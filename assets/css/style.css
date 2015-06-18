@@ -1,12 +1,7 @@
-/* ------------------------------------------------------------------
-Project: Rival
-Version: 1.5.1
------------------------------------------------------------------- */
-
 @import url("slider.css");
-@import url("http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700");
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700");
-@import url("http://fonts.googleapis.com/css?family=Volkhov:400italic");
+@import url("//fonts.googleapis.com/css?family=Roboto+Condensed:400,700");
+@import url("//fonts.googleapis.com/css?family=Open+Sans:400italic,400,700");
+@import url("//fonts.googleapis.com/css?family=Volkhov:400italic");
 
 /* ------------------------------------------------------------------
 General Styles
@@ -116,7 +111,7 @@ a,
 .form-control,
 .form-control:hover,
 .form-control:focus,
-.navbar-custom .dropdown-menu {
+.navbar-custom .sub-menu {
 	-webkit-box-shadow: none;
 			box-shadow: none;
 }
@@ -700,7 +695,7 @@ Navbar
 			transition: color 0.125s ease-in-out 0s;
 }
 
-.navbar-custom .dropdown-menu {
+.navbar-custom .sub-menu {
 	background: rgba(26, 26, 26, .9);
 	border-radius: 0;
 	border: 0;
@@ -721,14 +716,14 @@ Navbar
 	color: rgba(255, 255, 255, .7);
 }
 
-.navbar-custom .dropdown-menu > li > a {
+.navbar-custom .sub-menu > li > a {
 	border-bottom: 1px solid rgba(73, 71, 71, 0.15) !important;
 	padding: 11px 15px;
 	letter-spacing: 2px;
 	color: #999;
 }
 
-.navbar-custom .dropdown-menu .dropdown-menu {
+.navbar-custom .sub-menu .sub-menu {
 	border-left: 1px solid rgba(73, 71, 71, 0.15);
 	left: 100%;
 	right: auto;
@@ -736,7 +731,7 @@ Navbar
 	margin-top: 0;
 }
 
-.navbar-custom .dropdown-menu.left-side .dropdown-menu {
+.navbar-custom .sub-menu.left-side .sub-menu {
 	border: 0;
 	border-right: 1px solid rgba(73, 71, 71, 0.15);
 	right: 100%;
@@ -748,17 +743,17 @@ Navbar
 .navbar-custom .nav .open > a,
 .navbar-custom .nav .open > a:focus,
 .navbar-custom .nav .open > a:hover,
-.navbar-custom .dropdown-menu > li > a:focus,
-.navbar-custom .dropdown-menu > li > a:hover {
+.navbar-custom .sub-menu > li > a:focus,
+.navbar-custom .sub-menu > li > a:hover {
 	background: none;
 	color: #fff;
 }
 
-.navbar-custom .dropdown-menu > li > a:hover {
+.navbar-custom .sub-menu > li > a:hover {
 	background: rgba(255, 255, 255, .1) !important;
 }
 
-.navbar-custom .dropdown-toggle:after {
+.navbar-custom .menu-item-has-children-toggle:after {
 	position: absolute;
 	display: block;
 	right: 0;
@@ -776,19 +771,19 @@ Navbar
 	background: #fff;
 }
 
-.dropdown-menu {
+.sub-menu {
 	min-width: 180px;
 	font-size: 11px;
 }
 
 /* Navbar search */
 
-.dropdown-search {
+.menu-item-has-children-search {
 	position: relative;
 	padding: 5px;
 }
 
-.dropdown-search .form-control {
+.menu-item-has-children-search .form-control {
 	-webkit-border-radius: 0;
 	   -moz-border-radius: 0;
 	        border-radius: 0;
@@ -1915,7 +1910,7 @@ Shop
 
 /* Navbar cart item */
 
-.dropdown-menu.cart-list {
+.sub-menu.cart-list {
 	background: rgba(26, 26, 26, .92);
 	padding: 11px 15px;
 	text-align: right;
@@ -2147,19 +2142,19 @@ Responsive Media Querries
 		padding-top: 15px;
 	}
 
-	.navbar-custom .dropdown-menu {
+	.navbar-custom .sub-menu {
 		position: absolute;
 		display: block;
 		visibility: hidden;
 		opacity: 0;
 	}
 
-	.navbar-custom .open > .dropdown-menu {
+	.navbar-custom .open > .sub-menu {
 		visibility: visible;
 		opacity: 1;
 	}
 
-	.navbar-custom .dropdown-menu .dropdown-toggle:after {
+	.navbar-custom .sub-menu .menu-item-has-children-toggle:after {
 		position: absolute;
 		display: block;
 		right: 9px;
@@ -2173,7 +2168,7 @@ Responsive Media Querries
 		-moz-osx-font-smoothing: grayscale;
 	}
 
-	.navbar-right .dropdown-menu {
+	.navbar-right .sub-menu {
 		right: auto;
 		left: 0;
 	}
@@ -2257,29 +2252,29 @@ Responsive Media Querries
 		background: rgba(255, 255, 255, .1) !important;
 	}
 
-	.navbar-custom .navbar-nav .open .dropdown-menu .dropdown-header,
-	.navbar-custom .navbar-nav .open .dropdown-menu > li > a {
+	.navbar-custom .navbar-nav .open .sub-menu .menu-item-has-children-header,
+	.navbar-custom .navbar-nav .open .sub-menu > li > a {
 		padding: 10px 25px;
 	}
 
-	.navbar-custom .navbar-nav .open .dropdown-menu .dropdown-menu .dropdown-header,
-	.navbar-custom .navbar-nav .open .dropdown-menu .dropdown-menu > li > a {
+	.navbar-custom .navbar-nav .open .sub-menu .sub-menu .menu-item-has-children-header,
+	.navbar-custom .navbar-nav .open .sub-menu .sub-menu > li > a {
 		padding: 10px 35px;
 	}
 
 	.navbar-custom li a,
-	.navbar-custom .dropdown-search {
+	.navbar-custom .menu-item-has-children-search {
 		border-bottom: 1px solid rgba(73, 71, 71, 0.15) !important;
 	}
 
-	.navbar-custom .dropdown-toggle:after,
-	.navbar-custom .dropdown-menu .dropdown-toggle:after {
+	.navbar-custom .menu-item-has-children-toggle:after,
+	.navbar-custom .sub-menu .menu-item-has-children-toggle:after {
 		right: 7px;
 		content: "\f107";
 	}
 
 	.navbar-custom .nav > .open >.dropdown-toggle:after,
-	.navbar-custom .dropdown-menu .dropdown.open .dropdown-toggle:after {
+	.navbar-custom .sub-menu .menu-item-has-children.open .menu-item-has-children-toggle:after {
 		right: 7px;
 		content: "\f106";
 	}
@@ -2303,7 +2298,7 @@ Responsive Media Querries
 	}
 
 
-	.dropdown-menu.cart-list {
+	.sub-menu.cart-list {
 		text-align: left;
 		border-bottom: 1px solid rgba(73, 71, 71, 0.15) !important;
 	}

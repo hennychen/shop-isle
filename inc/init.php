@@ -32,11 +32,9 @@ require get_template_directory() . '/inc/functions/extras.php';
  * Customizer additions.
  */
 if ( is_storefront_customizer_enabled() ) {
-	require get_template_directory() . '/inc/customizer/hooks.php';
-	require get_template_directory() . '/inc/customizer/controls.php';
-	require get_template_directory() . '/inc/customizer/display.php';
+	require get_template_directory() . '/inc/customizer/customizer.php';
 	require get_template_directory() . '/inc/customizer/functions.php';
-	require get_template_directory() . '/inc/customizer/custom-header.php';
+	require get_template_directory() . '/inc/customizer/kirki.php';
 }
 
 /**
