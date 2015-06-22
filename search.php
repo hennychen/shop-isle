@@ -7,25 +7,46 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<!-- Wrapper start -->
+	<div class="main">
+		<!-- Post single start -->
+		<section class="module">
+			<div class="container">
 
-		<?php if ( have_posts() ) : ?>
+				<div class="row">
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'storefront' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
+					<!-- Content column start -->
+					<div class="col-sm-8">
 
-			<?php get_template_part( 'loop' ); ?>
+						<?php if ( have_posts() ) : ?>
 
-		<?php else : ?>
+							<header class="page-header">
+								<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'storefront' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+							</header><!-- .page-header -->
 
-			<?php get_template_part( 'content', 'none' ); ?>
+							<?php get_template_part( 'loop' ); ?>
 
-		<?php endif; ?>
+						<?php else : ?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+							<?php get_template_part( 'content', 'none' ); ?>
 
-<?php do_action( 'storefront_sidebar' ); ?>
+						<?php endif; ?>
+
+					</div><!-- Content column end -->	
+					
+					<!-- Sidebar column start -->
+					<div class="col-sm-4 col-md-3 col-md-offset-1 sidebar">
+
+						<?php do_action( 'storefront_sidebar' ); ?>
+
+					</div>
+					<!-- Sidebar column end -->
+					
+				</div><!-- .row -->
+
+			</div>
+		</section>
+		<!-- Post single end -->
+
+
 <?php get_footer(); ?>

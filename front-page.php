@@ -46,45 +46,22 @@
 	<div class="main">
 
 		<!-- Banner bloks start -->
-		<section class="module-small">
-			<div class="container">
+		<?php if ( is_active_sidebar( 'sidebar-banners' ) ) : ?>
+		
+			<section class="module-small">
+				<div class="container">
 
-				<div class="row">
+					<div class="row shop_isle_banners_section">
 
-					<div class="col-sm-4">
-						<div class="content-box mt-0 mb-0">
-							<div class="content-box-image">
-								<a href="#">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/shop/banner-1.jpg" alt="">
-								</a>
-							</div>
-						</div>
-					</div>
+						<?php dynamic_sidebar('sidebar-banners'); ?>
 
-					<div class="col-sm-4">
-						<div class="content-box mt-0 mb-0">
-							<div class="content-box-image">
-								<a href="#">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/shop/banner-2.jpg" alt="">
-								</a>
-							</div>
-						</div>
-					</div>
+					</div><!-- .row -->
 
-					<div class="col-sm-4">
-						<div class="content-box mt-0 mb-0">
-							<div class="content-box-image">
-								<a href="#">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/shop/banner-3.jpg" alt="">
-								</a>
-							</div>
-						</div>
-					</div>
-
-				</div><!-- .row -->
-
-			</div><!-- .container -->
-		</section>
+				</div><!-- .container -->
+			</section>
+			
+		<?php endif; ?>
+		
 		<!-- Banner bloks end -->
 
 		<!-- Divider -->

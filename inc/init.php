@@ -32,24 +32,14 @@ require get_template_directory() . '/inc/functions/extras.php';
  * Customizer additions.
  */
 if ( is_storefront_customizer_enabled() ) {
-	require get_template_directory() . '/inc/customizer/hooks.php';
-	require get_template_directory() . '/inc/customizer/controls.php';
-	require get_template_directory() . '/inc/customizer/display.php';
+	require get_template_directory() . '/inc/customizer/customizer.php';
 	require get_template_directory() . '/inc/customizer/functions.php';
-	require get_template_directory() . '/inc/customizer/custom-header.php';
 }
 
 /**
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack/jetpack.php';
-
-/**
- * Welcome screen
- */
-if ( is_admin() ) {
-	require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
-}
 
 /**
  * Load WooCommerce compatibility files.
