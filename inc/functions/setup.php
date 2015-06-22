@@ -1,8 +1,7 @@
 <?php
 /**
- * storefront setup functions
+ * ShopIsle setup functions
  *
- * @package storefront
  */
 
 /**
@@ -18,7 +17,7 @@ if ( ! isset( $content_width ) ) {
 $theme 					= wp_get_theme();
 $storefront_version 	= $theme['Version'];
 
-if ( ! function_exists( 'storefront_setup' ) ) :
+if ( ! function_exists( 'shop_isle_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -26,7 +25,7 @@ if ( ! function_exists( 'storefront_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function storefront_setup() {
+	function shop_isle_setup() {
 
 		/*
 		 * Load Localisation files.
@@ -57,9 +56,7 @@ if ( ! function_exists( 'storefront_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(
-			'primary'		=> __( 'Primary Menu', 'storefront' ),
-			'secondary'		=> __( 'Secondary Menu', 'storefront' ),
-			'handheld'		=> __( 'Handheld Menu', 'storefront' ),
+			'primary'		=> __( 'Primary Menu', 'shop-isle' )
 		) );
 
 		/*
@@ -92,14 +89,15 @@ if ( ! function_exists( 'storefront_setup' ) ) :
 		// Declare support for title theme feature
 		add_theme_support( 'title-tag' );
 	}
-endif; // storefront_setup
+endif; // shop_isle_setup
 
 /**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function storefront_widgets_init() {
+function shop_isle_widgets_init() {
+
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'storefront' ),
 		'id'            => 'sidebar-1',
@@ -120,20 +118,25 @@ function storefront_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 
-	$footer_widget_regions = apply_filters( 'storefront_footer_widget_regions', 4 );
-
-	for ( $i = 1; $i <= intval( $footer_widget_regions ); $i++ ) {
-		register_sidebar( array(
-			'name' 				=> sprintf( __( 'Footer %d', 'storefront' ), $i ),
-			'id' 				=> sprintf( 'footer-%d', $i ),
-			'description' 		=> sprintf( __( 'Widgetized Footer Region %d.', 'storefront' ), $i ),
-			'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
-			'after_widget' 		=> '</aside>',
-			'before_title' 		=> '<h3>',
-			'after_title' 		=> '</h3>',
-			)
-		);
-	}
+	register_sidebar( array(
+		'name'          => __( 'Banners section', 'shop-isle' ),
+		'id'            => 'sidebar-banners',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => __( 'Footer', 'shop-isle' ),
+		'id'            => 'sidebar-footer',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
 }
 
 /**

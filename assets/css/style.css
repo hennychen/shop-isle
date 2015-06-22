@@ -2129,6 +2129,30 @@ Scroll to top
 	opacity: 1;
 	color: #000;
 }
+.shop_isle_header_title h1, .shop_isle_header_title h2 {
+	margin-top:0px;
+	margin-bottom:0px;
+}
+.shop_isle_header_title h1 a, .shop_isle_header_title h2 a {
+	letter-spacing: 4px;
+	font-weight: 400;
+	font-size: 22px;
+	color: #fff;
+}
+.shop_isle_banners_section {
+	text-align:center;
+}
+.shop_isle_banners_section .widget {
+	width: 33.33333333%;
+	display: inline-block;
+}
+.shop_isle_footer_sidebar {	
+	text-align:center;
+}
+.shop_isle_footer_sidebar .widget {
+	width: 25%;
+	display: inline-block;
+}
 
 /* -------------------------------------------------------------------
 Responsive Media Querries
@@ -2239,6 +2263,10 @@ Responsive Media Querries
 }
 
 @media (max-width: 767px) {
+
+	.shop_isle_banners_section .widget {
+		width: 100%;
+	}
 
 	/* Navbar */
 
