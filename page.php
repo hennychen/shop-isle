@@ -6,8 +6,6 @@
  * Please note that this is the WordPress construct of pages
  * and that other 'pages' on your WordPress site will use a
  * different template.
- *
- * @package storefront
  */
 
 get_header(); ?>
@@ -23,10 +21,7 @@ get_header(); ?>
 
 					<div class="col-sm-6 col-sm-offset-3">
 
-						<h1 class="module-title font-alt">FAQ</h1>
-						<div class="module-subtitle font-serif mb-0">
-							A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-						</div>
+						<h1 class="module-title font-alt"><?php the_title(); ?></h1>
 
 					</div>
 
@@ -39,27 +34,50 @@ get_header(); ?>
 		<!-- Pricing start -->
 		<section class="module">
 			<div class="container">
+			
+				<div class="row">	
 
-				<?php while ( have_posts() ) : the_post(); ?>
+					<!-- Content column start -->
+					<div class="col-sm-8">
+						<?php
+						/**
+						* @hooked woocommerce_breadcrumb - 10
+						*/
+						do_action( 'shop_isle_content_top' ); ?>
 
-					<?php
-					do_action( 'storefront_page_before' );
-					?>
+						<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'content', 'page' ); ?>
+							<?php
+							do_action( 'storefront_page_before' );
+							?>
 
-					<?php
-					/**
-					 * @hooked storefront_display_comments - 10
-					 */
-					do_action( 'storefront_page_after' );
-					?>
+							<?php get_template_part( 'content', 'page' ); ?>
 
-				<?php endwhile; // end of the loop. ?>
+							<?php
+							/**
+							 * @hooked storefront_display_comments - 10
+							 */
+							do_action( 'storefront_page_after' );
+							?>
 
+						<?php endwhile; // end of the loop. ?>
+
+					</div>
+					<!-- Content column end -->
+
+					<!-- Sidebar column start -->
+					<div class="col-sm-4 col-md-3 col-md-offset-1 sidebar">
+
+						<?php do_action( 'storefront_sidebar' ); ?>
+
+					</div>
+					<!-- Sidebar column end -->
+
+				</div><!-- .row -->
+			
 			</div>
 		</section>
 		<!-- Pricing end -->
 
-<?php do_action( 'storefront_sidebar' ); ?>
+
 <?php get_footer(); ?>

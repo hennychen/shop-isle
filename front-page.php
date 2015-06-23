@@ -1,5 +1,6 @@
 <?php get_header(); ?>
-<!-- Home start -->
+	
+	<!-- Home start -->
 	<section id="home" class="home-section home-parallax home-fade home-full-height">
 
 		<div class="hero-slider">
@@ -79,6 +80,8 @@
 				</div><!-- .row -->
 
 				<div class="row multi-columns-row">
+				
+					<?php echo do_shortcode('[recent_products per_page="12" columns="4"]'); ?>
 
 					<!-- Shop item start -->
 					<div class="col-sm-6 col-md-3 col-lg-3">
@@ -216,115 +219,70 @@
 		<!-- Video end -->
 
 		<!-- Exclusive products start -->
-		<section class="module">
-			<div class="container">
+		<?php 
+			$shop_isle_products_slider_category = get_theme_mod('shop_isle_products_slider_category');
+			
+			if( !empty($shop_isle_products_slider_category) ):
+			
+				$shop_isle_products_slider_args = array( 'post_type' => 'product', 'posts_per_page' => 10, 'tax_query' => array(
+					array(
+						'taxonomy' => 'product_cat',
+						'field'    => 'term_id',
+						'terms'    => $shop_isle_products_slider_category,
+					)
+				));
 
-				<div class="row">
-					<div class="col-sm-6 col-sm-offset-3">
-						<h2 class="module-title font-alt">Exclusive products</h2>
-						<div class="module-subtitle font-serif">
-							The languages only differ in their grammar, their pronunciation and their most common words.
-						</div>
-					</div>
-				</div><!-- .row -->
+				$shop_isle_products_slider_loop = new WP_Query( $shop_isle_products_slider_args );
 
-				<div class="row">
+				if( $shop_isle_products_slider_loop->have_posts() ):
+				
+					echo '<section class="module">';
+			
+						echo '<div class="container">';
 
-					<!-- Owl-carousel start -->
-					<div class="owl-carousel text-center" data-items="5" data-pagination="false" data-navigation="false">
+							echo '<div class="row">';
+								echo '<div class="col-sm-6 col-sm-offset-3">';
+									echo '<h2 class="module-title font-alt">Exclusive products</h2>';
+									echo '<div class="module-subtitle font-serif">';
+										echo 'The languages only differ in their grammar, their pronunciation and their most common words.';
+									echo '</div>';
+								echo '</div>';
+							echo '</div><!-- .row -->';
 
-						<!-- ex-product start -->
-						<div class="owl-item">
-							<div class="col-sm-12">
-								<div class="ex-product">
-									<a href="#">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/shop/product-1.jpg" alt="">
-									</a>
-									<h4 class="shop-item-title font-alt"><a href="#">Leather belt</a></h4>
-									L12.00
-								</div>
-							</div>
-						</div>
-						<!-- ex-product end -->
+							echo '<div class="row">';
 
-						<!-- ex-product start -->
-						<div class="owl-item">
-							<div class="col-sm-12">
-								<div class="ex-product">
-									<a href="#">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/shop/product-3.jpg" alt="">
-									</a>
-									<h4 class="shop-item-title font-alt"><a href="#">Derby shoes</a></h4>
-									L54.00
-								</div>
-							</div>
-						</div>
-						<!-- ex-product end -->
+								echo '<div class="owl-carousel text-center" data-items="5" data-pagination="false" data-navigation="false">';
+				
+									while ( $shop_isle_products_slider_loop->have_posts() ) : 
+									
+										$shop_isle_products_slider_loop->the_post(); 
+										
+										echo '<div class="owl-item">';
+											echo '<div class="col-sm-12">';
+												echo '<div class="ex-product">';
+													echo '<a href="'.get_permalink().'">' . woocommerce_get_product_thumbnail().'</a>';
+													echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.the_title().'</a></h4>';
+													echo 'L12.00';
+												echo '</div>';
+											echo '</div>';
+										echo '</div>';
+	
+									endwhile; 
+	
+									wp_reset_postdata();
+								echo '</div>';
 
-						<!-- ex-product start -->
-						<div class="owl-item">
-							<div class="col-sm-12">
-								<div class="ex-product">
-									<a href="#">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/shop/product-2.jpg" alt="">
-									</a>
-									<h4 class="shop-item-title font-alt"><a href="#">Leather belt</a></h4>
-									L19.00
-								</div>
-							</div>
-						</div>
-						<!-- ex-product end -->
-
-						<!-- ex-product start -->
-						<div class="owl-item">
-							<div class="col-sm-12">
-								<div class="ex-product">
-									<a href="#">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/shop/product-4.jpg" alt="">
-									</a>
-									<h4 class="shop-item-title font-alt"><a href="#">Leather belt</a></h4>
-									L14.00
-								</div>
-							</div>
-						</div>
-						<!-- ex-product end -->
-
-						<!-- ex-product start -->
-						<div class="owl-item">
-							<div class="col-sm-12">
-								<div class="ex-product">
-									<a href="#">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/shop/product-5.jpg" alt="">
-									</a>
-									<h4 class="shop-item-title font-alt"><a href="#">Chelsea boots</a></h4>
-									L44.00
-								</div>
-							</div>
-						</div>
-						<!-- ex-product end -->
-
-						<!-- ex-product start -->
-						<div class="owl-item">
-							<div class="col-sm-12">
-								<div class="ex-product">
-									<a href="#">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/shop/product-6.jpg" alt="">
-									</a>
-									<h4 class="shop-item-title font-alt"><a href="#">Leather belt</a></h4>
-									L19.00
-								</div>
-							</div>
-						</div>
-						<!-- ex-product end -->
-
-					</div>
-					<!-- Owl-carousel end -->
-
-				</div>
-
-			</div>
-		</section>
-		<!-- Exclusive products end -->
+							echo '</div>';		
+									
+						echo '</div>';
+			
+					echo '</section>';
+					
+				endif;	
+				
+			endif;	
+			?>
+		
 
 		<!-- Divider -->
 		<hr class="divider-w">
