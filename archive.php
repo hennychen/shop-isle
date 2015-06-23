@@ -4,35 +4,58 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package storefront
- *
  */
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<!-- Wrapper start -->
+	<div class="main">
 
-		<?php if ( have_posts() ) : ?>
+		<!-- Post single start -->
+		<section class="module">
+			<div class="container">
 
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php the_archive_title(); ?>
-				</h1>
+				<div class="row">
 
-				<?php the_archive_description(); ?>
-			</header><!-- .page-header -->
+					<!-- Content column start -->
+					<div class="col-sm-8">
+						
+					
+					<?php if ( have_posts() ) : ?>
 
-			<?php get_template_part( 'loop' ); ?>
+						<header class="page-header">
+							<h1 class="page-title">
+								<?php the_archive_title(); ?>
+							</h1>
 
-		<?php else : ?>
+							<?php the_archive_description(); ?>
+						</header><!-- .page-header -->
 
-			<?php get_template_part( 'content', 'none' ); ?>
+						<?php get_template_part( 'loop' ); ?>
 
-		<?php endif; ?>
+					<?php else : ?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+						<?php get_template_part( 'content', 'none' ); ?>
 
-<?php do_action( 'storefront_sidebar' ); ?>
+					<?php endif; ?>
+
+					
+					</div>
+					<!-- Content column end -->
+
+					<!-- Sidebar column start -->
+					<div class="col-sm-4 col-md-3 col-md-offset-1 sidebar">
+
+						<?php do_action( 'storefront_sidebar' ); ?>
+
+					</div>
+					<!-- Sidebar column end -->
+
+				</div><!-- .row -->
+
+			</div>
+		</section>
+		<!-- Post single end -->
+		
+
 <?php get_footer(); ?>

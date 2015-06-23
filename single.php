@@ -1,8 +1,6 @@
 <?php
 /**
  * The template for displaying all single posts.
- *
- * @package storefront
  */
 
 get_header(); ?>
@@ -50,5 +48,6 @@ get_header(); ?>
 			</div>
 		</section>
 		<!-- Post single end -->
+		
 
 <?php get_footer(); ?>

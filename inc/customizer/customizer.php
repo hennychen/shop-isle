@@ -47,6 +47,31 @@ function shop_isle_customize_register( $wp_customize ) {
         'title'    => __( 'Footer', 'shop-isle' ),
         'priority' => 50
     ) );
+	
+	/* Frontpage */
+	if ( class_exists( 'WP_Customize_Panel' ) ):
+	
+		$wp_customize->add_panel( 'panel_frontpage', array(
+			'priority' => 41,
+			'capability' => 'edit_theme_options',
+			'theme_supports' => '',
+			'title' => __( 'Frontpage', 'shop-isle' )
+		) );
+		
+		$wp_customize->add_section( 'shop_isle_products_slider_section' , array(
+					'title'       => __( 'Products slider section', 'shop-isle' ),
+					'priority'    => 1,
+					'panel' => 'panel_frontpage'
+		));
+	
+	else:
+	
+		$wp_customize->add_section( 'shop_isle_products_slider_section' , array(
+					'title'       => __( 'Products slider section', 'shop-isle' ),
+					'priority'    => 1
+		));
+	
+	endif;
 		
 	
 }
@@ -74,44 +99,30 @@ function shop_isle_kirki_fields( $fields ) {
 		'priority'    => 1,
     );
 	
-	$fields[] = array(
-		 'type'        => 'sortable',
-		'setting'     => 'sortable_demo',
-		'label'       => __( 'This is the label', 'kirki' ),
-		'description' => __( 'This is the control description', 'kirki' ),
-		'help'        => __( 'This is some extra help text.', 'kirki' ),
-		'section'     => 'shop_isle_header_section',
-		'default'     => array(
-			'option3',
-			'option1',
-			'option4'
-		),
-		'choices'     => array(
-			'option1' => __( 'Option 1', 'kirki' ),
-			'option2' => __( 'Option 2', 'kirki' ),
-			'option3' => __( 'Option 3', 'kirki' ),
-			'option4' => __( 'Option 4', 'kirki' ),
-			'option5' => __( 'Option 5', 'kirki' ),
-			'option6' => __( 'Option 6', 'kirki' ),
-		),
-		'priority'    => 10,
+	$shop_isle_prod_categories_array = array();
 
-	);
+	$shop_isle_prod_categories = get_categories( array('taxonomy' => 'product_cat', 'hide_empty' => 0, 'title_li' => '') );
+
+	if( !empty($shop_isle_prod_categories) ):
+		foreach ($shop_isle_prod_categories as $shop_isle_prod_cat):
+		
+			if( !empty($shop_isle_prod_cat->term_id) && !empty($shop_isle_prod_cat->name) ):
+				$shop_isle_prod_categories_array[$shop_isle_prod_cat->term_id] = $shop_isle_prod_cat->name;
+			endif;	
+				
+		endforeach;
+	endif;
 	
 	$fields[] = array(
-		'id'          => 'opt-slides',
-    'type'        => 'slides',
-    'title'       => __('Slides Options', 'redux-framework-demo'),
-    'subtitle'    => __('Unlimited slides with drag and drop sortings.', 'redux-framework-demo'),
-    'desc'        => __('This field will store all slides values into a multidimensional array to use into a foreach loop.', 'redux-framework-demo'),
-	'section'     => 'shop_isle_header_section',
-    'placeholder' => array(
-        'title'           => __('This is a title', 'redux-framework-demo'),
-        'description'     => __('Description Here', 'redux-framework-demo'),
-        'url'             => __('Give us a link!', 'redux-framework-demo'),
-    ),
-
-	);
+		'type'        => 'select',
+		'setting'     => 'shop_isle_products_slider_category',
+		'label'       => __( 'Products category', 'shop-isle' ),
+		'help'        => __( 'Products will be selected from this category', 'shop-isle' ),
+		'section'     => 'shop_isle_products_slider_section',
+		'priority'    => 1,
+		'choices'     => $shop_isle_prod_categories_array
+		
+	);	
 
 
     return $fields;

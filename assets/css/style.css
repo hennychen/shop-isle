@@ -136,7 +136,8 @@ a,
 
 /* Forms */
 
-.form-control {
+.form-control,
+#comments input, #comments textarea {
 	font-family: "Roboto Condensed", sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 2px;
@@ -147,7 +148,35 @@ a,
 	   -moz-border-radius: 2px;
 	        border-radius: 2px;
 }
-
+#comments input, #comments textarea {
+	display: block;
+	width: 100%;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+#comments input[type="submit"] {
+	background: rgba(17, 17, 17, .8);
+	color: #fff;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	font-family: "Roboto Condensed", sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 11px;
+	padding: 8px 37px;
+}
 .form-control:focus {
 	border-color: #CACACA;
 }
@@ -670,7 +699,9 @@ blockquote {
 /* ------------------------------------------------------------------
 Navbar
 ------------------------------------------------------------------- */
-
+.page .navbar-custom {
+	background-color: rgba(10, 10, 10, .9) !important;
+}
 .navbar-custom {
 	background-color: rgba(10, 10, 10, .9);
 	border: 0;
@@ -709,6 +740,15 @@ Navbar
 	font-weight: 400;
 	font-size: 22px;
 	color: #fff;
+}
+
+.navbar-custom .sub-menu li {
+	list-style:none;
+}
+
+.navbar-custom .sub-menu li a {
+	width:100%;
+	display:block;
 }
 
 .navbar-custom .nav li > a {
@@ -868,9 +908,9 @@ Home Section
 Sections
 ------------------------------------------------------------------- */
 
-.navbar-custom + .main {
+/*.navbar-custom + .main {
 	margin-top: 50px;
-}
+}*/
 
 .main {
 	position: relative;
@@ -903,7 +943,7 @@ Sections
 	font-weight: 400;
 	font-size: 30px;
 	color: #111;
-	margin: 0 0 70px;
+	margin: 70px 0 70px;
 }
 
 .module-subtitle {
@@ -1823,12 +1863,13 @@ Comments and comment form
 ------------------------------------------------------------------- */
 
 .comments,
-.comment-form {
+#comments {
 	margin: 80px 0 0;
 }
 
 .comments .comment-title,
-.comment-form .comment-form-title {
+.comment-form .comment-form-title,
+#comments .comment-reply-title {
 	border-bottom: 1px dotted #c2c2c2;
 	font-size: 16px;
 	color: #111;
@@ -2160,11 +2201,11 @@ Responsive Media Querries
 
 @media (min-width: 768px) {
 
-	.navbar-transparent {
+	/*.navbar-transparent {
 		background: transparent;
 		padding-bottom: 15px;
 		padding-top: 15px;
-	}
+	}*/
 
 	.navbar-custom .sub-menu {
 		position: absolute;

@@ -56,7 +56,7 @@
 		<!-- Footer end -->
 	
 	</div>
-	<!-- Wrapper start -->
+	<!-- Wrapper end -->
 	
 	<!-- Scroll-up -->
 	<div class="scroll-up">
