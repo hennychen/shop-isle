@@ -1,5 +1,13 @@
 
 
+### 1.0.1 - 23/06/2015
+
+ Changes: 
+
+
+ * added templates for contact, about and fullwidth, and frontpage products slider
+
+
 ### 1.0.1 - 22/06/2015
 
  Changes: 
