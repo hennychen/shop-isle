@@ -1,5 +1,14 @@
 
 
+### 1.0.1 - 26/06/2015
+
+ Changes: 
+
+
+ * Improved CSS
+ * Improved css
+
+
 ### 1.0.1 - 23/06/2015
 
  Changes: 
