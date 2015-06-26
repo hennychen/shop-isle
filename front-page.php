@@ -5,6 +5,33 @@
 
 		<div class="hero-slider">
 			<ul class="slides">
+				<?php
+					
+					$shop_isle_slider_section = get_theme_mod('shop_isle_slider_section',json_encode(array( array("image_url" => get_template_directory_uri().'/images/companies/1.png' ,"link" => "#" ),array("image_url" => get_template_directory_uri().'/images/companies/2.png' ,"link" => "#" ),array("image_url" => get_template_directory_uri().'/images/companies/3.png' ,"link" => "#" ) )));
+					
+				
+
+					
+					if( !empty( $shop_isle_slider_section ) ){
+						
+						
+						$parallax_one_social_icons_decoded = json_decode($shop_isle_slider_section);
+						
+						if( !empty($parallax_one_social_icons_decoded) ){
+						
+							echo '<ul class="social-icons">';
+							
+								foreach($parallax_one_social_icons_decoded as $parallax_one_social_icon){
+									
+									//echo '<li><a href="'.esc_url($parallax_one_social_icon->link).'">'.$parallax_one_social_icon->image_url.'</a></li>';
+								}
+						
+							echo '</ul>';
+						
+						}
+					}
+					
+				?>
 
 				<li class="bg-dark-30 bg-dark" style="background-image:url(<?php echo get_template_directory_uri(); ?>/assets/images/section-23.jpg)">
 					<div class="hs-caption">
