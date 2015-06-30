@@ -4,13 +4,10 @@
 	<section id="home" class="home-section home-parallax home-fade home-full-height">
 
 		<div class="hero-slider">
-			<ul class="slides">
+			
 				<?php
 					
-					$shop_isle_slider_section = get_theme_mod('shop_isle_slider_section',json_encode(array( array("image_url" => get_template_directory_uri().'/images/companies/1.png' ,"link" => "#" ),array("image_url" => get_template_directory_uri().'/images/companies/2.png' ,"link" => "#" ),array("image_url" => get_template_directory_uri().'/images/companies/3.png' ,"link" => "#" ) )));
-					
-				
-
+					$shop_isle_slider_section = get_theme_mod('shop_isle_slider',json_encode(array( array("image_url" => get_template_directory_uri().'/assets/images/slide1.jpg' ,"link" => "#" ),array("image_url" => get_template_directory_uri().'/assets/images/slide2.jpg' ,"link" => "#" ),array("image_url" => get_template_directory_uri().'/assets/images/slide3.jpg' ,"link" => "#" ) )));
 					
 					if( !empty( $shop_isle_slider_section ) ){
 						
@@ -19,11 +16,27 @@
 						
 						if( !empty($parallax_one_social_icons_decoded) ){
 						
-							echo '<ul class="social-icons">';
+							echo '<ul class="slides">';
 							
 								foreach($parallax_one_social_icons_decoded as $parallax_one_social_icon){
 									
-									//echo '<li><a href="'.esc_url($parallax_one_social_icon->link).'">'.$parallax_one_social_icon->image_url.'</a></li>';
+									echo '<li class="bg-dark-30 bg-dark" style="background-image:url('.$parallax_one_social_icon->image_url.')">
+										<div class="hs-caption">
+											<div class="caption-content">
+												<div class="hs-title-size-1 font-alt mb-30">
+													This is Rival
+												</div>
+												<div class="hs-title-size-4 font-alt mb-30">
+													Summer 2015
+												</div>
+												<div class="hs-title-size-1 font-alt mb-40">
+													Your online fashion destination
+												</div>
+												<a href="#latest" class="section-scroll btn btn-border-w btn-round">Learn More</a>
+											</div>
+										</div>
+									</li>';
+								
 								}
 						
 							echo '</ul>';
@@ -33,38 +46,6 @@
 					
 				?>
 
-				<li class="bg-dark-30 bg-dark" style="background-image:url(<?php echo get_template_directory_uri(); ?>/assets/images/section-23.jpg)">
-					<div class="hs-caption">
-						<div class="caption-content">
-							<div class="hs-title-size-1 font-alt mb-30">
-								This is Rival
-							</div>
-							<div class="hs-title-size-4 font-alt mb-30">
-								Summer 2015
-							</div>
-							<div class="hs-title-size-1 font-alt mb-40">
-								Your online fashion destination
-							</div>
-							<a href="#latest" class="section-scroll btn btn-border-w btn-round">Learn More</a>
-						</div>
-					</div>
-				</li>
-
-				<li class="bg-dark-30 bg-dark" style="background-image:url(<?php echo get_template_directory_uri(); ?>/assets/images/section-20.jpg)">
-					<div class="hs-caption">
-						<div class="caption-content">
-							<div class="hs-title-size-1 font-alt mb-30">
-								This is Rival
-							</div>
-							<div class="hs-title-size-4 font-alt mb-40">
-								Exclusive products
-							</div>
-							<a href="#latest" class="section-scroll btn btn-border-w btn-round">Learn More</a>
-						</div>
-					</div>
-				</li>
-
-			</ul>
 		</div>
 
 	</section >

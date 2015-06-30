@@ -269,7 +269,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_setting( 'shop_isle_slider', array(
 		'sanitize_callback' => 'shop_isle_sanitize_text',
-		'default' => json_encode(array( array("image_url" => get_template_directory_uri().'/images/companies/1.png' ,"link" => "#" ),array("image_url" => get_template_directory_uri().'/images/companies/2.png' ,"link" => "#" ),array("image_url" => get_template_directory_uri().'/images/companies/3.png' ,"link" => "#" ) ))
+		'default' => json_encode(array( array("image_url" => get_template_directory_uri().'/assets/images/slide1.jpg' ,"link" => "#" ),array("image_url" => get_template_directory_uri().'/assets/images/slide2.jpg' ,"link" => "#" ),array("image_url" => get_template_directory_uri().'/assets/images/slide3.jpg' ,"link" => "#" ) ))
 	));
 	$wp_customize->add_control( new Shop_Isle_General_Repeater( $wp_customize, 'shop_isle_slider', array(
 		'label'   => __('Add new social icon','shop-isle'),
