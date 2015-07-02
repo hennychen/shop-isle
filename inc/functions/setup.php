@@ -210,3 +210,8 @@ function storefront_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+
+function shop_isle_admin_styles() {
+	wp_enqueue_media();
+    wp_enqueue_style( 'shop_isle_admin_stylesheet', get_template_directory_uri() . '/assets/css/admin-style.css' );
+}
