@@ -1,5 +1,15 @@
 
 
+### 1.0.1 - 02/07/2015
+
+ Changes: 
+
+
+ * Started to add the slider in customizer
+ * Added slider default images
+ * Finished slider, added banners and some part of the latest products
+
+
 ### 1.0.1 - 26/06/2015
 
  Changes: 
