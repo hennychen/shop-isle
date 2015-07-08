@@ -1,5 +1,13 @@
 
 
+### 1.0.1 - 08/07/2015
+
+ Changes: 
+
+
+ * Single product page , plus sections on frontpage
+
+
 ### 1.0.1 - 02/07/2015
 
  Changes: 
