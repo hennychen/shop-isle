@@ -17,7 +17,7 @@ add_action( 'after_setup_theme',			'shop_isle_setup' );
 add_action( 'widgets_init',					'shop_isle_widgets_init' );
 add_action( 'wp_enqueue_scripts',			'storefront_scripts',				10 );
 add_action( 'admin_enqueue_scripts',        'shop_isle_admin_styles',           10 );
-add_action( 'storefront_before_content',	'storefront_header_widget_region',	10 );
+add_action( 'shop_isle_before_content',	'storefront_header_widget_region',	10 );
 add_action( 'storefront_sidebar',			'storefront_get_sidebar',			10 );
 
 /**
@@ -92,3 +92,14 @@ add_action( 'storefront_page_after', 	'storefront_display_comments',	10 );
  */
 add_filter( 'body_class',			'storefront_body_classes' );
 add_filter( 'wp_page_menu_args',	'storefront_page_menu_args' );
+
+/**
+ * Customize
+ * 
+ * @see  shop_isle_customize_preview_js()
+ * @see  shop_isle_customize_register()
+ * @see  shop_isle_customizer_script()
+ */
+ add_action( 'customize_preview_init',               'shop_isle_customize_preview_js' );
+ add_action( 'customize_register',                   'shop_isle_customize_register' );
+ add_action( 'customize_controls_enqueue_scripts',   'shop_isle_customizer_script' );

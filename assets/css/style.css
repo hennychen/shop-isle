@@ -1723,7 +1723,6 @@ Gallery
 Elements
 --------------------------------------------------------------*/
 hr {
-	background-color: #ccc;
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
@@ -2544,6 +2543,9 @@ Shop product detail
 	margin: 0;
 }
 
+.related.products  ul.products li {
+	width: 33.3%;
+}
 /* -------------------------------------------------------------------
 Scroll to top
 ------------------------------------------------------------------- */

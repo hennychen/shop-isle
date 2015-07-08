@@ -2,19 +2,19 @@
 	margin-top: 15px;
 	color: rgb(0, 142, 214);
 }
-.parallax_one_repeater_container, .parallax_one_general_control_repeater_container {
+.shop_isle_repeater_container, .shop_isle_general_control_repeater_container {
 	width: 100%;
 	float: left;
 	padding: 5px 0;
 	cursor:move;
 }
-.parallax_one_repeater_container label, .parallax_one_general_control_repeater_container label {
+.shop_isle_repeater_container label, .shop_isle_general_control_repeater_container label {
 	padding: 5px;
 	border: 1px solid #dfdfdf;
 	border-top:0px;
 	padding-top: 0px;
 }
-button.parallax_one_remove_field {
+button.shop_isle_remove_field {
 	display: inline-block;
 	width: 25% !important;
 	height: 57px !important;
@@ -23,29 +23,29 @@ button.parallax_one_remove_field {
 	float: right;
 }
 
-button.parallax_one_general_control_remove_field {
+button.shop_isle_general_control_remove_field {
 	width: 100%;
 	margin-top: 10px!important;
 	 
 }
 
-button.parallax_one_general_control_remove_field:hover{
+button.shop_isle_general_control_remove_field:hover{
 	background-color:#00a0d2!important;
 	color:#FFFFFF!important;
 	border: 0;
 }
 
 
-.parallax_one_repeater_container .parallax_one_icon_link,  .parallax_one_general_control_repeater_container .parallax_one_text_control, .parallax_one_general_control_repeater_container .parallax_one_link_control{
+.shop_isle_repeater_container .shop_isle_icon_link,  .shop_isle_general_control_repeater_container .shop_isle_text_control, .shop_isle_general_control_repeater_container .shop_isle_link_control{
 	width: 100% !important;
 	margin: 3px 0 0 !important;
 }
-.parallax_one_repeater_container .parallax_one_icons, .parallax_one_general_control_repeater_container .parallax_one_icon_control {
+.shop_isle_repeater_container .shop_isle_icons, .shop_isle_general_control_repeater_container .shop_isle_icon_control {
 	width: 100%;
 	margin: 0;
 	padding: 0;
 }
-#parallax_one_new_field, #parallax_one_general_control_new_field {
+#shop_isle_new_field, #shop_isle_general_control_new_field {
 	width: 100%;
 }
 .customize-control-widget_form .widget-control-save {
@@ -54,19 +54,19 @@ button.parallax_one_general_control_remove_field:hover{
 
 
 
-.parallax_one_our_services_image_control{
+.shop_isle_our_services_image_control{
 	display:none;
 }
 
-.parallax_one_our_services_icon_control{
+.shop_isle_our_services_icon_control{
 	display:none;
 }
 
-.parallax_one_general_control_repeater_container label{
+.shop_isle_general_control_repeater_container label{
 	display: none;
 }
 
-.parallax-customize-control-title{
+.shop-isle-customize-control-title{
 	border: 1px solid #dfdfdf;
 	cursor: move !important;
 	font-weight: bold;
@@ -91,10 +91,10 @@ button.parallax_one_general_control_remove_field:hover{
 	color:#00a0d2;
 }
 
-.parallax_one_image_control .custom_media_button_parallax_one{
+.shop_isle_image_control .custom_media_button_shop_isle{
 	margin-top: 5px;
 }
 
-#customize-control-parallax_one_contact_form_shortcode{
+#customize-control-shop_isle_contact_form_shortcode{
 	display:none;
 }

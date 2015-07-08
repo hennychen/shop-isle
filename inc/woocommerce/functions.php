@@ -2,7 +2,6 @@
 /**
  * General functions used to integrate this theme with WooCommerce.
  *
- * @package storefront
  */
 
 /**
@@ -11,11 +10,12 @@
  * @since   1.0.0
  * @return  void
  */
-if ( ! function_exists( 'storefront_before_content' ) ) {
-	function storefront_before_content() {
+if ( ! function_exists( 'shop_isle_before_content' ) ) {
+	function shop_isle_before_content() {
 		?>
-		<div id="primary" class="content-area">
-			<main id="main" class="site-main" role="main">
+		<div class="main">
+			<section class="module">
+				<div class="container">
 	    	<?php
 	}
 }
@@ -26,13 +26,14 @@ if ( ! function_exists( 'storefront_before_content' ) ) {
  * @since   1.0.0
  * @return  void
  */
-if ( ! function_exists( 'storefront_after_content' ) ) {
-	function storefront_after_content() {
+if ( ! function_exists( 'shop_isle_after_content' ) ) {
+	function shop_isle_after_content() {
 		?>
-			</main><!-- #main -->
-		</div><!-- #primary -->
+				</div><!-- .container -->
+			</section><!-- .module -->		
+		</div><!-- .main -->
 
-		<?php do_action( 'storefront_sidebar' );
+		<?php
 	}
 }
 
