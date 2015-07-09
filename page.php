@@ -14,7 +14,7 @@ get_header(); ?>
 	<div class="main">
 
 		<!-- Header section start -->
-		<section class="module-small bg-dark bg-dark-60" data-background="assets/images/section-4.jpg">
+		<section class="module-small bg-dark bg-dark-60" data-background="">
 			<div class="container">
 
 				<div class="row">

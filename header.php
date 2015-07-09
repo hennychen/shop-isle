@@ -20,11 +20,19 @@
 	<?php do_action( 'storefront_before_header' ); ?>
 
 	<!-- Preloader -->
-	<div class="page-loader">
-		<div class="loader">Loading...</div>
-	</div>
+	<?php
 	
+	$shop_isle_disable_preloader = get_theme_mod('shop_isle_disable_preloader');
+		
+	if( isset($shop_isle_disable_preloader) && ($shop_isle_disable_preloader != 1) ):
 	
+		echo '<div class="page-loader">';
+			echo '<div class="loader">Loading...</div>';
+		echo '</div>';
+	
+	endif;
+	
+	?>
 	
 	<!-- Navigation start -->
 	<nav class="navbar navbar-custom navbar-transparent navbar-fixed-top" role="navigation">
@@ -33,7 +41,7 @@
 	
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
-					<span class="sr-only">Toggle navigation</span>
+					<span class="sr-only"><?php _e('Toggle navigation','shop-isle'); ?></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>

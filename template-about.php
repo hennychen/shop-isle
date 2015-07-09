@@ -11,17 +11,14 @@ get_header(); ?>
 	<div class="main">
 
 		<!-- Header section start -->
-		<section class="module bg-dark bg-dark-60" data-background="assets/images/section-4.jpg">
+		<section class="module bg-dark bg-dark-60" data-background="">
 			<div class="container">
 
 				<div class="row">
 
 					<div class="col-sm-6 col-sm-offset-3">
 
-						<h1 class="module-title font-alt">About</h1>
-						<div class="module-subtitle font-serif mb-0">
-							A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-						</div>
+						<h1 class="module-title font-alt"><?php the_title(); ?></h1>
 
 					</div>
 
@@ -37,44 +34,9 @@ get_header(); ?>
 
 				<div class="row">
 
-					<div class="col-sm-6">
+					<div class="col-sm-12">
 
-						<h5 class="font-alt">We’re a digital creative agency</h5>
-						<br>
-						<p>The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words.</p>
-						<p>The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary.</p>
-
-					</div>
-
-					<div class="col-sm-6">
-
-						<h6 class="font-alt"><span class="icon-tools-2"></span> Development</h6>
-						<div class="progress">
-							<div class="progress-bar pb-dark" aria-valuenow="60" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-								<span class="font-alt"></span>
-							</div>
-						</div>
-
-						<h6 class="font-alt"><span class="icon-strategy"></span> Branding</h6>
-						<div class="progress">
-							<div class="progress-bar pb-dark" aria-valuenow="80" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-								<span class="font-alt"></span>
-							</div>
-						</div>
-
-						<h6 class="font-alt"><span class="icon-target"></span> Marketing</h6>
-						<div class="progress">
-							<div class="progress-bar pb-dark" aria-valuenow="50" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-								<span class="font-alt"></span>
-							</div>
-						</div>
-
-						<h6 class="font-alt"><span class="icon-camera"></span> Photography</h6>
-						<div class="progress">
-							<div class="progress-bar pb-dark" aria-valuenow="90" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-								<span class="font-alt"></span>
-							</div>
-						</div>
+						<?php the_content(); ?>
 
 					</div>
 
@@ -108,7 +70,7 @@ get_header(); ?>
 				<div class="row">
 
 					<!-- Team item star -->
-					<div class="col-sm-6 col-md-3 mb-sm-20 wow fadeInUp">
+					<div class="col-sm-6 col-md-3 mb-sm-20 fadeInUp">
 
 						<div class="team-item">
 							<div class="team-image">
@@ -134,7 +96,7 @@ get_header(); ?>
 					<!-- Team item end -->
 
 					<!-- Team item star -->
-					<div class="col-sm-6 col-md-3 mb-sm-20 wow fadeInUp">
+					<div class="col-sm-6 col-md-3 mb-sm-20 fadeInUp">
 
 						<div class="team-item">
 							<div class="team-image">
@@ -160,7 +122,7 @@ get_header(); ?>
 					<!-- Team item end -->
 
 					<!-- Team item star -->
-					<div class="col-sm-6 col-md-3 mb-sm-20 wow fadeInUp">
+					<div class="col-sm-6 col-md-3 mb-sm-20 fadeInUp">
 
 						<div class="team-item">
 							<div class="team-image">
@@ -186,7 +148,7 @@ get_header(); ?>
 					<!-- Team item end -->
 
 					<!-- Team item star -->
-					<div class="col-sm-6 col-md-3 mb-sm-20 wow fadeInUp">
+					<div class="col-sm-6 col-md-3 mb-sm-20 fadeInUp">
 
 						<div class="team-item">
 							<div class="team-image">

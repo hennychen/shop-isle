@@ -1,8 +1,6 @@
 <?php
 /**
- * storefront engine room
- *
- * @package storefront
+ * Main file
  */
 
 /**
