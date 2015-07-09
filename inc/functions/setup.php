@@ -178,10 +178,6 @@ function storefront_scripts() {
 	
 	wp_enqueue_script( 'storefront-jqBootstrapValidation', get_template_directory_uri() . '/assets/js/jqBootstrapValidation.js', array('jquery'), '20120206', true );
 	
-	wp_enqueue_script( 'storefront-maps', 'http://maps.google.com/maps/api/js?sensor=true', array('jquery'), '20120206', true );
-	
-	wp_enqueue_script( 'storefront-gmaps', get_template_directory_uri() . '/assets/js/gmaps.js', array('jquery'), '20120206', true );
-	
 	wp_enqueue_script( 'storefront-isotope', get_template_directory_uri() . '/assets/js/isotope.pkgd.min.js', array('jquery'), '20120206', true );
 	
 	wp_enqueue_script( 'storefront-imagesloaded', get_template_directory_uri() . '/assets/js/imagesloaded.pkgd.js', array('jquery'), '20120206', true );
@@ -194,11 +190,7 @@ function storefront_scripts() {
 	
 	wp_enqueue_script( 'storefront-smoothscroll', get_template_directory_uri() . '/assets/js/smoothscroll.js', array('jquery'), '20120206', true );
 	
-	wp_enqueue_script( 'storefront-wow', get_template_directory_uri() . '/assets/js/wow.min.js', array('jquery'), '20120206', true );
-	
 	wp_enqueue_script( 'storefront-owl', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), '20120206', true );
-	
-	wp_enqueue_script( 'storefront-contact', get_template_directory_uri() . '/assets/js/contact.js', array('jquery'), '20120206', true );
 	
 	wp_enqueue_script( 'storefront-custom', get_template_directory_uri() . '/assets/js/custom.js', array('jquery','storefront-flexslider','storefront-jquery-mb-YTPlayer'), '20120206', true );
 

@@ -309,12 +309,43 @@ function shop_isle_customize_register( $wp_customize ) {
 	));
 	
 	/*********************************/
+	/******  Contact page  ***********/
+	/*********************************/
+	
+	$wp_customize->add_section( 'shop_isle_contact_page_section', array(
+        'title'    => __( 'Contact page', 'shop-isle' ),
+        'priority' => 51
+    ) );
+	
+	/* Contact Form  */
+	$wp_customize->add_setting( 'shop_isle_contact_page_form_shortcode', array( 'sanitize_callback' => ''));
+	
+	$wp_customize->add_control( 'shop_isle_contact_page_form_shortcode', array(
+		'label'    => __( 'Contact form shortcode', 'parallax-one' ),
+		'description' => __('Create a form, copy the shortcode generated and paste it here. We recommend <a href="https://wordpress.org/plugins/contact-form-7/">Contact Form 7</a> but you can use any plugin you like.','shop-isle'),
+		'section'  => 'shop_isle_contact_page_section',
+		'active_callback' => 'shop_isle_is_contact_page',
+		'priority'    => 1
+	));
+	
+	/* Map ShortCode  */
+	$wp_customize->add_setting( 'shop_isle_contact_page_map_shortcode', array( 'sanitize_callback' => ''));
+	
+	$wp_customize->add_control( 'shop_isle_contact_page_map_shortcode', array(
+		'label'    => __( 'Map shortcode', 'shop-isle' ),
+		'description' => __('To use this section please install <a href="https://wordpress.org/plugins/intergeo-maps/">Intergeo Maps</a> plugin then use it to create a map and paste here the shortcode generated','shop-isle'),
+		'section'  => 'shop_isle_contact_page_section',
+		'active_callback' => 'shop_isle_is_contact_page',
+		'priority'    => 2
+	));
+	
+	/*********************************/
 	/**********  404 page  ***********/
 	/*********************************/
 	
 	$wp_customize->add_section( 'shop_isle_404_section', array(
         'title'    => __( '404 Not found page', 'shop-isle' ),
-        'priority' => 51
+        'priority' => 52
     ) );
 	
 	/* Background */
@@ -362,4 +393,71 @@ function shop_isle_customize_register( $wp_customize ) {
 		'section'  => 'shop_isle_404_section',
 		'priority'    => 5,
 	));
+	
+	/********************************************************/
+	/************** ADVANCED OPTIONS  ***********************/
+	/********************************************************/
+	
+	$wp_customize->add_section( 'shop_isle_general_section' , array(
+		'title'       => __( 'Advanced options', 'shop-isle' ),
+      	'priority'    => 53
+	));
+	
+	$blogname = $wp_customize->get_control('blogname');
+	$blogdescription = $wp_customize->get_control('blogdescription');
+	$show_on_front = $wp_customize->get_control('show_on_front');
+	$page_on_front = $wp_customize->get_control('page_on_front');
+	$page_for_posts = $wp_customize->get_control('page_for_posts');
+	
+	if(!empty($blogname)):
+		$blogname->section = 'shop_isle_general_section';
+		$blogname->priority = 1;
+	endif;
+	
+	if(!empty($blogdescription)):
+		$blogdescription->section = 'shop_isle_general_section';
+		$blogdescription->priority = 2;
+	endif;
+	
+	if(!empty($show_on_front)):
+		$show_on_front->section = 'shop_isle_general_section';
+		$show_on_front->priority = 3;
+	endif;
+	
+	if(!empty($page_on_front)):
+		$page_on_front->section = 'shop_isle_general_section';
+		$page_on_front->priority = 4;
+	endif;
+	
+	if(!empty($page_for_posts)):
+		$page_for_posts->section = 'shop_isle_general_section';
+		$page_for_posts->priority = 5;
+	endif;
+	
+	$wp_customize->remove_section('static_front_page');
+	$wp_customize->remove_section('title_tagline');
+	
+	$nav_menu_locations_primary = $wp_customize->get_control('nav_menu_locations[primary]');
+	if(!empty($nav_menu_locations_primary)){
+		$nav_menu_locations_primary->section = 'shop_isle_general_section';
+		$nav_menu_locations_primary->priority = 6;
+	}
+	
+	/* Disable preloader */
+	$wp_customize->add_setting( 'shop_isle_disable_preloader', array( 'sanitize_callback' => ''));
+	
+	$wp_customize->add_control(
+			'shop_isle_disable_preloader',
+			array(
+				'type' => 'checkbox',
+				'label' => __('Disable preloader?','shop-isle'),
+				'description' => __('If this box is checked, the preloader will be disabled from homepage.','shop-isle'),
+				'section' => 'shop_isle_general_section',
+				'priority'    => 7,
+			)
+	);
 }
+
+function shop_isle_is_contact_page() { 
+	return is_page_template('template-contact.php');
+};
