@@ -34,7 +34,6 @@ function shop_isle_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'shop_isle_logo', array(
 		'label'    => __( 'Logo', 'shop-isle' ),
 		'section'  => 'shop_isle_header_section',
-		'settings' => 'shop_isle_logo',
 		'priority'    => 1,
 	)));
 	
@@ -309,4 +308,58 @@ function shop_isle_customize_register( $wp_customize ) {
 		'priority'    => 1,
 	));
 	
+	/*********************************/
+	/**********  404 page  ***********/
+	/*********************************/
+	
+	$wp_customize->add_section( 'shop_isle_404_section', array(
+        'title'    => __( '404 Not found page', 'shop-isle' ),
+        'priority' => 51
+    ) );
+	
+	/* Background */
+	$wp_customize->add_setting( 'shop_isle_404_background', array('default' => get_template_directory_uri().'/assets/images/404.jpg'));
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'shop_isle_404_background', array(
+		'label'    => __( 'Background image', 'shop-isle' ),
+		'section'  => 'shop_isle_404_section',
+		'priority'    => 1,
+	)));
+	
+	/* Title */
+	$wp_customize->add_setting( 'shop_isle_404_title', array('sanitize_callback' => 'shop_isle_sanitize_text', 'default' => __( 'Error 404', 'shop-isle' )));
+
+	$wp_customize->add_control( 'shop_isle_404_title', array(
+		'label'    => __( 'Title', 'shop-isle' ),
+		'section'  => 'shop_isle_404_section',
+		'priority'    => 2,
+	));
+	
+	/* Text */
+	$wp_customize->add_setting( 'shop_isle_404_text', array('sanitize_callback' => 'shop_isle_sanitize_text', 'default' => __( 'The requested URL was not found on this server.<br> That is all we know.', 'shop-isle' )));
+
+	$wp_customize->add_control( 'shop_isle_404_text', array(
+		'type' 		   => 'textarea',
+		'label'    => __( 'Text', 'shop-isle' ),
+		'section'  => 'shop_isle_404_section',
+		'priority'    => 3,
+	));
+	
+	/* Button link */
+	$wp_customize->add_setting( 'shop_isle_404_link', array('sanitize_callback' => 'esc_url', 'default' => '#'));
+
+	$wp_customize->add_control( 'shop_isle_404_link', array(
+		'label'    => __( 'Button link', 'shop-isle' ),
+		'section'  => 'shop_isle_404_section',
+		'priority'    => 4,
+	));
+	
+	/* Button label */
+	$wp_customize->add_setting( 'shop_isle_404_label', array('sanitize_callback' => 'shop_isle_sanitize_text', 'default' => __( 'Back to home page', 'shop-isle' )));
+
+	$wp_customize->add_control( 'shop_isle_404_label', array(
+		'label'    => __( 'Button label', 'shop-isle' ),
+		'section'  => 'shop_isle_404_section',
+		'priority'    => 5,
+	));
 }
