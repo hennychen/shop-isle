@@ -1,5 +1,14 @@
 
 
+### 1.0.1 - 09/07/2015
+
+ Changes: 
+
+
+ * Fixed #7, 404 not found page
+ * Removed some unused scripts and created contact page
+
+
 ### 1.0.1 - 08/07/2015
 
  Changes: 
