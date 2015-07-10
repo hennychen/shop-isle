@@ -65,7 +65,7 @@ function shop_isle_customize_register( $wp_customize ) {
 		'default' => json_encode(array( array('image_url' => get_template_directory_uri().'/assets/images/slide1.jpg' ,'link' => '#', 'text' => __('ShopIsle','shop-isle'), 'subtext' => __('WooCommerce Theme','shop-isle'), 'label' => __('FIND OUT MORE','shop-isle') ), array('image_url' => get_template_directory_uri().'/assets/images/slide2.jpg' ,'link' => '#', 'text' => __('ShopIsle','shop-isle'), 'subtext' => __('Hight quality store','shop-isle') , 'label' => __('FIND OUT MORE','shop-isle')), array('image_url' => get_template_directory_uri().'/assets/images/slide3.jpg' ,'link' => '#', 'text' => __('ShopIsle','shop-isle'), 'subtext' => __('Responsive Theme','shop-isle') , 'label' => __('FIND OUT MORE','shop-isle') ))))
 	);
 	
-	$wp_customize->add_control( new Shop_Isle_Slider_Repeater( $wp_customize, 'shop_isle_slider', array(
+	$wp_customize->add_control( new Shop_Isle_Repeater_Controler( $wp_customize, 'shop_isle_slider', array(
 		'label'   => __('Add new slide','shop-isle'),
 		'section' => 'shop_isle_slider_section',
 		'active_callback' => 'is_front_page',
@@ -74,7 +74,9 @@ function shop_isle_customize_register( $wp_customize ) {
         'shop_isle_text_control' => true,
         'shop_isle_link_control' => true,
 		'shop_isle_subtext_control' => true,
-		'shop_isle_label_control' => true
+		'shop_isle_label_control' => true,
+		'shop_isle_box_label' => __('Slide','shop-isle'),
+		'shop_isle_box_add_label' => __('Add new slide','shop-isle')
 	) ) );
 	
 	/********************************/
@@ -101,11 +103,11 @@ function shop_isle_customize_register( $wp_customize ) {
 	);
 	
 	/* Banner */
-	$wp_customize->add_setting( 'shop_isle_banner', array(
+	$wp_customize->add_setting( 'shop_isle_banners', array(
 		'sanitize_callback' => '',
 		'default' => json_encode(array( array('image_url' => get_template_directory_uri().'/assets/images/banner1.jpg' ,'link' => '#' ),array('image_url' => get_template_directory_uri().'/assets/images/banner2.jpg' ,'link' => '#'),array('image_url' => get_template_directory_uri().'/assets/images/banner3.jpg' ,'link' => '#') ))
 	));
-	$wp_customize->add_control( new Shop_Isle_Banners_Repeater( $wp_customize, 'shop_isle_banner', array(
+	$wp_customize->add_control( new Shop_Isle_Repeater_Controler( $wp_customize, 'shop_isle_banners', array(
 		'label'   => __('Add new banner','shop-isle'),
 		'section' => 'shop_isle_banners_section',
 		'active_callback' => 'is_front_page',
@@ -114,8 +116,9 @@ function shop_isle_customize_register( $wp_customize ) {
         'shop_isle_link_control' => true,
         'shop_isle_text_control' => false,
 		'shop_isle_subtext_control' => false,
-		'shop_isle_label_control' => false
-
+		'shop_isle_label_control' => false,
+		'shop_isle_box_label' => __('Banner','shop-isle'),
+		'shop_isle_box_add_label' => __('Add new banner','shop-isle')
 	) ) );
 	
 	

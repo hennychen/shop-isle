@@ -90,11 +90,11 @@ if ( ! function_exists( 'shop_isle_sanitize_text' ) ) {
 if ( class_exists( 'WP_Customize_Control' ) ):
 
 	/**
-	 * Slider controler
+	 * Repeater drag and drop controler
 	 *	
 	 * @since  1.0.0
 	 */
-	class Shop_Isle_Slider_Repeater extends WP_Customize_Control {
+	class Shop_Isle_Repeater_Controler extends WP_Customize_Control {
 		
 		private $options = array();
 		
@@ -112,30 +112,42 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 			$it = 0;
 									 
 			$options = $this->options;
-			if(!empty($options['shop_isle_image_control'])){
+			if( !empty($options['shop_isle_image_control']) ) {
 				$shop_isle_image_control = $options['shop_isle_image_control'];
 			} else {
 				$shop_isle_image_control = false;
 			}
-			if(!empty($options['shop_isle_text_control'])){
+			if( !empty($options['shop_isle_text_control']) ) {
 				$shop_isle_text_control = $options['shop_isle_text_control'];
 			} else {
 				$shop_isle_text_control = false;
 			}
-			if(!empty($options['shop_isle_subtext_control'])){
+			if( !empty($options['shop_isle_subtext_control']) ) {
 				$shop_isle_subtext_control = $options['shop_isle_subtext_control'];
 			} else {
 				$shop_isle_subtext_control = false;
 			}
-			if(!empty($options['shop_isle_link_control'])){
+			if( !empty($options['shop_isle_link_control']) ) {
 				$shop_isle_link_control = $options['shop_isle_link_control'];
 			} else {
 				$shop_isle_link_control = false;
 			}
-			if(!empty($options['shop_isle_label_control'])){
+			if( !empty($options['shop_isle_label_control']) ) {
 				$shop_isle_label_control = $options['shop_isle_label_control'];
 			} else {
 				$shop_isle_label_control = false;
+			}
+			
+			if( !empty($options['shop_isle_box_label']) ) {
+				$shop_isle_box_label = $options['shop_isle_box_label'];
+			} else {
+				$shop_isle_box_label = __('Slide','shop-isle');	
+			}
+			
+			if( !empty($options['shop_isle_box_add_label']) ) {
+				$shop_isle_box_add_label = $options['shop_isle_box_add_label'];
+			} else {
+				$shop_isle_box_add_label = __('Add new slide','shop-isle');
 			}
 	 ?>
 				
@@ -145,11 +157,11 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 						if(empty($json)) {
 					?>
 							<div class="shop_isle_general_control_repeater_container">
-								<div class="shop-isle-customize-control-title"><?php _e('Slide','shop-isle')?></div>
+								<div class="shop-isle-customize-control-title"><?php echo $shop_isle_box_label; ?></div>
 								<label>
 									<?php 
 										if($shop_isle_image_control ==true){ ?>
-											<span class="customize-control-title"><?php _e('Image','shop-isle')?></span>
+											<span class="customize-control-title"><?php _e('Image','shop-isle'); ?></span>
 											<p class="shop_isle_image_control">
 												<input type="text" class="widefat custom_media_url">
 												<input type="button" class="button button-primary custom_media_button_shop_isle" value="<?php _e('Upload Image','shop-isle'); ?>" />
@@ -158,23 +170,23 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 										} 
 							
 										if($shop_isle_text_control==true){ ?>
-											<span class="customize-control-title"><?php _e('Title','shop-isle')?></span>
+											<span class="customize-control-title"><?php _e('Title','shop-isle'); ?></span>
 											<input type="text" class="shop_isle_text_control" placeholder="<?php _e('Title','shop-isle'); ?>"/>
 									<?php 
 										}
 									
 										if($shop_isle_subtext_control==true){ ?>
-											<span class="customize-control-title"><?php _e('Subtitle','shop-isle')?></span>
+											<span class="customize-control-title"><?php _e('Subtitle','shop-isle'); ?></span>
 											<input type="text" value="<?php if(!empty($icon->subtext)) {echo esc_attr($icon->subtext);} ?>" class="shop_isle_subtext_control" placeholder="<?php _e('Subtitle','shop-isle'); ?>"/>
 									<?php }
 	
 										if($shop_isle_label_control==true){ ?>
-											<span class="customize-control-title"><?php _e('Button Label','shop-isle')?></span>
+											<span class="customize-control-title"><?php _e('Button Label','shop-isle'); ?></span>
 											<input type="text" value="<?php if(!empty($icon->label)) echo esc_attr($icon->label); ?>" class="shop_isle_label_control" placeholder="<?php _e('Button Label','shop-isle'); ?>"/>
 									<?php } 
 									
 										if($shop_isle_link_control==true){ ?>
-											<span class="customize-control-title"><?php _e('Button Link','shop-isle')?></span>
+											<span class="customize-control-title"><?php _e('Button Link','shop-isle'); ?></span>
 											<input type="text" class="shop_isle_link_control" placeholder="<?php _e('Button Link','shop-isle'); ?>"/>
 									<?php } ?>
 								<button type="button" class="shop_isle_general_control_remove_field button" style="display:none;"><?php _e('Delete field','shop-isle'); ?></button>
@@ -186,10 +198,10 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 								foreach($this_default as $icon){
 					?>
 									<div class="shop_isle_general_control_repeater_container shop_isle_draggable">
-										<div class="shop-isle-customize-control-title"><?php _e('Slide','shop-isle')?></div>
+										<div class="shop-isle-customize-control-title"><?php echo $shop_isle_box_label; ?></div>
 										<label>
 											<?php	if($shop_isle_image_control==true){ ?>
-														<span class="customize-control-title"><?php _e('Image','shop-isle')?></span>
+														<span class="customize-control-title"><?php _e('Image','shop-isle'); ?></span>
 														<p class="shop_isle_image_control">
 															<input type="text" class="widefat custom_media_url" value="<?php if(!empty($icon->image_url)) {echo esc_attr($icon->image_url);} ?>">
 															<input type="button" class="button button-primary custom_media_button_shop_isle" value="<?php _e('Upload Image','shop-isle'); ?>" />
@@ -197,22 +209,22 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 											<?php	}
 				
 													if($shop_isle_text_control==true){ ?>
-														<span class="customize-control-title"><?php _e('Title','shop-isle')?></span>
+														<span class="customize-control-title"><?php _e('Title','shop-isle'); ?></span>
 														<input type="text" value="<?php if(!empty($icon->text)) {echo esc_attr($icon->text);} ?>" class="shop_isle_text_control" placeholder="<?php _e('Title','shop-isle'); ?>"/>
 											<?php	}
 											
 													if($shop_isle_subtext_control==true){?>
-														<span class="customize-control-title"><?php _e('Subtitle','shop-isle')?></span>
+														<span class="customize-control-title"><?php _e('Subtitle','shop-isle'); ?></span>
 														<input type="text" value="<?php if(!empty($icon->subtext)) {echo esc_attr($icon->subtext);} ?>" class="shop_isle_subtext_control" placeholder="<?php _e('Subtitle','shop-isle'); ?>"/>
 												<?php }
 									
 													if($shop_isle_label_control==true){ ?>
-														<span class="customize-control-title"><?php _e('Button Label','shop-isle')?></span>
+														<span class="customize-control-title"><?php _e('Button Label','shop-isle'); ?></span>
 														<input type="text" value="<?php if(!empty($icon->label)) echo esc_attr($icon->label); ?>" class="shop_isle_label_control" placeholder="<?php _e('Button Label','shop-isle'); ?>"/>
 												<?php } 
 												
 													if($shop_isle_link_control){ ?>
-														<span class="customize-control-title"><?php _e('Button Link','shop-isle')?></span>
+														<span class="customize-control-title"><?php _e('Button Link','shop-isle'); ?></span>
 														<input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="shop_isle_link_control" placeholder="<?php _e('Button Link','shop-isle'); ?>"/>
 											<?php	} ?>
 										<button type="button" class="shop_isle_general_control_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php _e('Delete field','shop-isle'); ?></button>
@@ -227,11 +239,11 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 								foreach($json as $icon){
 						?>
 									<div class="shop_isle_general_control_repeater_container shop_isle_draggable">
-										<div class="shop-isle-customize-control-title"><?php _e('Slide','shop-isle')?></div>
+										<div class="shop-isle-customize-control-title"><?php echo $shop_isle_box_label; ?></div>
 										<label>
 										<?php 
 											if($shop_isle_image_control == true){ ?>
-												<span class="customize-control-title"><?php _e('Image','shop-isle')?></span>
+												<span class="customize-control-title"><?php _e('Image','shop-isle'); ?></span>
 												<p class="shop_isle_image_control">
 													<input type="text" class="widefat custom_media_url" value="<?php if(!empty($icon->image_url)) {echo esc_attr($icon->image_url);} ?>">
 													<input type="button" class="button button-primary custom_media_button_shop_isle" value="<?php _e('Upload Image','shop-isle'); ?>" />
@@ -239,22 +251,22 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 										<?php }
 											
 											if($shop_isle_text_control==true ){?>
-												<span class="customize-control-title"><?php _e('Title','shop-isle')?></span>
+												<span class="customize-control-title"><?php _e('Title','shop-isle'); ?></span>
 												<input type="text" value="<?php if(!empty($icon->text)) {echo esc_attr($icon->text);} ?>" class="shop_isle_text_control" placeholder="<?php _e('Title','shop-isle'); ?>"/>
 											<?php }
 											
 											if($shop_isle_subtext_control==true){?>
-												<span class="customize-control-title"><?php _e('Subtitle','shop-isle')?></span>
+												<span class="customize-control-title"><?php _e('Subtitle','shop-isle'); ?></span>
 												<input type="text" value="<?php if(!empty($icon->subtext)) {echo esc_attr($icon->subtext);} ?>" class="shop_isle_subtext_control" placeholder="<?php _e('Subtitle','shop-isle'); ?>"/>
 										<?php }
 											
 											if($shop_isle_label_control==true){ ?>
-												<span class="customize-control-title"><?php _e('Button Label','shop-isle')?></span>
+												<span class="customize-control-title"><?php _e('Button Label','shop-isle'); ?></span>
 												<input type="text" value="<?php if(!empty($icon->label)) echo esc_attr($icon->label); ?>" class="shop_isle_label_control" placeholder="<?php _e('Button Label','shop-isle'); ?>"/>
 									<?php } 
 									
 											if($shop_isle_link_control){ ?>
-												<span class="customize-control-title"><?php _e('Button Link','shop-isle')?></span>
+												<span class="customize-control-title"><?php _e('Button Link','shop-isle'); ?></span>
 												<input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="shop_isle_link_control" placeholder="<?php _e('Button Link','shop-isle'); ?>"/>
 											<?php } ?>
 										
@@ -275,7 +287,7 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 				<?php } ?>
 				</div>
 
-				<button type="button" class="button add_field shop_isle_general_control_new_field"><?php _e('Add new slide','shop-isle'); ?></button>
+				<button type="button" class="button add_field shop_isle_general_control_new_field"><?php echo $shop_isle_box_add_label; ?></button>
 
 				<?php
 			
@@ -283,137 +295,4 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 									 
 	}
 	
-	/**
-	 * Banner controler
-	 *	
-	 * @since  1.0.0
-	 */
-	class Shop_Isle_Banners_Repeater extends WP_Customize_Control {
-		
-		private $options = array();
-		
-		public function __construct( $manager, $id, $args = array() ) {
-			parent::__construct( $manager, $id, $args );
-			$this->options = $args;
-		}
-		public function render_content() {
-				
-			$this_default = json_decode($this->setting->default);
-				
-			$values = $this->value();
-			$json = json_decode($values);
-			if(!is_array($json)) $json = array($values);
-			$it = 0;
-									 
-			$options = $this->options;
-			if(!empty($options['shop_isle_image_control'])){
-				$shop_isle_image_control = $options['shop_isle_image_control'];
-			} else {
-				$shop_isle_image_control = false;
-			}
-			if(!empty($options['shop_isle_link_control'])){
-				$shop_isle_link_control = $options['shop_isle_link_control'];
-			} else {
-				$shop_isle_link_control = false;
-			}
-				
-	 ?>
-				
-				<div class="shop_isle_general_control_repeater shop_isle_general_control_droppable_b">
-					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-					<?php 
-						if(empty($json)) {
-					?>
-							<div class="shop_isle_general_control_repeater_container_b">
-								<div class="shop-isle-customize-control-title"><?php _e('Banner','shop-isle')?></div>
-								<label>
-									<?php 
-										if( $shop_isle_image_control ) { ?>
-											<span class="customize-control-title"><?php _e('Image','shop-isle')?></span>
-											<p class="shop_isle_image_control">
-												<input type="text" class="widefat custom_media_url">
-												<input type="button" class="button button-primary custom_media_button_shop_isle" value="<?php _e('Upload Image','shop-isle'); ?>" />
-											</p>
-									<?php 
-										}
-										
-										if( $shop_isle_link_control ) { ?>
-											<span class="customize-control-title"><?php _e('Link','shop-isle')?></span>
-											<input type="text" class="shop_isle_link_control" placeholder="<?php _e('Link','shop-isle'); ?>"/>
-									<?php } ?>
-								<button type="button" class="shop_isle_general_control_remove_field button" style="display:none;"><?php _e('Delete field','shop-isle'); ?></button>
-								</label>
-							</div>
-					<?php
-						} else {
-							if ( !empty($this_default) && empty($json)) {
-								foreach($this_default as $icon){
-					?>
-									<div class="shop_isle_general_control_repeater_container_b shop_isle_draggable">
-										<div class="shop-isle-customize-control-title"><?php _e('Banner','shop-isle')?></div>
-										<label>
-											<?php	if( $shop_isle_image_control ) { ?>
-														<span class="customize-control-title"><?php _e('Image','shop-isle')?></span>
-														<p class="shop_isle_image_control">
-															<input type="text" class="widefat custom_media_url" value="<?php if(!empty($icon->image_url)) {echo esc_attr($icon->image_url);} ?>">
-															<input type="button" class="button button-primary custom_media_button_shop_isle" value="<?php _e('Upload Image','shop-isle'); ?>" />
-														</p>
-											<?php	}
-				
-													if( $shop_isle_link_control ) { ?>
-														<span class="customize-control-title"><?php _e('Link','shop-isle')?></span>
-														<input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="shop_isle_link_control" placeholder="<?php _e('Link','shop-isle'); ?>"/>
-											<?php	} ?>
-										<button type="button" class="shop_isle_general_control_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php _e('Delete field','shop-isle'); ?></button>
-										</label>								
-
-									</div>
-
-					    <?php
-									$it++;
-								}
-							} else {
-								foreach($json as $icon){
-						?>
-									<div class="shop_isle_general_control_repeater_container_b shop_isle_draggable">
-										<div class="shop-isle-customize-control-title"><?php _e('Banner','shop-isle')?></div>
-										<label>
-										<?php 
-											if( $shop_isle_image_control ) { ?>
-												<span class="customize-control-title"><?php _e('Image','shop-isle')?></span>
-												<p class="shop_isle_image_control">
-													<input type="text" class="widefat custom_media_url" value="<?php if(!empty($icon->image_url)) {echo esc_attr($icon->image_url);} ?>">
-													<input type="button" class="button button-primary custom_media_button_shop_isle" value="<?php _e('Upload Image','shop-isle'); ?>" />
-												</p>
-										<?php }
-									
-											if( $shop_isle_link_control ) { ?>
-												<span class="customize-control-title"><?php _e('Link','shop-isle')?></span>
-												<input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="shop_isle_link_control" placeholder="<?php _e('Link','shop-isle'); ?>"/>
-											<?php } ?>
-										
-											<button type="button" class="shop_isle_general_control_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php _e('Delete field','shop-isle'); ?></button>
-										</label>								
-
-									</div>
-						<?php
-									$it++;
-								}
-							}
-						}
-					
-					if ( !empty($this_default) && empty($json)) {	?>
-						<input type="hidden" id="shop_isle_<?php echo $options['section']; ?>_repeater_colector" <?php $this->link(); ?> class="shop_isle_repeater_colector_b" value="<?php echo esc_textarea( $this_default ); ?>" />
-				<?php } else {	?>
-						<input type="hidden" id="shop_isle_<?php echo $options['section']; ?>_repeater_colector" <?php $this->link(); ?> class="shop_isle_repeater_colector_b" value="<?php echo esc_textarea( $this->value() ); ?>" />
-				<?php } ?>
-				</div>
-
-				<button type="button" class="button add_field shop_isle_general_control_new_field"><?php _e('Add new banner','shop-isle'); ?></button>
-
-				<?php
-			
-		}
-									 
-	}
 endif;
