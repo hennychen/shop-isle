@@ -10,8 +10,9 @@ jQuery(document).ready(function(){
 				var link = jQuery(this).find(".shop_isle_link_control").val();
 				var label = jQuery(this).find(".shop_isle_label_control").val();
 				var subtext = jQuery(this).find(".shop_isle_subtext_control").val();
+				var description = jQuery(this).find(".shop_isle_description_control").val();
 				var image_url = jQuery(this).find(".custom_media_url").val();
-				if( (icon_value != '') || (text != '') || (image_url != '') || (subtext != '') || (label != '') || (link != '') ){
+				if( (icon_value != '') || (text != '') || (image_url != '') || (subtext != '') || (label != '') || (link != '') || (description != '') ){
 					values.push({
 						"icon_value" : icon_value,
 						"text" : text,
@@ -19,7 +20,8 @@ jQuery(document).ready(function(){
 						"image_url" : image_url,
 						"subtext" : subtext,
 						"label" : label,
-						"link"  : link
+						"link"  : link,
+						"description" : description
 					});
 				}
 
@@ -27,34 +29,6 @@ jQuery(document).ready(function(){
 
 			th.find('.shop_isle_repeater_colector').val(JSON.stringify(values));
 			th.find('.shop_isle_repeater_colector').trigger('change');
-		});
-		jQuery(".shop_isle_general_control_droppable_b").each(function(){
-			
-			var values_b = [];
-			var th = jQuery(this);
-			th.find(".shop_isle_general_control_repeater_container_b").each(function(){
-				var icon_value = jQuery(this).find('select').val();
-				var text = jQuery(this).find(".shop_isle_text_control").val();
-				var link = jQuery(this).find(".shop_isle_link_control").val();
-				var label = jQuery(this).find(".shop_isle_label_control").val();
-				var subtext = jQuery(this).find(".shop_isle_subtext_control").val();
-				var image_url = jQuery(this).find(".custom_media_url").val();
-				if( (icon_value != '') || (text != '') || (image_url != '') || (subtext != '') || (label != '') || (link != '') ){
-					values_b.push({
-						"icon_value" : icon_value,
-						"text" : text,
-						"link" : link,
-						"image_url" : image_url,
-						"subtext" : subtext,
-						"label" : label,
-						"link"  : link
-					});
-				}
-
-			});
-			console.log(values_b);
-			th.find('.shop_isle_repeater_colector_b').val(JSON.stringify(values_b));
-			th.find('.shop_isle_repeater_colector_b').trigger('change');
 		});
 	}
     
@@ -176,11 +150,6 @@ jQuery(document).ready(function(){
 		update: function( event, ui ) {
 			shop_isle_refresh_general_control_values();
 		}
-	});	
-	jQuery(".shop_isle_general_control_droppable_b").sortable({
-		update: function( event, ui ) {
-			shop_isle_refresh_general_control_values();
-		}
-	});	
+	});
 
 });

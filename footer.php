@@ -42,7 +42,7 @@
 						
 						/* Socials icons */
 						
-						$shop_isle_socials = get_theme_mod('shop_isle_socials',json_encode(array( array('icon_value' => 'fa-facebook' ,'link' => '#' ),array('icon_value' => 'fa-twitter' ,'link' => '#'), array('icon_value' => 'fa-dribbble' ,'link' => '#'), array('icon_value' => 'fa-skype' ,'link' => '#') )));
+						$shop_isle_socials = get_theme_mod('shop_isle_socials',json_encode(array( array('icon_value' => 'social_facebook' ,'link' => '#' ),array('icon_value' => 'icon-social-twitter' ,'link' => '#'), array('icon_value' => 'icon-social-dribbble' ,'link' => '#'), array('icon_value' => 'icon-social-skype' ,'link' => '#') )));
 					
 						if( !empty( $shop_isle_socials ) ):
 									
@@ -55,7 +55,7 @@
 										
 											foreach($shop_isle_socials_decoded as $shop_isle_social):
 												
-												echo '<a href="'.$shop_isle_social->link.'"><i class="fa '.$shop_isle_social->icon_value.'"></i></a>';
+												echo '<a href="'.$shop_isle_social->link.'"><span class="'.$shop_isle_social->icon_value.'"></span></a>';
 											
 											endforeach;
 									

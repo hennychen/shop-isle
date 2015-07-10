@@ -29,21 +29,37 @@ get_header(); ?>
 		<!-- Header section end -->
 
 		<!-- About start -->
-		<section class="module">
-			<div class="container">
+		<?php
+		
+			if ( have_posts() ) : while ( have_posts() ) : the_post();
+			
+				$shop_isle_content_aboutus = get_the_content();
+				
+			endwhile; endif;
+			
+			if( trim($shop_isle_content_aboutus) != "" ):
+				
+				echo '<section class="module">';
+				
+					echo '<div class="container">';
 
-				<div class="row">
+						echo '<div class="row">';
 
-					<div class="col-sm-12">
+							echo '<div class="col-sm-12">';
 
-						<?php the_content(); ?>
+								the_content();
 
-					</div>
+							echo '</div>';
 
-				</div><!-- .row -->
+						echo '</div>';
 
-			</div>
-		</section>
+					echo '</div>';
+					
+				echo '</section>';
+				
+			endif;
+		?>
+		
 		<!-- About end -->
 
 		<!-- Divider -->
@@ -54,133 +70,85 @@ get_header(); ?>
 		<section class="module">
 			<div class="container">
 
-				<div class="row">
+				<?php
+					$shop_isle_our_team_title = get_theme_mod('shop_isle_our_team_title', __( 'Meet our team', 'shop-isle' ));
+					$shop_isle_our_team_subtitle = get_theme_mod('shop_isle_our_team_subtitle',__( 'An awesome way to introduce the members of your team.', 'shop-isle' ));
+					
+					if( !empty($shop_isle_our_team_title) || !empty($shop_isle_our_team_subtitle) ):
+					
+						echo '<div class="row">';
+							echo '<div class="col-sm-6 col-sm-offset-3">';
+							
+								if( !empty($shop_isle_our_team_title) ):
+									echo '<h2 class="module-title font-alt">'.$shop_isle_our_team_title.'</h2>';
+								endif;
+								
+								if( !empty($shop_isle_our_team_subtitle) ):
+									echo '<div class="module-subtitle font-serif">';
+										echo $shop_isle_our_team_subtitle;
+									echo '</div>';
+								endif;
 
-					<div class="col-sm-6 col-sm-offset-3">
+							echo '</div>';
 
-						<h2 class="module-title font-alt">Meet Our Team</h2>
-						<div class="module-subtitle font-serif">
-							A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-						</div>
+						echo '</div><!-- .row -->';
+						
+					endif;	
 
-					</div>
+					
+					$shop_isle_team_members = get_theme_mod('shop_isle_team_members',json_encode(array( array('image_url' => get_template_directory_uri().'/assets/images/team1.jpg' , 'text' => 'Eva Bean', 'subtext' => 'Developer', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.' ),array('image_url' => get_template_directory_uri().'/assets/images/team2.jpg' ,'text' => 'Maria Woods', 'subtext' => 'Designer', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.' ), array('image_url' => get_template_directory_uri().'/assets/images/team3.jpg' , 'text' => 'Booby Stone', 'subtext' => 'Director', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.'), array('image_url' => get_template_directory_uri().'/assets/images/team4.jpg' , 'text' => 'Anna Neaga', 'subtext' => 'Art Director', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.') )));
+						
+						if( !empty( $shop_isle_team_members ) ):
+										
+							$shop_isle_team_members_decoded = json_decode($shop_isle_team_members);
+										
+							if( !empty($shop_isle_team_members_decoded) ):
+							
+								echo '<div class="row">';
+											
+									echo '<div class="hero-slider">';
+											
+										echo '<ul class="slides">';
+												
+											foreach($shop_isle_team_members_decoded as $shop_isle_team_member):
 
-				</div><!-- .row -->
+												echo '<div class="col-sm-6 col-md-3 mb-sm-20 fadeInUp">';
 
-				<div class="row">
+													echo '<div class="team-item">';
+														echo '<div class="team-image">';
+															echo '<img src="'.$shop_isle_team_member->image_url.'" alt="">';
+															echo '<div class="team-detail">';
+																echo '<p class="font-serif">'.$shop_isle_team_member->description.'</p>';
+															echo '</div>';
+														echo '</div>';
+														echo '<div class="team-descr font-alt">';
+															echo '<div class="team-name">'.$shop_isle_team_member->text.'</div>';
+															echo '<div class="team-role">'.$shop_isle_team_member->subtext.'</div>';
+														echo '</div>';
+													echo '</div>';
 
-					<!-- Team item star -->
-					<div class="col-sm-6 col-md-3 mb-sm-20 fadeInUp">
+												echo '</div>';
 
-						<div class="team-item">
-							<div class="team-image">
-								<img src="assets/images/team-1.jpg" alt="">
-								<div class="team-detail">
-									<h5 class="font-alt">Hi all</h5>
-									<p class="font-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&nbsp;iaculis diam.</p>
-									<div class="team-social">
-										<a href="#"><i class="fa fa-facebook"></i></a>
-										<a href="#"><i class="fa fa-twitter"></i></a>
-										<a href="#"><i class="fa fa-dribbble"></i></a>
-										<a href="#"><i class="fa fa-skype"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="team-descr font-alt">
-								<div class="team-name">Jim Stone</div>
-								<div class="team-role">Art Director</div>
-							</div>
-						</div>
-
-					</div>
-					<!-- Team item end -->
-
-					<!-- Team item star -->
-					<div class="col-sm-6 col-md-3 mb-sm-20 fadeInUp">
-
-						<div class="team-item">
-							<div class="team-image">
-								<img src="assets/images/team-2.jpg" alt="">
-								<div class="team-detail">
-									<h5 class="font-alt">Good day</h5>
-									<p class="font-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&nbsp;iaculis diam.</p>
-									<div class="team-social">
-										<a href="#"><i class="fa fa-facebook"></i></a>
-										<a href="#"><i class="fa fa-twitter"></i></a>
-										<a href="#"><i class="fa fa-dribbble"></i></a>
-										<a href="#"><i class="fa fa-skype"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="team-descr font-alt">
-								<div class="team-name">Andy River</div>
-								<div class="team-role">Creative director</div>
-							</div>
-						</div>
-
-					</div>
-					<!-- Team item end -->
-
-					<!-- Team item star -->
-					<div class="col-sm-6 col-md-3 mb-sm-20 fadeInUp">
-
-						<div class="team-item">
-							<div class="team-image">
-								<img src="assets/images/team-3.jpg" alt="">
-								<div class="team-detail">
-									<h5 class="font-alt">Hello</h5>
-									<p class="font-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&nbsp;iaculis diam.</p>
-									<div class="team-social">
-										<a href="#"><i class="fa fa-facebook"></i></a>
-										<a href="#"><i class="fa fa-twitter"></i></a>
-										<a href="#"><i class="fa fa-dribbble"></i></a>
-										<a href="#"><i class="fa fa-skype"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="team-descr font-alt">
-								<div class="team-name">Adele Snow</div>
-								<div class="team-role">Account manager</div>
-							</div>
-						</div>
-
-					</div>
-					<!-- Team item end -->
-
-					<!-- Team item star -->
-					<div class="col-sm-6 col-md-3 mb-sm-20 fadeInUp">
-
-						<div class="team-item">
-							<div class="team-image">
-								<img src="assets/images/team-4.jpg" alt="">
-								<div class="team-detail">
-									<h5 class="font-alt">Yes, it's me</h5>
-									<p class="font-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&nbsp;iaculis diam.</p>
-									<div class="team-social">
-										<a href="#"><i class="fa fa-facebook"></i></a>
-										<a href="#"><i class="fa fa-twitter"></i></a>
-										<a href="#"><i class="fa fa-dribbble"></i></a>
-										<a href="#"><i class="fa fa-skype"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="team-descr font-alt">
-								<div class="team-name">Dylan Woods</div>
-								<div class="team-role">Developer</div>
-							</div>
-						</div>
-
-					</div>
-					<!-- Team item end -->
-
-				</div><!-- .row -->
+											endforeach;
+											
+										echo '</ul>';
+												
+									echo '</div>';
+								
+								echo '</div>';
+								
+							endif;
+						endif;
+					
+					
+					?>
 
 			</div>
 		</section>
 		<!-- Team end -->
 
 		<!-- Video start -->
-		<section class="module bg-dark-60" data-background="assets/images/section-1.jpg">
+		<section class="module bg-dark-60" data-background="">
 			<div class="container">
 
 				<div class="row">
