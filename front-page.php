@@ -168,7 +168,7 @@
 												echo '<a class="btn btn-round btn-b" href="'.$product->add_to_cart_url().'"><span class="icon-basket"></span>'.__('Add To Cart','shop-isle').'</a>';
 											echo '</div>';
 										echo '</div>';
-										echo '<h4 class="shop-item-title font-alt"><a href="#">'.the_title().'</a></h4>';
+										echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
 										if( function_exists('get_woocommerce_currency_symbol') ):
 											echo get_woocommerce_currency_symbol().$product->price;
 										endif;
@@ -234,7 +234,7 @@
 												echo '<a class="btn btn-round btn-b" href="'.$product->add_to_cart_url().'"><span class="icon-basket"></span>'.__('Add To Cart','shop-isle').'</a>';
 											echo '</div>';
 										echo '</div>';
-										echo '<h4 class="shop-item-title font-alt"><a href="#">'.the_title().'</a></h4>';
+										echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
 										if( function_exists('get_woocommerce_currency_symbol') ):
 											echo get_woocommerce_currency_symbol().$product->price;
 										endif;
@@ -368,7 +368,7 @@
 											echo '<div class="col-sm-12">';
 												echo '<div class="ex-product">';
 													echo '<a href="'.get_permalink().'">' . woocommerce_get_product_thumbnail().'</a>';
-													echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.the_title().'</a></h4>';
+													echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
 													echo 'L12.00';
 												echo '</div>';
 											echo '</div>';
@@ -403,7 +403,7 @@
 											echo '<div class="col-sm-12">';
 												echo '<div class="ex-product">';
 													echo '<a href="'.get_permalink().'">' . woocommerce_get_product_thumbnail().'</a>';
-													echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.the_title().'</a></h4>';
+													echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
 													echo 'L12.00';
 												echo '</div>';
 											echo '</div>';
