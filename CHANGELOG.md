@@ -1,5 +1,17 @@
 
 
+### 1.0.1 - 13/07/2015
+
+ Changes: 
+
+
+ * Fixed #11, banners section
+ * Fixed #9, social icons in footer
+ * Fixed #16, titles for latest products and exclusive products
+ * About us page
+ * Fixed #10, about us page template
+
+
 ### 1.0.1 - 09/07/2015
 
  Changes: 
