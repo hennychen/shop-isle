@@ -1990,9 +1990,9 @@ Navbar
 	right: 0;
 	top: 50%;
 	margin-top: -6px;
-	font: normal normal normal 14px/1 FontAwesome;
+	font: normal normal normal 14px/1 ElegantIcons;
 	font-size: 9px;
-	content: "\f107";
+	content: "\43";
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -3077,7 +3077,7 @@ Widgets
 }
 
 .widget_search form label:after  {
-	content: "\f002";
+	content: "\55";
 	position: absolute;
 	background: transparent;
 	border: none;
@@ -3089,7 +3089,7 @@ Widgets
 	outline: none;
 	color: #999;
 	display: inline-block;
-	font: normal normal normal 17px/1 FontAwesome;
+	font: normal normal normal 17px/1 ElegantIcons;
 	font-size: 18px;
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;

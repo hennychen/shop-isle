@@ -1,4 +1,5 @@
-<?php 
+<?php
+if ( 'posts' == get_option( 'show_on_front' ) ) {
 	
 	get_header();
 	
@@ -425,4 +426,9 @@
 		echo '</section>';		
 
 	endif; /* END Products slider */	
- get_footer(); ?>
+	get_footer();
+	
+} else {
+	include( get_page_template() );
+}
+?>
