@@ -11,7 +11,16 @@ get_header(); ?>
 	<div class="main">
 
 		<!-- Header section start -->
-		<section class="module bg-dark bg-dark-60" data-background="">
+		
+		<?php
+			$shop_isle_header_image = get_header_image();
+			if( !empty($shop_isle_header_image) ):
+				echo '<section class="module bg-dark bg-dark-60" data-background="'.get_template_directory_uri().'/assets/images/header.jpg">';
+			else:
+				echo '<section class="module bg-dark bg-dark-60">';
+			endif;
+		?>
+		
 			<div class="container">
 
 				<div class="row">
@@ -29,21 +38,37 @@ get_header(); ?>
 		<!-- Header section end -->
 
 		<!-- About start -->
-		<section class="module">
-			<div class="container">
+		<?php
+		
+			if ( have_posts() ) : while ( have_posts() ) : the_post();
+			
+				$shop_isle_content_aboutus = get_the_content();
+				
+			endwhile; endif;
+			
+			if( trim($shop_isle_content_aboutus) != "" ):
+				
+				echo '<section class="module">';
+				
+					echo '<div class="container">';
 
-				<div class="row">
+						echo '<div class="row">';
 
-					<div class="col-sm-12">
+							echo '<div class="col-sm-12">';
 
-						<?php the_content(); ?>
+								the_content();
 
-					</div>
+							echo '</div>';
 
-				</div><!-- .row -->
+						echo '</div>';
 
-			</div>
-		</section>
+					echo '</div>';
+					
+				echo '</section>';
+				
+			endif;
+		?>
+		
 		<!-- About end -->
 
 		<!-- Divider -->
@@ -54,133 +79,93 @@ get_header(); ?>
 		<section class="module">
 			<div class="container">
 
-				<div class="row">
+				<?php
+					$shop_isle_our_team_title = get_theme_mod('shop_isle_our_team_title', __( 'Meet our team', 'shop-isle' ));
+					$shop_isle_our_team_subtitle = get_theme_mod('shop_isle_our_team_subtitle',__( 'An awesome way to introduce the members of your team.', 'shop-isle' ));
+					
+					if( !empty($shop_isle_our_team_title) || !empty($shop_isle_our_team_subtitle) ):
+					
+						echo '<div class="row">';
+							echo '<div class="col-sm-6 col-sm-offset-3">';
+							
+								if( !empty($shop_isle_our_team_title) ):
+									echo '<h2 class="module-title font-alt">'.$shop_isle_our_team_title.'</h2>';
+								endif;
+								
+								if( !empty($shop_isle_our_team_subtitle) ):
+									echo '<div class="module-subtitle font-serif">';
+										echo $shop_isle_our_team_subtitle;
+									echo '</div>';
+								endif;
 
-					<div class="col-sm-6 col-sm-offset-3">
+							echo '</div>';
 
-						<h2 class="module-title font-alt">Meet Our Team</h2>
-						<div class="module-subtitle font-serif">
-							A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.
-						</div>
+						echo '</div><!-- .row -->';
+						
+					endif;	
 
-					</div>
+					
+					$shop_isle_team_members = get_theme_mod('shop_isle_team_members',json_encode(array( array('image_url' => get_template_directory_uri().'/assets/images/team1.jpg' , 'text' => 'Eva Bean', 'subtext' => 'Developer', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.' ),array('image_url' => get_template_directory_uri().'/assets/images/team2.jpg' ,'text' => 'Maria Woods', 'subtext' => 'Designer', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.' ), array('image_url' => get_template_directory_uri().'/assets/images/team3.jpg' , 'text' => 'Booby Stone', 'subtext' => 'Director', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.'), array('image_url' => get_template_directory_uri().'/assets/images/team4.jpg' , 'text' => 'Anna Neaga', 'subtext' => 'Art Director', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.') )));
+						
+						if( !empty( $shop_isle_team_members ) ):
+										
+							$shop_isle_team_members_decoded = json_decode($shop_isle_team_members);
+										
+							if( !empty($shop_isle_team_members_decoded) ):
+							
+								echo '<div class="row">';
+											
+									echo '<div class="hero-slider">';
+											
+										echo '<ul class="slides">';
+												
+											foreach($shop_isle_team_members_decoded as $shop_isle_team_member):
 
-				</div><!-- .row -->
+												echo '<div class="col-sm-6 col-md-3 mb-sm-20 fadeInUp">';
 
-				<div class="row">
+													echo '<div class="team-item">';
+														echo '<div class="team-image">';
+															echo '<img src="'.$shop_isle_team_member->image_url.'" alt="">';
+															echo '<div class="team-detail">';
+																echo '<p class="font-serif">'.$shop_isle_team_member->description.'</p>';
+															echo '</div>';
+														echo '</div>';
+														echo '<div class="team-descr font-alt">';
+															echo '<div class="team-name">'.$shop_isle_team_member->text.'</div>';
+															echo '<div class="team-role">'.$shop_isle_team_member->subtext.'</div>';
+														echo '</div>';
+													echo '</div>';
 
-					<!-- Team item star -->
-					<div class="col-sm-6 col-md-3 mb-sm-20 fadeInUp">
+												echo '</div>';
 
-						<div class="team-item">
-							<div class="team-image">
-								<img src="assets/images/team-1.jpg" alt="">
-								<div class="team-detail">
-									<h5 class="font-alt">Hi all</h5>
-									<p class="font-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&nbsp;iaculis diam.</p>
-									<div class="team-social">
-										<a href="#"><i class="fa fa-facebook"></i></a>
-										<a href="#"><i class="fa fa-twitter"></i></a>
-										<a href="#"><i class="fa fa-dribbble"></i></a>
-										<a href="#"><i class="fa fa-skype"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="team-descr font-alt">
-								<div class="team-name">Jim Stone</div>
-								<div class="team-role">Art Director</div>
-							</div>
-						</div>
-
-					</div>
-					<!-- Team item end -->
-
-					<!-- Team item star -->
-					<div class="col-sm-6 col-md-3 mb-sm-20 fadeInUp">
-
-						<div class="team-item">
-							<div class="team-image">
-								<img src="assets/images/team-2.jpg" alt="">
-								<div class="team-detail">
-									<h5 class="font-alt">Good day</h5>
-									<p class="font-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&nbsp;iaculis diam.</p>
-									<div class="team-social">
-										<a href="#"><i class="fa fa-facebook"></i></a>
-										<a href="#"><i class="fa fa-twitter"></i></a>
-										<a href="#"><i class="fa fa-dribbble"></i></a>
-										<a href="#"><i class="fa fa-skype"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="team-descr font-alt">
-								<div class="team-name">Andy River</div>
-								<div class="team-role">Creative director</div>
-							</div>
-						</div>
-
-					</div>
-					<!-- Team item end -->
-
-					<!-- Team item star -->
-					<div class="col-sm-6 col-md-3 mb-sm-20 fadeInUp">
-
-						<div class="team-item">
-							<div class="team-image">
-								<img src="assets/images/team-3.jpg" alt="">
-								<div class="team-detail">
-									<h5 class="font-alt">Hello</h5>
-									<p class="font-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&nbsp;iaculis diam.</p>
-									<div class="team-social">
-										<a href="#"><i class="fa fa-facebook"></i></a>
-										<a href="#"><i class="fa fa-twitter"></i></a>
-										<a href="#"><i class="fa fa-dribbble"></i></a>
-										<a href="#"><i class="fa fa-skype"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="team-descr font-alt">
-								<div class="team-name">Adele Snow</div>
-								<div class="team-role">Account manager</div>
-							</div>
-						</div>
-
-					</div>
-					<!-- Team item end -->
-
-					<!-- Team item star -->
-					<div class="col-sm-6 col-md-3 mb-sm-20 fadeInUp">
-
-						<div class="team-item">
-							<div class="team-image">
-								<img src="assets/images/team-4.jpg" alt="">
-								<div class="team-detail">
-									<h5 class="font-alt">Yes, it's me</h5>
-									<p class="font-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&nbsp;iaculis diam.</p>
-									<div class="team-social">
-										<a href="#"><i class="fa fa-facebook"></i></a>
-										<a href="#"><i class="fa fa-twitter"></i></a>
-										<a href="#"><i class="fa fa-dribbble"></i></a>
-										<a href="#"><i class="fa fa-skype"></i></a>
-									</div>
-								</div>
-							</div>
-							<div class="team-descr font-alt">
-								<div class="team-name">Dylan Woods</div>
-								<div class="team-role">Developer</div>
-							</div>
-						</div>
-
-					</div>
-					<!-- Team item end -->
-
-				</div><!-- .row -->
+											endforeach;
+											
+										echo '</ul>';
+												
+									echo '</div>';
+								
+								echo '</div>';
+								
+							endif;
+						endif;
+					
+					
+					?>
 
 			</div>
 		</section>
 		<!-- Team end -->
 
 		<!-- Video start -->
-		<section class="module bg-dark-60" data-background="assets/images/section-1.jpg">
+		<?php
+			$shop_isle_about_page_video_background = get_theme_mod('shop_isle_about_page_video_background',get_template_directory_uri().'/assets/images/background-video.jpg');
+			if( !empty($shop_isle_about_page_video_background) ):
+				echo '<section class="module bg-dark-60" data-background="'.$shop_isle_about_page_video_background.'">';
+			else:
+				echo '<section class="module bg-dark-60">';
+			endif;
+		?>
+		
 			<div class="container">
 
 				<div class="row">
@@ -188,15 +173,27 @@ get_header(); ?>
 					<div class="col-sm-12">
 
 						<div class="video-box">
-							<div class="video-box-icon">
-								<a href="http://vimeo.com/15486292" class="video-pop-up"><span class="icon-video"></span></a>
-							</div>
-							<div class="video-title font-alt">
-								Presentation
-							</div>
-							<div class="video-subtitle font-alt">
-								Watch the video about our new products
-							</div>
+							<?php
+								$shop_isle_about_page_video_link = get_theme_mod('shop_isle_about_page_video_link');
+								if( !empty($shop_isle_about_page_video_link) ):
+									echo '<div class="video-box-icon">';
+										echo '<a href="'.$shop_isle_about_page_video_link.'" class="video-pop-up"><span class="social_youtube_square"></span></a>';
+									echo '</div>';
+								endif;
+								
+								$shop_isle_about_page_video_title = get_theme_mod('shop_isle_about_page_video_title',__( 'Presentation', 'shop-isle' ));
+								$shop_isle_about_page_video_subtitle = get_theme_mod('shop_isle_about_page_video_subtitle',__( 'What the video about our new products', 'shop-isle' ));
+								
+								if( !empty($shop_isle_about_page_video_title) ):
+									echo '<div class="video-title font-alt">'.$shop_isle_about_page_video_title.'</div>';
+								endif;
+								
+								if( !empty($shop_isle_about_page_video_subtitle) ):
+									echo '<div class="video-subtitle font-alt">'.$shop_isle_about_page_video_subtitle.'</div>';
+								endif;
+								
+							?>
+							
 						</div>
 
 					</div>
@@ -211,75 +208,56 @@ get_header(); ?>
 		<section class="module">
 			<div class="container">
 
-				<div class="row">
+				<?php
+				
+				$shop_isle_our_advantages_title = get_theme_mod('shop_isle_our_advantages_title',__( 'Our advantages', 'shop-isle' ));
+				if( !empty($shop_isle_our_advantages_title) ):
+					echo '<div class="row">';
+						echo '<div class="col-sm-6 col-sm-offset-3">';
+							echo '<h2 class="module-title font-alt">'.$shop_isle_our_advantages_title.'</h2>';
+						echo '</div>';
+					echo '</div>';	
+				endif;	
+				
+				$shop_isle_advantages = get_theme_mod('shop_isle_advantages',json_encode(array( array('icon_value' => 'icon_lightbulb' , 'text' => __('Ideas and concepts','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle')), array('icon_value' => 'icon_tools' , 'text' => __('Designs & interfaces','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle')), array('icon_value' => 'icon_cogs' , 'text' => __('Highly customizable','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle')), array('icon_value' => 'icon_like', 'text' => __('Easy to use','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle')))));
+					
+				if( !empty( $shop_isle_advantages ) ):
+									
+					$shop_isle_advantages_decoded = json_decode($shop_isle_advantages);
+									
+					if( !empty($shop_isle_advantages_decoded) ):
+										
+						echo '<div class="row multi-columns-row">';
+									
+							foreach($shop_isle_advantages_decoded as $shop_isle_advantage):
+											
+								echo '<div class="col-sm-6 col-md-3 col-lg-3">';
 
-					<div class="col-sm-6 col-sm-offset-3">
+									echo '<div class="features-item">';
+										if( !empty($shop_isle_advantage->icon_value) ):
+											echo '<div class="features-icon">';
+												echo '<span class="'.$shop_isle_advantage->icon_value.'"></span>';
+											echo '</div>';
+										endif;	
+										if( !empty($shop_isle_advantage->text) ):
+											echo '<h3 class="features-title font-alt">'.$shop_isle_advantage->text.'</h3>';
+										endif;	
+										if( !empty($shop_isle_advantage->subtext) ):
+											echo $shop_isle_advantage->subtext;
+										endif;	
+									echo '</div>';
 
-						<h2 class="module-title font-alt">Our advantages</h2>
-
-					</div>
-
-				</div><!-- .row -->
-
-				<div class="row multi-columns-row">
-
-					<!-- Features start -->
-					<div class="col-sm-6 col-md-3 col-lg-3">
-
-						<div class="features-item">
-							<div class="features-icon">
-								<span class="icon-lightbulb"></span>
-							</div>
-							<h3 class="features-title font-alt">Ideas and concepts</h3>
-							Careful attention to detail and clean, well structured code ensures a smooth user experience for all your visitors.
-						</div>
-
-					</div>
-					<!-- Features end -->
-
-					<!-- Features start -->
-					<div class="col-sm-6 col-md-3 col-lg-3">
-
-						<div class="features-item">
-							<div class="features-icon">
-								<span class="icon-bike"></span>
-							</div>
-							<h3 class="features-title font-alt">Optimised for speed</h3>
-							Careful attention to detail and clean, well structured code ensures a smooth user experience for all your visitors.
-						</div>
-
-					</div>
-					<!-- Features end -->
-
-					<!-- Features start -->
-					<div class="col-sm-6 col-md-3 col-lg-3">
-
-						<div class="features-item">
-							<div class="features-icon">
-								<span class="icon-tools"></span>
-							</div>
-							<h3 class="features-title font-alt">Designs & interfaces</h3>
-							Careful attention to detail and clean, well structured code ensures a smooth user experience for all your visitors.
-						</div>
-
-					</div>
-					<!-- Features end -->
-
-					<!-- Features start -->
-					<div class="col-sm-6 col-md-3 col-lg-3">
-
-						<div class="features-item">
-							<div class="features-icon">
-								<span class="icon-gears"></span>
-							</div>
-							<h3 class="features-title font-alt">Highly customizable</h3>
-							Careful attention to detail and clean, well structured code ensures a smooth user experience for all your visitors.
-						</div>
-
-					</div>
-					<!-- Features end -->
-
-				</div><!-- .row -->
+								echo '</div>';
+					
+							endforeach;
+									
+						echo '</div>';
+									
+					endif;
+							
+				endif;
+				
+				?>
 
 			</div><!-- .container -->
 		</section>

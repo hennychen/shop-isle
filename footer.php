@@ -32,22 +32,41 @@
 	
 				<div class="row">
 					<?php
+						/* Copyright */
 						$shop_isle_copyright = get_theme_mod('shop_isle_copyright',__( '&copy; Themeisle, All rights reserved', 'shop-isle' ));
 						if( !empty($shop_isle_copyright) ):
 							echo '<div class="col-sm-6">';
 								echo '<p class="copyright font-alt">'.$shop_isle_copyright.'</p>';
 							echo '</div>';
 						endif;	
+						
+						/* Socials icons */
+						
+						$shop_isle_socials = get_theme_mod('shop_isle_socials',json_encode(array( array('icon_value' => 'social_facebook' ,'link' => '#' ),array('icon_value' => 'social_twitter' ,'link' => '#'), array('icon_value' => 'social_dribbble' ,'link' => '#'), array('icon_value' => 'social_skype' ,'link' => '#') )));
+					
+						if( !empty( $shop_isle_socials ) ):
+									
+							$shop_isle_socials_decoded = json_decode($shop_isle_socials);
+									
+							if( !empty($shop_isle_socials_decoded) ):
+										
+								echo '<div class="col-sm-6">';
+									echo '<div class="footer-social-links">';
+										
+											foreach($shop_isle_socials_decoded as $shop_isle_social):
+												
+												echo '<a href="'.$shop_isle_social->link.'"><span class="'.$shop_isle_social->icon_value.'"></span></a>';
+											
+											endforeach;
+									
+										echo '</div>';
+										
+									echo '</div>';
+									
+							endif;
+							
+						endif;
 					?>
-	
-					<div class="col-sm-6">
-						<div class="footer-social-links">
-							<a href="#"><i class="fa fa-facebook"></i></a>
-							<a href="#"><i class="fa fa-twitter"></i></a>
-							<a href="#"><i class="fa fa-dribbble"></i></a>
-							<a href="#"><i class="fa fa-skype"></i></a>
-						</div>
-					</div>
 	
 				</div><!-- .row -->
 	
@@ -62,7 +81,7 @@
 	<div class="scroll-up">
 		<a href="#totop"><i class="fa fa-angle-double-up"></i></a>
 	</div>
-
+	
 	<?php do_action( 'storefront_after_footer' ); ?>
 
 <?php wp_footer(); ?>
