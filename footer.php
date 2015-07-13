@@ -42,7 +42,7 @@
 						
 						/* Socials icons */
 						
-						$shop_isle_socials = get_theme_mod('shop_isle_socials',json_encode(array( array('icon_value' => 'social_facebook' ,'link' => '#' ),array('icon_value' => 'icon-social-twitter' ,'link' => '#'), array('icon_value' => 'icon-social-dribbble' ,'link' => '#'), array('icon_value' => 'icon-social-skype' ,'link' => '#') )));
+						$shop_isle_socials = get_theme_mod('shop_isle_socials',json_encode(array( array('icon_value' => 'social_facebook' ,'link' => '#' ),array('icon_value' => 'social_twitter' ,'link' => '#'), array('icon_value' => 'social_dribbble' ,'link' => '#'), array('icon_value' => 'social_skype' ,'link' => '#') )));
 					
 						if( !empty( $shop_isle_socials ) ):
 									

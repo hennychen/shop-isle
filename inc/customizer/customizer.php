@@ -317,7 +317,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	/* socials */
 	$wp_customize->add_setting( 'shop_isle_socials', array(
 		'sanitize_callback' => '',
-		'default' => json_encode(array( array('icon_value' => 'icon-social-facebook' ,'link' => '#' ),array('icon_value' => 'icon-social-twitter' ,'link' => '#'), array('icon_value' => 'icon-social-dribbble' ,'link' => '#'), array('icon_value' => 'icon-social-skype' ,'link' => '#') ))
+		'default' => json_encode(array( array('icon_value' => 'social_facebook' ,'link' => '#' ),array('icon_value' => 'social_twitter' ,'link' => '#'), array('icon_value' => 'social_dribbble' ,'link' => '#'), array('icon_value' => 'social_skype' ,'link' => '#') ))
 	));
 	$wp_customize->add_control( new Shop_Isle_Repeater_Controler( $wp_customize, 'shop_isle_socials', array(
 		'label'   => __('Add new social','shop-isle'),
@@ -435,11 +435,69 @@ function shop_isle_customize_register( $wp_customize ) {
 		'shop_isle_box_add_label' => __('Add new team member','shop-isle')
 	) ) );
 	
+	
+	if ( class_exists( 'WP_Customize_Panel' ) ):
+	
+		$wp_customize->add_section( 'shop_isle_about_page_video_section', array(
+			'title'    => __( 'Video', 'shop-isle' ),
+			'priority' => 2,
+			'panel' => 'panel_team'
+		) );
+		
+	else:
+	
+		$wp_customize->add_section( 'shop_isle_about_page_video_section', array(
+			'title'    => __( 'About us page - video', 'shop-isle' ),
+			'priority' => 53
+		) );
+
+	endif;
+	
+	/* Video title */
+	$wp_customize->add_setting( 'shop_isle_about_page_video_title', array('sanitize_callback' => 'shop_isle_sanitize_text', 'default' => __( 'Presentation', 'shop-isle' )));
+
+	$wp_customize->add_control( 'shop_isle_about_page_video_title', array(
+		'label'    => __( 'Title', 'shop-isle' ),
+		'section'  => 'shop_isle_about_page_video_section',
+		'active_callback' => 'shop_isle_is_aboutus_page',
+		'priority'    => 1,
+	));
+	
+	/* Video subtitle */
+	$wp_customize->add_setting( 'shop_isle_about_page_video_subtitle', array('sanitize_callback' => 'shop_isle_sanitize_text', 'default' => __( 'What the video about our new products', 'shop-isle' )));
+
+	$wp_customize->add_control( 'shop_isle_about_page_video_subtitle', array(
+		'label'    => __( 'Subtitle', 'shop-isle' ),
+		'section'  => 'shop_isle_about_page_video_section',
+		'active_callback' => 'shop_isle_is_aboutus_page',
+		'priority'    => 2,
+	));
+	
+	/* Video background */
+	$wp_customize->add_setting( 'shop_isle_about_page_video_background', array('default' => get_template_directory_uri().'/assets/images/background-video.jpg'));
+
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'shop_isle_about_page_video_background', array(
+		'label'    => __( 'Background', 'shop-isle' ),
+		'section'  => 'shop_isle_about_page_video_section',
+		'active_callback' => 'shop_isle_is_aboutus_page',
+		'priority'    => 3,
+	)));
+	
+	/* Video link */
+	$wp_customize->add_setting( 'shop_isle_about_page_video_link', array('sanitize_callback' => ''));
+
+	$wp_customize->add_control( 'shop_isle_about_page_video_link', array(
+		'label'    => __( 'Video', 'shop-isle' ),
+		'section'  => 'shop_isle_about_page_video_section',
+		'active_callback' => 'shop_isle_is_aboutus_page',
+		'priority'    => 4,
+	));
+	
 	if ( class_exists( 'WP_Customize_Panel' ) ):
 	
 		$wp_customize->add_section( 'shop_isle_about_page_advantages_section', array(
 			'title'    => __( 'Our advantages', 'shop-isle' ),
-			'priority' => 2,
+			'priority' => 3,
 			'panel' => 'panel_team'
 		) );
 		
@@ -447,7 +505,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 		$wp_customize->add_section( 'shop_isle_about_page_advantages_section', array(
 			'title'    => __( 'About us page - our advantages', 'shop-isle' ),
-			'priority' => 53
+			'priority' => 54
 		) );
 
 	endif;
@@ -465,8 +523,8 @@ function shop_isle_customize_register( $wp_customize ) {
 	/* Advantages */
 	$wp_customize->add_setting( 'shop_isle_advantages', array(
 		'sanitize_callback' => '',
-		'default' => json_encode(array( array('icon_value' => 'icon-basic-lightbulb' , 'text' => '', 'subtext' => '')))
-	));
+		'default' => json_encode(array( array('icon_value' => 'icon_lightbulb' , 'text' => __('Ideas and concepts','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle')), array('icon_value' => 'icon_tools' , 'text' => __('Designs & interfaces','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle')), array('icon_value' => 'icon_cogs' , 'text' => __('Highly customizable','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle')), array('icon_value' => 'icon_like', 'text' => __('Easy to use','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle'))))));
+		
 	$wp_customize->add_control( new Shop_Isle_Repeater_Controler( $wp_customize, 'shop_isle_advantages', array(
 		'label'   => __('Add new advantage','shop-isle'),
 		'section' => 'shop_isle_about_page_advantages_section',

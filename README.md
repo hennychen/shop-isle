@@ -17,5 +17,11 @@ Images sources:
  * team2.jpg: https://download.unsplash.com/photo-1433615988899-12bdf1bd42b6
  * team3.jpg: https://download.unsplash.com/photo-1427096105551-15e2512fd2dc
  * team4.jpg: https://download.unsplash.com/photo-1434123715472-19686d6cc442
+ 
+ * background-video.jpg https://download.unsplash.com/photo-1436190807865-2e156d40f1a2
+ 
+ * header.jpg: https://download.unsplash.com/photo-1424896842869-a5bda51fca24
 
 License: All unsplash.com images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/ 	
+
+ElegantIcons License: GPL 2.0 and MIT http://www.gnu.org/licenses/gpl-2.0.html, http://opensource.org/licenses/MIT

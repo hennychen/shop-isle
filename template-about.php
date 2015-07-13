@@ -11,7 +11,16 @@ get_header(); ?>
 	<div class="main">
 
 		<!-- Header section start -->
-		<section class="module bg-dark bg-dark-60" data-background="">
+		
+		<?php
+			$shop_isle_header_image = get_header_image();
+			if( !empty($shop_isle_header_image) ):
+				echo '<section class="module bg-dark bg-dark-60" data-background="'.get_template_directory_uri().'/assets/images/header.jpg">';
+			else:
+				echo '<section class="module bg-dark bg-dark-60">';
+			endif;
+		?>
+		
 			<div class="container">
 
 				<div class="row">
@@ -148,7 +157,15 @@ get_header(); ?>
 		<!-- Team end -->
 
 		<!-- Video start -->
-		<section class="module bg-dark-60" data-background="">
+		<?php
+			$shop_isle_about_page_video_background = get_theme_mod('shop_isle_about_page_video_background',get_template_directory_uri().'/assets/images/background-video.jpg');
+			if( !empty($shop_isle_about_page_video_background) ):
+				echo '<section class="module bg-dark-60" data-background="'.$shop_isle_about_page_video_background.'">';
+			else:
+				echo '<section class="module bg-dark-60">';
+			endif;
+		?>
+		
 			<div class="container">
 
 				<div class="row">
@@ -156,15 +173,27 @@ get_header(); ?>
 					<div class="col-sm-12">
 
 						<div class="video-box">
-							<div class="video-box-icon">
-								<a href="http://vimeo.com/15486292" class="video-pop-up"><span class="icon-video"></span></a>
-							</div>
-							<div class="video-title font-alt">
-								Presentation
-							</div>
-							<div class="video-subtitle font-alt">
-								Watch the video about our new products
-							</div>
+							<?php
+								$shop_isle_about_page_video_link = get_theme_mod('shop_isle_about_page_video_link');
+								if( !empty($shop_isle_about_page_video_link) ):
+									echo '<div class="video-box-icon">';
+										echo '<a href="'.$shop_isle_about_page_video_link.'" class="video-pop-up"><span class="social_youtube_square"></span></a>';
+									echo '</div>';
+								endif;
+								
+								$shop_isle_about_page_video_title = get_theme_mod('shop_isle_about_page_video_title',__( 'Presentation', 'shop-isle' ));
+								$shop_isle_about_page_video_subtitle = get_theme_mod('shop_isle_about_page_video_subtitle',__( 'What the video about our new products', 'shop-isle' ));
+								
+								if( !empty($shop_isle_about_page_video_title) ):
+									echo '<div class="video-title font-alt">'.$shop_isle_about_page_video_title.'</div>';
+								endif;
+								
+								if( !empty($shop_isle_about_page_video_subtitle) ):
+									echo '<div class="video-subtitle font-alt">'.$shop_isle_about_page_video_subtitle.'</div>';
+								endif;
+								
+							?>
+							
 						</div>
 
 					</div>
@@ -179,75 +208,56 @@ get_header(); ?>
 		<section class="module">
 			<div class="container">
 
-				<div class="row">
+				<?php
+				
+				$shop_isle_our_advantages_title = get_theme_mod('shop_isle_our_advantages_title',__( 'Our advantages', 'shop-isle' ));
+				if( !empty($shop_isle_our_advantages_title) ):
+					echo '<div class="row">';
+						echo '<div class="col-sm-6 col-sm-offset-3">';
+							echo '<h2 class="module-title font-alt">'.$shop_isle_our_advantages_title.'</h2>';
+						echo '</div>';
+					echo '</div>';	
+				endif;	
+				
+				$shop_isle_advantages = get_theme_mod('shop_isle_advantages',json_encode(array( array('icon_value' => 'icon_lightbulb' , 'text' => __('Ideas and concepts','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle')), array('icon_value' => 'icon_tools' , 'text' => __('Designs & interfaces','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle')), array('icon_value' => 'icon_cogs' , 'text' => __('Highly customizable','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle')), array('icon_value' => 'icon_like', 'text' => __('Easy to use','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle')))));
+					
+				if( !empty( $shop_isle_advantages ) ):
+									
+					$shop_isle_advantages_decoded = json_decode($shop_isle_advantages);
+									
+					if( !empty($shop_isle_advantages_decoded) ):
+										
+						echo '<div class="row multi-columns-row">';
+									
+							foreach($shop_isle_advantages_decoded as $shop_isle_advantage):
+											
+								echo '<div class="col-sm-6 col-md-3 col-lg-3">';
 
-					<div class="col-sm-6 col-sm-offset-3">
+									echo '<div class="features-item">';
+										if( !empty($shop_isle_advantage->icon_value) ):
+											echo '<div class="features-icon">';
+												echo '<span class="'.$shop_isle_advantage->icon_value.'"></span>';
+											echo '</div>';
+										endif;	
+										if( !empty($shop_isle_advantage->text) ):
+											echo '<h3 class="features-title font-alt">'.$shop_isle_advantage->text.'</h3>';
+										endif;	
+										if( !empty($shop_isle_advantage->subtext) ):
+											echo $shop_isle_advantage->subtext;
+										endif;	
+									echo '</div>';
 
-						<h2 class="module-title font-alt">Our advantages</h2>
-
-					</div>
-
-				</div><!-- .row -->
-
-				<div class="row multi-columns-row">
-
-					<!-- Features start -->
-					<div class="col-sm-6 col-md-3 col-lg-3">
-
-						<div class="features-item">
-							<div class="features-icon">
-								<span class="icon-lightbulb"></span>
-							</div>
-							<h3 class="features-title font-alt">Ideas and concepts</h3>
-							Careful attention to detail and clean, well structured code ensures a smooth user experience for all your visitors.
-						</div>
-
-					</div>
-					<!-- Features end -->
-
-					<!-- Features start -->
-					<div class="col-sm-6 col-md-3 col-lg-3">
-
-						<div class="features-item">
-							<div class="features-icon">
-								<span class="icon-bike"></span>
-							</div>
-							<h3 class="features-title font-alt">Optimised for speed</h3>
-							Careful attention to detail and clean, well structured code ensures a smooth user experience for all your visitors.
-						</div>
-
-					</div>
-					<!-- Features end -->
-
-					<!-- Features start -->
-					<div class="col-sm-6 col-md-3 col-lg-3">
-
-						<div class="features-item">
-							<div class="features-icon">
-								<span class="icon-tools"></span>
-							</div>
-							<h3 class="features-title font-alt">Designs & interfaces</h3>
-							Careful attention to detail and clean, well structured code ensures a smooth user experience for all your visitors.
-						</div>
-
-					</div>
-					<!-- Features end -->
-
-					<!-- Features start -->
-					<div class="col-sm-6 col-md-3 col-lg-3">
-
-						<div class="features-item">
-							<div class="features-icon">
-								<span class="icon-gears"></span>
-							</div>
-							<h3 class="features-title font-alt">Highly customizable</h3>
-							Careful attention to detail and clean, well structured code ensures a smooth user experience for all your visitors.
-						</div>
-
-					</div>
-					<!-- Features end -->
-
-				</div><!-- .row -->
+								echo '</div>';
+					
+							endforeach;
+									
+						echo '</div>';
+									
+					endif;
+							
+				endif;
+				
+				?>
 
 			</div><!-- .container -->
 		</section>
