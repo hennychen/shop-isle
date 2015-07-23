@@ -48,6 +48,31 @@ if ( ! function_exists( 'shop_isle_shop_page_wrapper' ) ) {
 }
 
 /**
+ * Before Product content
+ * @since   1.0.0
+ * @return  void
+ */
+function shop_isle_product_page_wrapper() {
+	echo '<section class="module">
+			<div class="container">';
+}
+
+/**
+ * After Product content
+ * Closes the wrapping div and section
+ * @since   1.0.0
+ * @return  void
+ */
+if ( ! function_exists( 'shop_isle_product_page_wrapper_end' ) ) {	
+	function shop_isle_product_page_wrapper_end() {
+		?>
+			</div><!-- .container -->
+		</section><!-- .module-small -->
+			<?php	
+	}
+}
+
+/**
  * After Shop loop
  * Closes the wrapping div and section
  * @since   1.0.0
