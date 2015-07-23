@@ -14,8 +14,6 @@ if ( ! function_exists( 'shop_isle_before_content' ) ) {
 	function shop_isle_before_content() {
 		?>
 		<div class="main">
-			<section class="module">
-				<div class="container">
 	    	<?php
 	}
 }
@@ -29,8 +27,6 @@ if ( ! function_exists( 'shop_isle_before_content' ) ) {
 if ( ! function_exists( 'shop_isle_after_content' ) ) {
 	function shop_isle_after_content() {
 		?>
-				</div><!-- .container -->
-			</section><!-- .module -->		
 		</div><!-- .main -->
 
 		<?php
@@ -38,12 +34,41 @@ if ( ! function_exists( 'shop_isle_after_content' ) ) {
 }
 
 /**
+ * Before Shop loop
+ * @since   1.0.0
+ * @return  void
+ */
+if ( ! function_exists( 'shop_isle_shop_page_wrapper' ) ) {
+	function shop_isle_shop_page_wrapper() {
+		?>
+		<section class="module-small">
+				<div class="container"> 
+		<?php	
+	}
+}
+
+/**
+ * After Shop loop
+ * Closes the wrapping div and section
+ * @since   1.0.0
+ * @return  void
+ */
+if ( ! function_exists( 'shop_isle_shop_page_wrapper_end' ) ) {	
+	function shop_isle_shop_page_wrapper_end() {
+		?>
+			</div><!-- .container -->
+		</section><!-- .module-small -->
+			<?php	
+	}
+}	
+
+/**
  * Default loop columns on product archives
  * @return integer products per row
  * @since  1.0.0
  */
 function storefront_loop_columns() {
-	return apply_filters( 'storefront_loop_columns', 3 ); // 3 products per row
+	return apply_filters( 'storefront_loop_columns', 4 ); // 4 products per row
 }
 
 /**
@@ -97,8 +122,8 @@ function storefront_woocommerce_scripts() {
  */
 function storefront_related_products_args( $args ) {
 	$args = apply_filters( 'storefront_related_products_args', array(
-		'posts_per_page' => 3,
-		'columns'        => 3,
+		'posts_per_page' => 4,
+		'columns'        => 4,
 	) );
 
 	return $args;
@@ -129,4 +154,29 @@ function storefront_products_per_page() {
  */
 function is_woocommerce_extension_activated( $extension = 'WC_Bookings' ) {
 	return class_exists( $extension ) ? true : false;
+}
+
+/**
+ * Header for shop page
+ * @since  1.0.0
+ */
+function shop_isle_header_shop_page( $page_title ) {
+
+	$shop_isle_title = '<section class="module bg-dark bg-dark-60" data-background="">';
+		$shop_isle_title .= '<div class="container">';
+
+			$shop_isle_title .= '<div class="row">';
+
+				$shop_isle_title .= '<div class="col-sm-6 col-sm-offset-3">';
+
+					$shop_isle_title .= '<h1 class="module-title font-alt">'.$page_title.'</h1>';
+				
+				$shop_isle_title .= '</div>';
+
+			$shop_isle_title .= '</div><!-- .row -->';
+
+		$shop_isle_title .= '</div>';
+	$shop_isle_title .= '</section>';
+	
+	return $shop_isle_title;
 }

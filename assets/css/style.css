@@ -2834,7 +2834,7 @@ Post
 	padding-left: 5px;
 }
 
-.pagination a {
+.pagination a, .woocommerce-pagination ul.page-numbers li {
 	border: 1px solid #eaeaea;
 	display: inline-block;
 	text-transform: uppercase;
@@ -3510,7 +3510,7 @@ Shop product detail
 }
 
 .amount {
-	font-size: 32px;
+	font-size: 12px;
 	color: #111;
 }
 
