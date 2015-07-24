@@ -83,8 +83,9 @@ if ( ! function_exists( 'storefront_upsell_display' ) ) {
  * @since   1.4.3
  * @return  void
  */
-function storefront_sorting_wrapper() {
-	echo '<div class="storefront-sorting">';
+function shop_isle_sorting_wrapper() {
+	echo '<div class="row">';
+		echo '<div class="col-sm-12">';
 }
 
 /**
@@ -92,7 +93,8 @@ function storefront_sorting_wrapper() {
  * @since   1.4.3
  * @return  void
  */
-function storefront_sorting_wrapper_close() {
+function shop_isle_sorting_wrapper_close() {
+		echo '</div>';
 	echo '</div>';
 }
 
@@ -101,22 +103,19 @@ function storefront_sorting_wrapper_close() {
  * @since   1.4.4
  * @uses    do_shortcode
  */
-function storefront_shop_messages() {
+function shop_isle_shop_messages() {
 	if ( ! is_checkout() ) {
 		echo wp_kses_post( do_shortcode( '[woocommerce_messages]' ) );
 	}
 }
 
 /**
- * Storefront WooCommerce Pagination
- * WooCommerce disables the product pagination inside the woocommerce_product_subcategories() function
- * but since Storefront adds pagination before that function is excuted we need a separate function to
- * determine whether or not to display the pagination.
- * @since 1.4.4
+ * Pagination on shop page
+ * @since  1.0.0
  */
-if ( ! function_exists( 'storefront_woocommerce_pagination' ) ) {
-	function storefront_woocommerce_pagination() {
-		if ( woocommerce_products_will_display() ) {
+if ( ! function_exists( 'shop_isle_woocommerce_pagination' ) ) {
+	function shop_isle_woocommerce_pagination() {
+		if ( woocommerce_products_will_display() ) {	
 			woocommerce_pagination();
 		}
 	}
