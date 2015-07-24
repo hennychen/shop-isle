@@ -119,4 +119,4 @@ if ( ! function_exists( 'shop_isle_woocommerce_pagination' ) ) {
 			woocommerce_pagination();
 		}
 	}
-}	
+}

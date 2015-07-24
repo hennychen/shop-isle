@@ -59,6 +59,9 @@ add_action( 'woocommerce_after_single_product_summary', 	'storefront_upsell_disp
 remove_action( 'woocommerce_before_shop_loop_item_title', 	'woocommerce_show_product_loop_sale_flash', 10 );
 add_action( 'woocommerce_after_shop_loop_item_title', 		'woocommerce_show_product_loop_sale_flash', 6 );
 
+/* remove stars */
+remove_action( 'woocommerce_after_shop_loop_item_title',    'woocommerce_template_loop_rating', 5 );
+
 /**
  * Header
  * @see  storefront_product_search()
@@ -95,3 +98,9 @@ if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '2.3', '>=' ) ) {
  */
 add_action( 'wp_enqueue_scripts', 						'storefront_woocommerce_integrations_scripts' );
 add_action( 'wp_enqueue_scripts', 						'storefront_add_integrations_customizer_css' );
+
+/**
+* Cart page
+*/
+add_filter( 'woocommerce_cart_item_thumbnail', 'shop_isle_cart_item_thumbnail', 10, 3 );
+remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );

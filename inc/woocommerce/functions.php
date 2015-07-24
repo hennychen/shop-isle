@@ -4,6 +4,8 @@
  *
  */
 
+add_image_size( 'shop_isle_cart_item_image_size', 58, 72, true );
+ 
 /**
  * Before Content
  * Wraps all WooCommerce content in wrappers which match the theme markup
@@ -205,3 +207,14 @@ function shop_isle_header_shop_page( $page_title ) {
 	
 	return $shop_isle_title;
 }
+
+/**
+ * New thumbnail size for cart page
+ * @since  1.0.0
+ */
+function shop_isle_cart_item_thumbnail( $thumb, $cart_item, $cart_item_key ) {
+	
+	$product = get_product( $cart_item['product_id'] );
+	return $product->get_image( 'shop_isle_cart_item_image_size' ); 
+	
+} 
