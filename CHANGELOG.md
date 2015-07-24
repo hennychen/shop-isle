@@ -1,5 +1,16 @@
 
 
+### 1.0.1 - 24/07/2015
+
+ Changes: 
+
+
+ * Fixed #17, added screenshot, and theme details
+ * Fixed #23, shop page
+ * Fixed some part of #24, single product page
+ * Fixed some woocommerce pages
+
+
 ### 1.0.1 - 13/07/2015
 
  Changes: 
