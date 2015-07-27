@@ -62,6 +62,11 @@ add_action( 'woocommerce_after_shop_loop_item_title', 		'woocommerce_show_produc
 /* remove stars */
 remove_action( 'woocommerce_after_shop_loop_item_title',    'woocommerce_template_loop_rating', 5 );
 
+/* add products slider */
+add_action( 'woocommerce_after_single_product',             'shop_isle_products_slider_on_single_page', 10, 0 );
+
+
+
 /**
  * Header
  * @see  storefront_product_search()
@@ -104,3 +109,8 @@ add_action( 'wp_enqueue_scripts', 						'storefront_add_integrations_customizer_
 */
 add_filter( 'woocommerce_cart_item_thumbnail', 'shop_isle_cart_item_thumbnail', 10, 3 );
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
+
+
+/* Meta box for header description on shop page */
+add_action('admin_menu', 'shop_isle_page_description_box');
+add_action('save_post', 'shop_isle_custom_add_save');

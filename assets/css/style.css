@@ -2127,6 +2127,14 @@ Sections
 	padding: 70px 0;
 }
 
+.module-super-small {
+	padding: 0;
+}
+
+.module-small-bottom {
+	padding: 0px 0px 140px 0px;
+}
+
 .module-title {
 	position: relative;
 	letter-spacing: 4px;
