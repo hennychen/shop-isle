@@ -7,9 +7,9 @@
 		<?php
 			$shop_isle_header_image = get_header_image();
 			if( !empty($shop_isle_header_image) ):
-				echo '<section class="module bg-dark bg-dark-30" data-background="'.get_template_directory_uri().'/assets/images/header.jpg">';
+				echo '<section class="module bg-dark" data-background="'.$shop_isle_header_image.'">';
 			else:
-				echo '<section class="module bg-dark bg-dark-30">';
+				echo '<section class="module bg-dark">';
 			endif;
 		?>
 		

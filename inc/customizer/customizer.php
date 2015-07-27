@@ -249,17 +249,31 @@ function shop_isle_customize_register( $wp_customize ) {
 		'priority'    => 45
 	));
 	
-	/* Hide products slider */
+	/* Hide products slider on frontpage */
 	$wp_customize->add_setting( 'shop_isle_products_slider_hide');
 
 	$wp_customize->add_control(
 		'shop_isle_products_slider_hide',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Hide products slider section?','shop-isle'),
+			'label' => __('Hide products slider section on frontpage?','shop-isle'),
 			'description' => __('If you check this box, the Products slider section will disappear from homepage.','shop-isle'),
 			'section' => 'shop_isle_products_slider_section',
 			'priority'    => 1,
+		)
+	);
+
+	/* Hide products slider on single product page */
+	$wp_customize->add_setting( 'shop_isle_products_slider_single_hide');
+
+	$wp_customize->add_control(
+		'shop_isle_products_slider_single_hide',
+		array(
+			'type' => 'checkbox',
+			'label' => __('Hide products slider section on single product page?','shop-isle'),
+			'description' => __('If you check this box, the Products slider section will disappear from each single product page.','shop-isle'),
+			'section' => 'shop_isle_products_slider_section',
+			'priority'    => 2,
 		)
 	);
 	
@@ -269,7 +283,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'shop_isle_products_slider_title', array(
 		'label'    => __( 'Section title', 'shop-isle' ),
 		'section'  => 'shop_isle_products_slider_section',
-		'priority'    => 2,
+		'priority'    => 3,
 	));
 	
 	/* Subtitle */
@@ -278,7 +292,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'shop_isle_products_slider_subtitle', array(
 		'label'    => __( 'Section subtitle', 'shop-isle' ),
 		'section'  => 'shop_isle_products_slider_section',
-		'priority'    => 3,
+		'priority'    => 4,
 	));
 	
 	/* Category */
@@ -292,7 +306,7 @@ function shop_isle_customize_register( $wp_customize ) {
 			'label' 	   => __( 'Products category', 'shop-isle' ),
 			'section' 	   => 'shop_isle_products_slider_section',
 			'choices'      => $shop_isle_prod_categories_array,
-			'priority' 	   => 4,
+			'priority' 	   => 5,
 		)
 	);
 	

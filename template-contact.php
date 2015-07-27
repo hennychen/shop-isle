@@ -12,7 +12,14 @@ get_header(); ?>
 	<div class="main">
 
 		<!-- Header section start -->
-		<section class="module bg-dark bg-dark-60" data-background="">
+		<?php
+		$shop_isle_header_image = get_header_image();
+		if( !empty($shop_isle_header_image) ):
+			echo '<section class="module bg-dark" data-background="'.$shop_isle_header_image.'">';
+		else:
+			echo '<section class="module bg-dark">';
+		endif;
+		?>
 			<div class="container">
 
 				<div class="row">
@@ -20,6 +27,23 @@ get_header(); ?>
 					<div class="col-sm-6 col-sm-offset-3">
 
 						<h1 class="module-title font-alt"><?php the_title(); ?></h1>
+
+						<?php
+
+						/* Header description */
+
+						$shop_isle_shop_id = get_the_ID();
+
+						if( !empty($shop_isle_shop_id) ):
+
+							$shop_isle_page_description = get_post_meta($shop_isle_shop_id, 'shop_isle_page_description');
+
+							if( !empty($shop_isle_page_description[0]) ):
+								echo '<div class="module-subtitle font-serif mb-0">'.$shop_isle_page_description[0].'</div>';
+							endif;
+
+						endif;
+						?>
 
 					</div>
 
