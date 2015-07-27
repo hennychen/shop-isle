@@ -1,5 +1,13 @@
 
 
+### 1.0.1 - 27/07/2015
+
+ Changes: 
+
+
+ * Fixed header and some woocommerce pages
+
+
 ### 1.0.1 - 24/07/2015
 
  Changes: 
