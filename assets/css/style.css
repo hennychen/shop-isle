@@ -1329,7 +1329,7 @@ a,
 	padding: 5px;
 }
 #comments input[type="submit"] {
-	background: rgba(17, 17, 17, .8);
+	background: rgba(17, 17, 17, 1);
 	color: #fff;
 	font-family: "Roboto Condensed", sans-serif;
 	text-transform: uppercase;
@@ -1341,6 +1341,9 @@ a,
 	border-radius: 2px;
 	width: auto;
 	border: none;
+}
+#comments input[type="submit"]:hover {
+	background: rgba(17, 17, 17, .8);
 }
 .form-control:focus {
 	border-color: #CACACA;

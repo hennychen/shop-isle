@@ -80,7 +80,7 @@
 	
 	<!-- Scroll-up -->
 	<div class="scroll-up">
-		<a href="#totop"><i class="fa fa-angle-double-up"></i></a>
+		<a href="#totop"><i class="arrow_carrot-2up"></i></a>
 	</div>
 	
 	<?php do_action( 'storefront_after_footer' ); ?>

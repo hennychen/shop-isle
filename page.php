@@ -17,7 +17,14 @@ get_header(); ?>
 			if( ( function_exists('is_cart') && is_cart() ) || ( function_exists('is_checkout') && is_checkout() ) || ( function_exists('is_wc_endpoint_url') && is_wc_endpoint_url( 'lost-password' ) ) ):
 				echo '<section class="module module-cart-top">';
 			else:
-				echo '<section class="module-small bg-dark" data-background="">';
+				
+				$shop_isle_header_image = get_header_image();
+				if( !empty($shop_isle_header_image) ):
+					echo '<section class="module-small bg-dark" data-background="'.$shop_isle_header_image.'">';
+				else:
+					echo '<section class="module-small bg-dark">';
+				endif;
+				
 			endif;
 		?>
 		

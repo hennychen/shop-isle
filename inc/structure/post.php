@@ -2,41 +2,32 @@
 /**
  * Template functions used for posts.
  *
- * @package storefront
  */
 
-if ( ! function_exists( 'storefront_post_header' ) ) {
+if ( ! function_exists( 'shop_isle_post_header' ) ) {
 	/**
 	 * Display the post header with a link to the single post
 	 * @since 1.0.0
 	 */
-	function storefront_post_header() { ?>
-		<header class="entry-header">
-		<?php
-		if ( is_single() ) {
-			shop_isle_posted_on();
-			the_title( '<h1 class="entry-title" itemprop="name headline">', '</h1>' );
-		} else {
-			if ( 'post' == get_post_type() ) {
-				shop_isle_posted_on();
-			}
-
-			the_title( sprintf( '<h1 class="entry-title" itemprop="name headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' );
-		}
-		?>
-		</header><!-- .entry-header -->
+	function shop_isle_post_header() { ?>
+		<div class="post-header font-alt">
+			<h2 class="post-title">
+				<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php the_title(); ?></a>
+			</h2>
+		</div>	
+		
 		<?php
 	}
 }
 
-if ( ! function_exists( 'storefront_post_content' ) ) {
+if ( ! function_exists( 'shop_isle_post_content' ) ) {
 	/**
 	 * Display the post content with a link to the single post
 	 * @since 1.0.0
 	 */
-	function storefront_post_content() {
+	function shop_isle_post_content() {
 		?>
-		<div class="entry-content" itemprop="articleBody">
+		<div class="post-entry" itemprop="articleBody">
 		<?php
 		if ( has_post_thumbnail() ) {
 			the_post_thumbnail( 'full', array( 'itemprop' => 'image' ) );
@@ -44,13 +35,13 @@ if ( ! function_exists( 'storefront_post_content' ) ) {
 
 		the_content(
 			sprintf(
-				__( 'Continue reading %s', 'storefront' ),
+				__( 'Continue reading %s', 'shop-isle' ),
 				'<span class="screen-reader-text">' . get_the_title() . '</span>'
 			)
 		);
 
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', 'storefront' ),
+			'before' => '<div class="page-links">' . __( 'Pages:', 'shop-isle' ),
 			'after'  => '</div>',
 		) );
 		?>
@@ -59,36 +50,17 @@ if ( ! function_exists( 'storefront_post_content' ) ) {
 	}
 }
 
-if ( ! function_exists( 'storefront_post_meta' ) ) {
+if ( ! function_exists( 'shop_isle_post_meta' ) ) {
 	/**
 	 * Display the post meta
 	 * @since 1.0.0
 	 */
-	function storefront_post_meta() {
-		
-		$shop_isle_num_comments = get_comments_number();
-
-		if ( $shop_isle_num_comments == 0 ) {
-			$shop_isle_comments = __('No Comments', 'shop-isle');
-		} elseif ( $shop_isle_num_comments > 1 ) {
-			$shop_isle_comments = $shop_isle_num_comments . __(' Comments','shop-isle');
-		} else {
-			$shop_isle_comments = __('1 Comment','shop-isle');
-		}
-		if( !empty($shop_isle_comments) ):
-			echo '<a href="' . get_comments_link() .'">'. $shop_isle_comments.'</a> | ';
-		endif;	
-										
-		$shop_isle_categories = get_the_category();
-		$separator = ', ';
-		$shop_isleoutput = '';
-		if($shop_isle_categories){
-			foreach($shop_isle_categories as $shop_isle_category) {
-				$shop_isleoutput .= '<a href="'.get_category_link( $shop_isle_category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $shop_isle_category->name ) ) . '">'.$shop_isle_category->cat_name.'</a>'.$separator;
-			}
-			echo trim($shop_isleoutput, $separator);
-		}
-		
+	function shop_isle_post_meta() {
+	?>
+		<div class="post-header font-alt">
+			<div class="post-meta"><?php shop_isle_posted_on(); ?></div>
+		</div>
+	<?php
 	}
 }
 
@@ -148,6 +120,30 @@ if ( ! function_exists( 'shop_isle_posted_on' ) ) {
 		if( !empty($time_string) ):
 			echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a> | ';
 		endif;
+		
+	
+		$shop_isle_num_comments = get_comments_number();
+
+		if ( $shop_isle_num_comments == 0 ) {
+			$shop_isle_comments = __('No Comments', 'shop-isle');
+		} elseif ( $shop_isle_num_comments > 1 ) {
+			$shop_isle_comments = $shop_isle_num_comments . __(' Comments','shop-isle');
+		} else {
+			$shop_isle_comments = __('1 Comment','shop-isle');
+		}
+		if( !empty($shop_isle_comments) ):
+			echo '<a href="' . get_comments_link() .'">'. $shop_isle_comments.'</a> | ';
+		endif;	
+										
+		$shop_isle_categories = get_the_category();
+		$separator = ', ';
+		$shop_isleoutput = '';
+		if($shop_isle_categories){
+			foreach($shop_isle_categories as $shop_isle_category) {
+				$shop_isleoutput .= '<a href="'.get_category_link( $shop_isle_category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $shop_isle_category->name ) ) . '">'.$shop_isle_category->cat_name.'</a>'.$separator;
+			}
+			echo trim($shop_isleoutput, $separator);
+		}
 
 	}
 }
