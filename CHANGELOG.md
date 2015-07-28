@@ -1,5 +1,13 @@
 
 
+### 1.0.1 - 28/07/2015
+
+ Changes: 
+
+
+ * Fixed #22 and #24, single product page and cart
+
+
 ### 1.0.1 - 27/07/2015
 
  Changes: 
