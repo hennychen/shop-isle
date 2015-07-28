@@ -279,8 +279,9 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 	/*********************************/
 	
 	$shop_isle_video_hide = get_theme_mod('shop_isle_video_hide');
+	$shop_isle_yt_link = get_theme_mod('shop_isle_yt_link');
 	
-	if( isset($shop_isle_video_hide) && $shop_isle_video_hide != 1 ):
+	if( isset($shop_isle_video_hide) && $shop_isle_video_hide != 1 && !empty($shop_isle_yt_link) ):
 	
 		echo '<section class="module module-video bg-dark-30">';
 			
@@ -298,15 +299,13 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 					echo '</div>';
 			
 				endif;
-			
-				$shop_isle_yt_link = get_theme_mod('shop_isle_yt_link');
-				if( !empty($shop_isle_yt_link) ):
-					?>
-					<!-- Youtube player start-->
-					<div class="video-player" data-property="{videoURL:'<?php echo $shop_isle_yt_link; ?>', containment:'.module-video', startAt:0, mute:true, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:25}"></div>
-					<!-- Youtube player end -->
-					<?php
-				endif;
+
+				?>
+				<!-- Youtube player start-->
+				<div class="video-player" data-property="{videoURL:'<?php echo $shop_isle_yt_link; ?>', containment:'.module-video', startAt:0, mute:true, autoPlay:true, loop:true, opacity:1, showControls:false, showYTLogo:false, vol:25}"></div>
+		 		<!-- Youtube player end -->
+				<?php
+
 				
 		echo '</section>';
 		
