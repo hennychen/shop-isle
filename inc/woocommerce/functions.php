@@ -56,7 +56,7 @@ if ( ! function_exists( 'shop_isle_shop_page_wrapper' ) ) {
  */
 function shop_isle_product_page_wrapper() {
 	echo '<section class="module module-super-small">
-			<div class="container">';
+			<div class="container product-main-content">';
 }
 
 /**

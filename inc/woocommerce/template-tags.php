@@ -67,13 +67,16 @@ if ( ! function_exists( 'storefront_header_cart' ) ) {
 
 /**
  * Upsells
- * Replace the default upsell function with our own which displays the correct number product columns
+ * Related products on single page and line above it
  * @since   1.0.0
  * @return  void
  * @uses    woocommerce_upsell_display()
  */
-if ( ! function_exists( 'storefront_upsell_display' ) ) {
-	function storefront_upsell_display() {
+if ( ! function_exists( 'shop_isle_upsell_display' ) ) {
+	function shop_isle_upsell_display() {
+		echo '</div></div>';
+		echo '<hr class="divider-w">';
+		echo '<div class="container">';
 		woocommerce_upsell_display( -1, 3 );
 	}
 }

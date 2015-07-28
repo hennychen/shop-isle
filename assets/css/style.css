@@ -1370,12 +1370,7 @@ a,
 	padding: 8px 37px;
 }
 
-.btn.active.focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus,
-.btn:active:focus,
-.btn:focus {
+*:focus {
 	outline: 0;
 }
 
@@ -1864,6 +1859,11 @@ blockquote {
 /* ------------------------------------------------------------------
 Navbar
 ------------------------------------------------------------------- */
+
+.admin-bar .navbar-custom {
+	top: 32px;
+}
+
 .page .navbar-custom {
 	background-color: rgba(10, 10, 10, .9) !important;
 }
@@ -2128,7 +2128,7 @@ Sections
 }
 
 .module-super-small {
-	padding: 0;
+	padding: 140px 0px 0px 0px;
 }
 
 .module-small-bottom {
@@ -3537,6 +3537,13 @@ Shop product detail
 
 .reviews {
 	margin: 0;
+}
+
+.single-product .amount {
+	font-size: 32px;
+	font-family: "Roboto Condensed", sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 2px;
 }
 
 /* -------------------------------------------------------------------
