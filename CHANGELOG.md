@@ -5,6 +5,14 @@
  Changes: 
 
 
+ * Fixed #21, do not show video section, when no video is selected
+
+
+### 1.0.1 - 28/07/2015
+
+ Changes: 
+
+
  * Fixed #22 and #24, single product page and cart
 
 
