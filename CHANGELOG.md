@@ -5,6 +5,14 @@
  Changes: 
 
 
+ * Full width page
+
+
+### 1.0.1 - 28/07/2015
+
+ Changes: 
+
+
  * Fixed #33, header for page
  * Fixed #32 and #31, single page and search page
 
