@@ -57,39 +57,52 @@ get_header(); ?>
 
 					<!-- Content column start -->
 					<div class="col-sm-8">
+					
+						<?php
+							if ( have_posts() ) {
+								while ( have_posts() ) {
+									the_post(); 
+									
+									?>
+									<!-- Post with thumbnail start -->
+									<div class="post">
 
-						<!-- Post with thumbnail start -->
-						<div class="post">
+										<?php
+										if ( has_post_thumbnail() ) {
 
-							<?php
-							if ( has_post_thumbnail() ) {
+											echo '<div class="post-thumbnail">';
+												echo '<a href="'.get_permalink().'">';
+													echo get_the_post_thumbnail($post->ID, 'blog-thumb');
+												echo '</a>';
+											echo '</div>';
+										}
+										?>
 
-								echo '<div class="post-thumbnail">';
-									echo '<a href="'.get_permalink().'">';
-										echo get_the_post_thumbnail($post->ID, 'blog-thumb');
-									echo '</a>';
-								echo '</div>';
+
+										<div class="post-header font-alt">
+											<h2 class="post-title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
+											<div class="post-meta">
+												By <a href="#">Mark Stone</a> | 23 November | 3 Comments | <a href="#">Photography</a>, <a href="#">Web Design</a>
+											</div>
+										</div>
+
+										<div class="post-entry">
+											<?php the_excerpt(); ?>
+										</div>
+
+										<div class="post-more">
+											<a href="blog-single-right.html" class="more-link">Read more</a>
+										</div>
+
+									</div>
+									<!-- Post with thumbnail end -->
+									<?php
+									
+								}
 							}
-							?>
+						?>
 
-
-							<div class="post-header font-alt">
-								<h2 class="post-title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
-								<div class="post-meta">
-									By <a href="#">Mark Stone</a> | 23 November | 3 Comments | <a href="#">Photography</a>, <a href="#">Web Design</a>
-								</div>
-							</div>
-
-							<div class="post-entry">
-								<?php the_excerpt(); ?>
-							</div>
-
-							<div class="post-more">
-								<a href="blog-single-right.html" class="more-link">Read more</a>
-							</div>
-
-						</div>
-						<!-- Post with thumbnail end -->
+						
 
 						<!-- Pagination start-->
 						<div class="pagination font-alt">

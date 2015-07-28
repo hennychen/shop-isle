@@ -9,7 +9,29 @@ get_header(); ?>
 	<!-- Wrapper start -->
 	<div class="main">
 		<!-- Post single start -->
-		<section class="module">
+			<?php
+			$shop_isle_header_image = get_header_image();
+				if( !empty($shop_isle_header_image) ):
+					echo '<section class="module-small bg-dark" data-background="'.$shop_isle_header_image.'">';
+				else:
+					echo '<section class="module-small bg-dark">';
+				endif;
+			?>
+			
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3">
+								<h1 class="module-title font-alt"><?php printf( __( 'Search Results for: %s', 'shop-isle' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+							</div>
+						</div>
+					</div><!-- .container -->
+			
+			
+			<?php	
+				echo '</section>';
+				
+				echo '<section class="module">';
+			?>
 			<div class="container">
 
 				<div class="row">
@@ -18,10 +40,6 @@ get_header(); ?>
 					<div class="col-sm-8">
 
 						<?php if ( have_posts() ) : ?>
-
-							<header class="page-header">
-								<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'shop-isle' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-							</header><!-- .page-header -->
 
 							<?php get_template_part( 'loop' ); ?>
 

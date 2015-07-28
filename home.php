@@ -57,7 +57,7 @@
 									<div class="post-meta">
 										<?php 
 										shop_isle_posted_on();
-										storefront_post_meta();
+										shop_isle_post_meta();
 										?>
 
 									</div>
