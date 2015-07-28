@@ -6,6 +6,7 @@
  *
  */
 ?>
+
 		<!-- Widgets start -->
 		<?php if ( is_active_sidebar( 'sidebar-footer' ) ) : ?>
 		<div class="module-small bg-dark shop_isle_footer_sidebar">
