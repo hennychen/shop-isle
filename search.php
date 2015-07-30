@@ -54,7 +54,7 @@ get_header(); ?>
 					<!-- Sidebar column start -->
 					<div class="col-sm-4 col-md-3 col-md-offset-1 sidebar">
 
-						<?php do_action( 'storefront_sidebar' ); ?>
+						<?php do_action( 'shop_isle_sidebar' ); ?>
 
 					</div>
 					<!-- Sidebar column end -->

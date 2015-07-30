@@ -1,9 +1,6 @@
 <?php
-/**
- * storefront engine room
- *
- * @package storefront
- */
+
+add_image_size( 'shop_isle_blog_image_size', 750, 500, true );
 
 /**
  * Setup.

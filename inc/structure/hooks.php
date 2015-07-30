@@ -11,14 +11,14 @@
  * @see  shop_isle_widgets_init()
  * @see  storefront_scripts()
  * @see  storefront_header_widget_region()
- * @see  storefront_get_sidebar()
+ * @see  shop_isle_get_sidebar()
  */
 add_action( 'after_setup_theme',			'shop_isle_setup' );
 add_action( 'widgets_init',					'shop_isle_widgets_init' );
 add_action( 'wp_enqueue_scripts',			'storefront_scripts',				10 );
 add_action( 'admin_enqueue_scripts',        'shop_isle_admin_styles',           10 );
-add_action( 'shop_isle_before_content',	'storefront_header_widget_region',	10 );
-add_action( 'storefront_sidebar',			'storefront_get_sidebar',			10 );
+add_action( 'shop_isle_before_content',	    'storefront_header_widget_region',	10 );
+add_action( 'shop_isle_sidebar',			'shop_isle_get_sidebar',			10 );
 
 /**
  * Header

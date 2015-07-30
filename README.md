@@ -20,7 +20,7 @@ Images sources:
  
  * background-video.jpg https://download.unsplash.com/photo-1436190807865-2e156d40f1a2
  
- * header.jpg: https://download.unsplash.com/photo-1424896842869-a5bda51fca24
+ * header.jpg: https://download.unsplash.com/photo-1434592370571-b4bacd3377b3
 
 License: All unsplash.com images are licensed under the terms of the Creative Commons Zero, http://creativecommons.org/publicdomain/zero/1.0/ 	
 
