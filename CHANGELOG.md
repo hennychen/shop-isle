@@ -1,5 +1,13 @@
 
 
+### 1.0.1 - 30/07/2015
+
+ Changes: 
+
+
+ * Fixed #30, archive page, blog page, and changed header image
+
+
 ### 1.0.1 - 28/07/2015
 
  Changes: 
