@@ -14,7 +14,7 @@ get_header(); ?>
 	<div class="main">
 
 		<?php
-			if( ( function_exists('is_cart') && is_cart() ) || ( function_exists('is_checkout') && is_checkout() ) || ( function_exists('is_wc_endpoint_url') && is_wc_endpoint_url( 'lost-password' ) ) ):
+			if( ( function_exists('is_cart') && is_cart() ) || ( function_exists('is_checkout') && is_checkout() ) || ( function_exists('is_wc_endpoint_url') && is_wc_endpoint_url( 'lost-password' ) ) || ( function_exists('is_account_page') && is_account_page() ) ):
 				echo '<section class="module module-cart-top">';
 			else:
 				
@@ -35,7 +35,7 @@ get_header(); ?>
 							</div>
 						</div>
 						<?php 
-							if(( function_exists('is_cart') && is_cart() ) || ( function_exists('is_checkout') && is_checkout() ) || ( function_exists('is_wc_endpoint_url') && is_wc_endpoint_url( 'lost-password' ) )): 
+							if(( function_exists('is_cart') && is_cart() ) || ( function_exists('is_checkout') && is_checkout() ) || ( function_exists('is_wc_endpoint_url') && is_wc_endpoint_url( 'lost-password' ) ) || ( function_exists('is_account_page') && is_account_page() )):
 								echo '<hr class="divider-w pt-20"><!-- divider -->';
 							endif; 
 						?>
@@ -47,7 +47,7 @@ get_header(); ?>
 
 		<!-- Pricing start -->
 		<?php 
-			if(( function_exists('is_cart') && is_cart() ) || ( function_exists('is_checkout') && is_checkout() ) || ( function_exists('is_wc_endpoint_url') && is_wc_endpoint_url( 'lost-password' ) )):
+			if(( function_exists('is_cart') && is_cart() ) || ( function_exists('is_checkout') && is_checkout() ) || ( function_exists('is_wc_endpoint_url') && is_wc_endpoint_url( 'lost-password' ) ) || ( function_exists('is_account_page') && is_account_page() )):
 				echo '<section class="module module-cart-bottom">';
 			else:
 				echo '<section class="module">';
@@ -58,7 +58,7 @@ get_header(); ?>
 				<div class="row">	
 
 					<!-- Content column start -->
-					<?php if(( function_exists('is_cart') && is_cart() ) || ( function_exists('is_checkout') && is_checkout() ) || ( function_exists('is_wc_endpoint_url') && is_wc_endpoint_url( 'lost-password' ) )): ?>
+					<?php if(( function_exists('is_cart') && is_cart() ) || ( function_exists('is_checkout') && is_checkout() ) || ( function_exists('is_wc_endpoint_url') && is_wc_endpoint_url( 'lost-password' ) ) || ( function_exists('is_account_page') && is_account_page() )): ?>
 						<div class="col-sm-12">
 					<?php else: ?>
 						<div class="col-sm-8">
@@ -90,7 +90,7 @@ get_header(); ?>
 					<!-- Content column end -->
 
 					<!-- Sidebar column start -->
-					<?php if(( function_exists('is_cart') && is_cart() ) || ( function_exists('is_checkout') && is_checkout() ) || ( function_exists('is_wc_endpoint_url') && is_wc_endpoint_url( 'lost-password' ) )): ?>
+					<?php if(( function_exists('is_cart') && is_cart() ) || ( function_exists('is_checkout') && is_checkout() ) || ( function_exists('is_wc_endpoint_url') && is_wc_endpoint_url( 'lost-password' ) ) || ( function_exists('is_account_page') && is_account_page() )): ?>
 					<?php else: ?>
 						<div class="col-sm-4 col-md-3 col-md-offset-1 sidebar">
 
