@@ -5,57 +5,131 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  */
-
-get_header(); ?>
+?>
+<?php get_header(); ?>
 
 <!-- Wrapper start -->
-	<div class="main">
+<div class="main">
 
-		<!-- Post single start -->
-		<section class="module">
-			<div class="container">
+	<!-- Header section start -->
+	<?php
+	$shop_isle_header_image = get_header_image();
+	if( !empty($shop_isle_header_image) ):
+		echo '<section class="module bg-dark" data-background="'.$shop_isle_header_image.'">';
+	else:
+		echo '<section class="module bg-dark">';
+	endif;
+	?>
+	<div class="container">
 
-				<div class="row">
+		<div class="row">
 
-					<!-- Content column start -->
-					<div class="col-sm-8">
-						
-					
-					<?php if ( have_posts() ) : ?>
+			<div class="col-sm-6 col-sm-offset-3">
 
-						<header class="page-header">
-							<h1 class="page-title">
-								<?php the_archive_title(); ?>
-							</h1>
+				<h1 class="module-title font-alt"><?php the_archive_title(); ?></h1>
 
-							<?php the_archive_description(); ?>
-						</header><!-- .page-header -->
+				<?php the_archive_description(); ?>
 
-						<?php get_template_part( 'loop' ); ?>
+			</div><!-- .col-sm-6 col-sm-offset-3 -->
 
-					<?php else : ?>
+		</div><!-- .row -->
 
-						<?php get_template_part( 'content', 'none' ); ?>
+	</div><!-- .container -->
 
-					<?php endif; ?>
+	<?php
+	echo '</section><!-- .module -->';
+	?>
+	<!-- Header section end -->
 
-					
-					</div>
-					<!-- Content column end -->
+	<?php
+		if ( have_posts() ) {
+			?>
+			<section class="module">
+				<div class="container">
 
-					<!-- Sidebar column start -->
-					<div class="col-sm-4 col-md-3 col-md-offset-1 sidebar">
+					<div class="row">
 
-						<?php do_action( 'storefront_sidebar' ); ?>
+						<!-- Content column start -->
+						<div class="col-sm-8">
+							<?php
 
-					</div>
-					<!-- Sidebar column end -->
+							while ( have_posts() ) {
+								the_post();
 
-				</div><!-- .row -->
+								?>
+								<div id="post-<?php the_ID(); ?>" <?php post_class("post"); ?> itemscope="" itemtype="http://schema.org/BlogPosting">
 
-			</div>
-		</section>
-		<!-- Post single end -->
-		
+									<?php
+									if ( has_post_thumbnail() ) {
+										echo '<div class="post-thumbnail">';
+										echo '<a href="'.get_permalink().'">';
+										echo get_the_post_thumbnail($post->ID, 'shop_isle_blog_image_size');
+										echo '</a>';
+										echo '</div>';
+									}
+									?>
 
-<?php get_footer(); ?>
+									<div class="post-header font-alt">
+										<h2 class="post-title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
+										<div class="post-meta">
+											<?php
+											shop_isle_posted_on();
+											?>
+
+										</div>
+									</div>
+
+									<div class="post-entry">
+										<?php
+										$shop_isleismore = @strpos( $post->post_content, '<!--more-->');
+										if($shop_isleismore) :
+											the_content();
+										else :
+											the_excerpt();
+										endif;
+										?>
+									</div>
+
+									<div class="post-more">
+										<a href="<?php echo get_permalink(); ?>" class="more-link"><?php _e('Read more','shop-isle'); ?></a>
+									</div>
+
+								</div>
+								<?php
+
+							}
+
+							?>
+
+							<!-- Pagination start-->
+							<div class="pagination font-alt">
+								<?php next_posts_link(__('<span class="meta-nav">&laquo;</span> Older posts', 'shop-isle'), $shop_isle_query->max_num_pages); ?>
+								<?php previous_posts_link(__('Newer posts <span class="meta-nav">&raquo;</span>', 'shop-isle'), $shop_isle_query->max_num_pages); ?>
+							</div>
+							<!-- Pagination end -->
+						</div>
+						<!-- Content column end -->
+
+						<!-- Sidebar column start -->
+						<div class="col-sm-4 col-md-3 col-md-offset-1 sidebar">
+
+							<?php do_action( 'shop_isle_sidebar' ); ?>
+
+						</div>
+						<!-- Sidebar column end -->
+
+					</div><!-- .row -->
+
+				</div>
+			</section>
+			<!-- Blog standar end -->
+
+			<?php
+			/* Restore original Post Data */
+			wp_reset_postdata();
+		}
+
+
+	?>
+
+	<?php get_footer(); ?>

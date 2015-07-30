@@ -69,7 +69,21 @@ if ( ! function_exists( 'storefront_paging_nav' ) ) {
 	 * Display navigation to next/previous set of posts when applicable.
 	 */
 	function storefront_paging_nav() {
-		global $wp_query;
+		echo '<div class="clear"></div>';
+		?>
+		<nav class="navigation paging-navigation" role="navigation">
+			<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'zerif' ); ?></h1>
+			<div class="nav-links">
+				<?php if ( get_next_posts_link() ) : ?>
+					<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'zerif' ) ); ?></div>
+				<?php endif; ?>
+				<?php if ( get_previous_posts_link() ) : ?>
+					<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'zerif' ) ); ?></div>
+				<?php endif; ?>
+			</div><!-- .nav-links -->
+		</nav><!-- .navigation -->
+		<?php
+		/*global $wp_query;
 
 		$args = array(
 			'type' 		=> 'list',
@@ -77,7 +91,7 @@ if ( ! function_exists( 'storefront_paging_nav' ) ) {
 			'prev_text'	=> '<span class="meta-nav">&larr;</span>&nbsp' . __( 'Previous', 'shop-isle' ),
 			);
 
-		the_posts_pagination( $args );
+		the_posts_pagination( $args ); */
 	}
 }
 
@@ -106,9 +120,6 @@ if ( ! function_exists( 'shop_isle_posted_on' ) ) {
 		endif;	
 										
 		$time_string = '<time class="entry-date published updated" datetime="%1$s" itemprop="datePublished">%2$s</time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s" itemprop="datePublished">%4$s</time>';
-		}
 
 		$time_string = sprintf( $time_string,
 			esc_attr( get_the_date( 'c' ) ),
@@ -118,7 +129,7 @@ if ( ! function_exists( 'shop_isle_posted_on' ) ) {
 		);
 
 		if( !empty($time_string) ):
-			echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a> | ';
+			echo '<a href="' . get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j')) . '" rel="bookmark">' . $time_string . '</a> | ';
 		endif;
 		
 	
