@@ -70,7 +70,7 @@ if ( ! function_exists( 'is_woocommerce_activated' ) ) {
  * Schema type
  * @return string schema itemprop type
  */
-function storefront_html_tag_schema() {
+function shop_isle_html_tag_schema() {
 	$schema 	= 'http://schema.org/';
 	$type 		= 'WebPage';
 

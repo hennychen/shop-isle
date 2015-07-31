@@ -2,23 +2,96 @@
 /**
  * Template functions used for the site footer.
  *
- * @package storefront
  */
 
-if ( ! function_exists( 'storefront_credit' ) ) {
+if ( ! function_exists( 'shop_isle_footer_widgets' ) ) {
 	/**
-	 * Display the theme credit
+	 * Display the footer widgets
 	 * @since  1.0.0
 	 * @return void
 	 */
-	function storefront_credit() {
+	function shop_isle_footer_widgets() {
 		?>
-		<div class="site-info">
-			<?php echo esc_html( apply_filters( 'storefront_copyright_text', $content = '&copy; ' . get_bloginfo( 'name' ) . ' ' . date( 'Y' ) ) ); ?>
-			<?php if ( apply_filters( 'storefront_credit_link', true ) ) { ?>
-			<br /> <?php printf( __( '%1$s designed by %2$s.', 'storefront' ), 'Storefront', '<a href="http://www.woothemes.com" alt="Premium WordPress Themes & Plugins by WooThemes" title="Premium WordPress Themes & Plugins by WooThemes" rel="designer">WooThemes</a>' ); ?>
-			<?php } ?>
-		</div><!-- .site-info -->
+		<!-- Widgets start -->
+		<?php if ( is_active_sidebar( 'sidebar-footer' ) ) : ?>
+			<div class="module-small bg-dark shop_isle_footer_sidebar">
+				<div class="container">
+
+					<div class="row">
+
+						<?php dynamic_sidebar('sidebar-footer'); ?>
+
+					</div><!-- .row -->
+
+				</div>
+			</div>
+		<?php endif; ?>
+		<!-- Widgets end -->
+
+		<!-- Divider -->
+		<hr class="divider-d">
+		<!-- Divider -->
+		<?php
+	}
+}
+
+if ( ! function_exists( 'shop_isle_footer_copyright_and_socials' ) ) {
+	/**
+	 * Display the theme copyright and socials
+	 * @since  1.0.0
+	 * @return void
+	 */
+	function shop_isle_footer_copyright_and_socials() {
+
+		?>
+		<!-- Footer start -->
+		<footer class="footer bg-dark">
+			<div class="container">
+
+				<div class="row">
+
+					<?php
+					/* Copyright */
+					$shop_isle_copyright = get_theme_mod('shop_isle_copyright',__( '&copy; Themeisle, All rights reserved', 'shop-isle' ));
+					if( !empty($shop_isle_copyright) ):
+						echo '<div class="col-sm-6">';
+							echo '<p class="copyright font-alt">'.$shop_isle_copyright.'</p>';
+						echo '</div>';
+					endif;
+
+					/* Socials icons */
+
+					$shop_isle_socials = get_theme_mod('shop_isle_socials',json_encode(array( array('icon_value' => 'social_facebook' ,'link' => '#' ),array('icon_value' => 'social_twitter' ,'link' => '#'), array('icon_value' => 'social_dribbble' ,'link' => '#'), array('icon_value' => 'social_skype' ,'link' => '#') )));
+
+					if( !empty( $shop_isle_socials ) ):
+
+						$shop_isle_socials_decoded = json_decode($shop_isle_socials);
+
+						if( !empty($shop_isle_socials_decoded) ):
+
+							echo '<div class="col-sm-6">';
+
+								echo '<div class="footer-social-links">';
+
+									foreach($shop_isle_socials_decoded as $shop_isle_social):
+
+										echo '<a href="'.$shop_isle_social->link.'"><span class="'.$shop_isle_social->icon_value.'"></span></a>';
+
+									endforeach;
+
+								echo '</div>';
+
+							echo '</div>';
+
+						endif;
+
+					endif;
+					?>
+				</div><!-- .row -->
+
+			</div>
+		</footer>
+		<!-- Footer end -->
 		<?php
 	}
 }

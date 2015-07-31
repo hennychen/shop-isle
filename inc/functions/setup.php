@@ -12,7 +12,7 @@ if ( ! isset( $content_width ) ) {
 }
 
 /**
- * Assign the Storefront version to a var
+ * Assign the ShopIsle version to a var
  */
 $theme 					= wp_get_theme();
 $shop_isle_version 	= $theme['Version'];
@@ -33,14 +33,14 @@ if ( ! function_exists( 'shop_isle_setup' ) ) :
 		 * Note: the first-loaded translation file overrides any following ones if the same translation is present.
 		 */
 
-		// wp-content/languages/themes/storefront-it_IT.mo
-		load_theme_textdomain( 'storefront', trailingslashit( WP_LANG_DIR ) . 'themes/' );
+		// wp-content/languages/themes/shop-isle-it_IT.mo
+		load_theme_textdomain( 'shop-isle', trailingslashit( WP_LANG_DIR ) . 'themes/' );
 
 		// wp-content/themes/child-theme-name/languages/it_IT.mo
-		load_theme_textdomain( 'storefront', get_stylesheet_directory() . '/languages' );
+		load_theme_textdomain( 'shop-isle', get_stylesheet_directory() . '/languages' );
 
 		// wp-content/themes/theme-name/languages/it_IT.mo
-		load_theme_textdomain( 'storefront', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'shop-isle', get_template_directory() . '/languages' );
 
 		/**
 		 * Add default posts and comments RSS feed links to head.
@@ -102,7 +102,7 @@ endif; // shop_isle_setup
 function shop_isle_widgets_init() {
 
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'storefront' ),
+		'name'          => __( 'Sidebar', 'shop-isle' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -112,7 +112,7 @@ function shop_isle_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Header', 'storefront' ),
+		'name'          => __( 'Header', 'shop-isle' ),
 		'id'            => 'header-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -146,7 +146,7 @@ function shop_isle_widgets_init() {
  * Enqueue scripts and styles.
  * @since  1.0.0
  */
-function storefront_scripts() {
+function shop_isle_scripts() {
 	global $shop_isle_version;
 	
 	wp_enqueue_style( 'shop-isle-bootstrap', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css', array(), '20120206', "all"  );
