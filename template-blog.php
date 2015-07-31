@@ -72,7 +72,7 @@ Template Name: Blog template
 						<div class="row">
 
 							<!-- Content column start -->
-							<div class="col-sm-8">
+							<div class="col-sm-8" id="shop-isle-blog-container">
 								<?php
 
 								while ( $shop_isle_query->have_posts() ) {

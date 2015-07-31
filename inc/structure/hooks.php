@@ -9,36 +9,32 @@
  * General
  * @see  shop_isle_setup()
  * @see  shop_isle_widgets_init()
- * @see  storefront_scripts()
- * @see  storefront_header_widget_region()
+ * @see  shop_isle_scripts()
  * @see  shop_isle_get_sidebar()
  */
 add_action( 'after_setup_theme',			'shop_isle_setup' );
 add_action( 'widgets_init',					'shop_isle_widgets_init' );
-add_action( 'wp_enqueue_scripts',			'storefront_scripts',				10 );
+add_action( 'wp_enqueue_scripts',			'shop_isle_scripts',				10 );
 add_action( 'admin_enqueue_scripts',        'shop_isle_admin_styles',           10 );
-add_action( 'shop_isle_before_content',	    'storefront_header_widget_region',	10 );
 add_action( 'shop_isle_sidebar',			'shop_isle_get_sidebar',			10 );
 
 /**
  * Header
  * @see  storefront_skip_links()
- * @see  storefront_secondary_navigation()
  * @see  storefront_site_branding()
- * @see  storefront_primary_navigation()
+ * @see  shop_isle_primary_navigation()
  */
 add_action( 'storefront_header', 'storefront_skip_links', 				0 );
 add_action( 'storefront_header', 'storefront_site_branding',			20 );
-add_action( 'storefront_header', 'storefront_secondary_navigation',		30 );
-add_action( 'storefront_header', 'storefront_primary_navigation',		50 );
+add_action( 'shop_isle_header', 'shop_isle_primary_navigation',		50 );
 
 /**
  * Footer
- * @see  storefront_footer_widgets()
- * @see  storefront_credit()
+ * @see  shop_isle_footer_widgets()
+ * @see  shop_isle_footer_copyright_and_socials()
  */
-add_action( 'storefront_footer', 'storefront_footer_widgets',	10 );
-add_action( 'storefront_footer', 'storefront_credit',			20 );
+add_action( 'shop_isle_footer', 'shop_isle_footer_widgets',	                    10 );
+add_action( 'shop_isle_footer', 'shop_isle_footer_copyright_and_socials',	    20 );
 
 /**
  * Homepage

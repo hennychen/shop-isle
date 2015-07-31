@@ -79,7 +79,7 @@ if( !empty($shop_isle_posts_per_page) && ($shop_isle_posts_per_page > 0) ):
 				<div class="row">
 
 					<!-- Content column start -->
-					<div class="col-sm-8">
+					<div class="col-sm-8" id="shop-isle-blog-container">
 						<?php
 
 						while ( $shop_isle_query->have_posts() ) {

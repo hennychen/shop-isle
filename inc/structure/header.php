@@ -5,23 +5,6 @@
  * @package storefront
  */
 
-if ( ! function_exists( 'storefront_header_widget_region' ) ) {
-	/**
-	 * Display header widget region
-	 * @since  1.0.0
-	 */
-	function storefront_header_widget_region() {
-		if ( is_active_sidebar( 'header-1' ) ) {
-		?>
-		<div class="header-widget-region" role="complementary">
-			<div class="col-full">
-				<?php dynamic_sidebar( 'header-1' ); ?>
-			</div>
-		</div>
-		<?php
-		}
-	}
-}
 
 if ( ! function_exists( 'storefront_site_branding' ) ) {
 	/**
@@ -43,54 +26,52 @@ if ( ! function_exists( 'storefront_site_branding' ) ) {
 	}
 }
 
-if ( ! function_exists( 'storefront_primary_navigation' ) ) {
+if ( ! function_exists( 'shop_isle_primary_navigation' ) ) {
 	/**
 	 * Display Primary Navigation
 	 * @since  1.0.0
 	 * @return void
 	 */
-	function storefront_primary_navigation() {
+	function shop_isle_primary_navigation() {
 		?>
-		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Primary Navigation', 'storefront' ); ?>">
-		<button class="menu-toggle"><?php echo esc_attr( apply_filters( 'storefront_menu_toggle_text', __( 'Navigation', 'storefront' ) ) ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location'	=> 'primary',
-					'container_class'	=> 'primary-navigation',
-					)
-			);
+		<!-- Navigation start -->
+		<nav class="navbar navbar-custom navbar-transparent navbar-fixed-top" role="navigation">
 
-			wp_nav_menu(
-				array(
-					'theme_location'	=> 'handheld',
-					'container_class'	=> 'handheld-navigation',
-					)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-		<?php
-	}
-}
+			<div class="container">
 
-if ( ! function_exists( 'storefront_secondary_navigation' ) ) {
-	/**
-	 * Display Secondary Navigation
-	 * @since  1.0.0
-	 * @return void
-	 */
-	function storefront_secondary_navigation() {
-		?>
-		<nav class="secondary-navigation" role="navigation" aria-label="<?php _e( 'Secondary Navigation', 'storefront' ); ?>">
-			<?php
-				wp_nav_menu(
-					array(
-						'theme_location'	=> 'secondary',
-						'fallback_cb'		=> '',
-					)
-				);
-			?>
-		</nav><!-- #site-navigation -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+						<span class="sr-only"><?php _e('Toggle navigation','shop-isle'); ?></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<?php
+						$shop_isle_logo = get_theme_mod('shop_isle_logo');
+						if( !empty($shop_isle_logo) ):
+							echo '<a href="'.esc_url( home_url( '/' ) ).'"><img src="'.$shop_isle_logo.'"></a>';
+						else:
+							echo '<div class="shop_isle_header_title">';
+								echo '<h1 class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
+
+								echo '<h2 class="site-description"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'description' ).'</a></h2>';
+
+							echo '</div>';
+						endif;
+					?>
+
+				</div>
+
+				<div class="collapse navbar-collapse" id="custom-collapse">
+
+						<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'nav navbar-nav navbar-right') ); ?>
+
+				</div>
+
+			</div>
+
+		</nav>
+		<!-- Navigation end -->
 		<?php
 	}
 }

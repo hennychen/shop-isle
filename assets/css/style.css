@@ -1684,7 +1684,7 @@ a,
 }
 
 .bg-dark {
-	background: #111;
+	background-color: #111 !important;
 }
 
 .bg-dark-30:before {
