@@ -138,7 +138,7 @@ if ( ! function_exists( 'storefront_cart_link_fragment' ) ) {
 function storefront_woocommerce_scripts() {
 	global $shop_isle_version;
 
-	wp_enqueue_style( 'storefront-woocommerce-style', get_template_directory_uri() . '/inc/woocommerce/css/woocommerce.css', $shop_isle_version );
+	wp_enqueue_style( 'storefront-woocommerce-style1', get_template_directory_uri() . '/inc/woocommerce/css/woocommerce.css', array(), 'v3' );
 }
 
 /**
