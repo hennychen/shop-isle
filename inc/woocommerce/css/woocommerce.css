@@ -612,6 +612,28 @@ ul.products li.product .product-button-wrap .button.product_type_simple {
 	display: none;
 }
 
+.added_to_cart {
+	background-color: #0f834d;
+    letter-spacing: 2px;
+    font-size: 11px;
+    padding: 10px 5px;
+    color: #fff;
+    border-radius: 2px;
+    line-height: 25px;
+    font-family: "Roboto Condensed",sans-serif;
+    text-transform: uppercase;
+	
+}
+
+.added_to_cart:hover {
+	color: #fff;
+	background: #439C73;
+	-webkit-transition: all 0.125s ease-in-out 0s; 
+	-moz-transition: all 0.125s ease-in-out 0s; 
+	-ms-transition: all 0.125s ease-in-out 0s; 
+	-o-transition: all 0.125s ease-in-out 0s; 
+	transition: all 0.125s ease-in-out 0s;
+}
 
 @media screen and (max-width: 992px) {
 
