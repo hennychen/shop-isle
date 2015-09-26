@@ -1,5 +1,13 @@
 
 
+### 1.0.1.1 - 26/09/2015
+
+ Changes: 
+
+
+ * css issue: product list button, header
+
+
 ### 1.0.1.1 - 03/09/2015
 
  Changes: 
