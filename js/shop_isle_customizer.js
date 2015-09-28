@@ -151,5 +151,14 @@ jQuery(document).ready(function(){
 			shop_isle_refresh_general_control_values();
 		}
 	});
+	
+	
+	/* Forum and Documentation links in customizer */
+	
+	jQuery( '#customize-theme-controls > ul' ).prepend('<li class="accordion-section shop-isle-upsells">');
+
+	jQuery( '.shop-isle-upsells' ).append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/forums/forum/shop-isle/" class="button" target="_blank">{support}</a>'.replace('{support}',objectL10n.support));
+
+	jQuery( '.shop-isle-upsells' ).append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/documentation-shop-isle/" class="button" target="_blank">{documentation}</a>'.replace('{documentation}',objectL10n.documentation));
 
 });
