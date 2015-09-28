@@ -1328,7 +1328,7 @@ a,
 	width: 100%;
 	padding: 5px;
 }
-#comments input[type="submit"] {
+#comments input[type="submit"], button[type="submit"] {
 	background: rgba(17, 17, 17, 1);
 	color: #fff;
 	font-family: "Roboto Condensed", sans-serif;
@@ -1342,7 +1342,7 @@ a,
 	width: auto;
 	border: none;
 }
-#comments input[type="submit"]:hover {
+#comments input[type="submit"]:hover,  button[type="submit"]:hover {
 	background: rgba(17, 17, 17, .8);
 }
 .form-control:focus {
