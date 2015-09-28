@@ -110,26 +110,6 @@ function shop_isle_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Header', 'shop-isle' ),
-		'id'            => 'header-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Banners section', 'shop-isle' ),
-		'id'            => 'sidebar-banners',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
 	
 	register_sidebar( array(
 		'name'          => __( 'Footer', 'shop-isle' ),
