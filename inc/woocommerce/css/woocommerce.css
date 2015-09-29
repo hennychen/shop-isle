@@ -618,6 +618,13 @@ ul.products li.product .product-button-wrap .button.product_type_simple {
 .navbar-nav li {
 	position: relative;
 }
+.navbar-custom ul {
+	margin-left: 0;
+}
+.navbar-custom .sub-menu > li:hover > a, 
+.navbar-custom .children > li:hover > a {
+    background: rgba(255, 255, 255, .1) !important;
+}
 .navbar-custom ul ul {
 	display: none;
 }
