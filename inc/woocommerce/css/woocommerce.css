@@ -767,6 +767,23 @@ div.wpcf7-response-output {
 	width: 100%;
 }
 
+/****
+Footer
+****/
+.shop_isle_footer_sidebar .widget {
+	width: 100%;
+	text-align: left;
+	padding-bottom: 60px;
+}
+.widget select {
+	color: #111111;	
+}
+footer.footer .divider-d {
+	height: 0;
+	margin-bottom: 10px;
+	display: block !important;
+}
+
 @media screen and (max-width: 992px) {
 
 	/* single product page */
