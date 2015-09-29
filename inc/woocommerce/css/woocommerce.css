@@ -539,7 +539,6 @@ ul.products li.product:hover img {
 #payment .payment_methods li label {
 	width: auto
 }
-
 .product .product-button-wrap .add_to_cart_button,
 ul.products li.product .product-button-wrap .button.product_type_simple {
     opacity: 0;
@@ -657,7 +656,6 @@ ul.products li.product .product-button-wrap .button.product_type_simple {
 .navbar-nav .page_item_has_children>a:after {
 	display: none;
 }
-
 .added_to_cart {
 	background-color: #0f834d;
     letter-spacing: 2px;
@@ -670,7 +668,6 @@ ul.products li.product .product-button-wrap .button.product_type_simple {
     text-transform: uppercase;
 	
 }
-
 .added_to_cart:hover {
 	color: #fff;
 	background: #439C73;
@@ -680,6 +677,61 @@ ul.products li.product .product-button-wrap .button.product_type_simple {
 	-o-transition: all 0.125s ease-in-out 0s; 
 	transition: all 0.125s ease-in-out 0s;
 }
+
+/****
+Contact page
+****/
+.wpcf7-form input:not([type='submit']) {
+	font-family: "Roboto Condensed", sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 11px;
+	height: 33px;
+	border: 1px solid #EAEAEA;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	width: 100%;
+	padding: 0 10px;
+}
+.wpcf7-form textarea {
+	font-family: "Roboto Condensed", sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 11px;
+	border: 1px solid #EAEAEA;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	width: 100%;
+	padding: 10px;
+}
+.wpcf7-form input[type='submit'] {
+    background: rgba(17, 17, 17, .8);
+    color: #fff;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-family: "Roboto Condensed", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11px;
+    padding: 8px 37px;
+    width: 100%;
+    border: none;
+}
+.wpcf7-form p {
+	line-height: 25px;
+}
+div.wpcf7-mail-sent-ng {
+	border: 2px solid #f00;
+	margin: 0;
+}
+div.wpcf7-response-output {
+    margin: 0;
+    padding: 0.2em 1em;
+}
+
 
 @media screen and (max-width: 992px) {
 
@@ -846,6 +898,9 @@ ul.products li.product .product-button-wrap .button.product_type_simple {
 		margin-left: 0;
 	}
 
+	.wpcf7-form {
+		margin-bottom: 25px;		
+	}
 
 }
 
