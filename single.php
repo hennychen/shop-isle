@@ -9,7 +9,7 @@ get_header(); ?>
 	<div class="main">
 
 		<!-- Post single start -->
-		<section class="module">
+		<section class="page-module-content module">
 			<div class="container">
 
 				<div class="row">

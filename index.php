@@ -19,9 +19,9 @@
 <?php
 $shop_isle_header_image = get_header_image();
 if( !empty($shop_isle_header_image) ):
-	echo '<section class="module bg-dark" data-background="'.$shop_isle_header_image.'">';
+	echo '<section class="page-module-content module bg-dark" data-background="'.$shop_isle_header_image.'">';
 else:
-	echo '<section class="module bg-dark">';
+	echo '<section class="page-module-content module bg-dark">';
 endif;
 ?>
 	<div class="container">

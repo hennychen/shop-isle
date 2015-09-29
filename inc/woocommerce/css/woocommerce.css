@@ -48,6 +48,38 @@ ul.products li.product {
 }
 
 /****
+Header
+****/
+.menu-align-center .shop_isle_header_title {
+    float: none;
+}
+.menu-align-center .navbar-header {
+	float: none;
+	text-align: center;
+}
+.menu-align-center.navbar-custom .nav > li > a {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.menu-align-center.navbar-custom .nav {
+	text-align: center;
+	width: 100%;
+}
+.menu-align-center.navbar-custom .nav > li {
+	display: inline-block;
+	float: none;
+}
+.menu-align-center.navbar-custom {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.menu-align-center.navbar-custom li.has_children>.dropdownmenu:before {
+    content: "\43";
+    line-height: 18px;
+}
+
+
+/****
 Single product page
 ****/
 .woocommerce.single-product .price ins {
@@ -638,7 +670,7 @@ ul.products li.product .product-button-wrap .button.product_type_simple {
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    line-height: 25px;
+    line-height: 35px;
     text-align: center;
 }
 .navbar-custom li.has_children.this-open > .dropdownmenu:before{
