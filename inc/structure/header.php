@@ -49,7 +49,7 @@ if ( ! function_exists( 'shop_isle_primary_navigation' ) ) {
 					<?php
 						$shop_isle_logo = get_theme_mod('shop_isle_logo');
 						if( !empty($shop_isle_logo) ):
-							echo '<a href="'.esc_url( home_url( '/' ) ).'"><img src="'.$shop_isle_logo.'"></a>';
+							echo '<div class="shop_isle_header_title"><a href="'.esc_url( home_url( '/' ) ).'"><img src="'.$shop_isle_logo.'"></a></div>';
 						else:
 							echo '<div class="shop_isle_header_title">';
 								echo '<h1 class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';

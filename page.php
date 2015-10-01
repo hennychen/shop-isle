@@ -20,9 +20,9 @@ get_header(); ?>
 				
 				$shop_isle_header_image = get_header_image();
 				if( !empty($shop_isle_header_image) ):
-					echo '<section class="module-small bg-dark" data-background="'.$shop_isle_header_image.'">';
+					echo '<section class="page-module-header module-small bg-dark" data-background="'.$shop_isle_header_image.'">';
 				else:
-					echo '<section class="module-small bg-dark">';
+					echo '<section class="page-module-header module-small bg-dark">';
 				endif;
 				
 			endif;
@@ -48,9 +48,9 @@ get_header(); ?>
 		<!-- Pricing start -->
 		<?php 
 			if(( function_exists('is_cart') && is_cart() ) || ( function_exists('is_checkout') && is_checkout() ) || ( function_exists('is_wc_endpoint_url') && is_wc_endpoint_url( 'lost-password' ) ) || ( function_exists('is_account_page') && is_account_page() )):
-				echo '<section class="module module-cart-bottom">';
+				echo '<section class="page-module-content module module-cart-bottom">';
 			else:
-				echo '<section class="module">';
+				echo '<section class="page-module-content module">';
 			endif; 
 		?>
 			<div class="container">
