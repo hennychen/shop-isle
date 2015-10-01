@@ -1,5 +1,17 @@
 
 
+### 1.0.1.1 - 01/10/2015
+
+ Changes: 
+
+
+ * Fixed #36 Multi level menu issue
+ * Fixed #49 Improved style Contact page
+ * Fixed #47 Comments form width issue
+ * Fixed #34 Footer widgets style
+ * Fixed #35 Login register page style
+
+
 ### 1.0.1.1 - 26/09/2015
 
  Changes: 
