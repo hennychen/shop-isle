@@ -806,6 +806,9 @@ div.wpcf7-response-output {
 .comments, #comments {
 	width: 100%;
 }
+#map-section {
+	height: auto;
+}
 
 /****
 Footer

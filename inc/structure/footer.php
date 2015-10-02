@@ -14,6 +14,8 @@ if ( ! function_exists( 'shop_isle_footer_widgets' ) ) {
 		?>
 		<!-- Widgets start -->
 
+	<?php if ( is_active_sidebar( 'sidebar-footer-area-1' ) || is_active_sidebar( 'sidebar-footer-area-2' ) || is_active_sidebar( 'sidebar-footer-area-3' ) || is_active_sidebar( 'sidebar-footer-area-4' ) ) : ?>
+
 		<div class="module-small bg-dark shop_isle_footer_sidebar">
 			<div class="container">
 				<div class="row">
@@ -50,6 +52,9 @@ if ( ! function_exists( 'shop_isle_footer_widgets' ) ) {
 				</div><!-- .row -->
 			</div>
 		</div>
+
+	<?php endif; ?>
+
 		<?php
 	}
 }
