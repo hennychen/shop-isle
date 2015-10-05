@@ -42,9 +42,15 @@ p.stars{font-size:1em}p.stars a{display:inline-block}p.stars a.star-1,p.stars a.
 	-o-transition: all 0.125s ease-in-out 0s; 
 	transition: all 0.125s ease-in-out 0s;
 }
-
 ul.products li.product {
 	overflow: hidden;
+}
+h1.page-title {
+	margin-top: 0;
+}
+.container-wooinfo {
+	padding-left: 0;
+	padding-right: 0;
 }
 
 /****
