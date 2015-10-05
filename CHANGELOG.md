@@ -1,5 +1,15 @@
 
 
+### 1.0.1.1 - 05/10/2015
+
+ Changes: 
+
+
+ * Fixed #53 Removed white space under the map AND Removed black area in footer when there is no widgets
+ * Fixed #48 Top menu does not change background on scroll when the slider is not displayed
+ * Fixed #40 Shop page does not look good without products
+
+
 ### 1.0.1.1 - 01/10/2015
 
  Changes: 
