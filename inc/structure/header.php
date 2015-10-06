@@ -33,6 +33,9 @@ if ( ! function_exists( 'shop_isle_primary_navigation' ) ) {
 	 * @return void
 	 */
 	function shop_isle_primary_navigation() {
+
+		global $wp_customize;
+
 		?>
 		<!-- Navigation start -->
 		<nav class="navbar navbar-custom navbar-transparent navbar-fixed-top" role="navigation">
@@ -47,17 +50,27 @@ if ( ! function_exists( 'shop_isle_primary_navigation' ) ) {
 						<span class="icon-bar"></span>
 					</button>
 					<?php
+
 						$shop_isle_logo = get_theme_mod('shop_isle_logo');
+						echo '<div class="shop_isle_header_title">';
 						if( !empty($shop_isle_logo) ):
-							echo '<div class="shop_isle_header_title"><a href="'.esc_url( home_url( '/' ) ).'"><img src="'.$shop_isle_logo.'"></a></div>';
+							echo '<a href="'.esc_url( home_url( '/' ) ).'" class="logo-image"><img src="'.$shop_isle_logo.'"></a>';
+							if( isset( $wp_customize ) ):
+								echo '<h1 class="site-title shop_isle_hidden_if_not_customizer""><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
+								echo '<h2 class="site-description shop_isle_hidden_if_not_customizer"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'description' ).'</a></h2>';
+							endif;
 						else:
-							echo '<div class="shop_isle_header_title">';
-								echo '<h1 class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
-
-								echo '<h2 class="site-description"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'description' ).'</a></h2>';
-
-							echo '</div>';
+							if( isset( $wp_customize ) ):
+								echo '
+										<a href="'.esc_url( home_url( '/' ) ).'" class="logo-image shop_isle_hidden_if_not_customizer">
+											<img src="">
+										</a>
+									';
+							endif;							
+							echo '<h1 class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
+							echo '<h2 class="site-description"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'description' ).'</a></h2>';
 						endif;
+						echo '</div>';
 					?>
 
 				</div>

@@ -9,10 +9,14 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 	
 	$shop_isle_slider_hide = get_theme_mod('shop_isle_slider_hide');
 	
-	if( isset($shop_isle_slider_hide) && $shop_isle_slider_hide != 1 ):
-		
+	if ( isset($shop_isle_slider_hide) && $shop_isle_slider_hide != 1 ):		
 		echo '<section id="home" class="home-section home-parallax home-fade home-full-height">';
-	
+	elseif ( isset( $wp_customize ) ):
+		echo '<section id="home" class="home-section home-parallax home-fade home-full-height shop_isle_hidden_if_not_customizer">';
+	endif;
+
+	if( ( isset($shop_isle_slider_hide) && $shop_isle_slider_hide != 1 ) || isset( $wp_customize ) ):
+
 			$shop_isle_slider = get_theme_mod('shop_isle_slider',json_encode(array( array('image_url' => get_template_directory_uri().'/assets/images/slide1.jpg' ,'link' => '#', 'text' => __('ShopIsle','shop-isle'), 'subtext' => __('WooCommerce Theme','shop-isle'), 'label' => __('FIND OUT MORE','shop-isle') ), array('image_url' => get_template_directory_uri().'/assets/images/slide2.jpg' ,'link' => '#', 'text' => __('ShopIsle','shop-isle'), 'subtext' => __('Hight quality store','shop-isle') , 'label' => __('FIND OUT MORE','shop-isle')), array('image_url' => get_template_directory_uri().'/assets/images/slide3.jpg' ,'link' => '#', 'text' => __('ShopIsle','shop-isle'), 'subtext' => __('Responsive Theme','shop-isle') , 'label' => __('FIND OUT MORE','shop-isle') ))));
 						
 			if( !empty( $shop_isle_slider ) ):
@@ -60,9 +64,15 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 		
 		$shop_isle_banners_hide = get_theme_mod('shop_isle_banners_hide');
 		
-		if( isset($shop_isle_banners_hide) && $shop_isle_banners_hide != 1 ):
+		if ( isset($shop_isle_banners_hide) && $shop_isle_banners_hide != 1 ):		
+			echo '<section class="module-small home-banners">';
+		elseif ( isset( $wp_customize ) ):
+			echo '<section class="module-small home-banners shop_isle_hidden_if_not_customizer">';
+		endif;
+
+		if( ( isset($shop_isle_banners_hide) && $shop_isle_banners_hide != 1) || isset( $wp_customize ) ):
 		
-			$shop_isle_banners = get_theme_mod('shop_isle_banners',json_encode(array( array('image_url' => get_template_directory_uri().'/assets/images/banner1.jpg' ,'link' => '#' ),array('image_url' => get_template_directory_uri().'/assets/images/banner2.jpg' ,'link' => '#'), array('image_url' => get_template_directory_uri().'/assets/images/banner3.jpg' ,'link' => '#') )));
+			$shop_isle_banners = get_theme_mod('shop_isle_banners', json_encode(array( array('image_url' => get_template_directory_uri().'/assets/images/banner1.jpg' ,'link' => '#' ),array('image_url' => get_template_directory_uri().'/assets/images/banner2.jpg' ,'link' => '#'), array('image_url' => get_template_directory_uri().'/assets/images/banner3.jpg' ,'link' => '#') )));
 					
 			if( !empty( $shop_isle_banners ) ):
 						
@@ -70,7 +80,6 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 						
 				if( !empty($shop_isle_banners_decoded) ):
 							
-					echo '<section class="module-small">';
 						echo '<div class="container">';
 
 							echo '<div class="row shop_isle_bannerss_section">';
@@ -84,15 +93,15 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 							echo '</div>';
 							
 						echo '</div>';
-							
-					echo '</section>';
-						
+													
 				endif;
 				
 			endif;
 			
+			echo '</section>';
+
 			echo '<hr class="divider-w">';
-			
+
 		endif;	/* END BANNERS */
 		
 		/*********************************/
@@ -100,20 +109,24 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 		/*********************************/
 		
 		$shop_isle_products_hide = get_theme_mod('shop_isle_products_hide');
-		
-		if( isset($shop_isle_products_hide) && $shop_isle_products_hide != 1 ):
-					
-			/* Latest products */
-		
+	
+		/* Latest products */
+
+		if ( isset($shop_isle_products_hide) && $shop_isle_products_hide != 1 ):		
 			echo '<section id="latest" class="module-small">';
-			
+		elseif ( isset( $wp_customize ) ):
+			echo '<section id="latest" class="module-small shop_isle_hidden_if_not_customizer">';
+		endif;
+
+		if( ( isset($shop_isle_products_hide) && $shop_isle_products_hide != 1 ) || isset( $wp_customize ) ):
+
 				echo '<div class="container">';
 
 					$shop_isle_products_title = get_theme_mod('shop_isle_products_title',__( 'Latest products', 'shop-isle' ));
 					if( !empty($shop_isle_products_title) ):
 						echo '<div class="row">';
 							echo '<div class="col-sm-6 col-sm-offset-3">';
-								echo '<h2 class="module-title font-alt">'.$shop_isle_products_title.'</h2>';
+								echo '<h2 class="module-title font-alt product-hide-title">'.$shop_isle_products_title.'</h2>';
 							echo '</div>';
 						echo '</div>';
 					endif;
@@ -125,9 +138,11 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 					/**** Woocommerce shortcode ******/
 					/*********************************/
 					
-					if( isset($shop_isle_products_shortcode) && !empty($shop_isle_products_shortcode) ):	
-						echo do_shortcode($shop_isle_products_shortcode);
-					
+					echo '<div class="products_shortcode">';
+						if( isset($shop_isle_products_shortcode) && !empty($shop_isle_products_shortcode) ):	
+							echo do_shortcode($shop_isle_products_shortcode);
+					echo '</div>';
+
 					/**********************************/
 					/***** Products from category *****/
 					/**********************************/
@@ -281,10 +296,14 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 	$shop_isle_video_hide = get_theme_mod('shop_isle_video_hide');
 	$shop_isle_yt_link = get_theme_mod('shop_isle_yt_link');
 	
-	if( isset($shop_isle_video_hide) && $shop_isle_video_hide != 1 && !empty($shop_isle_yt_link) ):
-	
+	if( isset($shop_isle_video_hide) && $shop_isle_video_hide != 1 && !empty($shop_isle_yt_link) ):	
 		echo '<section class="module module-video bg-dark-30">';
-			
+	elseif ( !empty($shop_isle_yt_link) && isset( $wp_customize ) ):
+		echo '<section class="module module-video bg-dark-30 shop_isle_hidden_if_not_customizer">';
+	endif;
+
+	if( ( isset($shop_isle_video_hide) && $shop_isle_video_hide != 1 && !empty($shop_isle_yt_link) ) || ( !empty($shop_isle_yt_link) && isset( $wp_customize ) )  ):	
+
 				$shop_isle_video_title = get_theme_mod('shop_isle_video_title');
 				if( !empty($shop_isle_video_title) ):
 			
@@ -292,7 +311,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 
 						echo '<div class="row">';
 							echo '<div class="col-sm-12">';
-								echo '<h2 class="module-title font-alt mb-0">'.$shop_isle_video_title.'</h2>';
+								echo '<h2 class="module-title font-alt mb-0 video-title">'.$shop_isle_video_title.'</h2>';
 							echo '</div>';
 						echo '</div>';
 
@@ -317,11 +336,15 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 	/******************************/
 	
 	$shop_isle_products_slider_hide = get_theme_mod('shop_isle_products_slider_hide');
-	
-	if( isset($shop_isle_products_slider_hide) && $shop_isle_products_slider_hide != 1 ):	
 
-		echo '<section class="module">';
-			
+	if ( isset($shop_isle_products_slider_hide) && $shop_isle_products_slider_hide != 1 ):		
+		echo '<section class="home-product-slider">';
+	elseif ( isset( $wp_customize ) ):
+		echo '<section class="home-product-slider shop_isle_hidden_if_not_customizer">';
+	endif;
+
+	if ( ( isset($shop_isle_products_slider_hide) && $shop_isle_products_slider_hide != 1)  || isset( $wp_customize ) ):
+
 			echo '<div class="container">';
 
 				$shop_isle_products_slider_title = get_theme_mod('shop_isle_products_slider_title',__( 'Exclusive products', 'shop-isle' ));
@@ -331,10 +354,10 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 					echo '<div class="row">';
 						echo '<div class="col-sm-6 col-sm-offset-3">';
 							if( !empty($shop_isle_products_slider_title) ):
-								echo '<h2 class="module-title font-alt">'.$shop_isle_products_slider_title.'</h2>';
+								echo '<h2 class="module-title font-alt home-prod-title">'.$shop_isle_products_slider_title.'</h2>';
 							endif;
 							if( !empty($shop_isle_products_slider_subtitle) ):
-								echo '<div class="module-subtitle font-serif">'.$shop_isle_products_slider_subtitle.'</div>';
+								echo '<div class="module-subtitle font-serif home-prod-subtitle">'.$shop_isle_products_slider_subtitle.'</div>';
 							endif;	
 						echo '</div>';
 					echo '</div><!-- .row -->';

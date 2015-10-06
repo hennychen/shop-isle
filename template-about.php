@@ -106,11 +106,11 @@ get_header(); ?>
 							echo '<div class="col-sm-6 col-sm-offset-3">';
 							
 								if( !empty($shop_isle_our_team_title) ):
-									echo '<h2 class="module-title font-alt">'.$shop_isle_our_team_title.'</h2>';
+									echo '<h2 class="module-title font-alt meet-out-team-title">'.$shop_isle_our_team_title.'</h2>';
 								endif;
 								
 								if( !empty($shop_isle_our_team_subtitle) ):
-									echo '<div class="module-subtitle font-serif">';
+									echo '<div class="module-subtitle font-serif meet-out-team-subtitle">';
 										echo $shop_isle_our_team_subtitle;
 									echo '</div>';
 								endif;
@@ -177,9 +177,9 @@ get_header(); ?>
 		<?php
 			$shop_isle_about_page_video_background = get_theme_mod('shop_isle_about_page_video_background',get_template_directory_uri().'/assets/images/background-video.jpg');
 			if( !empty($shop_isle_about_page_video_background) ):
-				echo '<section class="module bg-dark-60" data-background="'.$shop_isle_about_page_video_background.'">';
+				echo '<section class="module bg-dark-60 about-page-video" data-background="'.$shop_isle_about_page_video_background.'">';
 			else:
-				echo '<section class="module bg-dark-60">';
+				echo '<section class="module bg-dark-60 about-page-video">';
 			endif;
 		?>
 		
@@ -194,6 +194,11 @@ get_header(); ?>
 								$shop_isle_about_page_video_link = get_theme_mod('shop_isle_about_page_video_link');
 								if( !empty($shop_isle_about_page_video_link) ):
 									echo '<div class="video-box-icon">';
+										echo '<a href="'.$shop_isle_about_page_video_link.'" class="video-pop-up"><span class="social_youtube_square"></span></a>';
+									echo '</div>';
+								endif;
+								if( empty($shop_isle_about_page_video_link) && isset( $wp_customize ) ):
+									echo '<div class="video-box-icon shop_isle_hidden_if_not_customizer">';
 										echo '<a href="'.$shop_isle_about_page_video_link.'" class="video-pop-up"><span class="social_youtube_square"></span></a>';
 									echo '</div>';
 								endif;
@@ -231,7 +236,7 @@ get_header(); ?>
 				if( !empty($shop_isle_our_advantages_title) ):
 					echo '<div class="row">';
 						echo '<div class="col-sm-6 col-sm-offset-3">';
-							echo '<h2 class="module-title font-alt">'.$shop_isle_our_advantages_title.'</h2>';
+							echo '<h2 class="module-title font-alt our_advantages">'.$shop_isle_our_advantages_title.'</h2>';
 						echo '</div>';
 					echo '</div>';	
 				endif;	

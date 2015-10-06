@@ -9,7 +9,7 @@
 					
 					if(!empty($shop_isle_contact_page_form_shortcode)):
 
-						echo '<div class="col-sm-6">';
+						echo '<div class="col-sm-6 contact-page-form">';
 
 							echo do_shortcode($shop_isle_contact_page_form_shortcode);
 							

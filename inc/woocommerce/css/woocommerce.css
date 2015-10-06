@@ -52,6 +52,24 @@ h1.page-title {
 	padding-left: 0;
 	padding-right: 0;
 }
+.shop_isle_hidden_if_not_customizer {
+	display: none !important;
+}
+body.home .navbar-color-customizer {
+	background-color: rgba(10, 10, 10, .9) !important;
+}
+
+@media (min-width: 768px) {
+
+	body.home .navbar-transparent {
+	    padding-bottom: 10px;
+	    padding-top: 10px;
+	}
+}
+.main {
+	background-color: transparent;
+	color: #666;
+}
 
 /****
 Header
