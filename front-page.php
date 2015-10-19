@@ -74,7 +74,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 		
 		$shop_isle_banners_hide = get_theme_mod('shop_isle_banners_hide');
 		
-		if ( isset($shop_isle_banners_hide) && $shop_isle_banners_hide != 1 ):		
+		if ( isset($shop_isle_banners_hide) && $shop_isle_banners_hide != 1 ):
 			echo '<section class="module-small home-banners">';
 		elseif ( isset( $wp_customize ) ):
 			echo '<section class="module-small home-banners shop_isle_hidden_if_not_customizer">';
@@ -96,7 +96,14 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 							
 								foreach($shop_isle_banners_decoded as $shop_isle_banner):
 									
-									echo '<div class="col-sm-4"><div class="content-box mt-0 mb-0"><div class="content-box-image"><a href="'.$shop_isle_banner->link.'"><img src="'.$shop_isle_banner->image_url.'"></a></div></div></div>';
+									echo '<div class="col-sm-4"><div class="content-box mt-0 mb-0"><div class="content-box-image">';
+									if ( $shop_isle_banner->link!='' ) {
+										echo '<a href="' . $shop_isle_banner->link . '"><img src="' . $shop_isle_banner->image_url . '"></a>';
+									}
+									else {
+										echo '<a><img src="' . $shop_isle_banner->image_url . '"></a>';
+									}
+									echo '</div></div></div>';
 								
 								endforeach;
 						
