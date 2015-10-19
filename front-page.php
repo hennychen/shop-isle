@@ -55,8 +55,18 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 	endif; /* END SLIDER */				
 	
 	/* Wrapper start */
+
+	$shop_isle_bg = get_theme_mod('background_color');
+
+	if( isset($shop_isle_bg) && $shop_isle_bg!='' ) {
+
+		echo '<div class="main front-page-main" style="background-color: #' . $shop_isle_bg . '">';
+
+	} else {
 	
-	echo '<div class="main">';
+		echo '<div class="main front-page-main" style="background-color: #FFF">';
+	
+	}
 
 		/***********************/
 		/******  BANNERS *******/

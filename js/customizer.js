@@ -24,7 +24,6 @@
 	/**********  Colors ***********/
 	/******************************/
 
-	/* zerif_bigtitle_header_color */
 	wp.customize( 'header_textcolor', function( value ) {
 		value.bind( function( to ) {
 			$( '.shop_isle_header_title h1 a' ).css( {
@@ -37,9 +36,14 @@
 	} );
 	wp.customize( 'background_color', function( value ) {
 		value.bind( function( to ) {
-			$( 'body.custom-background' ).css( {
-				'color': to
+			$( 'body' ).css( {
+				'background': to
 			} );
+			if( $( '.front-page-main' ).length > 0 ) { 
+				$( '.front-page-main' ).css( {
+					'background': to
+				} );
+			}
 		} );
 	} );
 
