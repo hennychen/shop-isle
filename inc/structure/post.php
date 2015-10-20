@@ -29,10 +29,6 @@ if ( ! function_exists( 'shop_isle_post_content' ) ) {
 		?>
 		<div class="post-entry" itemprop="articleBody">
 		<?php
-		if ( has_post_thumbnail() ) {
-			the_post_thumbnail( 'full', array( 'itemprop' => 'image' ) );
-		}
-
 		the_content(
 			sprintf(
 				__( 'Continue reading %s', 'shop-isle' ),
