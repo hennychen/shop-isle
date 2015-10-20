@@ -1,5 +1,14 @@
 
 
+### 1.0.1.1 - 20/10/2015
+
+ Changes: 
+
+
+ * Fixed #12 Add transport to every setting
+ * Fixed #57 Slider overrides the next section on scroll
+
+
 ### 1.0.1.1 - 05/10/2015
 
  Changes: 
