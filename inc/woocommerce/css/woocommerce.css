@@ -455,6 +455,7 @@ p.stars a.star-4:before {
 .woocommerce.single-product .upsells.products,
 .woocommerce.single-product .related.products {
 	padding-top: 70px;
+	overflow: hidden;
 }
 .woocommerce.single-product .related.products {
 	margin-top: 0;
