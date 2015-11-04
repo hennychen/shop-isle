@@ -3001,6 +3001,16 @@ Post
 	bottom: 0;
 }
 
+/*
+Pirate Forms 
+*/
+.pirate_forms_wrap .form_field_wrap {
+	padding-left: 0px;
+}
+.pirate_forms_wrap .form_field_wrap textarea {
+	min-height: 100px;
+}
+
 /* -------------------------------------------------------------------
 Widgets
 ------------------------------------------------------------------- */
