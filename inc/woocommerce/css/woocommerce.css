@@ -460,6 +460,9 @@ p.stars a.star-4:before {
 	margin-top: 0;
 	padding-bottom: 70px;
 }
+.woocommerce.single-product ul.products li.product:nth-child(3n+1) {
+	clear: left;
+}
 /* you may also like */
 .woocommerce.single-product ul.products li.product {
     clear: none;
@@ -907,6 +910,12 @@ footer.footer .divider-d {
 	}
 	.woocommerce.single-product ul.products li.product.first {
 		clear: none !important;
+	}
+	.woocommerce.single-product ul.products li.product:nth-child(3n+1) {
+		clear: none;
+	}
+	.woocommerce.single-product ul.products li.product:nth-child(2n+1) {
+		clear: left;
 	}
 
 	/* product list */
