@@ -1,5 +1,15 @@
 
 
+### 1.0.4 - 05/11/2015
+
+ Changes: 
+
+
+ * Fixed #59 Related product
+ * Fixed #58 Like products are not clickable
+ * Fixed #65, breadcrumbs
+
+
 ### 1.0.2 - 26/10/2015
 
  Changes: 
