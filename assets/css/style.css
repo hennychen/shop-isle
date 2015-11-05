@@ -2845,13 +2845,21 @@ Post
 	padding-left: 5px;
 }
 
-.pagination a, .woocommerce-pagination ul.page-numbers li {
-	border: 1px solid #eaeaea;
+.woocommerce-pagination ul.page-numbers li {
 	display: inline-block;
+}
+.pagination a, 
+.woocommerce-pagination ul.page-numbers li a,
+.woocommerce-pagination ul.page-numbers li span {
+	border: 1px solid #eaeaea;
 	text-transform: uppercase;
 	text-align: center;
 	color: #999;
-	padding: 4px 12px;
+	padding: 7px 12px;
+}
+
+.woocommerce-pagination ul.page-numbers li a {
+	color: #111;
 }
 
 .pagination a.active {
@@ -3606,18 +3614,21 @@ Scroll to top
 	line-height: 16px;
 }
 .shop_isle_header_title h1 a {
-	letter-spacing: 4px;
-	font-weight: 400;
-	font-size: 22px;
-	color: #fff;
+    letter-spacing: 4px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 24px;
+    color: #fff;
+    display: block;
 }
 .shop_isle_header_title h2 {
 	line-height: 12px;
 }
 .shop_isle_header_title h2 a {
-	font-size: 12px;
-	line-height: 14px;
-	color: #FFF;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFF;
+    display: block;
 }
 .shop_isle_header_title {
 	text-align: center;
