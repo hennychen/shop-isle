@@ -31,15 +31,16 @@ remove_action( 'woocommerce_after_shop_loop', 		'woocommerce_pagination', 					1
 add_action( 'woocommerce_before_main_content', 		'shop_isle_before_content', 				10 );
 
 add_action( 'woocommerce_before_shop_loop', 		'shop_isle_shop_page_wrapper', 				20 );
-add_action( 'shop_isle_content_top', 				'shop_isle_shop_messages', 				    21 );
-
+add_action( 'woocommerce_before_shop_loop', 		'woocommerce_breadcrumb', 			        21 );
 add_action( 'woocommerce_before_shop_loop', 		'woocommerce_catalog_ordering', 			22 );
+
+add_action( 'shop_isle_content_top', 				'shop_isle_shop_messages', 				    21 );
 
 add_action( 'woocommerce_after_shop_loop',			'shop_isle_sorting_wrapper',				23 );
 add_action( 'woocommerce_after_shop_loop', 			'shop_isle_woocommerce_pagination', 		24 );
 add_action( 'woocommerce_after_shop_loop',			'shop_isle_sorting_wrapper_close',			25 );
-
 add_action( 'woocommerce_after_shop_loop', 			'shop_isle_shop_page_wrapper_end', 			40 );
+
 add_action( 'woocommerce_after_main_content', 		'shop_isle_after_content', 				    50 );
 
 add_filter( 'woocommerce_page_title', 'shop_isle_header_shop_page');
@@ -52,6 +53,7 @@ remove_action( 'woocommerce_before_single_product', 'action_woocommerce_before_s
 remove_action( 'woocommerce_after_single_product', 'action_woocommerce_after_single_product', 10, 1 );
 
 add_action( 'woocommerce_before_single_product', 'shop_isle_product_page_wrapper', 10, 1 );
+add_action( 'woocommerce_before_single_product', 'woocommerce_breadcrumb', 11 );
 add_action( 'woocommerce_after_single_product', 'shop_isle_product_page_wrapper_end', 10, 1 ); 
  
 remove_action( 'woocommerce_after_single_product_summary', 	'woocommerce_upsell_display', 				15 );

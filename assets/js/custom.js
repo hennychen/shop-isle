@@ -133,15 +133,11 @@
 
 		function navbarAnimation(navbar, homeSection, navHeight) {
 
-			console.log( 'top' );
-
 			var topScroll = $(window).scrollTop();
 			if (navbar.length > 0 && homeSection.length > 0) {
 				if(topScroll >= navHeight) {
-					console.log( 'remove class' );
 					navbar.removeClass('navbar-transparent');
 				} else {
-					console.log( 'add class' );
 					navbar.addClass('navbar-transparent');
 				}
 			} else {
