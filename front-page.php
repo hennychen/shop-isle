@@ -409,7 +409,9 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 												echo '<div class="ex-product">';
 													echo '<a href="'.get_permalink().'">' . woocommerce_get_product_thumbnail().'</a>';
 													echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
-													echo 'L12.00';
+													if( function_exists('get_woocommerce_currency_symbol') ):
+														echo get_woocommerce_currency_symbol().$product->price;
+													endif;
 												echo '</div>';
 											echo '</div>';
 										echo '</div>';
@@ -444,7 +446,9 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 												echo '<div class="ex-product">';
 													echo '<a href="'.get_permalink().'">' . woocommerce_get_product_thumbnail().'</a>';
 													echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
-													echo 'L12.00';
+													if( function_exists('get_woocommerce_currency_symbol') ):
+														echo get_woocommerce_currency_symbol().$product->price;
+													endif;
 												echo '</div>';
 											echo '</div>';
 										echo '</div>';
