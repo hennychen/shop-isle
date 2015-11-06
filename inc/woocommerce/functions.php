@@ -310,7 +310,7 @@ function shop_isle_update_custom_meta($postID, $newvalue, $field_name) {
 function shop_isle_products_slider_on_single_page() {
 
 	global $wp_customize;
-	global $product;
+	
 
 	$shop_isle_products_slider_single_hide = get_theme_mod('shop_isle_products_slider_single_hide');
 
@@ -372,7 +372,11 @@ function shop_isle_products_slider_on_single_page() {
 													echo '<a href="'.get_permalink().'">' . woocommerce_get_product_thumbnail().'</a>';
 													echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
 													if( function_exists('get_woocommerce_currency_symbol') ):
-														echo get_woocommerce_currency_symbol().$product->price;
+														echo get_woocommerce_currency_symbol();
+														$product = new WC_Product( get_the_ID() );
+														if(!empty($product)):
+															echo $product->price;
+														endif;
 													endif;
 												echo '</div>';
 											echo '</div>';
@@ -409,7 +413,11 @@ function shop_isle_products_slider_on_single_page() {
 													echo '<a href="'.get_permalink().'">' . woocommerce_get_product_thumbnail().'</a>';
 													echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
 													if( function_exists('get_woocommerce_currency_symbol') ):
-														echo get_woocommerce_currency_symbol().$product->price;
+														echo get_woocommerce_currency_symbol();
+														$product = new WC_Product( get_the_ID() );
+														if(!empty($product)):
+															echo $product->price;
+														endif;
 													endif;
 												echo '</div>';
 											echo '</div>';
