@@ -1,5 +1,14 @@
 
 
+### 1.0.5 - 06/11/2015
+
+ Changes: 
+
+
+ * Fixed #68, price for exclusive products
+ * Fixed #67, errors when WooCommerce not instaled
+
+
 ### 1.0.4 - 05/11/2015
 
  Changes: 
