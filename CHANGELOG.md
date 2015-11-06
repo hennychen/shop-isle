@@ -1,5 +1,13 @@
 
 
+### 1.0.6 - 06/11/2015
+
+ Changes: 
+
+
+ * Merge branch 'development' of https://github.com/Codeinwp/shop-isle into development
+
+
 ### 1.0.5 - 06/11/2015
 
  Changes: 
