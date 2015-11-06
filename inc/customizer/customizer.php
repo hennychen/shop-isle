@@ -394,7 +394,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'shop_isle_contact_page_form_shortcode', array( 'sanitize_callback' => '', 'transport' => 'postMessage'));
 	
 	$wp_customize->add_control( 'shop_isle_contact_page_form_shortcode', array(
-		'label'    => __( 'Contact form shortcode', 'parallax-one' ),
+		'label'    => __( 'Contact form shortcode', 'shop-isle' ),
 		'description' => __('Create a form, copy the shortcode generated and paste it here. We recommend <a href="https://wordpress.org/plugins/contact-form-7/">Contact Form 7</a> but you can use any plugin you like.','shop-isle'),
 		'section'  => 'shop_isle_contact_page_section',
 		'active_callback' => 'shop_isle_is_contact_page',

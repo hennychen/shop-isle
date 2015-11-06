@@ -23,7 +23,7 @@ if ( ! function_exists( 'storefront_product_categories' ) ) {
 				'columns' 			=> 3,
 				'child_categories' 	=> 0,
 				'orderby' 			=> 'name',
-				'title'				=> __( 'Product Categories', 'storefront' ),
+				'title'				=> __( 'Product Categories', 'shop-isle' ),
 				) );
 
 			echo '<section class="storefront-product-section storefront-product-categories">';
@@ -55,7 +55,7 @@ if ( ! function_exists( 'storefront_recent_products' ) ) {
 			$args = apply_filters( 'storefront_recent_products_args', array(
 				'limit' 			=> 4,
 				'columns' 			=> 4,
-				'title'				=> __( 'Recent Products', 'storefront' ),
+				'title'				=> __( 'Recent Products', 'shop-isle' ),
 				) );
 
 			echo '<section class="storefront-product-section storefront-recent-products">';
@@ -89,7 +89,7 @@ if ( ! function_exists( 'storefront_featured_products' ) ) {
 				'columns' 			=> 4,
 				'orderby'			=> 'date',
 				'order'				=> 'desc',
-				'title'				=> __( 'Featured Products', 'storefront' ),
+				'title'				=> __( 'Featured Products', 'shop-isle' ),
 				) );
 
 			echo '<section class="storefront-product-section storefront-featured-products">';
@@ -121,7 +121,7 @@ if ( ! function_exists( 'storefront_popular_products' ) ) {
 			$args = apply_filters( 'storefront_popular_products_args', array(
 				'limit' 			=> 4,
 				'columns' 			=> 4,
-				'title'				=> __( 'Top Rated Products', 'storefront' ),
+				'title'				=> __( 'Top Rated Products', 'shop-isle' ),
 				) );
 
 			echo '<section class="storefront-product-section storefront-popular-products">';
@@ -153,7 +153,7 @@ if ( ! function_exists( 'storefront_on_sale_products' ) ) {
 			$args = apply_filters( 'storefront_on_sale_products_args', array(
 				'limit' 			=> 4,
 				'columns' 			=> 4,
-				'title'				=> __( 'On Sale', 'storefront' ),
+				'title'				=> __( 'On Sale', 'shop-isle' ),
 				) );
 
 			echo '<section class="storefront-product-section storefront-on-sale-products">';

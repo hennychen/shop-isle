@@ -407,7 +407,9 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 										echo '<div class="owl-item">';
 											echo '<div class="col-sm-12">';
 												echo '<div class="ex-product">';
-													echo '<a href="'.get_permalink().'">' . woocommerce_get_product_thumbnail().'</a>';
+													if( function_exists('woocommerce_get_product_thumbnail') ):
+														echo '<a href="'.get_permalink().'">' . woocommerce_get_product_thumbnail().'</a>';
+													endif;	
 													echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
 													if( function_exists('get_woocommerce_currency_symbol') ):
 														echo get_woocommerce_currency_symbol().$product->price;
@@ -444,7 +446,9 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 										echo '<div class="owl-item">';
 											echo '<div class="col-sm-12">';
 												echo '<div class="ex-product">';
-													echo '<a href="'.get_permalink().'">' . woocommerce_get_product_thumbnail().'</a>';
+													if( function_exists('woocommerce_get_product_thumbnail') ):
+														echo '<a href="'.get_permalink().'">' . woocommerce_get_product_thumbnail().'</a>';
+													endif;	
 													echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
 													if( function_exists('get_woocommerce_currency_symbol') ):
 														echo get_woocommerce_currency_symbol().$product->price;
