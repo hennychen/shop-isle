@@ -198,11 +198,13 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 											endif;
 											
 											echo '<div class="shop-item-detail">';
-												echo '<a class="btn btn-round btn-b" href="'.$product->add_to_cart_url().'"><span class="icon-basket"></span>'.__('Add To Cart','shop-isle').'</a>';
+												if(!empty($product)):
+													echo '<a class="btn btn-round btn-b" href="'.$product->add_to_cart_url().'"><span class="icon-basket"></span>'.__('Add To Cart','shop-isle').'</a>';
+												endif;	
 											echo '</div>';
 										echo '</div>';
 										echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
-										if( function_exists('get_woocommerce_currency_symbol') ):
+										if( function_exists('get_woocommerce_currency_symbol') && !empty($product) ):
 											echo get_woocommerce_currency_symbol().$product->price;
 										endif;
 									echo '</div>';
@@ -264,11 +266,13 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 											endif;
 											
 											echo '<div class="shop-item-detail">';
-												echo '<a class="btn btn-round btn-b" href="'.$product->add_to_cart_url().'"><span class="icon-basket"></span>'.__('Add To Cart','shop-isle').'</a>';
+												if(!empty($product)):
+													echo '<a class="btn btn-round btn-b" href="'.$product->add_to_cart_url().'"><span class="icon-basket"></span>'.__('Add To Cart','shop-isle').'</a>';
+												endif;
 											echo '</div>';
 										echo '</div>';
 										echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
-										if( function_exists('get_woocommerce_currency_symbol') ):
+										if( function_exists('get_woocommerce_currency_symbol') && !empty($product) ):
 											echo get_woocommerce_currency_symbol().$product->price;
 										endif;
 									echo '</div>';
@@ -411,7 +415,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 														echo '<a href="'.get_permalink().'">' . woocommerce_get_product_thumbnail().'</a>';
 													endif;	
 													echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
-													if( function_exists('get_woocommerce_currency_symbol') ):
+													if( function_exists('get_woocommerce_currency_symbol') && !empty($product) ):
 														echo get_woocommerce_currency_symbol().$product->price;
 													endif;
 												echo '</div>';
@@ -450,7 +454,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 														echo '<a href="'.get_permalink().'">' . woocommerce_get_product_thumbnail().'</a>';
 													endif;	
 													echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
-													if( function_exists('get_woocommerce_currency_symbol') ):
+													if( function_exists('get_woocommerce_currency_symbol') && !empty($product) ):
 														echo get_woocommerce_currency_symbol().$product->price;
 													endif;
 												echo '</div>';
