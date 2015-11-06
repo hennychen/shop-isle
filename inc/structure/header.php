@@ -2,17 +2,17 @@
 /**
  * Template functions used for the site header.
  *
- * @package storefront
+ * @package shop-isle
  */
 
 
-if ( ! function_exists( 'storefront_site_branding' ) ) {
+if ( ! function_exists( 'shop_isle_site_branding' ) ) {
 	/**
 	 * Display Site Branding
 	 * @since  1.0.0
 	 * @return void
 	 */
-	function storefront_site_branding() {
+	function shop_isle_site_branding() {
 		if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
 			jetpack_the_site_logo();
 		} else { ?>
@@ -97,8 +97,8 @@ if ( ! function_exists( 'storefront_skip_links' ) ) {
 	 */
 	function storefront_skip_links() {
 		?>
-		<a class="skip-link screen-reader-text" href="#site-navigation"><?php _e( 'Skip to navigation', 'storefront' ); ?></a>
-		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'storefront' ); ?></a>
+		<a class="skip-link screen-reader-text" href="#site-navigation"><?php _e( 'Skip to navigation', 'shop-isle' ); ?></a>
+		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'shop-isle' ); ?></a>
 		<?php
 	}
 }

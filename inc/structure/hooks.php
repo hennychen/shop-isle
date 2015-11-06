@@ -1,8 +1,8 @@
 <?php
 /**
- * storefront hooks
+ * shop-isle hooks
  *
- * @package storefront
+ * @package shop-isle
  */
 
 /**
@@ -21,11 +21,11 @@ add_action( 'shop_isle_sidebar',			'shop_isle_get_sidebar',			10 );
 /**
  * Header
  * @see  storefront_skip_links()
- * @see  storefront_site_branding()
+ * @see  shop_isle_site_branding()
  * @see  shop_isle_primary_navigation()
  */
 add_action( 'storefront_header', 'storefront_skip_links', 				0 );
-add_action( 'storefront_header', 'storefront_site_branding',			20 );
+add_action( 'storefront_header', 'shop_isle_site_branding',			20 );
 add_action( 'shop_isle_header', 'shop_isle_primary_navigation',		50 );
 
 /**
@@ -60,7 +60,7 @@ add_action( 'homepage', 'storefront_on_sale_products',		60 );
  * @see  storefront_paging_nav()
  * @see  storefront_single_post_header()
  * @see  storefront_post_nav()
- * @see  storefront_display_comments()
+ * @see  shop_isle_display_comments()
  */
 add_action( 'storefront_loop_post',			'shop_isle_post_header',		10 );
 add_action( 'storefront_loop_post',			'shop_isle_post_meta',			20 );
@@ -70,24 +70,24 @@ add_action( 'storefront_single_post',		'shop_isle_post_header',		10 );
 add_action( 'storefront_single_post',		'shop_isle_post_meta',			20 );
 add_action( 'storefront_single_post',		'shop_isle_post_content',		30 );
 add_action( 'storefront_single_post_after',	'storefront_post_nav',			10 );
-add_action( 'storefront_single_post_after',	'storefront_display_comments',	10 );
+add_action( 'storefront_single_post_after',	'shop_isle_display_comments',	10 );
 
 /**
  * Pages
  * @see  storefront_page_content()
- * @see  storefront_display_comments()
+ * @see  shop_isle_display_comments()
  */
 add_action( 'storefront_page', 			'storefront_page_content',		20 );
-add_action( 'storefront_page_after', 	'storefront_display_comments',	10 );
+add_action( 'storefront_page_after', 	'shop_isle_display_comments',	10 );
 
 /**
  * Extras
  * @see  storefront_setup_author()
  * @see  storefront_body_classes()
- * @see  storefront_page_menu_args()
+ * @see  shop_isle_page_menu_args()
  */
 add_filter( 'body_class',			'storefront_body_classes' );
-add_filter( 'wp_page_menu_args',	'storefront_page_menu_args' );
+add_filter( 'wp_page_menu_args',	'shop_isle_page_menu_args' );
 
 /**
  * Customize

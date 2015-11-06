@@ -36,10 +36,8 @@ require get_template_directory() . '/inc/functions/extras.php';
 /**
  * Customizer additions.
  */
-if ( is_storefront_customizer_enabled() ) {
-	require get_template_directory() . '/inc/customizer/customizer.php';
-	require get_template_directory() . '/inc/customizer/functions.php';
-}
+require get_template_directory() . '/inc/customizer/customizer.php';
+require get_template_directory() . '/inc/customizer/functions.php';
 
 /**
  * Load Jetpack compatibility file.

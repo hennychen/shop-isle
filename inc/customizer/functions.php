@@ -185,7 +185,7 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 								<?php
 										if($shop_isle_icon_control ==true){
                                 ?>
-                                            <span class="customize-control-title"><?php _e('Icon','parallax-one')?></span>
+                                            <span class="customize-control-title"><?php _e('Icon','shop-isle')?></span>
                                             <select name="<?php echo esc_attr($this->id); ?>" class="shop_isle_icon_control">
                                                 <?php
                                                     foreach($icons_array as $contact_icon) {
@@ -241,8 +241,8 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 										<div class="shop-isle-customize-control-title"><?php echo $shop_isle_box_label; ?></div>
 										<label>
 										<?php
-											if($parallax_icon_control==true){ ?>
-                                                    <span class="customize-control-title"><?php _e('Icon','parallax-one')?></span>
+											if($shop_isle_icon_control==true){ ?>
+                                                    <span class="customize-control-title"><?php _e('Icon','shop-isle')?></span>
                                                     <select name="<?php echo esc_attr($this->id); ?>" class="shop_isle_icon_control">
                                                         <?php
                                                             foreach($icons_array as $contact_icon) {
@@ -306,7 +306,7 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 										<label>
 										<?php
 										if($shop_isle_icon_control==true){ ?>
-                                                <span class="customize-control-title"><?php _e('Icon','parallax-one')?></span>
+                                                <span class="customize-control-title"><?php _e('Icon','shop-isle')?></span>
                                                 <select name="<?php echo esc_attr($this->id); ?>" class="shop_isle_icon_control">
                                                 <?php
                                                     foreach($icons_array as $contact_icon) {

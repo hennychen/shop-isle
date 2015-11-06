@@ -79,7 +79,7 @@ get_header(); ?>
 
 								<?php
 								/**
-								 * @hooked storefront_display_comments - 10
+								 * @hooked shop_isle_display_comments - 10
 								 */
 								do_action( 'storefront_page_after' );
 								?>

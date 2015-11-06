@@ -15,7 +15,7 @@ if ( ! function_exists( 'storefront_page_content' ) ) {
 			<?php the_content(); ?>
 			<?php
 				wp_link_pages( array(
-					'before' => '<div class="page-links">' . __( 'Pages:', 'storefront' ),
+					'before' => '<div class="page-links">' . __( 'Pages:', 'shop-isle' ),
 					'after'  => '</div>',
 				) );
 			?>
