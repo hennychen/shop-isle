@@ -115,6 +115,12 @@ if ( ! function_exists( 'shop_isle_footer_copyright_and_socials' ) ) {
 					endif;
 					?>
 				</div><!-- .row -->
+				
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="shop-isle-poweredby-box"><a class="shop-isle-poweredby" href="http://themeisle.com/themes/shop-isle/" rel="nofollow">ShopIsle </a><?php _e('powered by','shop-isle'); ?><a class="shop-isle-poweredby" href="http://wordpress.org/" rel="nofollow"> WordPress</a></div>
+					</div>	
+				</div>	
 
 			</div>
 		</footer>
