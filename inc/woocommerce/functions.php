@@ -371,13 +371,32 @@ function shop_isle_products_slider_on_single_page() {
 												echo '<div class="ex-product">';
 													echo '<a href="'.get_permalink().'">' . woocommerce_get_product_thumbnail().'</a>';
 													echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
-													if( function_exists('get_woocommerce_currency_symbol') ):
-														echo get_woocommerce_currency_symbol();
+													
 														$product = new WC_Product( get_the_ID() );
 														if(!empty($product)):
-															echo $product->price;
+															if( function_exists('get_woocommerce_price_format') ):
+																$format_string = get_woocommerce_price_format();
+															endif;	
+															if( !empty($format_string) ):
+																switch ( $format_string ) {
+																	case '%1$s%2$s' :
+																		echo get_woocommerce_currency_symbol().$product->price;
+																	break;
+																	case '%2$s%1$s' :
+																		echo $product->price.get_woocommerce_currency_symbol();
+																	break;
+																	case '%1$s&nbsp;%2$s' :
+																		echo get_woocommerce_currency_symbol().' '.$product->price;
+																	break;
+																	case '%2$s&nbsp;%1$s' :
+																		echo $product->price.' '.get_woocommerce_currency_symbol();
+																	break;
+																}
+															else:
+																echo get_woocommerce_currency_symbol().$product->price;
+															endif;
 														endif;
-													endif;
+													
 												echo '</div>';
 											echo '</div>';
 										echo '</div>';
@@ -412,13 +431,32 @@ function shop_isle_products_slider_on_single_page() {
 												echo '<div class="ex-product">';
 													echo '<a href="'.get_permalink().'">' . woocommerce_get_product_thumbnail().'</a>';
 													echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
-													if( function_exists('get_woocommerce_currency_symbol') ):
-														echo get_woocommerce_currency_symbol();
+													
 														$product = new WC_Product( get_the_ID() );
 														if(!empty($product)):
-															echo $product->price;
+															if( function_exists('get_woocommerce_price_format') ):
+																$format_string = get_woocommerce_price_format();
+															endif;	
+															if( !empty($format_string) ):
+																switch ( $format_string ) {
+																	case '%1$s%2$s' :
+																		echo get_woocommerce_currency_symbol().$product->price;
+																	break;
+																	case '%2$s%1$s' :
+																		echo $product->price.get_woocommerce_currency_symbol();
+																	break;
+																	case '%1$s&nbsp;%2$s' :
+																		echo get_woocommerce_currency_symbol().' '.$product->price;
+																	break;
+																	case '%2$s&nbsp;%1$s' :
+																		echo $product->price.' '.get_woocommerce_currency_symbol();
+																	break;
+																}
+															else:
+																echo get_woocommerce_currency_symbol().$product->price;
+															endif;
 														endif;
-													endif;
+													
 												echo '</div>';
 											echo '</div>';
 										echo '</div>';

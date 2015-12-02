@@ -205,7 +205,27 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 										echo '</div>';
 										echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
 										if( function_exists('get_woocommerce_currency_symbol') && !empty($product) ):
-											echo get_woocommerce_currency_symbol().$product->price;
+											if( function_exists('get_woocommerce_price_format') ):
+												$format_string = get_woocommerce_price_format();
+											endif;	
+											if( !empty($format_string) ):
+												switch ( $format_string ) {
+													case '%1$s%2$s' :
+														echo get_woocommerce_currency_symbol().$product->price;
+													break;
+													case '%2$s%1$s' :
+														echo $product->price.get_woocommerce_currency_symbol();
+													break;
+													case '%1$s&nbsp;%2$s' :
+														echo get_woocommerce_currency_symbol().' '.$product->price;
+													break;
+													case '%2$s&nbsp;%1$s' :
+														echo $product->price.' '.get_woocommerce_currency_symbol();
+													break;
+												}
+											else:
+												echo get_woocommerce_currency_symbol().$product->price;
+											endif;
 										endif;
 									echo '</div>';
 								echo '</div>';
@@ -273,7 +293,27 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 										echo '</div>';
 										echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
 										if( function_exists('get_woocommerce_currency_symbol') && !empty($product) ):
-											echo get_woocommerce_currency_symbol().$product->price;
+											if( function_exists('get_woocommerce_price_format') ):
+												$format_string = get_woocommerce_price_format();
+											endif;	
+											if( !empty($format_string) ):
+												switch ( $format_string ) {
+													case '%1$s%2$s' :
+														echo get_woocommerce_currency_symbol().$product->price;
+													break;
+													case '%2$s%1$s' :
+														echo $product->price.get_woocommerce_currency_symbol();
+													break;
+													case '%1$s&nbsp;%2$s' :
+														echo get_woocommerce_currency_symbol().' '.$product->price;
+													break;
+													case '%2$s&nbsp;%1$s' :
+														echo $product->price.' '.get_woocommerce_currency_symbol();
+													break;
+												}
+											else:
+												echo get_woocommerce_currency_symbol().$product->price;
+											endif;
 										endif;
 									echo '</div>';
 								echo '</div>';
@@ -416,7 +456,27 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 													endif;	
 													echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
 													if( function_exists('get_woocommerce_currency_symbol') && !empty($product) ):
-														echo get_woocommerce_currency_symbol().$product->price;
+														if( function_exists('get_woocommerce_price_format') ):
+															$format_string = get_woocommerce_price_format();
+														endif;	
+														if( !empty($format_string) ):
+															switch ( $format_string ) {
+																case '%1$s%2$s' :
+																	echo get_woocommerce_currency_symbol().$product->price;
+																break;
+																case '%2$s%1$s' :
+																	echo $product->price.get_woocommerce_currency_symbol();
+																break;
+																case '%1$s&nbsp;%2$s' :
+																	echo get_woocommerce_currency_symbol().' '.$product->price;
+																break;
+																case '%2$s&nbsp;%1$s' :
+																	echo $product->price.' '.get_woocommerce_currency_symbol();
+																break;
+															}
+														else:
+															echo get_woocommerce_currency_symbol().$product->price;
+														endif;
 													endif;
 												echo '</div>';
 											echo '</div>';
@@ -455,7 +515,27 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 													endif;	
 													echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
 													if( function_exists('get_woocommerce_currency_symbol') && !empty($product) ):
-														echo get_woocommerce_currency_symbol().$product->price;
+														if( function_exists('get_woocommerce_price_format') ):
+															$format_string = get_woocommerce_price_format();
+														endif;	
+														if( !empty($format_string) ):
+															switch ( $format_string ) {
+																case '%1$s%2$s' :
+																	echo get_woocommerce_currency_symbol().$product->price;
+																break;
+																case '%2$s%1$s' :
+																	echo $product->price.get_woocommerce_currency_symbol();
+																break;
+																case '%1$s&nbsp;%2$s' :
+																	echo get_woocommerce_currency_symbol().' '.$product->price;
+																break;
+																case '%2$s&nbsp;%1$s' :
+																	echo $product->price.' '.get_woocommerce_currency_symbol();
+																break;
+															}
+														else:
+															echo get_woocommerce_currency_symbol().$product->price;
+														endif;
 													endif;
 												echo '</div>';
 											echo '</div>';
