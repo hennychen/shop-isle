@@ -1,5 +1,13 @@
 
 
+### 1.0.8 - 02/12/2015
+
+ Changes: 
+
+
+ * Fixed #74, Pricing options for exclusive products
+
+
 ### 1.0.6 - 06/11/2015
 
  Changes: 
