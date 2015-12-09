@@ -778,6 +778,10 @@ ul.products li.product .product-button-wrap .button.product_type_simple {
 	content: "\43";
     line-height: 38px;
 }
+.menu-align-center.navbar-custom ul.nav > li.has_children > .dropdownmenu:before {
+	content: "\43";
+    line-height: 18px;
+}
 .navbar-custom div.nav > ul > li.has_children > .dropdownmenu:before {
 	content: "\43";
     line-height: 28px;
