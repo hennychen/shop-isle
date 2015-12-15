@@ -1,6 +1,6 @@
 <wpml-config>
 	<admin-texts>
-		<key name="theme_mods_Shop-Isle">
+		<key name="theme_mods_shop-isle">
 			<key name="shop_isle_products_title" />
 			<key name="shop_isle_products_slider_title" />
 			<key name="shop_isle_products_slider_subtitle" />
