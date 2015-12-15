@@ -1,5 +1,16 @@
 
 
+### 1.0.9 - 15/12/2015
+
+ Changes: 
+
+
+ * Added WPML-config.xml. Closed #79.
+ * Merge pull request #81 from abaicus/development
+
+Closed #79. Added WPML-config.xml.
+
+
 ### 1.0.8 - 02/12/2015
 
  Changes: 
