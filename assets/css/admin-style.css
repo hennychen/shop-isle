@@ -26,7 +26,7 @@ button.shop_isle_remove_field {
 button.shop_isle_general_control_remove_field {
 	width: 100%;
 	margin-top: 10px!important;
-	 
+
 }
 
 button.shop_isle_general_control_remove_field:hover{
@@ -97,4 +97,14 @@ button.shop_isle_general_control_remove_field:hover{
 
 #customize-control-shop_isle_contact_form_shortcode{
 	display:none;
+}
+
+.shop-isle-upgrade-to-pro-button {
+	padding: 3px 6px !important;
+	line-height: 1.5 !important;
+	font-size: 9px !important;
+	color: #ffffff !important;
+	background-color: #EA6F60;
+	letter-spacing: 1px;
+	text-transform: uppercase;
 }
