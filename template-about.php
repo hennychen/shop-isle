@@ -15,9 +15,9 @@ get_header(); ?>
 		<?php
 			$shop_isle_header_image = get_header_image();
 			if( !empty($shop_isle_header_image) ):
-				echo '<section class="module bg-dark" data-background="'.$shop_isle_header_image.'">';
+				echo '<section class="page-header-module module bg-dark" data-background="'.$shop_isle_header_image.'">';
 			else:
-				echo '<section class="module bg-dark">';
+				echo '<section class="page-header-module module bg-dark">';
 			endif;
 		?>
 		
@@ -25,7 +25,7 @@ get_header(); ?>
 
 				<div class="row">
 
-					<div class="col-sm-6 col-sm-offset-3">
+					<div class="col-sm-10 col-sm-offset-1">
 
 						<h1 class="module-title font-alt"><?php the_title(); ?></h1>
 

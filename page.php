@@ -30,7 +30,7 @@ get_header(); ?>
 		
 					<div class="container">
 						<div class="row">
-							<div class="col-sm-6 col-sm-offset-3">
+							<div class="col-sm-10 col-sm-offset-1">
 								<h1 class="module-title font-alt"><?php the_title(); ?></h1>
 							</div>
 						</div>
@@ -92,7 +92,7 @@ get_header(); ?>
 					<!-- Sidebar column start -->
 					<?php if(( function_exists('is_cart') && is_cart() ) || ( function_exists('is_checkout') && is_checkout() ) || ( function_exists('is_wc_endpoint_url') && is_wc_endpoint_url( 'lost-password' ) ) || ( function_exists('is_account_page') && is_account_page() )): ?>
 					<?php else: ?>
-						<div class="col-sm-4 col-md-3 col-md-offset-1 sidebar">
+						<div class="col-xs-12 col-sm-4 col-md-3 col-md-offset-1 sidebar">
 
 							<?php do_action( 'shop_isle_sidebar' ); ?>
 

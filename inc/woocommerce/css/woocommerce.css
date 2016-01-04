@@ -142,6 +142,20 @@ a.remove:hover {
     color: #FFF;
 }
 
+.page-header-module:before {
+	content: " ";
+	position: absolute;
+	background: rgba(34,34,34, .6);
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+
+.page-header-module.module {
+	padding: 190px 0 140px
+}
+
 /****
 Single product page
 ****/

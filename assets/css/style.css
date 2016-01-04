@@ -2115,7 +2115,7 @@ Sections
 .module,
 .module-small {
 	position: relative;
-	padding: 140px 0;
+	padding: 130px 0;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	-webkit-background-size: cover;
@@ -2145,7 +2145,7 @@ Sections
 	font-weight: 400;
 	font-size: 30px;
 	color: #111;
-	margin: 70px 0 70px;
+	margin: 0 0 70px;
 }
 
 .module-subtitle {
@@ -2869,7 +2869,7 @@ Post
 .post-navigation {
 	float: left;
 	width: 100%;
-	padding-top: 80px;
+	padding-top: 60px;
 }
 
 .nav-links {
@@ -3000,13 +3000,21 @@ Post
 
 .comment-content .reply {
 	position: absolute;
-	left: 200px;
+	right: 0;
 	bottom: 0;
 }
 
 .comment-date {
 	position: absolute;
 	bottom: 0;
+}
+
+.comment-area {
+	margin-top: 50px;
+}
+
+.comments-area label {
+	font-weight: 400;
 }
 
 /*
@@ -3082,6 +3090,7 @@ Widgets
 
 .widget label {
 	width: 100%;
+	position: relative;
 }
 
 .widget form {
@@ -3089,20 +3098,26 @@ Widgets
 }
 
 .widget input[type=search] {
-	-webkit-appearance: none;
-	width: 100%;
 	font-family: "Roboto Condensed", sans-serif;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-size: 11px;
-	height: 40px;
-	line-height: 40px;
-	border: 1px solid #EAEAEA;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	border-radius: 2px;
-	font-size: 12px;
-	padding: 0 40px 0 6px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11px;
+    height: 33px;
+    border: 1px solid #EAEAEA;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-weight: 400;
+    width: 100%;
+    padding: 5px 30px 5px 12px;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.widget input[type=search]:focus {
+	border-color: #CACACA;
 }
 
 .widget_search form label:after  {
@@ -3113,19 +3128,31 @@ Widgets
 	overflow: hidden;
 	top: 0;
 	right: 1px;
-	width: 40px;
-	height: 40px;
+    height: 33px;
+	line-height: 33px;
+    width: 33px;
 	outline: none;
 	color: #999;
 	display: inline-block;
-	font: normal normal normal 17px/1 ElegantIcons;
-	font-size: 18px;
+	font: normal normal normal 15px/33px ElegantIcons;
 	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	transform: translate(0, 0);
-	line-height: 40px;
 	text-align: center;
+}
+
+.widget form input[type=submit] {
+    position: absolute;
+    background: transparent;
+    border: none;
+    overflow: hidden;
+    right: 1px;
+    width: 33px;
+    height: 33px;
+    line-height: 38px;
+    font-size: 14px;
+    outline: none;
+    color: #999;
+    text-indent: -99999999px;
+    top: 0;
 }
 
 .widget .icon-list li {
@@ -3161,24 +3188,6 @@ Widgets
 
 .search-box {
 	position: relative;
-}
-
-.widget form input[type=submit] {
-	position: absolute;
-	top: 0;
-	right: 0;
-	height: 40px;
-	width: 40px;
-	line-height: 40px;
-	border: none;
-	box-shadow: none;
-	background-color: transparent;
-	text-indent: 99999999px;
-}
-
-.widget.widget_search form input[type=submit]:before {
-	content: "";
-	content: "\f002";
 }
 
 .widget .tagcloud a {
@@ -3272,7 +3281,7 @@ Comments and comment form
 
 .comments,
 #comments {
-	margin: 80px 0 0;
+	margin: 50px 0 0;
 }
 
 .comments .comment-title,

@@ -37,7 +37,7 @@ get_header(); ?>
 					<!-- Content column end -->
 
 					<!-- Sidebar column start -->
-					<div class="col-sm-4 col-md-3 col-md-offset-1 sidebar">
+					<div class="col-xs-12 col-sm-4 col-md-3 col-md-offset-1 sidebar">
 
 						<?php do_action( 'shop_isle_sidebar' ); ?>
 
