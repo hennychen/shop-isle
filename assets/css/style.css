@@ -2135,7 +2135,7 @@ Sections
 }
 
 .module-small-bottom {
-	padding: 0px 0px 140px 0px;
+	padding: 140px 0px 140px 0px;
 }
 
 .module-title {
@@ -2146,6 +2146,10 @@ Sections
 	font-size: 30px;
 	color: #111;
 	margin: 0 0 70px;
+}
+
+.page-header-module .module-title {
+	margin: 0;
 }
 
 .module-subtitle {
@@ -2163,6 +2167,10 @@ Sections
 
 .module-title + .module-subtitle {
 	margin-top: -35px;
+}
+
+.page-header-module .module-subtitle {
+	margin-top: 35px;
 }
 
 /* Restaurant module header */
@@ -2988,10 +2996,16 @@ Post
 	box-shadow: none;
 }
 
+.comments-bottom-wrap {
+	float: left;
+	width: 100%;
+}
+
 .comment-date {
 	font-family: "Roboto Condensed", sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 2px;
+	float: left;
 }
 
 .comment-body {
@@ -2999,14 +3013,7 @@ Post
 }
 
 .comment-content .reply {
-	position: absolute;
-	right: 0;
-	bottom: 0;
-}
 
-.comment-date {
-	position: absolute;
-	bottom: 0;
 }
 
 .comment-area {
