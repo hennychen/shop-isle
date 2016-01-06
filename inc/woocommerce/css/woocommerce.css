@@ -1175,18 +1175,97 @@ p.stars a.star-5:hover:after {
     color: #555
 }
 
-.woocommerce-error,
-.woocommerce-info,
-.woocommerce-message,
+.woocommerce-error {
+    list-style: none
+}
+
 .woocommerce-noreviews,
 p.no-comments {
-    padding: 1em 1.618em;
-    margin-bottom: 2.618em;
-    background-color: #CCCCCC;
-    margin-left: 0;
-    color: #fff;
+    color: #666666;
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+}
+
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
     clear: both;
-    border-left: .618em solid rgba(0, 0, 0, .15)
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    padding: 15px;
+    margin-bottom: 30px;
+    margin-left: 0;
+    width: 100%;
+}
+
+.woocommerce-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+
+.woocommerce-info a {
+    color: #31708f;
+    font-weight: bold; 
+}
+
+.woocommerce-info a.button {
+    color: #31708f;
+    font-weight: bold;
+    border: none;
+    float: right;
+}
+
+.woocommerce-message {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.woocommerce-message a {
+    color: #3c763d;
+    font-weight: bold;
+}
+
+.woocommerce-message a.button {
+    color: #3c763d;
+    font-weight: bold;
+    border: none;
+    float: right;
+}
+
+.woocommerce-error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.woocommerce-error a {
+    color: #a94442;
+    font-weight: bold;
+}
+
+.woocommerce-error a:hover,
+.woocommerce-message a:hover,
+.woocommerce-info a:hover {
+    filter: alpha(opacity=70);
+    opacity: .7;
+}
+
+.woocommerce-error a.button {
+    color: #a94442;
+    font-weight: bold;
+    border: none;
+    float: right;
+}
+
+.woocommerce-error a.button:hover {
+    opacity: 0.7;
 }
 
 .woocommerce-error::after,
@@ -1197,58 +1276,6 @@ p.no-comments::after {
     clear: both;
     content: "";
     display: table
-}
-
-.woocommerce-error a,
-.woocommerce-info a,
-.woocommerce-message a,
-.woocommerce-noreviews a,
-p.no-comments a {
-    color: #fff
-}
-
-.woocommerce-error a:hover,
-.woocommerce-info a:hover,
-.woocommerce-message a:hover,
-.woocommerce-noreviews a:hover,
-p.no-comments a:hover {
-    color: #fff;
-    opacity: .7
-}
-
-.woocommerce-error a.button:hover,
-.woocommerce-info a.button:hover,
-.woocommerce-message a.button:hover,
-.woocommerce-noreviews a.button:hover,
-p.no-comments a.button:hover {
-    opacity: 1
-}
-
-.woocommerce-error .button,
-.woocommerce-info .button,
-.woocommerce-message .button,
-.woocommerce-noreviews .button,
-p.no-comments .button {
-    float: right;
-    padding: 0 0 0 1em;
-    background: 0 0;
-    color: #fff;
-    box-shadow: none;
-    line-height: 1.618;
-    border-width: 0 0 0 1px;
-    border-left-style: solid;
-    border-left-color: rgba(255, 255, 255, .25)!important;
-    border-radius: 0
-}
-
-.woocommerce-error .button:hover,
-.woocommerce-info .button:hover,
-.woocommerce-message .button:hover,
-.woocommerce-noreviews .button:hover,
-p.no-comments .button:hover {
-    background: 0 0;
-    color: #fff;
-    opacity: .7
 }
 
 .woocommerce-error pre,
@@ -1263,21 +1290,6 @@ p.no-comments pre {
 .site-content>.col-full>.woocommerce>.woocommerce-info:first-child,
 .site-content>.col-full>.woocommerce>.woocommerce-message:first-child {
     margin-top: 2.618em
-}
-
-.woocommerce-error {
-    list-style: none
-}
-
-.woocommerce-info,
-.woocommerce-noreviews,
-p.no-comments {
-    background-color: rgb(236, 236, 236);
-    color: #404040;
-}
-
-.woocommerce-error {
-    background-color: #e2401c
 }
 
 dl.variation {
