@@ -200,15 +200,7 @@ ul.products li.product .button {
     margin-bottom: 1.618em;
     display: block
 }
-/*
-.single-product div.product .images .thumbnails a.zoom {
-    display: block;
-    width: 22.05%;
-    margin-right: 3.8%;
-    float: left;
-    margin-bottom: 1em
-}
-*/
+
 .single-product .product_title {
     font-family: "Roboto Condensed", sans-serif;
     text-transform: uppercase;
@@ -228,7 +220,13 @@ ul.products li.product .button {
 }
 
 .single-product div.product .images .thumbnails a.zoom {
-    margin: 0 10px;
+    width: 15%;
+    margin: 0 1% 12px;
+    float: left;
+}
+
+.single-product div.product .images .thumbnails a.zoom img {
+    width: 100%;
 }
 
 .single-product div.product form.cart {
@@ -1493,18 +1491,6 @@ ul.products li.product.last {
     content: "";
     display: table
 }
-/*
-.single-product div.product .images .thumbnails a.zoom {
-    width: 14.2857142857%;
-    float: left;
-    margin-right: 14.2857142857%
-}
-
-.single-product div.product .images .thumbnails a.zoom.last {
-    float: right;
-    margin-right: 0
-}
-*/
 
 .single-product div.product .summary {
     width: 52.9411764706%;
@@ -2641,22 +2627,6 @@ p.stars {
     text-align: center;
     width: 100%;
 }
-/*
-.single-product div.product .images .thumbnails a.zoom {
-    display: block;
-    width: 22.05%;
-    margin-right: 3.8%;
-    float: left;
-    margin-bottom: 1em;
-}
-.single-product div.product .images .thumbnails a.zoom {
-    display: block;
-    width: 22.05%;
-    margin-right: 3.8%;
-    float: left;
-    margin-bottom: 1em;
-}
-*/
 .single-product div.product .images {
     width: 50%;
     padding: 0 15px 0 0;
@@ -2746,13 +2716,6 @@ p.stars a.star-4:before {
 .form-row label {
 	font-weight: normal;
 }
-/**
-.woocommerce .product-thumbnail img {
-    width: 75px;
-    height: auto;
-}
-*/
-
 .add_to_cart_button:not(.product_type_variable):before,
 .icon-basket:before,
 .single-product div.product form.cart .button:before {
