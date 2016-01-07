@@ -2173,6 +2173,10 @@ Sections
 	margin-top: 35px;
 }
 
+.no-results .page-header {
+	margin-top: 0;
+}
+
 /* Restaurant module header */
 
 .alt-module-subtitle {
@@ -2918,6 +2922,70 @@ Post
 	font-family: "Roboto Condensed", sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 2px;
+}
+
+.no-results .screen-reader-text {
+	padding-bottom: 0;
+	border: none;
+}
+
+.no-results .search-form input[type=search] {
+	font-family: "Roboto Condensed", sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 11px;
+	height: 33px;
+	border: 1px solid #EAEAEA;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	font-weight: 400;
+	width: 250px;
+	max-width: 100%;
+	padding: 5px 30px 5px 12px;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.no-results .search-form input[type=submit] {
+    margin-left: -33px;
+    background: transparent;
+    border: none;
+    overflow: hidden;
+    width: 33px;
+    height: 33px;
+    line-height: 38px;
+    font-size: 14px;
+    outline: none;
+    color: #999;
+    text-indent: -99999999px;
+    z-index: 999;
+    position: relative;
+}
+
+.no-results .search-form label {
+    position: relative;
+    float: left;
+}
+.no-results .search-form label:after{
+    content: "\55";
+    position: absolute;
+    background: transparent;
+    border: none;
+    overflow: hidden;
+    top: 0;
+    right: 1px;
+    height: 33px;
+    line-height: 33px;
+    width: 33px;
+    outline: none;
+    color: #999;
+    display: inline-block;
+    font: normal normal normal 15px/33px ElegantIcons;
+    text-rendering: auto;
+    text-align: center;
 }
 
 .comments-area {

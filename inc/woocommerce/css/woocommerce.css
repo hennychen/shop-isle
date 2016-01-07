@@ -105,7 +105,10 @@ table.shop_table_responsive tr td:before {
 ul.products {
     margin-right: -15px;
     margin-left: -15px;
-    padding: 70px 0;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+    padding-top: 70px;
 }
 
 ul.products::before {
@@ -432,6 +435,8 @@ ul.products li.product .button {
     margin-bottom: 1.236em;
     font-size: 14px;
     float: left;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 .single-product .woocommerce-breadcrumb {
@@ -1511,6 +1516,8 @@ ul.products li.product.last {
     float: right;
     margin-right: 1em;
     margin-bottom: 0;
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 .woocommerce-ordering select {
@@ -1531,6 +1538,10 @@ ul.products li.product.last {
     clear: none;
     padding: 0;
     margin-bottom: 0
+}
+
+.woocommerce-pagination .page-numbers.current {
+    border-color: #CACACA;
 }
 
 .woocommerce-pagination ul.page-numbers {
@@ -2223,7 +2234,7 @@ body.home .navbar-color-customizer {
     padding: 70px 0 30px;
 }
 .home-product-slider {
-	padding: 0 0 70px;
+	padding: 70px 0 70px;
 }
 
 /* rating stars */
@@ -2430,7 +2441,7 @@ a.remove:hover {
 .page-header-module:before {
 	content: " ";
 	position: absolute;
-	background: rgba(34,34,34, .6);
+	background: rgba(34,34,34, .3);
 	height: 100%;
 	width: 100%;
 	left: 0;

@@ -12,9 +12,9 @@ get_header(); ?>
 			<?php
 			$shop_isle_header_image = get_header_image();
 				if( !empty($shop_isle_header_image) ):
-					echo '<section class="module-small bg-dark" data-background="'.$shop_isle_header_image.'">';
+					echo '<section class="page-header-module module bg-dark" data-background="'.$shop_isle_header_image.'">';
 				else:
-					echo '<section class="module-small bg-dark">';
+					echo '<section class="page-header-module module bg-dark">';
 				endif;
 			?>
 			
