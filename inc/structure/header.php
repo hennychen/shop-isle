@@ -41,46 +41,50 @@ if ( ! function_exists( 'shop_isle_primary_navigation' ) ) {
 		<nav class="navbar navbar-custom navbar-transparent navbar-fixed-top" role="navigation">
 
 			<div class="container">
+				<div class="header-container">
 
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
-						<span class="sr-only"><?php _e('Toggle navigation','shop-isle'); ?></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<?php
+					<div class="navbar-header">
+						<?php
 
-						$shop_isle_logo = get_theme_mod('shop_isle_logo');
-						echo '<div class="shop_isle_header_title">';
-						if( !empty($shop_isle_logo) ):
-							echo '<a href="'.esc_url( home_url( '/' ) ).'" class="logo-image"><img src="'.$shop_isle_logo.'"></a>';
-							if( isset( $wp_customize ) ):
-								echo '<h1 class="site-title shop_isle_hidden_if_not_customizer""><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
-								echo '<h2 class="site-description shop_isle_hidden_if_not_customizer"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'description' ).'</a></h2>';
+							$shop_isle_logo = get_theme_mod('shop_isle_logo');
+							echo '<div class="shop_isle_header_title">';
+							if( !empty($shop_isle_logo) ):
+								echo '<a href="'.esc_url( home_url( '/' ) ).'" class="logo-image"><img src="'.$shop_isle_logo.'"></a>';
+								if( isset( $wp_customize ) ):
+									echo '<h1 class="site-title shop_isle_hidden_if_not_customizer""><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
+									echo '<h2 class="site-description shop_isle_hidden_if_not_customizer"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'description' ).'</a></h2>';
+								endif;
+							else:
+								if( isset( $wp_customize ) ):
+									echo '
+											<a href="'.esc_url( home_url( '/' ) ).'" class="logo-image shop_isle_hidden_if_not_customizer">
+												<img src="">
+											</a>
+										';
+								endif;							
+								echo '<h1 class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
+								echo '<h2 class="site-description"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'description' ).'</a></h2>';
 							endif;
-						else:
-							if( isset( $wp_customize ) ):
-								echo '
-										<a href="'.esc_url( home_url( '/' ) ).'" class="logo-image shop_isle_hidden_if_not_customizer">
-											<img src="">
-										</a>
-									';
-							endif;							
-							echo '<h1 class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
-							echo '<h2 class="site-description"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'description' ).'</a></h2>';
-						endif;
-						echo '</div>';
-					?>
+							echo '</div>';
+						?>
 
-				</div>
+						<div type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
+							<span class="sr-only"><?php _e('Toggle navigation','shop-isle'); ?></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</div>
+					</div>
 
-				<div class="collapse navbar-collapse" id="custom-collapse">
+					<div class="header-menu-wrap">
+						<div class="collapse navbar-collapse" id="custom-collapse">
 
-						<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'nav navbar-nav navbar-right') ); ?>
+								<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'nav navbar-nav navbar-right') ); ?>
 
-				</div>
+						</div>
+					</div>
 
+				<div>
 			</div>
 
 		</nav>

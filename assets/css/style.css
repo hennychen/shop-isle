@@ -3764,6 +3764,17 @@ Responsive Media Querries
 
 @media (min-width: 768px) {
 
+	.header-menu-wrap {
+		display: table-cell !important;
+		vertical-align: middle;
+	}
+
+	.header-container {
+	    display: table;
+	    overflow: hidden;
+	    width: 100%;
+	}
+
 	body.home .navbar-transparent {
 		background: transparent;
 		padding-bottom: 15px;
@@ -3898,6 +3909,19 @@ Responsive Media Querries
 
 	.shop_isle_banners_section .widget {
 		width: 100%;
+	}
+	.navbar-toggle {
+		display: table-cell;
+		vertical-align: middle;
+		float: none;
+		width: 44px;
+		cursor: pointer;
+	}
+
+	.navbar-header {
+	    display: table;
+	    overflow: hidden;
+	    width: 100%;
 	}
 
 	/* Navbar */
