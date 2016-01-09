@@ -2265,6 +2265,11 @@ Footer
 	text-align: center;
 }
 
+.shop_isle_footer_sidebar .widget input[type=search],
+.shop_isle_footer_sidebar .widget_search {
+	color: #666;
+}
+
 /* -------------------------------------------------------------------
 Google map
 ------------------------------------------------------------------- */
