@@ -2642,6 +2642,28 @@ Testimonials
 	font-size: 11px;
 }
 
+/*--------------------------------------------------------------
+Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
 /* -------------------------------------------------------------------
 Gallery
 ------------------------------------------------------------------- */
@@ -2776,6 +2798,10 @@ th {
 Post
 ------------------------------------------------------------------- */
 
+.sticky {
+	display: block;
+}
+
 .post {
 	margin: 0 0 80px;
 }
@@ -2820,6 +2846,11 @@ Post
 	background: #f5f5f5;
 	text-align: center;
 	padding: 20px;
+}
+
+.tags-links {
+	width: 100%;
+	float: left;
 }
 
 /* Post columns */
@@ -2986,6 +3017,10 @@ Post
     font: normal normal normal 15px/33px ElegantIcons;
     text-rendering: auto;
     text-align: center;
+}
+
+.bypostauthor {
+	display: block;
 }
 
 .comments-area {
