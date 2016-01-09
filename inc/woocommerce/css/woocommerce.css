@@ -1944,6 +1944,10 @@ table.cart td.actions input[name="apply_coupon"]:hover {
     padding: 12px;
 }
 
+.shop_table.cart img {
+    max-width: 83px;
+}
+
 .shop_table.cart > tbody > tr:nth-of-type(odd) {
     background-color: #f9f9f9;
 }
@@ -3005,7 +3009,7 @@ ul.products li.product .product-button-wrap .button.product_type_simple:hover {
 }
 .navbar-custom div.nav > ul > li.has_children > .dropdownmenu:before {
 	content: "\43";
-    line-height: 28px;
+    line-height: 16px;
 }
 .menu-align-center.navbar-custom div.nav li.has_children > .dropdownmenu:before {
 	content: "\43";

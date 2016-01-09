@@ -2245,7 +2245,7 @@ Footer
 ------------------------------------------------------------------- */
 
 .footer {
-	padding: 10px 0;
+	padding: 0 0 10px 0;
 }
 
 .copyright {
@@ -3878,7 +3878,7 @@ Responsive Media Querries
 
 	.navbar-nav>ul>li>a {
 		display: block;
-		padding: 10px 15px;
+		padding: 3px 15px;
 	}
 
 	. {
