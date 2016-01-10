@@ -3811,7 +3811,6 @@ Responsive Media Querries
 
 	.header-container {
 	    display: table;
-	    overflow: hidden;
 	    width: 100%;
 	}
 
