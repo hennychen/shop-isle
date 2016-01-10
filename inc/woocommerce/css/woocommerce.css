@@ -3001,7 +3001,7 @@ ul.products li.product .product-button-wrap .button.product_type_simple:hover {
 }
 .navbar-custom ul.nav > li.has_children > .dropdownmenu:before {
 	content: "\43";
-    line-height: 38px;
+    line-height: 16px;
 }
 .menu-align-center.navbar-custom ul.nav > li.has_children > .dropdownmenu:before {
 	content: "\43";
