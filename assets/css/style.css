@@ -1210,6 +1210,10 @@ code {
 	left: auto !important;
 }
 
+address {
+    line-height: 20px;
+}
+
 /* Selection */
 
 ::-moz-selection {
