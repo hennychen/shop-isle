@@ -2198,40 +2198,6 @@ Sections
 	margin-top: 0;
 }
 
-.menu-align-center .shop_isle_header_title {
-    float: none;
-}
-.menu-align-center .navbar-header {
-	float: none;
-	text-align: center;
-}
-.menu-align-center.navbar-custom .nav > li > a,
-.menu-align-center.navbar-custom div.nav > ul > li > a  {
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
-.menu-align-center.navbar-custom .nav > li ul a,
-.menu-align-center.navbar-custom div.nav > ul > li ul a {
-	text-align: left;
-}
-.menu-align-center.navbar-custom .nav {
-	text-align: center;
-	width: 100%;
-}
-.menu-align-center.navbar-custom .nav > li,
-.menu-align-center.navbar-custom div.nav > ul > li  {
-	display: inline-block;
-	float: none;
-}
-.menu-align-center.navbar-custom {
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-.menu-align-center.navbar-custom li.has_children>.dropdownmenu:before {
-    content: "\43";
-    line-height: 18px;
-}
-
 .page-module-header {
 	text-align: center;
 }
@@ -2300,25 +2266,9 @@ Sections
     line-height: 32px;
     text-align: center;
 }
-.navbar-custom ul.nav > li.has_children > .dropdownmenu:before {
-	content: "\43";
-    line-height: 16px;
-}
-.menu-align-center.navbar-custom ul.nav > li.has_children > .dropdownmenu:before {
-	content: "\43";
-    line-height: 18px;
-}
 .navbar-custom div.nav > ul > li.has_children > .dropdownmenu:before {
 	content: "\43";
     line-height: 16px;
-}
-.menu-align-center.navbar-custom div.nav li.has_children > .dropdownmenu:before {
-	content: "\43";
-	line-height: 32px;
-}
-.menu-align-center.navbar-custom div.nav > ul > li.has_children > .dropdownmenu:before {
-	content: "\43";
-	line-height: 18px;
 }
 .navbar-custom li.has_children.this-open > .dropdownmenu:before{
 	display: block;
@@ -2336,8 +2286,11 @@ Sections
 	display: none;
 }
 
-/* Restaurant module header */
+.logo-image img {
+	max-width: initial;
+}
 
+/* Restaurant module header */
 .alt-module-subtitle {
 	display: table;
 }
@@ -2499,6 +2452,10 @@ Footer
 	width: 100%;
 	text-align: left;
 	padding-bottom: 60px;
+}
+
+.shop_isle_footer_sidebar .footer-sidebar-wrap .widget:last-child {
+	padding-bottom: 0;
 }
 
 .widget select {
@@ -3391,6 +3348,10 @@ Widgets
 	margin-bottom: 60px;
 }
 
+.sidebar .widget:last-child {
+	margin-bottom: 0;
+}
+
 .sidebar .widget-title {
 	color: #111;
 }
@@ -4120,9 +4081,9 @@ Responsive Media Querries
 		padding: 3px 15px;
 	}
 
-	. {
-		visibility: visible;
-  		opacity: 1;
+	.navbar-custom ul.nav > li.has_children > .dropdownmenu:before {
+	    content: "\43";
+	    line-height: 16px;
 	}
 
 }

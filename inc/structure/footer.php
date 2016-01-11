@@ -21,21 +21,21 @@ if ( ! function_exists( 'shop_isle_footer_widgets' ) ) {
 				<div class="row">
 
 					<?php if ( is_active_sidebar( 'sidebar-footer-area-1' ) ) : ?>
-						<div class="col-sm-6 col-md-3">
+						<div class="col-sm-6 col-md-3 footer-sidebar-wrap">
 							<?php dynamic_sidebar('sidebar-footer-area-1'); ?>
 						</div>
 					<?php endif; ?>
 					<!-- Widgets end -->
 
 					<?php if ( is_active_sidebar( 'sidebar-footer-area-2' ) ) : ?>
-						<div class="col-sm-6 col-md-3">
+						<div class="col-sm-6 col-md-3 footer-sidebar-wrap">
 							<?php dynamic_sidebar('sidebar-footer-area-2'); ?>
 						</div>
 					<?php endif; ?>
 					<!-- Widgets end -->
 
 					<?php if ( is_active_sidebar( 'sidebar-footer-area-3' ) ) : ?>
-						<div class="col-sm-6 col-md-3">
+						<div class="col-sm-6 col-md-3 footer-sidebar-wrap">
 							<?php dynamic_sidebar('sidebar-footer-area-3'); ?>
 						</div>
 					<?php endif; ?>
@@ -43,7 +43,7 @@ if ( ! function_exists( 'shop_isle_footer_widgets' ) ) {
 
 
 					<?php if ( is_active_sidebar( 'sidebar-footer-area-4' ) ) : ?>
-						<div class="col-sm-6 col-md-3">
+						<div class="col-sm-6 col-md-3 footer-sidebar-wrap">
 							<?php dynamic_sidebar('sidebar-footer-area-4'); ?>
 						</div>
 					<?php endif; ?>
