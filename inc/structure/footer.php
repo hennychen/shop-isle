@@ -128,3 +128,29 @@ if ( ! function_exists( 'shop_isle_footer_copyright_and_socials' ) ) {
 		<?php
 	}
 }
+
+
+if ( ! function_exists( 'shop_isle_footer_wrap_open' ) ) {
+	/**
+	 * Display the theme copyright and socials
+	 * @since  1.0.0
+	 * @return void
+	 */
+	function shop_isle_footer_wrap_open() {
+		echo '<div class="bottom-page-wrap">';
+	}
+
+}
+
+
+if ( ! function_exists( 'shop_isle_footer_wrap_close' ) ) {
+	/**
+	 * Display the theme copyright and socials
+	 * @since  1.0.0
+	 * @return void
+	 */
+	function shop_isle_footer_wrap_close() {
+		echo '</div><!-- .bottom-page-wrap';
+	}
+
+}

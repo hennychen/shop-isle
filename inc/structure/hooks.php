@@ -33,8 +33,10 @@ add_action( 'shop_isle_header', 'shop_isle_primary_navigation',		50 );
  * @see  shop_isle_footer_widgets()
  * @see  shop_isle_footer_copyright_and_socials()
  */
+add_action( 'shop_isle_footer', 'shop_isle_footer_wrap_open',	             	5 );
 add_action( 'shop_isle_footer', 'shop_isle_footer_widgets',	                    10 );
 add_action( 'shop_isle_footer', 'shop_isle_footer_copyright_and_socials',	    20 );
+add_action( 'shop_isle_footer', 'shop_isle_footer_wrap_close',	             	30 );
 
 /**
  * Homepage
