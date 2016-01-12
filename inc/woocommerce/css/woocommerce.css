@@ -2963,6 +2963,7 @@ Breacrumb
 }
 
 @media screen and (max-width: 768px) {
+	
 	/* single product page */
 	.woocommerce-tabs ul.tabs {
 	    border-bottom: 1px solid #ddd;
@@ -3055,6 +3056,13 @@ Breacrumb
     .page-title ~ .woocommerce-message {
         width: 100%;
     }
+	
+	.shop-item-image, .woocommerce ul.products li.product {
+		max-width: 370px;
+		margin-left: auto;
+		margin-right: auto !important;
+		float: none;
+	}
 }
 
 @media(min-width: 991px) and (max-width:1200px) {
