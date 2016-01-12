@@ -1,5 +1,28 @@
 
 
+### 1.1.0 - 12/01/2016
+
+ Changes: 
+
+
+ * Merge pull request #83 from abaicus/development
+
+!!!Compressed default images.
+ * Merge pull request #88 from abaicus/development
+
+!!!Added upsell button to customizer.
+ * Generated shop-isle.pot file for translation ready #90
+ * added woocommerce image size, added grey overlay on blog header, added description on page header
+ * Changed number of thumbnails per rows in product galleries
+ * Fixed: alert boxes issue on shop issue, default image size on product page
+ * Added new look for rating stars from reviews form
+ * Centered the header nav menu vertically
+ * Fixed #102 Big space unde sidebar on mobile
+ * Fixed #99 Footer on cart page issue
+ * #104, option to hide the button and text from the slider section
+ * #111, Regenerated .pot file to make theme translation ready
+
+
 ### 1.0.9 - 15/12/2015
 
  Changes: 
