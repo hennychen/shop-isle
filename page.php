@@ -20,26 +20,45 @@ get_header(); ?>
 				
 				$shop_isle_header_image = get_header_image();
 				if( !empty($shop_isle_header_image) ):
-					echo '<section class="page-module-header module-small bg-dark" data-background="'.$shop_isle_header_image.'">';
+					echo '<section class="page-header-module module bg-dark" data-background="'.$shop_isle_header_image.'">';
 				else:
-					echo '<section class="page-module-header module-small bg-dark">';
+					echo '<section class="page-header-module module bg-dark">';
 				endif;
 				
 			endif;
 		?>
 		
-					<div class="container">
-						<div class="row">
-							<div class="col-sm-6 col-sm-offset-3">
-								<h1 class="module-title font-alt"><?php the_title(); ?></h1>
-							</div>
-						</div>
-						<?php 
-							if(( function_exists('is_cart') && is_cart() ) || ( function_exists('is_checkout') && is_checkout() ) || ( function_exists('is_wc_endpoint_url') && is_wc_endpoint_url( 'lost-password' ) ) || ( function_exists('is_account_page') && is_account_page() )):
-								echo '<hr class="divider-w pt-20"><!-- divider -->';
-							endif; 
-						?>
-					</div><!-- .container -->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-10 col-sm-offset-1">
+					<h1 class="module-title font-alt"><?php the_title(); ?></h1>
+				
+					<?php
+
+					/* Header description */
+
+					$shop_isle_shop_id = get_the_ID();
+
+					if( !empty($shop_isle_shop_id) ):
+
+						$shop_isle_page_description = get_post_meta($shop_isle_shop_id, 'shop_isle_page_description');
+
+						if( !empty($shop_isle_page_description[0]) ):
+							echo '<div class="module-subtitle font-serif mb-0">'.$shop_isle_page_description[0].'</div>';
+						endif;
+
+					endif;
+					?>
+
+				</div>
+			</div>
+			<?php 
+				if(( function_exists('is_cart') && is_cart() ) || ( function_exists('is_checkout') && is_checkout() ) || ( function_exists('is_wc_endpoint_url') && is_wc_endpoint_url( 'lost-password' ) ) || ( function_exists('is_account_page') && is_account_page() )):
+					echo '<hr class="divider-w pt-20"><!-- divider -->';
+				endif; 
+			?>
+		</div><!-- .container -->
+		
 		<?php	
 			echo '</section>';
 		?>	
@@ -92,7 +111,7 @@ get_header(); ?>
 					<!-- Sidebar column start -->
 					<?php if(( function_exists('is_cart') && is_cart() ) || ( function_exists('is_checkout') && is_checkout() ) || ( function_exists('is_wc_endpoint_url') && is_wc_endpoint_url( 'lost-password' ) ) || ( function_exists('is_account_page') && is_account_page() )): ?>
 					<?php else: ?>
-						<div class="col-sm-4 col-md-3 col-md-offset-1 sidebar">
+						<div class="col-xs-12 col-sm-4 col-md-3 col-md-offset-1 sidebar">
 
 							<?php do_action( 'shop_isle_sidebar' ); ?>
 

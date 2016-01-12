@@ -18,8 +18,6 @@
 		<a href="#totop"><i class="arrow_carrot-2up"></i></a>
 	</div>
 
-	
-	
 	<?php do_action( 'shop_isle_after_footer' ); ?>
 
 <?php wp_footer(); ?>

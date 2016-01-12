@@ -21,21 +21,21 @@ if ( ! function_exists( 'shop_isle_footer_widgets' ) ) {
 				<div class="row">
 
 					<?php if ( is_active_sidebar( 'sidebar-footer-area-1' ) ) : ?>
-						<div class="col-sm-6 col-md-3">
+						<div class="col-sm-6 col-md-3 footer-sidebar-wrap">
 							<?php dynamic_sidebar('sidebar-footer-area-1'); ?>
 						</div>
 					<?php endif; ?>
 					<!-- Widgets end -->
 
 					<?php if ( is_active_sidebar( 'sidebar-footer-area-2' ) ) : ?>
-						<div class="col-sm-6 col-md-3">
+						<div class="col-sm-6 col-md-3 footer-sidebar-wrap">
 							<?php dynamic_sidebar('sidebar-footer-area-2'); ?>
 						</div>
 					<?php endif; ?>
 					<!-- Widgets end -->
 
 					<?php if ( is_active_sidebar( 'sidebar-footer-area-3' ) ) : ?>
-						<div class="col-sm-6 col-md-3">
+						<div class="col-sm-6 col-md-3 footer-sidebar-wrap">
 							<?php dynamic_sidebar('sidebar-footer-area-3'); ?>
 						</div>
 					<?php endif; ?>
@@ -43,7 +43,7 @@ if ( ! function_exists( 'shop_isle_footer_widgets' ) ) {
 
 
 					<?php if ( is_active_sidebar( 'sidebar-footer-area-4' ) ) : ?>
-						<div class="col-sm-6 col-md-3">
+						<div class="col-sm-6 col-md-3 footer-sidebar-wrap">
 							<?php dynamic_sidebar('sidebar-footer-area-4'); ?>
 						</div>
 					<?php endif; ?>
@@ -127,4 +127,30 @@ if ( ! function_exists( 'shop_isle_footer_copyright_and_socials' ) ) {
 		<!-- Footer end -->
 		<?php
 	}
+}
+
+
+if ( ! function_exists( 'shop_isle_footer_wrap_open' ) ) {
+	/**
+	 * Display the theme copyright and socials
+	 * @since  1.0.0
+	 * @return void
+	 */
+	function shop_isle_footer_wrap_open() {
+		echo '<div class="bottom-page-wrap">';
+	}
+
+}
+
+
+if ( ! function_exists( 'shop_isle_footer_wrap_close' ) ) {
+	/**
+	 * Display the theme copyright and socials
+	 * @since  1.0.0
+	 * @return void
+	 */
+	function shop_isle_footer_wrap_close() {
+		echo '</div><!-- .bottom-page-wrap -->';
+	}
+
 }

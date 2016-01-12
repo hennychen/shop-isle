@@ -1,5 +1,5 @@
 jQuery(document).ready(function(){
-		
+
 	function shop_isle_refresh_general_control_values(){
 		jQuery(".shop_isle_general_control_droppable").each(function(){
 			var values = [];
@@ -31,12 +31,12 @@ jQuery(document).ready(function(){
 			th.find('.shop_isle_repeater_colector').trigger('change');
 		});
 	}
-    
+
     jQuery('#customize-theme-controls').on('click','.shop-isle-customize-control-title',function(){
         jQuery(this).next().slideToggle();
     });
     function media_upload(button_class) {
-	
+
 		jQuery('body').on('click', button_class, function(e) {
 			var button_id ='#'+jQuery(this).attr('id');
 			var display_field = jQuery(this).parent().children('input:text');
@@ -87,23 +87,23 @@ jQuery(document).ready(function(){
 			return false;
 		});
 	}
-	
+
     media_upload('.custom_media_button_shop_isle');
     jQuery(".custom_media_url").live('change',function(){
         shop_isle_refresh_general_control_values();
         return false;
     });
-    
+
 	jQuery("#customize-theme-controls").on('change', '.shop_isle_icon_control',function(){
 		shop_isle_refresh_general_control_values();
-		return false; 
+		return false;
 	});
 
 	jQuery(".shop_isle_general_control_new_field").on("click",function(){
-	 
+
 		var th = jQuery(this).parent();
 		if(typeof th != 'undefined') {
-			
+
             var field = th.find(".shop_isle_general_control_repeater_container:first").clone();
             if(typeof field != 'undefined'){
                 field.find(".shop_isle_general_control_remove_field").show();
@@ -116,11 +116,11 @@ jQuery(document).ready(function(){
                 th.find(".shop_isle_general_control_repeater_container:first").parent().append(field);
                 shop_isle_refresh_general_control_values();
             }
-			
+
 		}
 		return false;
 	 });
-	 
+
 	jQuery("#customize-theme-controls").on("click", ".shop_isle_general_control_remove_field",function(){
 		if( typeof	jQuery(this).parent() != 'undefined'){
 			jQuery(this).parent().parent().remove();
@@ -132,29 +132,29 @@ jQuery(document).ready(function(){
 	jQuery("#customize-theme-controls").on('keyup', '.shop_isle_text_control',function(){
 		 shop_isle_refresh_general_control_values();
 	});
-	
+
 	jQuery("#customize-theme-controls").on('keyup', '.shop_isle_link_control',function(){
 		shop_isle_refresh_general_control_values();
 	});
-	
+
 	jQuery("#customize-theme-controls").on('keyup', '.shop_isle_label_control',function(){
 		shop_isle_refresh_general_control_values();
 	});
-	
+
 	jQuery("#customize-theme-controls").on('keyup', '.shop_isle_subtext_control',function(){
 		shop_isle_refresh_general_control_values();
 	});
-	
+
 	/*Drag and drop to change order*/
 	jQuery(".shop_isle_general_control_droppable").sortable({
 		update: function( event, ui ) {
 			shop_isle_refresh_general_control_values();
 		}
 	});
-	
-	
+
+
 	/* Forum and Documentation links in customizer */
-	
+
 	jQuery( '#customize-theme-controls > ul' ).prepend('<li class="accordion-section shop-isle-upsells">');
 
 	jQuery( '.shop-isle-upsells' ).append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/forums/forum/shopisle/" class="button" target="_blank">{support}</a>'.replace('{support}',objectL10n.support));

@@ -33,8 +33,10 @@ add_action( 'shop_isle_header', 'shop_isle_primary_navigation',		50 );
  * @see  shop_isle_footer_widgets()
  * @see  shop_isle_footer_copyright_and_socials()
  */
+add_action( 'shop_isle_footer', 'shop_isle_footer_wrap_open',	             	5 );
 add_action( 'shop_isle_footer', 'shop_isle_footer_widgets',	                    10 );
 add_action( 'shop_isle_footer', 'shop_isle_footer_copyright_and_socials',	    20 );
+add_action( 'shop_isle_footer', 'shop_isle_footer_wrap_close',	             	30 );
 
 /**
  * Homepage
@@ -99,3 +101,44 @@ add_filter( 'wp_page_menu_args',	'shop_isle_page_menu_args' );
  add_action( 'customize_preview_init',               'shop_isle_customize_preview_js' );
  add_action( 'customize_register',                   'shop_isle_customize_register' );
  add_action( 'customize_controls_enqueue_scripts',   'shop_isle_customizer_script' );
+
+
+/**
+ * Define image sizes
+ */
+function shop_isle_woocommerce_image_dimensions() {
+	global $pagenow;
+ 
+	if ( ! isset( $_GET['activated'] ) || $pagenow != 'themes.php' ) {
+		return;
+	}
+  	$catalog = array(
+		'width' 	=> '262',	// px
+		'height'	=> '325',	// px
+		'crop'		=> 1 		// true
+	);
+	$single = array(
+		'width' 	=> '555',	// px
+		'height'	=> '688',	// px
+		'crop'		=> 1 		// true
+	);
+	$thumbnail = array(
+		'width' 	=> '83',	// px
+		'height'	=> '103',	// px
+		'crop'		=> 1 		// false
+	);
+	// Image sizes
+	update_option( 'shop_catalog_image_size', $catalog ); 		// Product category thumbs
+	update_option( 'shop_single_image_size', $single ); 		// Single product image
+	update_option( 'shop_thumbnail_image_size', $thumbnail ); 	// Image gallery thumbs
+}
+add_action( 'after_switch_theme', 'shop_isle_woocommerce_image_dimensions', 1 );
+
+ 
+/*
+ * Number of thumbnails per row in product galleries
+ */
+add_filter ( 'woocommerce_product_thumbnails_columns', 'shop_isle_thumb_cols', 99 );
+function shop_isle_thumb_cols() {
+	return 6; 
+}
