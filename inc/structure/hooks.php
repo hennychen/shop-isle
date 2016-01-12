@@ -106,7 +106,7 @@ add_filter( 'wp_page_menu_args',	'shop_isle_page_menu_args' );
 /**
  * Define image sizes
  */
-function yourtheme_woocommerce_image_dimensions() {
+function shop_isle_woocommerce_image_dimensions() {
 	global $pagenow;
  
 	if ( ! isset( $_GET['activated'] ) || $pagenow != 'themes.php' ) {
@@ -132,7 +132,7 @@ function yourtheme_woocommerce_image_dimensions() {
 	update_option( 'shop_single_image_size', $single ); 		// Single product image
 	update_option( 'shop_thumbnail_image_size', $thumbnail ); 	// Image gallery thumbs
 }
-add_action( 'after_switch_theme', 'yourtheme_woocommerce_image_dimensions', 1 );
+add_action( 'after_switch_theme', 'shop_isle_woocommerce_image_dimensions', 1 );
 
  
 /*
