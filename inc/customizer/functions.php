@@ -32,7 +32,6 @@ if ( ! function_exists( 'shop_isle_customizer_script' ) ) {
 
 			'documentation' => __( 'Documentation', 'shop-isle' ),
 			'support' 				=> __( 'Support Forum','shop-isle' ),
-			'pro' 					=> __('View PRO version','shop-isle'),
 
 		) );
 

@@ -161,6 +161,4 @@ jQuery(document).ready(function(){
 
 	jQuery( '.shop-isle-upsells' ).append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="http://themeisle.com/documentation-shop-isle/" class="button" target="_blank">{documentation}</a>'.replace('{documentation}',objectL10n.documentation));
 
-	jQuery('.preview-notice').append('<a class="shop-isle-upgrade-to-pro-button" href="http://themeisle.com/themes/shop-isle-pro/" class="button" target="_blank">{pro}</a>'.replace('{pro}',objectL10n.pro));
-
 });
