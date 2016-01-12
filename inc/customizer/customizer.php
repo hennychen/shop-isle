@@ -67,8 +67,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	);
 	
 	/* Slider */
-	$wp_customize->add_setting( 'shop_isle_slider', array( 
-		'transport' => 'postMessage',
+	$wp_customize->add_setting( 'shop_isle_slider', array(
 		'sanitize_callback' => 'shop_isle_sanitize_repeater',
 		'default' => json_encode(array( array('image_url' => get_template_directory_uri().'/assets/images/slide1.jpg' ,'link' => '#', 'text' => __('ShopIsle','shop-isle'), 'subtext' => __('WooCommerce Theme','shop-isle'), 'label' => __('FIND OUT MORE','shop-isle') ), array('image_url' => get_template_directory_uri().'/assets/images/slide2.jpg' ,'link' => '#', 'text' => __('ShopIsle','shop-isle'), 'subtext' => __('Hight quality store','shop-isle') , 'label' => __('FIND OUT MORE','shop-isle')), array('image_url' => get_template_directory_uri().'/assets/images/slide3.jpg' ,'link' => '#', 'text' => __('ShopIsle','shop-isle'), 'subtext' => __('Responsive Theme','shop-isle') , 'label' => __('FIND OUT MORE','shop-isle') ))))
 	);

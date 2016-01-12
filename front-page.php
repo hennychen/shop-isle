@@ -34,9 +34,15 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 								echo '<li class="bg-dark-30 bg-dark" style="background-image:url('.$shop_isle_slide->image_url.')">';
 									echo '<div class="hs-caption">';
 										echo '<div class="caption-content">';
-											echo '<div class="hs-title-size-4 font-alt mb-30">'.$shop_isle_slide->text.'</div>';
-											echo '<div class="hs-title-size-1 font-alt mb-40">'.$shop_isle_slide->subtext.'</div>';
-											echo '<a href="'.$shop_isle_slide->link.'" class="section-scroll btn btn-border-w btn-round">'.$shop_isle_slide->label.'</a>';
+											if( !empty($shop_isle_slide->text) ):
+												echo '<div class="hs-title-size-4 font-alt mb-30">'.$shop_isle_slide->text.'</div>';
+											endif;
+											if( !empty($shop_isle_slide->subtext) ):
+												echo '<div class="hs-title-size-1 font-alt mb-40">'.$shop_isle_slide->subtext.'</div>';
+											endif;	
+											if( !empty($shop_isle_slide->link) && !empty($shop_isle_slide->label) ):
+												echo '<a href="'.$shop_isle_slide->link.'" class="section-scroll btn btn-border-w btn-round">'.$shop_isle_slide->label.'</a>';
+											endif;	
 										echo '</div>';
 									echo '</div>';
 								echo '</li>';
