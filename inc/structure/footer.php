@@ -150,7 +150,7 @@ if ( ! function_exists( 'shop_isle_footer_wrap_close' ) ) {
 	 * @return void
 	 */
 	function shop_isle_footer_wrap_close() {
-		echo '</div><!-- .bottom-page-wrap';
+		echo '</div><!-- .bottom-page-wrap -->';
 	}
 
 }
