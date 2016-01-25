@@ -53,3 +53,21 @@ if ( is_woocommerce_activated() ) {
 	require get_template_directory() . '/inc/woocommerce/template-tags.php';
 	require get_template_directory() . '/inc/woocommerce/integrations.php';
 }
+
+
+/**
+ * Checkout page
+ * Move the coupon fild and message info after the order table
+**/
+function shop_isle_coupon_after_order_table_js() {
+	wc_enqueue_js( '
+		$( $( ".woocommerce-info, .checkout_coupon" ).detach() ).appendTo( "#shop-isle-checkout-coupon" );
+	');
+}
+add_action( 'woocommerce_before_checkout_form', 'shop_isle_coupon_after_order_table_js' );
+
+function shop_isle_coupon_after_order_table() {
+	echo '<div id="shop-isle-checkout-coupon"></div><div style="clear:both"></div>';
+}
+add_action( 'woocommerce_checkout_order_review', 'shop_isle_coupon_after_order_table' );
+

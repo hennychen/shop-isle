@@ -729,6 +729,41 @@ a.remove {
     margin-bottom: 2.618em
 }
 
+#shop-isle-checkout-coupon .checkout_coupon .form-row-first {
+    width: 100%;
+    margin-left: -200px;
+    padding-left: 200px;
+    margin-right: 0;
+}
+
+#shop-isle-checkout-coupon .woocommerce-info,
+#shop-isle-checkout-coupon .woocommerce-error {
+    margin-bottom: 15px;
+}
+
+#shop-isle-checkout-coupon .checkout_coupon .form-row-first input[type="text"] {
+    font-family: "Roboto Condensed", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11px;
+    height: 35px;
+    border: 1px solid #EAEAEA;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    padding: 6px 12px;
+    width: 100%;
+}
+
+.woocommerce #shop-isle-checkout-coupon .form-row input[type='submit'] {
+    margin-right: 0;
+    max-width: 195px;
+}
+
+#shop-isle-checkout-coupon .checkout_coupon .form-row-last {
+    width: auto;
+}
+
 form.checkout::after {
     clear: both;
     content: "";
@@ -3071,5 +3106,21 @@ Breacrumb
     margin-top: 15px;
     padding: 5px 10px;
 	}
+}
+
+@media(max-width: 480px) {
+    #shop-isle-checkout-coupon .checkout_coupon .form-row-first {
+        margin-left: 0;
+        padding-left: 0;
+    }
+    #shop-isle-checkout-coupon .checkout_coupon .form-row-last {
+        width: 100%;
+    }
+    .woocommerce #shop-isle-checkout-coupon .form-row input[type='submit'] {
+        margin-right: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+
 }
 
