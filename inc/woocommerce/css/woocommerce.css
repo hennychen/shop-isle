@@ -729,6 +729,14 @@ a.remove {
     margin-bottom: 2.618em
 }
 
+.woocommerce-checkout .woocommerce-info {
+    display: none;
+}
+
+.woocommerce-checkout #shop-isle-checkout-coupon .woocommerce-info {
+    display: block;
+}
+
 #shop-isle-checkout-coupon .checkout_coupon .form-row-first {
     width: 100%;
     margin-left: -200px;
