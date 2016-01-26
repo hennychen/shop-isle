@@ -12,11 +12,13 @@
  * @see  shop_isle_scripts()
  * @see  shop_isle_get_sidebar()
  */
-add_action( 'after_setup_theme',			'shop_isle_setup' );
-add_action( 'widgets_init',					'shop_isle_widgets_init' );
-add_action( 'wp_enqueue_scripts',			'shop_isle_scripts',				10 );
-add_action( 'admin_enqueue_scripts',        'shop_isle_admin_styles',           10 );
-add_action( 'shop_isle_sidebar',			'shop_isle_get_sidebar',			10 );
+add_action( 'after_setup_theme',				'shop_isle_setup' );
+add_action( 'widgets_init',						'shop_isle_widgets_init' );
+add_action( 'wp_enqueue_scripts',				'shop_isle_scripts',					10 );
+add_action( 'admin_enqueue_scripts',        	'shop_isle_admin_styles',           	10 );
+add_action( 'shop_isle_sidebar',				'shop_isle_get_sidebar',				10 );
+add_action( 'shop_isle_sidebar_shop_archive',	'shop_isle_get_sidebar_shop_archive',	10 );
+
 
 /**
  * Header

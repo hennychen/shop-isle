@@ -2901,6 +2901,17 @@ ul.products li.product .product-button-wrap .button.product_type_simple:hover,
 .shop-item .product-button-wrap .add_to_cart_button:hover  {
 	background: rgba(17, 17, 17, .8);
 }
+.shop-with-sidebar .product .product-button-wrap .add_to_cart_button, 
+.shop-with-sidebar ul.products li.product .product-button-wrap .button.product_type_simple {
+    padding-left: 10px;
+    padding-right: 10px; 
+}
+.shop-with-sidebar .added_to_cart {
+    clear: left;
+    display: inline-block;
+    padding: 4px 10px;
+    margin-top: 10px;
+}
 .product .product-button-wrap,
 .shop-item .product-button-wrap {
     position: absolute;
