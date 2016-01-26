@@ -2712,6 +2712,9 @@ Single product page
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+.shop-with-sidebar {
+    float: right;
+}
 
 /****
 product list
