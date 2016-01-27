@@ -1143,6 +1143,16 @@ ul.digital-downloads li:before {
     padding-top: 10px;
 }
 
+.module-small-shop ul.products {
+    padding-top: 50px; 
+}
+.module-small-shop .woocommerce-breadcrumb {
+    margin-bottom: 0;
+}
+.sidebar-shop {
+    padding-top: 50px;
+}
+
 .woocommerce-noreviews,
 p.no-comments {
     color: #666666;

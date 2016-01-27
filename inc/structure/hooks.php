@@ -106,6 +106,13 @@ add_filter( 'wp_page_menu_args',	'shop_isle_page_menu_args' );
 
 
 /**
+ * Shop page
+ */
+add_action( 'shop_isle_before_shop', 		'woocommerce_breadcrumb',	             	10 );
+add_action( 'shop_isle_before_shop', 		'woocommerce_catalog_ordering',				20 );
+
+
+/**
  * Define image sizes
  */
 function shop_isle_woocommerce_image_dimensions() {
