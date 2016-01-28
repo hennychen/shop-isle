@@ -1543,7 +1543,11 @@ ul.products li.product.last {
 }
 
 .woocommerce .page-description {
-    margin-bottom: 1.618em
+    margin-bottom: 1.618em;
+    width: 100%;
+    float: left;
+    padding: 0px 15px 15px;
+    margin-top: -30px;
 }
 
 .storefront-sorting {
@@ -3088,6 +3092,10 @@ Breacrumb
     .page-title ~ .woocommerce-info,
     .page-title ~ .woocommerce-message {
         width: 750px;
+    }
+
+    .module-small-shop .woocommerce-breadcrumb {
+        margin-bottom: 1.236em;
     }
 }
 
