@@ -27,12 +27,13 @@ remove_action( 'woocommerce_sidebar', 				'woocommerce_get_sidebar', 					10 );
 remove_action( 'woocommerce_before_shop_loop', 		'woocommerce_result_count', 				20 );
 remove_action( 'woocommerce_before_shop_loop', 		'woocommerce_catalog_ordering', 			30 );
 remove_action( 'woocommerce_after_shop_loop', 		'woocommerce_pagination', 					10 );
+remove_action( 'woocommerce_archive_description', 	'woocommerce_product_archive_description',  10 );
+
+add_action( 'shop_isle_before_shop', 				'woocommerce_product_archive_description', 	5 );
 
 add_action( 'woocommerce_before_main_content', 		'shop_isle_before_content', 				10 );
 
 add_action( 'woocommerce_before_shop_loop', 		'shop_isle_shop_page_wrapper', 				20 );
-add_action( 'woocommerce_before_shop_loop', 		'woocommerce_breadcrumb', 			        21 );
-add_action( 'woocommerce_before_shop_loop', 		'woocommerce_catalog_ordering', 			22 );
 
 add_action( 'shop_isle_content_top', 				'shop_isle_shop_messages', 				    21 );
 

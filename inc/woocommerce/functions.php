@@ -45,8 +45,21 @@ if ( ! function_exists( 'shop_isle_after_content' ) ) {
 if ( ! function_exists( 'shop_isle_shop_page_wrapper' ) ) {
 	function shop_isle_shop_page_wrapper() {
 		?>
-		<section class="module-small">
-				<div class="container"> 
+		<section class="module-small module-small-shop">
+				<div class="container">
+
+				<?php if( is_shop() || is_product_tag() || is_product_category() ):
+
+						do_action( 'shop_isle_before_shop' );
+
+						if( is_active_sidebar( 'sidebar-shop-archive' ) ) : ?>
+
+							<div class="col-sm-9 shop-with-sidebar" id="shop-isle-blog-container">
+
+						<?php endif; ?>
+
+				<?php endif; ?>
+
 		<?php	
 	}
 }
@@ -85,9 +98,22 @@ if ( ! function_exists( 'shop_isle_product_page_wrapper_end' ) ) {
 if ( ! function_exists( 'shop_isle_shop_page_wrapper_end' ) ) {	
 	function shop_isle_shop_page_wrapper_end() {
 		?>
+
+			<?php if( (is_shop() || is_product_category() || is_product_tag() ) && is_active_sidebar( 'sidebar-shop-archive' ) ): ?>
+
+				</div>
+
+				<!-- Sidebar column start -->
+				<div class="col-sm-3 col-md-3 sidebar sidebar-shop">
+					<?php do_action( 'shop_isle_sidebar_shop_archive' ); ?>
+				</div>
+				<!-- Sidebar column end -->
+
+			<?php endif; ?>
+
 			</div><!-- .container -->
 		</section><!-- .module-small -->
-			<?php	
+		<?php	
 	}
 }	
 

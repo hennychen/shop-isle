@@ -53,3 +53,47 @@ if ( is_woocommerce_activated() ) {
 	require get_template_directory() . '/inc/woocommerce/template-tags.php';
 	require get_template_directory() . '/inc/woocommerce/integrations.php';
 }
+
+
+/**
+ * Checkout page
+ * Move the coupon fild and message info after the order table
+**/
+function shop_isle_coupon_after_order_table_js() {
+	wc_enqueue_js( '
+		$( $( ".woocommerce-info, .checkout_coupon" ).detach() ).appendTo( "#shop-isle-checkout-coupon" );
+	');
+}
+add_action( 'woocommerce_before_checkout_form', 'shop_isle_coupon_after_order_table_js' );
+
+function shop_isle_coupon_after_order_table() {
+	echo '<div id="shop-isle-checkout-coupon"></div><div style="clear:both"></div>';
+}
+add_action( 'woocommerce_checkout_order_review', 'shop_isle_coupon_after_order_table' );
+
+
+// Ensure cart contents update when products are added to the cart via AJAX )
+add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
+function woocommerce_header_add_to_cart_fragment( $fragments ) {
+	ob_start();
+	?>
+
+		<a href="<?php echo WC()->cart->get_cart_url() ?>" title="<?php _e( 'View your shopping cart' ); ?>" class="cart-contents header-shopping-cart">
+			<span class="glyphicon glyphicon-shopping-cart shopping-cart-count">
+				<span>
+				<?php
+					echo trim( WC()->cart->get_cart_contents_count() );
+				?>
+				</span>
+			</span>
+			<span class="cart-total">
+			<?php echo WC()->cart->get_cart_total(); ?>
+			</span>
+		</a>
+
+	<?php
+	
+	$fragments['a.cart-contents'] = ob_get_clean();
+	
+	return $fragments;
+}

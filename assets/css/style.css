@@ -3655,6 +3655,10 @@ Client logos
 Shop
 ------------------------------------------------------------------- */
 
+.shop-with-sidebar {
+	float: right !important;
+}
+
 .navbar-custom .navbar-cart > a {
 	position: relative;
 	font-size: 12px;
@@ -4166,6 +4170,7 @@ Responsive Media Querries
 	    display: table;
 	    overflow: hidden;
 	    width: 100%;
+	    padding-right: 110px;
 	}
 
 	/* Navbar */

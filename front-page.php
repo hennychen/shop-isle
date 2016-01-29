@@ -205,7 +205,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 											
 											echo '<div class="shop-item-detail">';
 												if(!empty($product)):
-													echo '<a class="btn btn-round btn-b" href="'.$product->add_to_cart_url().'"><span class="icon-basket"></span>'.__('Add To Cart','shop-isle').'</a>';
+													echo do_shortcode( '[add_to_cart id="' . $shop_isle_latest_loop->post->ID . '"]' );
 												endif;	
 											echo '</div>';
 										echo '</div>';
@@ -293,7 +293,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 											
 											echo '<div class="shop-item-detail">';
 												if(!empty($product)):
-													echo '<a class="btn btn-round btn-b" href="'.$product->add_to_cart_url().'"><span class="icon-basket"></span>'.__('Add To Cart','shop-isle').'</a>';
+													echo do_shortcode( '[add_to_cart id="' . $shop_isle_latest_loop->post->ID . '"]' );
 												endif;
 											echo '</div>';
 										echo '</div>';

@@ -213,3 +213,15 @@ if ( ! function_exists( 'shop_isle_get_sidebar' ) ) {
 		get_sidebar();
 	}
 }
+
+
+if ( ! function_exists( 'shop_isle_get_sidebar_shop_archive' ) ) {
+	/**
+	 * Display sidebar
+	 * @uses get_sidebar()
+	 * @since 1.0.0
+	 */
+	function shop_isle_get_sidebar_shop_archive() {
+		get_sidebar('shop-archive');
+	}
+}
