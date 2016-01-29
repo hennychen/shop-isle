@@ -1,5 +1,22 @@
 
 
+### 1.1.1 - 29/01/2016
+
+ Changes: 
+
+
+ * Fixed #113 Moved coupon form after order table
+ * Fixed #87 <Add to cart> button on homepage issue
+ * Fixed #101 Added cart in header
+ * Fixed #101 Fatal error when woocommerce not installed
+ * Add to cart button on category page not aligned vertically in the middle
+ * Fixed #89 Added sidebar on shop page
+ * Fixed #89 Moved breadcrumb and ordering form
+ * Fixed #112 Page description in shop page
+ * Added style for default woocommerce widgets
+ * Fixed #121 Responsive issue on shop with sidebar
+
+
 ### 1.1.0 - 12/01/2016
 
  Changes: 
