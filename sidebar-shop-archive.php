@@ -5,11 +5,11 @@
  * @package storefront
  */
 
-if ( ! is_active_sidebar( 'sidebar-shop-archive' ) ) {
+if ( ! is_active_sidebar( 'shop-isle-sidebar-shop-archive' ) ) {
 	return;
 }
 ?>
 
 <div id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-shop-archive' ); ?>
+	<?php dynamic_sidebar( 'shop-isle-sidebar-shop-archive' ); ?>
 </div><!-- #secondary -->

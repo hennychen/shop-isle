@@ -48,7 +48,7 @@ if ( ! function_exists( 'shop_isle_shop_page_wrapper' ) ) {
 		<section class="module-small module-small-shop">
 				<div class="container">
 
-				<?php if( is_shop() || is_product_category() ):
+				<?php if( is_shop() || is_product_tag() || is_product_category() ):
 
 						do_action( 'shop_isle_before_shop' );
 
@@ -99,7 +99,7 @@ if ( ! function_exists( 'shop_isle_shop_page_wrapper_end' ) ) {
 	function shop_isle_shop_page_wrapper_end() {
 		?>
 
-			<?php if( (is_shop() || is_product_category() ) && is_active_sidebar( 'sidebar-shop-archive' ) ): ?>
+			<?php if( (is_shop() || is_product_category() || is_product_tag() ) && is_active_sidebar( 'sidebar-shop-archive' ) ): ?>
 
 				</div>
 

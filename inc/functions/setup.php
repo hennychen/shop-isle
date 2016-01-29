@@ -148,7 +148,7 @@ function shop_isle_widgets_init() {
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Sidebar Shop Page', 'shop-isle' ),
-		'id'            => 'sidebar-shop-archive',
+		'id'            => 'shop-isle-sidebar-shop-archive',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
