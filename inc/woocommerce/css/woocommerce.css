@@ -3122,14 +3122,21 @@ Breacrumb
 .bottom-page-wrap .widget_price_filter .ui-slider .ui-slider-handle {
     background: #FFFFFF;
 }
-.bottom-page-wrap .widget ul li:before {
+.bottom-page-wrap .widget ul li {
+    position: relative;
+}
+.bottom-page-wrap .widget.woocommerce ul li:before {
     content: "\00BB";
-    color: #aaa;
+    color: #777;
     position: absolute;
     float: left;
     left: 0;
     top: 9px;
     padding-right: 5px;
+}
+.bottom-page-wrap .widget.woocommerce ul li:before {
+    content: "\00BB";
+    color: #777;
 }
 .bottom-page-wrap .widget .tagcloud a {
     background: rgba(255, 255, 255, 0.2);
