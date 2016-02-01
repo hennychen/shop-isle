@@ -188,6 +188,21 @@
 		} );
 	} );
 
+
+	/*******************************/
+	/******    Slider section ******/
+	/*******************************/
+	wp.customize( 'shop_isle_site_info_hide', function( value ) {
+		value.bind( function( to ) {
+			if( to != '1' ) {
+				$( '.shop-isle-poweredby-box' ).removeClass( 'shop_isle_hidden_if_not_customizer' );
+			}
+			else {
+				$( '.shop-isle-poweredby-box' ).addClass( 'shop_isle_hidden_if_not_customizer' );
+			}
+		} );
+	} );
+
 	/*********************************/
 	/******  Contact page  ***********/
 	/*********************************/

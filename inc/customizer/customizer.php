@@ -369,6 +369,23 @@ function shop_isle_customize_register( $wp_customize ) {
 		'section'  => 'shop_isle_footer_section',
 		'priority'    => 1,
 	));
+
+	/* Hide slider */
+	$wp_customize->add_setting( 'shop_isle_site_info_hide', array(
+		'transport' => 'postMessage',
+		'sanitize_callback' => 'shop_isle_sanitize_text'
+	));
+
+	$wp_customize->add_control(
+		'shop_isle_site_info_hide',
+		array(
+			'type' => 'checkbox',
+			'label' => __('Hide site info?','shop-isle'),
+			'description' => __('If you check this box, the Site info will disappear from footer.','shop-isle'),
+			'section' => 'shop_isle_footer_section',
+			'priority' => 1,
+		)
+	);
 	
 	/* socials */
 	$wp_customize->add_setting( 'shop_isle_socials', array(
