@@ -189,9 +189,9 @@
 	} );
 
 
-	/*******************************/
-	/******    Slider section ******/
-	/*******************************/
+	/*******************************************/
+	/******    Hide site info from footer ******/
+	/*******************************************/
 	wp.customize( 'shop_isle_site_info_hide', function( value ) {
 		value.bind( function( to ) {
 			if( to != '1' ) {
