@@ -3996,9 +3996,11 @@ Scroll to top
 	margin: 0 auto;
 }
 .shop-isle-poweredby-box {
-	width: 100%;
-	text-align: center;
-	font-size: 11px;
+    width: 100%;
+    text-align: left;
+    font-size: 9px;
+    margin-bottom: 0;
+    letter-spacing: 1px;
 }
 
 /* -------------------------------------------------------------------

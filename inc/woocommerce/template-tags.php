@@ -75,9 +75,19 @@ if ( ! function_exists( 'storefront_header_cart' ) ) {
 if ( ! function_exists( 'shop_isle_upsell_display' ) ) {
 	function shop_isle_upsell_display() {
 		echo '</div></div>';
-		echo '<hr class="divider-w">';
+		global $product;
+		$upsells = $product->get_upsells();
+		if ( !empty($upsells) && (count($upsells) > 0) ) {
+			echo '<hr class="divider-w">';
+		}
 		echo '<div class="container">';
 		woocommerce_upsell_display( -1, 3 );
+		$related = $product->get_related();
+		if ( !empty($related) && (count($related) > 0) ) {
+			echo '</div>';
+			echo '<hr class="divider-w">';
+			echo '<div class="container">';
+		}
 	}
 }
 

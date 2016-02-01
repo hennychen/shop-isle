@@ -83,6 +83,11 @@ if ( ! function_exists( 'shop_isle_footer_copyright_and_socials' ) ) {
 					if( !empty($shop_isle_copyright) ):
 						echo '<div class="col-sm-6">';
 							echo '<p class="copyright font-alt">'.$shop_isle_copyright.'</p>';
+							$shop_isle_site_info_hide = get_theme_mod('shop_isle_site_info_hide');
+							if( isset($shop_isle_site_info_hide) && $shop_isle_site_info_hide != 1 ): ?>
+							<p class="shop-isle-poweredby-box"><a class="shop-isle-poweredby" href="http://themeisle.com/themes/shop-isle/" rel="nofollow">ShopIsle </a><?php _e('powered by','shop-isle'); ?><a class="shop-isle-poweredby" href="http://wordpress.org/" rel="nofollow"> WordPress</a></p>
+							<?php
+							endif;
 						echo '</div>';
 					endif;
 
@@ -115,12 +120,6 @@ if ( ! function_exists( 'shop_isle_footer_copyright_and_socials' ) ) {
 					endif;
 					?>
 				</div><!-- .row -->
-				
-				<div class="row">
-					<div class="col-sm-12">
-						<div class="shop-isle-poweredby-box"><a class="shop-isle-poweredby" href="http://themeisle.com/themes/shop-isle/" rel="nofollow">ShopIsle </a><?php _e('powered by','shop-isle'); ?><a class="shop-isle-poweredby" href="http://wordpress.org/" rel="nofollow"> WordPress</a></div>
-					</div>	
-				</div>	
 
 			</div>
 		</footer>
