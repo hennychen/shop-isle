@@ -2662,15 +2662,11 @@ Single product page
 	margin-bottom: 0;
 	padding-bottom: 0;
 }
-.woocommerce.single-product .upsells.products,
-.woocommerce.single-product .related.products {
-	padding-top: 70px;
-	overflow: hidden;
-}
-.woocommerce.single-product .related.products {
-    margin-top: 0;
+.woocommerce.single-product .related.products,
+.woocommerce.single-product .upsells.products{
     padding-bottom: 70px;
     padding-top: 100px;
+    overflow: hidden;
 }
 
 /* you may also like */
