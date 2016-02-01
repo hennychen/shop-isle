@@ -475,11 +475,6 @@ ul.products li.product .button {
     margin-bottom: 0
 }
 
-.widget_shopping_cart .product_list_widget li {
-    padding-left: 2em;
-    position: relative
-}
-
 .widget_shopping_cart .product_list_widget li a.remove {
     position: absolute;
     top: 1em;
@@ -529,11 +524,14 @@ ul.products li.product .button {
 }
 
 .widget_layered_nav li:before {
-    font-family: FontAwesome;
-    margin-right: .53em;
-    display: inline-block;
-    opacity: .35;
-    content: "\f0c8"
+    float: left;
+    position: absolute;
+    left: 0;
+    top: 9px;
+    content: "\00BB";
+    color: #666666;
+    padding-right: 5px;
+    opacity: 1;
 }
 
 .widget_layered_nav .chosen:before {
@@ -3027,6 +3025,43 @@ Breacrumb
 .price_label {
     line-height: 33px;
 }
+.sidebar-shop .widget.widget_products ul li:before,
+.sidebar-shop .widget.widget_recent_reviews ul li:before,
+.sidebar-shop .widget.widget_recently_viewed_products ul li:before,
+.sidebar-shop .widget.widget_top_rated_products ul li:before,
+.sidebar-shop .widget.widget_product_categories  ul li:before,
+.sidebar-shop .widget.widget_layered_nav .chosen:before {
+    float: left;
+    position: absolute;
+    left: 0;
+    top: 9px;
+    content: "\00BB";
+    color: #666666;
+    padding-right: 5px;
+}
+.product_list_widget .amount,
+.product_list_widget del,
+.product_list_widget ins {
+    color: #999;
+}
+.product_list_widget ins {
+    text-decoration: none;
+}
+.product_list_widget .amount {
+    margin-right: 10px;
+}
+.widget.woocommerce li {
+    position: relative;
+    padding-left: 12px;
+}
+.widget_shopping_cart .product_list_widget li {
+    padding-left: 2em;
+    position: relative
+}
+.widget.woocommerce a:hover .product-title,
+.widget.woocommerce a:hover {
+    color: #aaa;
+}
 .widget_shopping_cart_content .buttons a {
     background: rgba(17, 17, 17, 1);
     color: #fff;
@@ -3046,55 +3081,21 @@ Breacrumb
     display: inline-block;
     margin-bottom: 10px;
 }
-.widget_shopping_cart_content .buttons a:hover {
+.widget_shopping_cart_content .buttons a:hover,
+.widget.woocommerce.widget_shopping_cart_content .button a:hover {
     background: rgba(17, 17, 17, .8);
     color: #FFF;
-}
-.sidebar-shop .widget.widget_products ul li:before,
-.sidebar-shop .widget.widget_recent_reviews ul li:before,
-.sidebar-shop .widget.widget_recently_viewed_products ul li:before,
-.sidebar-shop .widget.widget_top_rated_products ul li:before,
-.sidebar-shop .widget.widget_product_categories  ul li:before,
-.sidebar-shop .widget.widget_layered_nav .chosen:before {
-    float: left;
-    position: absolute;
-    left: 0;
-    top: 9px;
-    content: "\00BB";
-    color: #666666;
-    padding-right: 5px;
-}
-.product_list_widget li > a {
-    display: block;
-}
-.product_list_widget .amount,
-.product_list_widget del,
-.product_list_widget ins {
-    color: #999;
-}
-.product_list_widget ins {
-    text-decoration: none;
-}
-.product_list_widget .amount {
-    margin-right: 10px;
-}
-.widget.woocommerce li {
-    position: relative;
-    padding-left: 12px;
-}
-.widget.woocommerce a:hover .product-title,
-.widget.woocommerce a:hover {
-    color: #aaa;
 }
 .widget.woocommerce .star-rating {
     margin-top: 8px;
     margin-bottom: 5px;
 }
-.sidebar-shop .widget_shopping_cart li:before {
+.widget_shopping_cart li:before {
     content: "";
     display: none;
 }
-.sidebar-shop .widget_shopping_cart li {
+.sidebar-shop .widget_shopping_cart li,
+.widget_shopping_cart li {
     padding-left: 2em;
 }
 .widget_shopping_cart .product_list_widget li a.remove {
@@ -3103,6 +3104,45 @@ Breacrumb
 .widget_shopping_cart .product_list_widget li a.remove:hover {
     color: #FFF;
 }
+.widget_recently_viewed_products li a,
+.widget_top_rated_products li a {
+    display: block;
+}
+.bottom-page-wrap .widget_shopping_cart .amount {
+    color: #FFF;
+}
+.bottom-page-wrap .widget_shopping_cart_content .buttons a,
+.bottom-page-wrap .widget_price_filter .price_slider_amount .button {
+    background: rgba(255, 255, 255, 0.20);
+}
+.bottom-page-wrap .widget_shopping_cart_content .buttons a:hover,
+.bottom-page-wrap .widget_price_filter .price_slider_amount .button:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+.bottom-page-wrap .widget_price_filter .ui-slider .ui-slider-handle {
+    background: #FFFFFF;
+}
+.bottom-page-wrap .widget ul li:before {
+    content: "\00BB";
+    color: #aaa;
+    position: absolute;
+    float: left;
+    left: 0;
+    top: 9px;
+    padding-right: 5px;
+}
+.bottom-page-wrap .widget .tagcloud a {
+    background: rgba(255, 255, 255, 0.2);
+}
+.bottom-page-wrap .product-title,
+.bottom-page-wrap .widget.woocommerce a {
+    color: #aaa;
+}
+.bottom-page-wrap .widget_product_categories a .product-title:hover,
+.bottom-page-wrap .widget.woocommerce a:hover {
+    text-decoration: underline;
+}
+
 
 @media screen and (max-width: 1200px) {
     .page-title ~ .woocommerce-error,
