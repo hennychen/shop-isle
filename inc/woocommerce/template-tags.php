@@ -77,13 +77,13 @@ if ( ! function_exists( 'shop_isle_upsell_display' ) ) {
 		echo '</div></div>';
 		global $product;
 		$upsells = $product->get_upsells();
-		if (count($upsells) > 0 ) {
+		if ( !empty($upsells) && (count($upsells) > 0) ) {
 			echo '<hr class="divider-w">';
 		}
 		echo '<div class="container">';
 		woocommerce_upsell_display( -1, 3 );
 		$related = $product->get_related();
-		if (count($related) > 0) {
+		if ( !empty($related) && (count($related) > 0) ) {
 			echo '</div>';
 			echo '<hr class="divider-w">';
 			echo '<div class="container">';
