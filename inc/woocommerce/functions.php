@@ -52,7 +52,7 @@ if ( ! function_exists( 'shop_isle_shop_page_wrapper' ) ) {
 
 						do_action( 'shop_isle_before_shop' );
 
-						if( is_active_sidebar( 'sidebar-shop-archive' ) ) : ?>
+						if( is_active_sidebar( 'shop-isle-sidebar-shop-archive' ) ) : ?>
 
 							<div class="col-sm-9 shop-with-sidebar" id="shop-isle-blog-container">
 
@@ -99,7 +99,7 @@ if ( ! function_exists( 'shop_isle_shop_page_wrapper_end' ) ) {
 	function shop_isle_shop_page_wrapper_end() {
 		?>
 
-			<?php if( (is_shop() || is_product_category() || is_product_tag() ) && is_active_sidebar( 'sidebar-shop-archive' ) ): ?>
+			<?php if( (is_shop() || is_product_category() || is_product_tag() ) && is_active_sidebar( 'shop-isle-sidebar-shop-archive' ) ): ?>
 
 				</div>
 
