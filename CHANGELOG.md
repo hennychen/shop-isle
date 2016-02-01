@@ -1,5 +1,17 @@
 
 
+### 1.1.2 - 01/02/2016
+
+ Changes: 
+
+
+ * Added option to hide site info from footer
+ * Fixed #120 Coupon code should not be uppercase
+ * Fixed #114 Double line on product page
+ * Fixed #124 Shop page sidebar issue
+ * Fixed #116 Visual bug
+
+
 ### 1.1.1 - 29/01/2016
 
  Changes: 
