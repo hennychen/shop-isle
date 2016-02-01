@@ -750,7 +750,6 @@ a.remove {
 
 #shop-isle-checkout-coupon .checkout_coupon .form-row-first input[type="text"] {
     font-family: "Roboto Condensed", sans-serif;
-    text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 11px;
     height: 35px;
