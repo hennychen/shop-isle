@@ -117,3 +117,20 @@ remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' 
 /* Meta box for header description on shop page */
 add_action('admin_menu', 'shop_isle_page_description_box');
 add_action('save_post', 'shop_isle_custom_add_save');
+
+/* WooCommerce compare list plugin */
+if( function_exists('wccm_render_catalog_compare_info') ) {
+	
+	remove_action( 'woocommerce_before_shop_loop', 'wccm_render_catalog_compare_info' );
+	
+	add_action( 'woocommerce_before_shop_loop', 'wccm_render_catalog_compare_info', 30 );
+
+	add_action( 'shop_isle_wccm_compare_list','wccm_render_catalog_compare_info' );
+}	
+
+if( function_exists('wccm_add_single_product_compare_buttton') ) {
+	
+	remove_action( 'woocommerce_single_product_summary', 'wccm_add_single_product_compare_buttton', 35 );
+	
+	add_action( 'woocommerce_product_meta_end', 'wccm_add_single_product_compare_buttton', 35 );
+}

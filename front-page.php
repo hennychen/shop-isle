@@ -58,7 +58,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 			
 		echo '</section >';
 		
-	endif; /* END SLIDER */				
+	endif; /* END SLIDER */
 	
 	/* Wrapper start */
 
@@ -73,6 +73,13 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 		echo '<div class="main front-page-main" style="background-color: #FFF">';
 	
 	}
+	
+		/* Woocommerce compare list plugin */
+		echo '<section class="module-small wccm-frontpage-compare-list">';
+			echo '<div class="container">';
+				do_action( 'shop_isle_wccm_compare_list' );
+			echo '</div>';
+		echo '</section>';
 
 		/***********************/
 		/******  BANNERS *******/
@@ -126,6 +133,7 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 			echo '<hr class="divider-w">';
 
 		endif;	/* END BANNERS */
+		
 		
 		/*********************************/
 		/******* Latest products *********/
@@ -206,6 +214,9 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 											echo '<div class="shop-item-detail">';
 												if(!empty($product)):
 													echo do_shortcode( '[add_to_cart id="' . $shop_isle_latest_loop->post->ID . '"]' );
+													if(function_exists('wccm_add_button')) {
+														wccm_add_button();
+													}
 												endif;	
 											echo '</div>';
 										echo '</div>';
@@ -294,6 +305,9 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 											echo '<div class="shop-item-detail">';
 												if(!empty($product)):
 													echo do_shortcode( '[add_to_cart id="' . $shop_isle_latest_loop->post->ID . '"]' );
+													if(function_exists('wccm_add_button')) {
+														wccm_add_button();
+													}	
 												endif;
 											echo '</div>';
 										echo '</div>';

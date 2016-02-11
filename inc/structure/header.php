@@ -87,7 +87,7 @@ if ( ! function_exists( 'shop_isle_primary_navigation' ) ) {
 					<?php if( function_exists( 'WC' ) ): ?>
 						<div id="header-cart" class="header-shopping-cart-wrap">
 
-							<a href="<?php echo WC()->cart->get_cart_url() ?>" title="<?php _e( 'View your shopping cart' ); ?>" class="cart-contents header-shopping-cart">
+							<a href="<?php echo WC()->cart->get_cart_url() ?>" title="<?php _e( 'View your shopping cart','shop-isle' ); ?>" class="cart-contents header-shopping-cart">
 								<span class="glyphicon glyphicon-shopping-cart shopping-cart-count">
 									<span>
 									<?php

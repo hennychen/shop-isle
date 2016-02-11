@@ -135,7 +135,7 @@ ul.products li.product .price ins {
     background-color: transparent
 }
 
-ul.products li.product h3 {
+ul.products li.product h3, .wccm-td div {
     font-weight: 400;
     font-size: 14px;
     color: #111;
@@ -3147,6 +3147,88 @@ Breacrumb
 .bottom-page-wrap .widget_product_categories a .product-title:hover,
 .bottom-page-wrap .widget.woocommerce a:hover {
     text-decoration: underline;
+}
+
+/****************************************/
+/** WooCommerce Compare List plugin *****/
+/****************************************/
+
+a.button.compare, .shop-isle-compare-list-wrapper a.button.alt {
+    bottom: 0;
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    transform: translateY(0%);
+    position: relative;
+    opacity: 1;
+    font-family: "Roboto Condensed",sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11px;
+    padding: 10px 30px;
+    background: #0B5B34;
+    color: #fff;
+    border-radius: 2px;
+    line-height: 25px;
+}
+a.button.compare:hover {
+	background: rgba(11, 91, 52, 0.9);
+}
+.shop-isle-compare-list-wrapper {
+	margin-bottom: -40px;
+	margin-top: 20px;
+}
+.shop-isle-compare-list-wrapper a.button.alt {
+	margin-left: 10px;
+}
+.wccm-catalog-items {
+	float:left;
+	padding-left:15px;
+	padding-right:15px;
+}
+.wccm-catalog-item a.button {
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    transform: translateY(0%);
+    opacity: 1;
+    font-family: "Roboto Condensed",sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11px;
+    padding: 10px 30px;
+	
+    background: #0B5B34;
+    color: #fff;
+    border-radius: 2px;
+    line-height: 25px;
+}
+.wccm-catalog-item a.button:hover {
+	background: rgba(11, 91, 52, 0.9);
+}
+.wccm-catalog-item a.button.alt, .shop-isle-compare-list-wrapper a.button.alt {
+	background: rgb(185, 179, 179);
+}
+.wccm-catalog-item a.button.alt:hover, .shop-isle-compare-list-wrapper a.button.alt:hover {
+	background: rgba(185, 179, 179, 0.9);
+}
+.wccm-frontpage-compare-list .wccm-catalog-item {
+	display: inline-block;
+	float: left;
+    margin-right: 1em;
+    position: relative;
+}
+.wccm-frontpage-compare-list .wccm-catalog-item img {
+	width: 48px;
+    height: 48px;
+}
+.wccm-frontpage-compare-list .wccm-catalog-item a.dashicons {
+	position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    color: red;
+    display: block;
 }
 
 
