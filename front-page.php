@@ -30,22 +30,51 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 						echo '<ul class="slides">';
 								
 							foreach($shop_isle_slider_decoded as $shop_isle_slide):
-										
-								echo '<li class="bg-dark-30 bg-dark" style="background-image:url('.$shop_isle_slide->image_url.')">';
-									echo '<div class="hs-caption">';
-										echo '<div class="caption-content">';
-											if( !empty($shop_isle_slide->text) ):
-												echo '<div class="hs-title-size-4 font-alt mb-30">'.$shop_isle_slide->text.'</div>';
-											endif;
-											if( !empty($shop_isle_slide->subtext) ):
-												echo '<div class="hs-title-size-1 font-alt mb-40">'.$shop_isle_slide->subtext.'</div>';
-											endif;	
-											if( !empty($shop_isle_slide->link) && !empty($shop_isle_slide->label) ):
-												echo '<a href="'.$shop_isle_slide->link.'" class="section-scroll btn btn-border-w btn-round">'.$shop_isle_slide->label.'</a>';
-											endif;	
-										echo '</div>';
-									echo '</div>';
-								echo '</li>';
+									
+								if( !empty($shop_isle_slide->image_url) ) {
+									
+									if (function_exists ( 'icl_t' ) && !empty($shop_isle_slide->id)){
+										$shop_isle_slider_image_url = icl_t( 'Slider',$shop_isle_slide->id.'_slider_image_url',$shop_isle_slide->image_url );
+										echo '<li class="bg-dark-30 bg-dark" style="background-image:url('.$shop_isle_slider_image_url.')">';
+									} else {	
+										echo '<li class="bg-dark-30 bg-dark" style="background-image:url('.$shop_isle_slide->image_url.')">';
+									}
+								
+											echo '<div class="hs-caption">';
+												echo '<div class="caption-content">';
+												
+													if( !empty($shop_isle_slide->text) ) {
+														if (function_exists ( 'icl_t' ) && !empty($shop_isle_slide->id)){												
+															$shop_isle_slider_text = icl_t( 'Slider',$shop_isle_slide->id.'_slider_text',$shop_isle_slide->text );
+															echo '<div class="hs-title-size-4 font-alt mb-30">'.$shop_isle_slider_text.'</div>';			
+														} else {
+															echo '<div class="hs-title-size-4 font-alt mb-30">'.$shop_isle_slide->text.'</div>';							
+														}
+													}
+													
+													if( !empty($shop_isle_slide->subtext) ) {
+														if (function_exists ( 'icl_t' ) && !empty($shop_isle_slide->id)){												
+															$shop_isle_slider_subtext = icl_t( 'Slider',$shop_isle_slide->id.'_slider_subtext',$shop_isle_slide->subtext );
+															echo '<div class="hs-title-size-1 font-alt mb-40">'.$shop_isle_slider_subtext.'</div>';			
+														} else {
+															echo '<div class="hs-title-size-1 font-alt mb-40">'.$shop_isle_slide->subtext.'</div>';							
+														}
+													}
+													
+													if( !empty($shop_isle_slide->link) && !empty($shop_isle_slide->label) ) {
+														if (function_exists ( 'icl_t' ) && !empty($shop_isle_slide->id)){
+															$shop_isle_slider_link = icl_t( 'Slider',$shop_isle_slide->id.'_slider_subtext',$shop_isle_slide->link );
+															$shop_isle_slider_label = icl_t( 'Slider',$shop_isle_slide->id.'_slider_subtext',$shop_isle_slide->label );
+															echo '<a href="'.$shop_isle_slider_link.'" class="section-scroll btn btn-border-w btn-round">'.$shop_isle_slider_label.'</a>';
+														} else {
+															echo '<a href="'.$shop_isle_slide->link.'" class="section-scroll btn btn-border-w btn-round">'.$shop_isle_slide->label.'</a>';
+														}
+													}
+												echo '</div>';
+											echo '</div>';
+										echo '</li>';
+								
+								}
 									
 							endforeach;
 							
@@ -108,15 +137,33 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 							echo '<div class="row shop_isle_bannerss_section">';
 							
 								foreach($shop_isle_banners_decoded as $shop_isle_banner):
+								
+									if ( !empty($shop_isle_banner->image_url) ) {
 									
-									echo '<div class="col-sm-4"><div class="content-box mt-0 mb-0"><div class="content-box-image">';
-									if ( $shop_isle_banner->link!='' ) {
-										echo '<a href="' . $shop_isle_banner->link . '"><img src="' . $shop_isle_banner->image_url . '"></a>';
+										echo '<div class="col-sm-4"><div class="content-box mt-0 mb-0"><div class="content-box-image">';
+										
+										if ( !empty($shop_isle_banner->link) ) {
+											
+											if (function_exists ( 'icl_t' ) && !empty($shop_isle_banner->id)){
+												$shop_isle_banner_link = icl_t( 'Banner',$shop_isle_banner->id.'_banner_link',$shop_isle_banner->link );
+												$shop_isle_banner_image_url = icl_t( 'Banner',$shop_isle_banner->id.'_banner_image_url',$shop_isle_banner->image_url );
+												
+												echo '<a href="' . $shop_isle_banner_link . '"><img src="' . $shop_isle_banner_image_url . '"></a>';
+											} else {					
+												echo '<a href="' . $shop_isle_banner->link . '"><img src="' . $shop_isle_banner->image_url . '"></a>';
+											}
+										}
+										else {
+											if (function_exists ( 'icl_t' ) && !empty($shop_isle_banner->id)){
+												$shop_isle_banner_image_url = icl_t( 'Banner',$shop_isle_banner->id.'_banner_image_url',$shop_isle_banner->image_url );
+												echo '<a><img src="' . $shop_isle_banner_image_url . '"></a>';
+											} else {
+												echo '<a><img src="' . $shop_isle_banner->image_url . '"></a>';
+											}	
+										}
+										echo '</div></div></div>';
+									
 									}
-									else {
-										echo '<a><img src="' . $shop_isle_banner->image_url . '"></a>';
-									}
-									echo '</div></div></div>';
 								
 								endforeach;
 						

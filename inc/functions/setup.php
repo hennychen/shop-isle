@@ -259,3 +259,151 @@ function shop_isle_register_required_plugins() {
     );
     tgmpa($plugins, $config);
 }
+
+function shop_isle_add_id() {
+	
+	$migrate = get_option( 'shop_isle_migrate_translation' );
+	
+	if( isset($migrate) && $migrate == false ) {
+		
+		/* Slider section */
+		$shop_isle_slider = get_theme_mod('shop_isle_slider', json_encode(
+							array( array('image_url' => get_template_directory_uri().'/assets/images/slide1.jpg' ,'link' => '#', 'text' => __('ShopIsle','shop-isle'), 'subtext' => __('WooCommerce Theme','shop-isle'), 'label' => __('FIND OUT MORE','shop-isle') ), array('image_url' => get_template_directory_uri().'/assets/images/slide2.jpg' ,'link' => '#', 'text' => __('ShopIsle','shop-isle'), 'subtext' => __('Hight quality store','shop-isle') , 'label' => __('FIND OUT MORE','shop-isle')), array('image_url' => get_template_directory_uri().'/assets/images/slide3.jpg' ,'link' => '#', 'text' => __('ShopIsle','shop-isle'), 'subtext' => __('Responsive Theme','shop-isle') , 'label' => __('FIND OUT MORE','shop-isle') ))
+		));
+		
+		if(!empty($shop_isle_slider)){
+			
+			$shop_isle_slider_decoded = json_decode($shop_isle_slider);
+			foreach($shop_isle_slider_decoded as &$it){
+				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
+					$it = (object) array_merge( (array)$it, array( 'id' => 'shop_isle_'.uniqid() ) );
+				}
+			}
+			
+			$shop_isle_slider = json_encode($shop_isle_slider_decoded);
+			set_theme_mod( 'shop_isle_slider', $shop_isle_slider );
+		}
+		
+		/* Banners section */
+		$shop_isle_banners = get_theme_mod('shop_isle_banners', json_encode(
+							array( array('image_url' => get_template_directory_uri().'/assets/images/banner1.jpg' ,'link' => '#' ),array('image_url' => get_template_directory_uri().'/assets/images/banner2.jpg' ,'link' => '#'),array('image_url' => get_template_directory_uri().'/assets/images/banner3.jpg' ,'link' => '#') )
+		));
+		
+		if(!empty($shop_isle_banners)){
+			
+			$shop_isle_banners_decoded = json_decode($shop_isle_banners);
+			foreach($shop_isle_banners_decoded as &$it){
+				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
+					$it = (object) array_merge( (array)$it, array( 'id' => 'shop_isle_'.uniqid() ) );
+				}
+			}
+			
+			$shop_isle_banners = json_encode($shop_isle_banners_decoded);
+			set_theme_mod( 'shop_isle_banners', $shop_isle_banners );
+		}
+		
+		update_option( 'shop_isle_migrate_translation', true );
+	}
+}
+add_action( 'shutdown', 'shop_isle_add_id' );
+
+/* Polylang repeater translate */
+
+if(function_exists('icl_unregister_string') && function_exists('icl_register_string')){
+	
+	/* Slider section */
+	
+	$shop_isle_slider_pl = get_theme_mod('shop_isle_slider');
+	
+	if( !empty($shop_isle_slider_pl) ) {
+		
+		$shop_isle_slider_pl_decoded = json_decode($shop_isle_slider_pl);
+		
+		if ( !empty($shop_isle_slider_pl_decoded) ) {
+		
+			foreach($shop_isle_slider_pl_decoded as $shop_isle_slider){
+				
+				if( !empty($shop_isle_slider->id) ) {
+					$id = $shop_isle_slider->id;
+				}
+				$text = $shop_isle_slider->text;
+				$subtext = $shop_isle_slider->subtext;
+				$image_url = $shop_isle_slider->image_url;
+				$link = $shop_isle_slider->link;
+				$label = $shop_isle_slider->label;
+				
+				if(!empty($id)) {
+					if(!empty($text)){
+						icl_unregister_string ('Slider' , $id.'_slider_text' );
+						icl_register_string( 'Slider' , $id.'_slider_text' , $text );
+					} else {
+						icl_unregister_string ('Slider' , $id.'_slider_text' );
+					}
+					if(!empty($subtext)){
+						icl_unregister_string ('Slider' , $id.'_slider_subtext' );
+						icl_register_string( 'Slider' , $id.'_slider_subtext' , $subtext );
+					} else {
+						icl_unregister_string ('Slider' , $id.'_slider_subtext' );
+					}
+					if(!empty($link)){
+						icl_unregister_string ('Slider' , $id.'_slider_link' );
+						icl_register_string( 'Slider' , $id.'_slider_link' , $link );
+					} else {
+						icl_unregister_string ('Slider' , $id.'_slider_link' );
+					}
+					if(!empty($label)){
+						icl_unregister_string ('Slider' , $id.'_slider_label' );
+						icl_register_string( 'Slider' , $id.'_slider_label' , $label );
+					} else {
+						icl_unregister_string ('Slider' , $id.'_slider_label' );
+					}
+					if(!empty($image_url)){
+						icl_unregister_string ('Slider' , $id.'_slider_image_url' );
+						icl_register_string( 'Slider' , $id.'_slider_image_url' , $image_url );
+					} else {
+						icl_unregister_string ('Slider' , $id.'_slider_image_url' );
+					}
+				}
+			}
+		}	
+	}
+	
+	/* Banners section */
+	
+	$shop_isle_banners_pl = get_theme_mod('shop_isle_banners');
+	
+	if( !empty($shop_isle_banners_pl) ) {
+		
+		$shop_isle_banners_pl_decoded = json_decode($shop_isle_banners_pl);
+		
+		if ( !empty($shop_isle_banners_pl_decoded) ) {
+		
+			foreach($shop_isle_banners_pl_decoded as $shop_isle_banners){
+				
+				if( !empty($shop_isle_banners->id) ) {
+					$id = $shop_isle_banners->id;
+				}
+				$image_url = $shop_isle_banners->image_url;
+				$link = $shop_isle_banners->link;
+				
+				if(!empty($id)) {
+					if(!empty($image_url)){
+						icl_unregister_string ('Banner' , $id.'_banner_image_url' );
+						icl_register_string( 'Banner' , $id.'_banner_image_url' , $image_url );
+					} else {
+						icl_unregister_string ('Banner' , $id.'_banner_image_url' );
+					}
+					if(!empty($link)){
+						icl_unregister_string ('Banner' , $id.'_banner_link' );
+						icl_register_string( 'Banner' , $id.'_banner_link' , $link );
+					} else {
+						icl_unregister_string ('Banner' , $id.'_banner_link' );
+					}
+					
+				}
+			}
+		}	
+	}
+	
+	
+}

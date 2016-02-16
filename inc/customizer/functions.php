@@ -229,7 +229,8 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 											<span class="customize-control-title"><?php _e('Button Link','shop-isle'); ?></span>
 											<input type="text" class="shop_isle_link_control" placeholder="<?php _e('Button Link','shop-isle'); ?>"/>
 									<?php } ?>
-								<button type="button" class="shop_isle_general_control_remove_field button" style="display:none;"><?php _e('Delete field','shop-isle'); ?></button>
+									<input type="hidden" class="shop_isle_box_id" value="<?php if(!empty($icon->id)) echo esc_attr($icon->id); ?>">
+									<button type="button" class="shop_isle_general_control_remove_field button" style="display:none;"><?php _e('Delete field','shop-isle'); ?></button>
 								</label>
 							</div>
 					<?php
@@ -290,7 +291,8 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 														<span class="customize-control-title"><?php _e('Button Link','shop-isle'); ?></span>
 														<input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="shop_isle_link_control" placeholder="<?php _e('Button Link','shop-isle'); ?>"/>
 											<?php	} ?>
-										<button type="button" class="shop_isle_general_control_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php _e('Delete field','shop-isle'); ?></button>
+													<input type="hidden" class="shop_isle_box_id" value="<?php if(!empty($icon->id)) echo esc_attr($icon->id); ?>">
+													<button type="button" class="shop_isle_general_control_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php _e('Delete field','shop-isle'); ?></button>
 										</label>
 
 									</div>
@@ -355,6 +357,7 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 												<input type="text" value="<?php if(!empty($icon->link)) echo esc_url($icon->link); ?>" class="shop_isle_link_control" placeholder="<?php _e('Button Link','shop-isle'); ?>"/>
 											<?php } ?>
 
+											<input type="hidden" class="shop_isle_box_id" value="<?php if(!empty($icon->id)) echo esc_attr($icon->id); ?>">
 											<button type="button" class="shop_isle_general_control_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php _e('Delete field','shop-isle'); ?></button>
 										</label>
 
