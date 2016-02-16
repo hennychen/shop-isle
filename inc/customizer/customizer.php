@@ -263,8 +263,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	/* Youtube link */
 	$wp_customize->add_setting( 'shop_isle_yt_link', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text', 
-		'transport' => 'postMessage'
+		'sanitize_callback' => 'esc_url'
 	));
 
 	$wp_customize->add_control( 'shop_isle_yt_link', array(
