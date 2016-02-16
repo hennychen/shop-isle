@@ -3162,9 +3162,9 @@ a.button.compare, .shop-isle-compare-list-wrapper a.button.alt {
     opacity: 1;
     font-family: "Roboto Condensed",sans-serif;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 11px;
-    padding: 10px 30px;
+    letter-spacing: 1px;
+    font-size: 10px;
+    padding: 6px;
     background: #0B5B34;
     color: #fff;
     border-radius: 2px;
@@ -3194,21 +3194,21 @@ a.button.compare:hover {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 11px;
-    padding: 10px 30px;
-	
-    background: #0B5B34;
-    color: #fff;
     border-radius: 2px;
-    line-height: 25px;
+    line-height: 48px;
+    padding: 16px 0px;
+    height: 48px;
 }
 .wccm-catalog-item a.button:hover {
-	background: rgba(11, 91, 52, 0.9);
+    color: rgba(153, 153, 153, 0.75);
 }
-.wccm-catalog-item a.button.alt, .shop-isle-compare-list-wrapper a.button.alt {
-	background: rgb(185, 179, 179);
+.wccm-catalog-item a.button.alt, 
+.shop-isle-compare-list-wrapper a.button.alt {
+    color: #999;
 }
-.wccm-catalog-item a.button.alt:hover, .shop-isle-compare-list-wrapper a.button.alt:hover {
-	background: rgba(185, 179, 179, 0.9);
+.wccm-catalog-item a.button.alt:hover, 
+.shop-isle-compare-list-wrapper a.button.alt:hover {
+    color: rgba(153, 153, 153, 0.75);
 }
 .wccm-frontpage-compare-list .wccm-catalog-item {
 	display: inline-block;
@@ -3230,7 +3230,20 @@ a.button.compare:hover {
     color: red;
     display: block;
 }
-
+.wccm-catalog-item a.dashicons {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 14px;
+    height: 14px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 14px;
+    color: red;
+    display: block;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 1px;
+}
 
 @media screen and (max-width: 1200px) {
     .page-title ~ .woocommerce-error,
