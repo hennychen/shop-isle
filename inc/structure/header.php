@@ -85,6 +85,18 @@ if ( ! function_exists( 'shop_isle_primary_navigation' ) ) {
 					</div>
 
 					<?php if( function_exists( 'WC' ) ): ?>
+
+
+					<div class="navbar-cart">
+						<a href="<?php echo WC()->cart->get_cart_url() ?>" title="<?php _e( 'View your shopping cart','shop-isle' ); ?>">
+							<span class="icon-basket"></span>
+							<span class="cart-item-number"><?php echo trim( WC()->cart->get_cart_contents_count() ); ?></span>
+						</a>
+					</div>
+
+
+
+<!--
 						<div id="header-cart" class="header-shopping-cart-wrap">
 
 							<a href="<?php echo WC()->cart->get_cart_url() ?>" title="<?php _e( 'View your shopping cart','shop-isle' ); ?>" class="cart-contents header-shopping-cart">
@@ -99,8 +111,9 @@ if ( ! function_exists( 'shop_isle_primary_navigation' ) ) {
 								<?php echo WC()->cart->get_cart_total(); ?>
 								</span>
 							</a>
-
 						</div>
+-->
+
 					<?php endif; ?>
 	
 				</div>

@@ -4172,7 +4172,7 @@ Responsive Media Querries
 	    display: table;
 	    overflow: hidden;
 	    width: 100%;
-	    padding-right: 110px;
+	    padding-right: 40px;
 	}
 
 	/* Navbar */
@@ -4226,18 +4226,9 @@ Responsive Media Querries
 		padding-left: 15px;
 	}
 
-	.navbar-custom .cart-item-number {
-		display: none;
-	}
-
-	.navbar-custom .navbar-cart > a:after {
-		content: "\f107";
-	}
-
 	.navbar-custom .navbar-cart-item a {
 		border: 0 !important;
 	}
-
 
 	.sub-menu.cart-list,
 	.children.cart-list {
@@ -4260,6 +4251,11 @@ Responsive Media Querries
 		margin-left: 0;
 	}
 
+	.navbar-custom .navbar-cart {
+	    position: absolute;
+	    right: 35px;
+	    top: 12px;
+	}
 
 
 	/* Headers */
