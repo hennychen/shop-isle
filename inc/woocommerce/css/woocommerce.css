@@ -340,6 +340,34 @@ ul.products li.product .button {
     border: black;
 }
 
+.product .product-button-wrap .product_type_simple, 
+ul.products li.product .product-button-wrap .button.product_type_simple, 
+.shop-item .product-button-wrap .product_type_simple {
+    opacity: 0;
+    bottom: 0;
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    transform: translateY(0%);
+    position: relative;
+    opacity: 1;
+    color: #aaa;
+    font-family: "Roboto Condensed",sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11px;
+    padding: 10px 30px;
+    background: rgba(17, 17, 17, 1);
+    color: #fff;
+    border-radius: 2px;
+    line-height: 25px;
+}
+
+.product .product-button-wrap .product_type_simple:hover, 
+ul.products li.product .product-button-wrap .button.product_type_simple:hover, 
+.shop-item .product-button-wrap .product_type_simple:hover {
+    background: rgba(17, 17, 17, .8);
+}
+
 .single-product div.product .woocommerce-product-rating a {
     font-size: .857em
 }
@@ -3171,7 +3199,7 @@ a.button.compare, .shop-isle-compare-list-wrapper a.button.alt {
     line-height: 25px;
 }
 a.button.compare:hover {
-	background: rgba(11, 91, 52, 0.9);
+	background: rgba(11, 91, 52, 0.8);
 }
 .shop-isle-compare-list-wrapper {
 	margin-bottom: -40px;
@@ -3185,6 +3213,9 @@ a.button.compare:hover {
 	padding-left:15px;
 	padding-right:15px;
 }
+.wccm-catalog-item {
+    margin-bottom: 12px;  
+}
 .wccm-catalog-item a.button {
     -webkit-transform: translateY(0%);
     -moz-transform: translateY(0%);
@@ -3195,20 +3226,28 @@ a.button.compare:hover {
     letter-spacing: 2px;
     font-size: 11px;
     border-radius: 2px;
-    line-height: 48px;
-    padding: 16px 0px;
-    height: 48px;
+    background: transparent;
+    border: 1px solid rgba(17,17,17,1);
+    padding: 2px 10px 0;
+    line-height: 21px;
+    float: left;
+    height: auto;
+    margin-top: 12px;
+    color: rgba(17,17,17,1);
 }
 .wccm-catalog-item a.button:hover {
-    color: rgba(153, 153, 153, 0.75);
+    color: rgba(17,17,17,0.6);
+    border: 1px solid rgba(17,17,17,0.3);
 }
 .wccm-catalog-item a.button.alt, 
 .shop-isle-compare-list-wrapper a.button.alt {
     color: #999;
+    border: 1px solid rgba(17,17,17,0.3);
 }
 .wccm-catalog-item a.button.alt:hover, 
 .shop-isle-compare-list-wrapper a.button.alt:hover {
     color: rgba(153, 153, 153, 0.75);
+    border: 1px solid rgba(17,17,17,0.15);
 }
 .wccm-frontpage-compare-list .wccm-catalog-item {
 	display: inline-block;
@@ -3220,16 +3259,7 @@ a.button.compare:hover {
 	width: 48px;
     height: 48px;
 }
-.wccm-frontpage-compare-list .wccm-catalog-item a.dashicons {
-	position: absolute;
-    top: 2px;
-    right: 2px;
-    width: 16px;
-    height: 16px;
-    font-size: 16px;
-    color: red;
-    display: block;
-}
+.wccm-frontpage-compare-list .wccm-catalog-item a.dashicons,
 .wccm-catalog-item a.dashicons {
     position: absolute;
     top: 2px;
@@ -3239,10 +3269,39 @@ a.button.compare:hover {
     font-size: 12px;
     text-align: center;
     line-height: 14px;
-    color: red;
+    color: #1B1B1B;
     display: block;
     background: rgba(255, 255, 255, 0.75);
     border-radius: 1px;
+}
+
+.wccm-catalog-item a.dashicons:hover {
+    color: #fff;
+    background: #A94442;
+}
+.wccm-thumb a {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 14px;
+    height: 14px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 14px;
+    color: #1B1B1B;
+    display: block;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 1px;
+    padding-left: 1px;
+}
+.wccm-thumb a:hover {
+    color: #fff;
+    background: #A94442;
+}
+.wccm-thumb {
+    width: 150px;
+    height: 150px;
+    background: rgba(221,221,221,0.35);
 }
 
 @media screen and (max-width: 1200px) {
