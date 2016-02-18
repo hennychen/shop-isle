@@ -302,6 +302,61 @@ function shop_isle_add_id() {
 			set_theme_mod( 'shop_isle_banners', $shop_isle_banners );
 		}
 		
+		/* Footer socials */
+		$shop_isle_socials = get_theme_mod('shop_isle_socials', json_encode(
+							array( array('icon_value' => 'social_facebook' ,'link' => '#' ),array('icon_value' => 'social_twitter' ,'link' => '#'), array('icon_value' => 'social_dribbble' ,'link' => '#'), array('icon_value' => 'social_skype' ,'link' => '#') )
+		));
+		
+		if(!empty($shop_isle_socials)){
+			
+			$shop_isle_socials_decoded = json_decode($shop_isle_socials);
+			foreach($shop_isle_socials_decoded as &$it){
+				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
+					$it = (object) array_merge( (array)$it, array( 'id' => 'shop_isle_'.uniqid() ) );
+				}
+			}
+			
+			$shop_isle_socials = json_encode($shop_isle_socials_decoded);
+			set_theme_mod( 'shop_isle_socials', $shop_isle_socials );
+		}
+		
+		/* Our team */
+		$shop_isle_team_members = get_theme_mod('shop_isle_team_members', json_encode(
+							array( array('image_url' => get_template_directory_uri().'/assets/images/team1.jpg' , 'text' => 'Eva Bean', 'subtext' => 'Developer', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.' ),array('image_url' => get_template_directory_uri().'/assets/images/team2.jpg' ,'text' => 'Maria Woods', 'subtext' => 'Designer', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.' ), array('image_url' => get_template_directory_uri().'/assets/images/team3.jpg' , 'text' => 'Booby Stone', 'subtext' => 'Director', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.'), array('image_url' => get_template_directory_uri().'/assets/images/team4.jpg' , 'text' => 'Anna Neaga', 'subtext' => 'Art Director', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.') )
+		));
+		
+		if(!empty($shop_isle_team_members)){
+			
+			$shop_isle_team_members_decoded = json_decode($shop_isle_team_members);
+			foreach($shop_isle_team_members_decoded as &$it){
+				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
+					$it = (object) array_merge( (array)$it, array( 'id' => 'shop_isle_'.uniqid() ) );
+				}
+			}
+			
+			$shop_isle_team_members = json_encode($shop_isle_team_members_decoded);
+			set_theme_mod( 'shop_isle_team_members', $shop_isle_team_members );
+		}
+		
+		/* Our advantages */
+		$shop_isle_advantages = get_theme_mod('shop_isle_advantages', json_encode(
+							array( array('icon_value' => 'icon_lightbulb' , 'text' => __('Ideas and concepts','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle')), array('icon_value' => 'icon_tools' , 'text' => __('Designs & interfaces','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle')), array('icon_value' => 'icon_cogs' , 'text' => __('Highly customizable','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle')), array('icon_value' => 'icon_like', 'text' => __('Easy to use','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle')))
+		));
+		
+		if(!empty($shop_isle_advantages)){
+			
+			$shop_isle_advantages_decoded = json_decode($shop_isle_advantages);
+			foreach($shop_isle_advantages_decoded as &$it){
+				if(!array_key_exists ( "id" , $it ) || !($it->id) ){
+					$it = (object) array_merge( (array)$it, array( 'id' => 'shop_isle_'.uniqid() ) );
+				}
+			}
+			
+			$shop_isle_advantages = json_encode($shop_isle_advantages_decoded);
+			set_theme_mod( 'shop_isle_advantages', $shop_isle_advantages );
+		}
+		
+		
 		update_option( 'shop_isle_migrate_translation', true );
 	}
 }
@@ -404,6 +459,142 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 			}
 		}	
 	}
+	
+	/* Footer socials */
+	
+	$shop_isle_socials_pl = get_theme_mod('shop_isle_socials');
+	
+	if( !empty($shop_isle_socials_pl) ) {
+		
+		$shop_isle_socials_pl_decoded = json_decode($shop_isle_socials_pl);
+		
+		if ( !empty($shop_isle_socials_pl_decoded) ) {
+		
+			foreach($shop_isle_socials_pl_decoded as $shop_isle_socials){
+				
+				if( !empty($shop_isle_socials->id) ) {
+					$id = $shop_isle_socials->id;
+				}
+				$icon_value = $shop_isle_socials->icon_value;
+				$link = $shop_isle_socials->link;
+				
+				if(!empty($id)) {
+					if(!empty($icon_value)){
+						icl_unregister_string ('Social' , $id.'_social_icon_value' );
+						icl_register_string( 'Social' , $id.'_social_icon_value' , $icon_value );
+					} else {
+						icl_unregister_string ('Social' , $id.'_social_icon_value' );
+					}
+					if(!empty($link)){
+						icl_unregister_string ('Social' , $id.'_social_link' );
+						icl_register_string( 'Social' , $id.'_social_link' , $link );
+					} else {
+						icl_unregister_string ('Social' , $id.'_social_link' );
+					}
+					
+				}
+			}
+		}	
+	}
+	
+	/*************************/
+    /***	About us page  ***/
+	/*************************/
+	
+	
+	/* Our team */
+	$shop_isle_team_members_pl = get_theme_mod('shop_isle_team_members');
+	
+	if( !empty($shop_isle_team_members_pl) ) {
+		
+		$shop_isle_team_members_pl_decoded = json_decode($shop_isle_team_members_pl);
+		
+		if ( !empty($shop_isle_team_members_pl_decoded) ) {
+		
+			foreach($shop_isle_team_members_pl_decoded as $shop_isle_team_members){
+				
+				if( !empty($shop_isle_team_members->id) ) {
+					$id = $shop_isle_team_members->id;
+				}
+				$image_url = $shop_isle_team_members->image_url;
+				$text = $shop_isle_team_members->text;
+				$subtext = $shop_isle_team_members->subtext;
+				$description = $shop_isle_team_members->description;
+				
+				if(!empty($id)) {
+					if(!empty($image_url)){
+						icl_unregister_string ('Team member' , $id.'_team_member_image_url' );
+						icl_register_string( 'Team member' , $id.'_team_member_image_url' , $image_url );
+					} else {
+						icl_unregister_string ('Team member' , $id.'_team_member_image_url' );
+					}
+					if(!empty($text)){
+						icl_unregister_string ('Team member' , $id.'_team_member_text' );
+						icl_register_string( 'Team member' , $id.'_team_member_text' , $text );
+					} else {
+						icl_unregister_string ('Team member' , $id.'_team_member_text' );
+					}
+					if(!empty($subtext)){
+						icl_unregister_string ('Team member' , $id.'_team_member_subtext' );
+						icl_register_string( 'Team member' , $id.'_team_member_subtext' , $subtext );
+					} else {
+						icl_unregister_string ('Team member' , $id.'_team_member_subtext' );
+					}
+					if(!empty($description)){
+						icl_unregister_string ('Team member' , $id.'_team_member_description' );
+						icl_register_string( 'Team member' , $id.'_team_member_description' , $description );
+					} else {
+						icl_unregister_string ('Team member' , $id.'_team_member_description' );
+					}
+					
+				}
+			}
+		}	
+	}
+	
+	/* Our advantages */
+	$shop_isle_advantages_pl = get_theme_mod('shop_isle_advantages');
+	
+	if( !empty($shop_isle_advantages_pl) ) {
+		
+		$shop_isle_advantages_pl_decoded = json_decode($shop_isle_advantages_pl);
+		
+		if ( !empty($shop_isle_advantages_pl_decoded) ) {
+		
+			foreach($shop_isle_advantages_pl_decoded as $shop_isle_advantages){
+				
+				if( !empty($shop_isle_advantages->id) ) {
+					$id = $shop_isle_advantages->id;
+				}
+				$icon_value = $shop_isle_advantages->icon_value;
+				$text = $shop_isle_advantages->text;
+				$subtext = $shop_isle_advantages->subtext;
+				
+				if(!empty($id)) {
+					if(!empty($icon_value)){
+						icl_unregister_string ('Advantage' , $id.'_advantage_icon_value' );
+						icl_register_string( 'Advantage' , $id.'_advantage_icon_value' , $icon_value );
+					} else {
+						icl_unregister_string ('Advantage' , $id.'_advantage_icon_value' );
+					}
+					if(!empty($text)){
+						icl_unregister_string ('Advantage' , $id.'_advantage_text' );
+						icl_register_string( 'Advantage' , $id.'_advantage_text' , $text );
+					} else {
+						icl_unregister_string ('Advantage' , $id.'_advantage_text' );
+					}
+					if(!empty($subtext)){
+						icl_unregister_string ('Advantage' , $id.'_advantage_subtext' );
+						icl_register_string( 'Advantage' , $id.'_advantage_subtext' , $subtext );
+					} else {
+						icl_unregister_string ('Advantage' , $id.'_advantage_subtext' );
+					}
+					
+				}
+			}
+		}	
+	}
+	
 	
 	
 }
