@@ -3216,7 +3216,7 @@ a.button.compare:hover {
     border-radius: 2px;
     background: transparent;
     border: 1px solid rgba(17,17,17,1);
-    padding: 2px 10px 0;
+    padding: 0 10px 0;
     line-height: 21px;
     float: left;
     height: auto;
@@ -3262,7 +3262,6 @@ a.button.compare:hover {
     background: rgba(255, 255, 255, 0.75);
     border-radius: 1px;
 }
-
 .wccm-catalog-item a.dashicons:hover {
     color: #fff;
     background: #A94442;
@@ -3290,6 +3289,138 @@ a.button.compare:hover {
     width: 150px;
     height: 150px;
     background: rgba(221,221,221,0.35);
+}
+.product_meta a.button.compare,
+.shop-isle-compare-list-wrapper a.button.alt {
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    transform: translateY(0%);
+    opacity: 1;
+    font-family: "Roboto Condensed",sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11px;
+    border-radius: 2px;
+    background: transparent;
+    padding: 0 10px 0;
+    line-height: 21px;
+    float: left;
+    height: auto;
+    margin-top: 12px;
+    color: #999;
+    border: 1px solid rgba(17,17,17,0.3);
+}
+.product_meta a.button.compare:hover,
+.shop-isle-compare-list-wrapper a.button.alt:hover {
+    color: rgba(153, 153, 153, 0.75);
+    border: 1px solid rgba(17,17,17,0.15);
+}
+
+/****************************************/
+/** YITH WooCommerce Wishlist plugin *****/
+/****************************************/
+.yith-wcwl-add-button a.add_to_wishlist {
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    transform: translateY(0%);
+    opacity: 1;
+    font-family: "Roboto Condensed",sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11px;
+    border-radius: 2px;
+    background: transparent;
+    border: 1px solid rgba(17,17,17,1);
+    padding: 0px 10px 0;
+    line-height: 21px;
+    float: left;
+    height: auto;
+    margin-top: 12px;
+    color: rgba(17,17,17,1);
+}
+.yith-wcwl-add-button a.add_to_wishlist:hover {
+    color: rgba(17,17,17,0.6);
+    border: 1px solid rgba(17,17,17,0.3);
+}
+.yith-wcwl-add-button a.add_to_wishlist:before {
+    content: "\e005";
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+.yith-wcwl-wishlistexistsbrowse,
+.yith-wcwl-wishlistaddedbrowse {
+    position: relative;
+    float: left;
+    font-size: 11px;
+    border-radius: 2px;
+    background: transparent;
+    padding: 0px 10px 0;
+    line-height: 21px;
+    color: #999;
+    border: 1px solid rgba(17,17,17,0.3);
+    margin-top: 12px;
+}
+.yith-wcwl-wishlistexistsbrowse:before,
+.yith-wcwl-wishlistaddedbrowse:before {
+    content: "\e005";
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+.shop_table.wishlist_table tr:last-child td {
+    padding: 16px 12px;
+    border: 1px solid #e7e7e7;
+}
+.shop_table.wishlist_table tfoot tr:last-child td {
+    border: none;
+}
+.shop_table.wishlist_table tr td.product-name,
+.shop_table.wishlist_table tr td.product-price,
+.shop_table.wishlist_table tr td.product-stock-status {
+    margin: 0 0 20px;
+    color: #111;
+    font-family: "Roboto Condensed", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.4;
+    font-weight: 400;
+    font-size: 14px;
+}
+.shop_table.wishlist_table {
+    font-size: 12px;
+}
+#yith-wcwl-popup-message {
+    background: rgba(34, 34, 34, 0.75);
+    border: 1px solid #222;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    line-height: 20px;
+    padding: 20px;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    z-index: 10000;
+    color: #fff;
+}
+.page-template-template-fullwidth-php table.wishlist_table thead,
+.page-template-template-fullwidth-php table.wishlist_table {
+    font-size: 12px;
+}
+.wishlist-title {
+    display: none;
 }
 
 @media screen and (max-width: 1200px) {
