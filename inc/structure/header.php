@@ -84,37 +84,30 @@ if ( ! function_exists( 'shop_isle_primary_navigation' ) ) {
 						</div>
 					</div>
 
-					<?php if( function_exists( 'WC' ) ): ?>
-
-
 					<div class="navbar-cart">
-						<a href="<?php echo WC()->cart->get_cart_url() ?>" title="<?php _e( 'View your shopping cart','shop-isle' ); ?>">
-							<span class="icon-basket"></span>
-							<span class="cart-item-number"><?php echo trim( WC()->cart->get_cart_contents_count() ); ?></span>
-						</a>
+						
+						<div class="header-search">
+							<div class="glyphicon glyphicon-search header-search-button"></div>
+							<div class="header-search-input">
+								<form role="search" method="get" class="woocommerce-product-search" action="<?php echo esc_url( home_url( '/'  ) ); ?>">
+									<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search Products&hellip;', 'placeholder', 'woocommerce' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'woocommerce' ); ?>" />
+									<input type="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'woocommerce' ); ?>" />
+									<input type="hidden" name="post_type" value="product" />
+								</form>
+							</div>
+						</div>
+
+						<?php if( function_exists( 'WC' ) ): ?>
+							<div class="navbar-cart-inner">
+								<a href="<?php echo WC()->cart->get_cart_url() ?>" title="<?php _e( 'View your shopping cart','shop-isle' ); ?>">
+									<span class="icon-basket"></span>
+									<span class="cart-item-number"><?php echo trim( WC()->cart->get_cart_contents_count() ); ?></span>
+								</a>
+							</div>
+						<?php endif; ?>
+
 					</div>
 
-
-
-<!--
-						<div id="header-cart" class="header-shopping-cart-wrap">
-
-							<a href="<?php echo WC()->cart->get_cart_url() ?>" title="<?php _e( 'View your shopping cart','shop-isle' ); ?>" class="cart-contents header-shopping-cart">
-								<span class="glyphicon glyphicon-shopping-cart shopping-cart-count">
-									<span>
-									<?php
-										echo trim( WC()->cart->get_cart_contents_count() );
-									?>
-									</span>
-								</span>
-								<span class="cart-total">
-								<?php echo WC()->cart->get_cart_total(); ?>
-								</span>
-							</a>
-						</div>
--->
-
-					<?php endif; ?>
 	
 				</div>
 			</div>
