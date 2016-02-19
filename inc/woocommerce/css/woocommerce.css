@@ -2286,8 +2286,8 @@ body.home .navbar-color-customizer {
 .navbar-cart-inner .cart-item-number {
     position: absolute;
     background: #e5e5e5;
-    top: 10px;
-    left: 12px;
+    top: 9px;
+    left: 7px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
@@ -2297,17 +2297,17 @@ body.home .navbar-color-customizer {
 }
 .navbar-cart-inner {
     position: relative;
-    width: 26px;
+    width: 25px;
     height: 25px;
     float: right;
 }
 .navbar-cart {
-    width: 80px;
+    width: 90px;
     height: 25px;
     margin-left: 20px;
     display: table-cell !important;
     vertical-align: middle;
-    padding-left: 20px;
+    padding-left: 30px;
 }
 
 /* rating stars */
@@ -2473,12 +2473,13 @@ Search form Header
 ****/
 .header-search {
     float: left;
-    width: 26px;
+    width: 25px;
     height: 25px;
     position: relative;
+    text-align: center;
 }
 .header-search-button {
-    font-size: 16px;
+    font-size: 14px;
     color: #CBC7C2;
     line-height: 26px;
 }
@@ -2488,14 +2489,17 @@ Search form Header
 .header-search-input {
     display: none;
     padding: 5px;
-    width: 180px;
+    width: 220px;
     position: absolute;
     right: 0;
     top: 100%;
     background: rgba(26, 26, 26, .9);
 }
-.header-search-input.header-search-open {
+.header-search.header-search-open .header-search-input {
     display: block;
+}
+.header-search.header-search-open .header-search-button {
+    color: #fff;
 }
 .header-search-input input[type=submit] {
     position: absolute;
@@ -2532,7 +2536,7 @@ Search form Header
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 33px;
     top: 5px;
     right: 5px;
@@ -3577,7 +3581,35 @@ a.button.compare:hover {
 }
 
 @media screen and (max-width: 768px) {
-	
+
+    .navbar-header {
+        padding-right: 70px;
+        margin-right: -85px;
+        float: left;
+    }
+    .navbar-custom .navbar-cart {
+        position: absolute;
+        right: 35px;
+        top: 12px;
+    }
+    .navbar-fixed-top .navbar-collapse {
+        width: 100%;
+        float: left;  
+    }
+    .header-search {
+        position: initial;
+    }
+    .header-search-input {
+        width: 100%;
+    }
+    .navbar-custom .navbar-cart {
+        position: initial;
+        padding: 10px 0px 10px 20px;
+    }
+    .navbar-cart {
+        width: 80px;
+    }
+
 	/* single product page */
 	.woocommerce-tabs ul.tabs {
 	    border-bottom: 1px solid #ddd;

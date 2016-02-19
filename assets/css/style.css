@@ -4172,7 +4172,6 @@ Responsive Media Querries
 	    display: table;
 	    overflow: hidden;
 	    width: 100%;
-	    padding-right: 90px;
 	}
 
 	/* Navbar */
@@ -4249,12 +4248,6 @@ Responsive Media Querries
 		white-space: normal;
 		padding: 0;
 		margin-left: 0;
-	}
-
-	.navbar-custom .navbar-cart {
-	    position: absolute;
-	    right: 35px;
-	    top: 12px;
 	}
 
 
