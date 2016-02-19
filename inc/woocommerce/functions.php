@@ -221,7 +221,7 @@ function shop_isle_header_shop_page( $page_title ) {
 
 	$shop_isle_header_image = get_header_image();
 	if( !empty($shop_isle_header_image) ):
-		$shop_isle_title = '<section class="page-header-module module bg-dark" data-background="'.$shop_isle_header_image.'">';
+		$shop_isle_title = '<section class="' . ( is_woocommerce() ? 'woocommerce-page-title ' : '' ) . 'page-header-module module bg-dark" data-background="'.$shop_isle_header_image.'">';
 	else:
 		$shop_isle_title = '<section class="page-header-module module bg-dark">';
 	endif;
