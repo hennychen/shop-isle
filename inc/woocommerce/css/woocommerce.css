@@ -471,6 +471,11 @@ ul.products li.product .product-button-wrap .button.product_type_simple:hover,
     margin-left: 0
 }
 
+.product_list_widget .amount {
+    font-size: 12px;
+    letter-spacing: 0;
+}
+
 .product_list_widget li {
     padding: 1em 0;
     border-bottom: 1px dotted rgba(0, 0, 0, .1)
