@@ -3586,11 +3586,6 @@ a.button.compare:hover {
 
 @media screen and (max-width: 768px) {
 
-    .navbar-header {
-        padding-right: 70px;
-        margin-right: -85px;
-        float: left;
-    }
     .navbar-custom .navbar-cart {
         position: absolute;
         right: 35px;
@@ -3608,10 +3603,14 @@ a.button.compare:hover {
     }
     .navbar-custom .navbar-cart {
         position: initial;
-        padding: 10px 0px 10px 20px;
+        padding: 10px 0px 10px 10px;
+        width: 70px;
     }
     .navbar-cart {
         width: 80px;
+    }
+    .shop_isle_header_title {
+        margin-left: 0; 
     }
 
 	/* single product page */

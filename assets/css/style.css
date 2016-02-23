@@ -2235,6 +2235,7 @@ Sections
 }
 .dropdownmenu {
     position: absolute;
+    z-index: 9999999;
     width: 25px;
     height: 25px;
     margin: 7px;
@@ -4096,6 +4097,16 @@ Responsive Media Querries
 	    line-height: 16px;
 	}
 
+	.navbar-right {
+		text-align: right;
+	}
+
+	.navbar-nav > li {
+    	position: relative;
+    	display: inline-block;
+    	float: none;
+	}
+
 }
 
 @media (max-width: 1200px) {
@@ -4174,12 +4185,34 @@ Responsive Media Querries
 	    width: 100%;
 	}
 
+	.navbar-fixed-top .navbar-collapse {
+	    width: 100%;
+	    float: left;
+	    position: absolute;
+	    top: 100%;
+	    background: #1B1B1B;
+	    left: 0;
+	    z-index: 9999999;
+	}
+
+	.header-container {
+		display: table; 
+		overflow: hidden;
+		width: 100%;
+	}
+	.navbar-header {
+	    padding-right: 0;
+	    margin-right: 0;
+	    float: left;
+	}
+
 	/* Navbar */
 
 	.navbar-custom .navbar-nav {
 		letter-spacing: 3px;
 		margin-top: 1px;
 		margin-bottom: 0;
+		width: 100%;
 	}
 
 	.navbar-custom li > a:hover {
