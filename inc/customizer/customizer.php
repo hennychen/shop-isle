@@ -187,8 +187,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	/* Shortcode */
 	$wp_customize->add_setting( 'shop_isle_products_shortcode', array(
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'parallax_one_sanitize_text'
+		'sanitize_callback' => 'shop_isle_sanitize_text'
 	));
 
 	$wp_customize->add_control( 'shop_isle_products_shortcode', array(
@@ -431,8 +430,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	/* Contact Form  */
 	$wp_customize->add_setting( 'shop_isle_contact_page_form_shortcode', array( 
-		'sanitize_callback' => 'parallax_one_sanitize_text', 
-		'transport' => 'postMessage'
+		'sanitize_callback' => 'shop_isle_sanitize_text', 
 	));
 	
 	$wp_customize->add_control( 'shop_isle_contact_page_form_shortcode', array(
@@ -445,8 +443,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	/* Map ShortCode  */
 	$wp_customize->add_setting( 'shop_isle_contact_page_map_shortcode', array( 
-		'sanitize_callback' => 'parallax_one_sanitize_text', 
-		'transport' => 'postMessage'
+		'sanitize_callback' => 'shop_isle_sanitize_text',
 	));
 	
 	$wp_customize->add_control( 'shop_isle_contact_page_map_shortcode', array(

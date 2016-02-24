@@ -118,11 +118,6 @@
 			$( '.product-hide-title' ).text( to );
 		} );
 	} );
-	wp.customize( 'shop_isle_products_shortcode', function( value ) {
-		value.bind( function( to ) {
-			$( '.products_shortcode' ).text( to );
-		} );
-	} );
 
 	/****************************************/
 	/*********** Video section **************/
@@ -200,20 +195,6 @@
 			else {
 				$( '.shop-isle-poweredby-box' ).addClass( 'shop_isle_hidden_if_not_customizer' );
 			}
-		} );
-	} );
-
-	/*********************************/
-	/******  Contact page  ***********/
-	/*********************************/
-	wp.customize( 'shop_isle_contact_page_form_shortcode', function( value ) {
-		value.bind( function( to ) {
-			$( '.contact-page-form' ).text( to );
-		} );
-	} );
-	wp.customize( 'shop_isle_contact_page_map_shortcode', function( value ) {
-		value.bind( function( to ) {
-			$( '#map' ).text( to );
 		} );
 	} );
 
