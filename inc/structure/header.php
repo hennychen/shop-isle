@@ -5,27 +5,6 @@
  * @package shop-isle
  */
 
-
-if ( ! function_exists( 'shop_isle_site_branding' ) ) {
-	/**
-	 * Display Site Branding
-	 * @since  1.0.0
-	 * @return void
-	 */
-	function shop_isle_site_branding() {
-		if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
-			jetpack_the_site_logo();
-		} else { ?>
-			<div class="site-branding">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php if ( '' != get_bloginfo( 'description' ) ) { ?>
-					<p class="site-description"><?php echo bloginfo( 'description' ); ?></p>
-				<?php } ?>
-			</div>
-		<?php }
-	}
-}
-
 if ( ! function_exists( 'shop_isle_primary_navigation' ) ) {
 	/**
 	 * Display Primary Navigation
@@ -118,19 +97,3 @@ if ( ! function_exists( 'shop_isle_primary_navigation' ) ) {
 		<?php
 	}
 }
-
-if ( ! function_exists( 'storefront_skip_links' ) ) {
-	/**
-	 * Skip links
-	 * @since  1.4.1
-	 * @return void
-	 */
-	function storefront_skip_links() {
-		?>
-		<a class="skip-link screen-reader-text" href="#site-navigation"><?php _e( 'Skip to navigation', 'shop-isle' ); ?></a>
-		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'shop-isle' ); ?></a>
-		<?php
-	}
-}
-
-

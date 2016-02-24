@@ -2023,6 +2023,10 @@ Navbar
 	font-size: 11px;
 }
 
+.navbar-right ul {
+	text-align: left;
+}
+
 /* Navbar search */
 
 .menu-item-has-children-search {

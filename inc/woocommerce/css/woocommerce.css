@@ -1123,7 +1123,7 @@ ul.digital-downloads li:before {
 	line-height: 16px;
 }
 
-.storefront-sorting {
+.shop-isle-sorting {
     font-size: .857em;
     margin-bottom: 2.618em
 }
@@ -1303,16 +1303,16 @@ dl.variation dd {
     margin: 0 0 1em
 }
 
-.storefront-product-section {
+.shop-isle-product-section {
     border-bottom: 3px solid rgba(0, 0, 0, .025);
     margin-bottom: 4.236em
 }
 
-.storefront-product-section .section-title {
+.shop-isle-product-section .section-title {
     text-align: center
 }
 
-.storefront-product-section:last-child {
+.shop-isle-product-section:last-child {
     border-bottom: 0
 }
 
@@ -1424,7 +1424,7 @@ ul.products li.product.last {
 
 .page-template-template-fullwidth-php .site-main .columns-1 ul.products li.product,
 .page-template-template-homepage-php .site-main .columns-1 ul.products li.product,
-.storefront-full-width-content .site-main .columns-1 ul.products li.product {
+.shop-isle-full-width-content .site-main .columns-1 ul.products li.product {
     width: 100%;
     margin-right: 0;
     float: none
@@ -1432,7 +1432,7 @@ ul.products li.product.last {
 
 .page-template-template-fullwidth-php .site-main .columns-2 ul.products li.product,
 .page-template-template-homepage-php .site-main .columns-2 ul.products li.product,
-.storefront-full-width-content .site-main .columns-2 ul.products li.product {
+.shop-isle-full-width-content .site-main .columns-2 ul.products li.product {
     width: 47.8260869565%;
     float: left;
     margin-right: 4.347826087%
@@ -1440,7 +1440,7 @@ ul.products li.product.last {
 
 .page-template-template-fullwidth-php .site-main .columns-3 ul.products li.product,
 .page-template-template-homepage-php .site-main .columns-3 ul.products li.product,
-.storefront-full-width-content .site-main .columns-3 ul.products li.product {
+.shop-isle-full-width-content .site-main .columns-3 ul.products li.product {
     width: 30.4347826087%;
     float: left;
     margin-right: 4.347826087%
@@ -1448,7 +1448,7 @@ ul.products li.product.last {
 
 .page-template-template-fullwidth-php .site-main .columns-4 ul.products li.product,
 .page-template-template-homepage-php .site-main .columns-4 ul.products li.product,
-.storefront-full-width-content .site-main .columns-4 ul.products li.product {
+.shop-isle-full-width-content .site-main .columns-4 ul.products li.product {
     width: 21.7391304348%;
     float: left;
     margin-right: 4.347826087%
@@ -1456,7 +1456,7 @@ ul.products li.product.last {
 
 .page-template-template-fullwidth-php .site-main .columns-5 ul.products li.product,
 .page-template-template-homepage-php .site-main .columns-5 ul.products li.product,
-.storefront-full-width-content .site-main .columns-5 ul.products li.product {
+.shop-isle-full-width-content .site-main .columns-5 ul.products li.product {
     width: 16.9%;
     margin-right: 3.8%
 }
@@ -1529,36 +1529,36 @@ ul.products li.product.last {
     padding-right: 0;
 }
 
-.storefront-full-width-content.single-product div.product .images {
+.shop-isle-full-width-content.single-product div.product .images {
     width: 30.4347826087%;
     float: left;
     margin-right: 4.347826087%;
     margin-bottom: 3.631em
 }
 
-.storefront-full-width-content.single-product div.product .images .thumbnails a.zoom {
+.shop-isle-full-width-content.single-product div.product .images .thumbnails a.zoom {
     width: 14.2857142857%;
     float: left;
     margin-right: 14.2857142857%
 }
 
-.storefront-full-width-content.single-product div.product .images .thumbnails a.zoom.last {
+.shop-isle-full-width-content.single-product div.product .images .thumbnails a.zoom.last {
     margin-right: 0
 }
 
-.storefront-full-width-content.single-product div.product .summary {
+.shop-isle-full-width-content.single-product div.product .summary {
     width: 65.2173913043%;
     float: right;
     margin-right: 0;
     margin-bottom: 3.631em
 }
 
-.storefront-full-width-content.single-product div.product .woocommerce-tabs {
+.shop-isle-full-width-content.single-product div.product .woocommerce-tabs {
     clear: both
 }
 
-.storefront-full-width-content.single-product .related ul.products li.product,
-.storefront-full-width-content.single-product .upsells ul.products li.product {
+.shop-isle-full-width-content.single-product .related ul.products li.product,
+.shop-isle-full-width-content.single-product .upsells ul.products li.product {
     width: 30.4347826087%;
     float: left;
     margin-right: 4.347826087%
@@ -1571,17 +1571,17 @@ ul.products li.product.last {
     padding: 0px 15px 15px;
 }
 
-.storefront-sorting {
+.shop-isle-sorting {
     margin-bottom: 2.618em
 }
 
-.storefront-sorting::after {
+.shop-isle-sorting::after {
     clear: both;
     content: "";
     display: table
 }
 
-.storefront-sorting select {
+.shop-isle-sorting select {
     width: 9.505em
 }
 
@@ -1893,13 +1893,13 @@ table.cart td.actions input {
     margin-right: 0
 }
 
-.storefront-full-width-content .woocommerce-tabs ul.tabs {
+.shop-isle-full-width-content .woocommerce-tabs ul.tabs {
     width: 30.4347826087%;
     float: left;
     margin-right: 4.347826087%
 }
 
-.storefront-full-width-content .woocommerce-tabs .panel {
+.shop-isle-full-width-content .woocommerce-tabs .panel {
     width: 65.2173913043%;
     float: right;
     margin-right: 0;

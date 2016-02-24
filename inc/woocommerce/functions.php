@@ -122,8 +122,8 @@ if ( ! function_exists( 'shop_isle_shop_page_wrapper_end' ) ) {
  * @return integer products per row
  * @since  1.0.0
  */
-function storefront_loop_columns() {
-	return apply_filters( 'storefront_loop_columns', 4 ); // 4 products per row
+function shop_isle_loop_columns() {
+	return apply_filters( 'shop_isle_loop_columns', 4 ); // 4 products per row
 }
 
 /**
@@ -131,7 +131,7 @@ function storefront_loop_columns() {
  * @param  array $classes
  * @return array $classes modified to include 'woocommerce-active' class
  */
-function storefront_woocommerce_body_class( $classes ) {
+function shop_isle_woocommerce_body_class( $classes ) {
 	if ( is_woocommerce_activated() ) {
 		$classes[] = 'woocommerce-active';
 	}
@@ -145,13 +145,13 @@ function storefront_woocommerce_body_class( $classes ) {
  * @param  array $fragments Fragments to refresh via AJAX
  * @return array            Fragments to refresh via AJAX
  */
-if ( ! function_exists( 'storefront_cart_link_fragment' ) ) {
-	function storefront_cart_link_fragment( $fragments ) {
+if ( ! function_exists( 'shop_isle_cart_link_fragment' ) ) {
+	function shop_isle_cart_link_fragment( $fragments ) {
 		global $woocommerce;
 
 		ob_start();
 
-		storefront_cart_link();
+		shop_isle_cart_link();
 
 		$fragments['a.cart-contents'] = ob_get_clean();
 
@@ -163,10 +163,10 @@ if ( ! function_exists( 'storefront_cart_link_fragment' ) ) {
  * WooCommerce specific scripts & stylesheets
  * @since 1.0.0
  */
-function storefront_woocommerce_scripts() {
+function shop_isle_woocommerce_scripts() {
 	global $shop_isle_version;
 
-	wp_enqueue_style( 'storefront-woocommerce-style1', get_template_directory_uri() . '/inc/woocommerce/css/woocommerce.css', array(), 'v3' );
+	wp_enqueue_style( 'shop-isle-woocommerce-style1', get_template_directory_uri() . '/inc/woocommerce/css/woocommerce.css', array(), 'v3' );
 }
 
 /**
@@ -175,8 +175,8 @@ function storefront_woocommerce_scripts() {
  * @since 1.0.0
  * @return  array $args related products args
  */
-function storefront_related_products_args( $args ) {
-	$args = apply_filters( 'storefront_related_products_args', array(
+function shop_isle_related_products_args( $args ) {
+	$args = apply_filters( 'shop_isle_related_products_args', array(
 		'posts_per_page' => 4,
 		'columns'        => 4,
 	) );
@@ -189,8 +189,8 @@ function storefront_related_products_args( $args ) {
  * @return integer number of columns
  * @since  1.0.0
  */
-function storefront_thumbnail_columns() {
-	return intval( apply_filters( 'storefront_product_thumbnail_columns', 4 ) );
+function shop_isle_thumbnail_columns() {
+	return intval( apply_filters( 'shop_isle_product_thumbnail_columns', 4 ) );
 }
 
 /**
@@ -198,8 +198,8 @@ function storefront_thumbnail_columns() {
  * @return integer number of products
  * @since  1.0.0
  */
-function storefront_products_per_page() {
-	return intval( apply_filters( 'storefront_products_per_page', 12 ) );
+function shop_isle_products_per_page() {
+	return intval( apply_filters( 'shop_isle_products_per_page', 12 ) );
 }
 
 /**

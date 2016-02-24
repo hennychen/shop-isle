@@ -68,11 +68,11 @@ if ( ! function_exists( 'shop_isle_post_meta' ) ) {
 	}
 }
 
-if ( ! function_exists( 'storefront_paging_nav' ) ) {
+if ( ! function_exists( 'shop_isle_paging_nav' ) ) {
 	/**
 	 * Display navigation to next/previous set of posts when applicable.
 	 */
-	function storefront_paging_nav() {
+	function shop_isle_paging_nav() {
 		echo '<div class="clear"></div>';
 		?>
 		<nav class="navigation paging-navigation" role="navigation">
@@ -99,11 +99,11 @@ if ( ! function_exists( 'storefront_paging_nav' ) ) {
 	}
 }
 
-if ( ! function_exists( 'storefront_post_nav' ) ) {
+if ( ! function_exists( 'shop_isle_post_nav' ) ) {
 	/**
 	 * Display navigation to next/previous post when applicable.
 	 */
-	function storefront_post_nav() {
+	function shop_isle_post_nav() {
 		$args = array(
 			'next_text' => '%title &nbsp;<span class="meta-nav">&rarr;</span>',
 			'prev_text'	=> '<span class="meta-nav">&larr;</span>&nbsp;%title',
