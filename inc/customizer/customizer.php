@@ -12,6 +12,18 @@
  * @since  1.0.0
  */ 
 function shop_isle_customize_register( $wp_customize ) {
+	
+	class ShopIsle_Contact_Page_Instructions extends WP_Customize_Control {
+		public function render_content() {
+			echo __( 'To customize the Contact Page you need to first select the template "Contact page" for the page you want to use for this purpose. Then open that page in the browser and press "Customize" in the top bar.','shop-isle' ).'<br><br>'. __( 'Need further assistance? Check out this','shop-isle' ).' <a href="http://docs.themeisle.com/article/211-shopisle-customizing-the-contact-and-about-us-page" target="_blank">'.__( 'doc','shop-isle' ).'</a>';
+		}
+	}
+	
+	class ShopIsle_Aboutus_Page_Instructions extends WP_Customize_Control {
+		public function render_content() {
+			echo __( 'To customize the About us Page you need to first select the template "About us page" for the page you want to use for this purpose. Then open that page in the browser and press "Customize" in the top bar.','shop-isle' ).'<br><br>'. __( 'Need further assistance? Check out this','shop-isle' ).' <a href="http://docs.themeisle.com/article/211-shopisle-customizing-the-contact-and-about-us-page" target="_blank">'.__( 'doc','shop-isle' ).'</a>';
+		}
+	}
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 
@@ -175,8 +187,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	/* Shortcode */
 	$wp_customize->add_setting( 'shop_isle_products_shortcode', array(
-		'transport' => 'postMessage',
-		'sanitize_callback' => 'parallax_one_sanitize_text'
+		'sanitize_callback' => 'shop_isle_sanitize_text'
 	));
 
 	$wp_customize->add_control( 'shop_isle_products_shortcode', array(
@@ -251,8 +262,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	/* Youtube link */
 	$wp_customize->add_setting( 'shop_isle_yt_link', array(
-		'sanitize_callback' => 'parallax_one_sanitize_text', 
-		'transport' => 'postMessage'
+		'sanitize_callback' => 'esc_url'
 	));
 
 	$wp_customize->add_control( 'shop_isle_yt_link', array(
@@ -420,8 +430,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	/* Contact Form  */
 	$wp_customize->add_setting( 'shop_isle_contact_page_form_shortcode', array( 
-		'sanitize_callback' => 'parallax_one_sanitize_text', 
-		'transport' => 'postMessage'
+		'sanitize_callback' => 'shop_isle_sanitize_text', 
 	));
 	
 	$wp_customize->add_control( 'shop_isle_contact_page_form_shortcode', array(
@@ -434,8 +443,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	/* Map ShortCode  */
 	$wp_customize->add_setting( 'shop_isle_contact_page_map_shortcode', array( 
-		'sanitize_callback' => 'parallax_one_sanitize_text', 
-		'transport' => 'postMessage'
+		'sanitize_callback' => 'shop_isle_sanitize_text',
 	));
 	
 	$wp_customize->add_control( 'shop_isle_contact_page_map_shortcode', array(
@@ -445,6 +453,24 @@ function shop_isle_customize_register( $wp_customize ) {
 		'active_callback' => 'shop_isle_is_contact_page',
 		'priority'    => 2
 	));
+	
+	/***********************************************************************************/
+	/******  Contact page - instructions for users when not on Contact page  ***********/
+	/***********************************************************************************/
+	
+	$wp_customize->add_section( 'shop_isle_contact_page_instructions', array(
+        'title'    => __( 'Contact page', 'shop-isle' ),
+        'priority' => 51
+    ) );
+	
+	$wp_customize->add_setting( 'shop_isle_contact_page_instructions' );
+	
+	$wp_customize->add_control( new ShopIsle_Contact_Page_Instructions( $wp_customize, 'shop_isle_contact_page_instructions', array(
+	    'section' => 'shop_isle_contact_page_instructions',
+		'active_callback' => 'shop_isle_is_not_contact_page',
+	)));
+	
+	
 	
 	/*********************************/
 	/******  About us page  **********/
@@ -523,6 +549,22 @@ function shop_isle_customize_register( $wp_customize ) {
 		'shop_isle_box_label' => __('Team member','shop-isle'),
 		'shop_isle_box_add_label' => __('Add new team member','shop-isle')
 	) ) );
+	
+	/***********************************************************************************/
+	/******  About us page - instructions for users when not on About us page  *********/
+	/***********************************************************************************/
+	
+	$wp_customize->add_section( 'shop_isle_aboutus_page_instructions', array(
+        'title'    => __( 'About us page', 'shop-isle' ),
+        'priority' => 52
+    ) );
+	
+	$wp_customize->add_setting( 'shop_isle_aboutus_page_instructions' );
+	
+	$wp_customize->add_control( new ShopIsle_Aboutus_Page_Instructions( $wp_customize, 'shop_isle_aboutus_page_instructions', array(
+	    'section' => 'shop_isle_aboutus_page_instructions',
+		'active_callback' => 'shop_isle_is_not_aboutus_page',
+	)));
 	
 	
 	if ( class_exists( 'WP_Customize_Panel' ) ):
@@ -793,9 +835,15 @@ function shop_isle_customize_register( $wp_customize ) {
 function shop_isle_is_contact_page() { 
 	return is_page_template('template-contact.php');
 };
+function shop_isle_is_not_contact_page() { 
+	return !is_page_template('template-contact.php');
+};
 
 function shop_isle_is_aboutus_page() { 
 	return is_page_template('template-about.php');
+};
+function shop_isle_is_not_aboutus_page() { 
+	return !is_page_template('template-about.php');
 };
 
 function shop_isle_sanitize_repeater($input){

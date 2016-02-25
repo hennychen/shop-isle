@@ -21,14 +21,14 @@ get_header(); ?>
 
 							<?php
 							
-							do_action( 'storefront_single_post_before' );
+							do_action( 'shop_isle_single_post_before' );
 
 							get_template_part( 'content', 'single' );
 
 							/**
-							 * @hooked storefront_post_nav - 10
+							 * @hooked shop_isle_post_nav - 10
 							 */
-							do_action( 'storefront_single_post_after' );
+							do_action( 'shop_isle_single_post_after' );
 							?>
 
 						<?php endwhile; // end of the loop. ?>

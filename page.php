@@ -91,7 +91,7 @@ get_header(); ?>
 							<?php while ( have_posts() ) : the_post(); ?>
 
 								<?php
-								do_action( 'storefront_page_before' );
+								do_action( 'shop_isle_page_before' );
 								?>
 
 								<?php get_template_part( 'content', 'page' ); ?>
@@ -100,7 +100,7 @@ get_header(); ?>
 								/**
 								 * @hooked shop_isle_display_comments - 10
 								 */
-								do_action( 'storefront_page_after' );
+								do_action( 'shop_isle_page_after' );
 								?>
 
 							<?php endwhile; // end of the loop. ?>

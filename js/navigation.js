@@ -43,13 +43,13 @@
 	};
 
 	// Add focus class to li
-	jQuery( '.main-navigation, .secondary-navigation' ).find( 'a' ).on( 'focus.storefront blur.storefront', function() {
+	jQuery( '.main-navigation, .secondary-navigation' ).find( 'a' ).on( 'focus.shop-isle blur.shop-isle', function() {
 		jQuery( this ).parents().toggleClass( 'focus' );
 	});
 
 	// Add focus to cart dropdown
 	jQuery( window ).load( function() {
-		jQuery( '.site-header-cart' ).find( 'a' ).on( 'focus.storefront blur.storefront', function() {
+		jQuery( '.site-header-cart' ).find( 'a' ).on( 'focus.shop-isle blur.shop-isle', function() {
 			jQuery( this ).parents().toggleClass( 'focus' );
 		});
 	});

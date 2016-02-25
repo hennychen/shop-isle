@@ -4,12 +4,12 @@
  *
  */
 
-if ( ! function_exists( 'storefront_page_content' ) ) {
+if ( ! function_exists( 'shop_isle_page_content' ) ) {
 	/**
 	 * Display the post content with a link to the single post
 	 * @since 1.0.0
 	 */
-	function storefront_page_content() {
+	function shop_isle_page_content() {
 		?>
 		<div class="entry-content" itemprop="mainContentOfPage">
 			<?php the_content(); ?>

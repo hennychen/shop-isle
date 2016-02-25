@@ -2,7 +2,7 @@
 /**
  * The sidebar containing the main widget area.
  *
- * @package storefront
+ * @package shop-isle
  */
 
 if ( ! is_active_sidebar( 'shop-isle-sidebar-shop-archive' ) ) {

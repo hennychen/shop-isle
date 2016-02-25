@@ -1,4 +1,52 @@
 jQuery(document).ready(function(){
+	
+	/**************************/
+	/**** Generate uniq id ****/
+	/**************************/
+	
+	function shop_isle_uniqid(prefix, more_entropy) {
+
+	  if (typeof prefix === 'undefined') {
+		prefix = '';
+	  }
+
+	  var retId;
+	  var formatSeed = function(seed, reqWidth) {
+		seed = parseInt(seed, 10)
+		  .toString(16); // to hex str
+		if (reqWidth < seed.length) { // so long we split
+		  return seed.slice(seed.length - reqWidth);
+		}
+		if (reqWidth > seed.length) { // so short we pad
+		  return Array(1 + (reqWidth - seed.length))
+			.join('0') + seed;
+		}
+		return seed;
+	  };
+
+	  // BEGIN REDUNDANT
+	  if (!this.php_js) {
+		this.php_js = {};
+	  }
+	  // END REDUNDANT
+	  if (!this.php_js.uniqidSeed) { // init seed with big random int
+		this.php_js.uniqidSeed = Math.floor(Math.random() * 0x75bcd15);
+	  }
+	  this.php_js.uniqidSeed++;
+
+	  retId = prefix; // start with prefix, add current milliseconds hex string
+	  retId += formatSeed(parseInt(new Date()
+		.getTime() / 1000, 10), 8);
+	  retId += formatSeed(this.php_js.uniqidSeed, 5); // add seed hex string
+	  if (more_entropy) {
+		// for more entropy we add a float lower to 10
+		retId += (Math.random() * 10)
+		  .toFixed(8)
+		  .toString();
+	  }
+
+	  return retId;
+	}
 
 	function shop_isle_refresh_general_control_values(){
 		jQuery(".shop_isle_general_control_droppable").each(function(){
@@ -12,6 +60,7 @@ jQuery(document).ready(function(){
 				var subtext = jQuery(this).find(".shop_isle_subtext_control").val();
 				var description = jQuery(this).find(".shop_isle_description_control").val();
 				var image_url = jQuery(this).find(".custom_media_url").val();
+				var id = jQuery(this).find(".shop_isle_box_id").val();
 				if( (icon_value != '') || (text != '') || (image_url != '') || (subtext != '') || (label != '') || (link != '') || (description != '') ){
 					values.push({
 						"icon_value" : icon_value,
@@ -21,7 +70,8 @@ jQuery(document).ready(function(){
 						"subtext" : subtext,
 						"label" : label,
 						"link"  : link,
-						"description" : description
+						"description" : description,
+						"id" : id
 					});
 				}
 
@@ -102,6 +152,7 @@ jQuery(document).ready(function(){
 	jQuery(".shop_isle_general_control_new_field").on("click",function(){
 
 		var th = jQuery(this).parent();
+		var id = 'shop_isle_' + shop_isle_uniqid();
 		if(typeof th != 'undefined') {
 
             var field = th.find(".shop_isle_general_control_repeater_container:first").clone();
@@ -112,6 +163,7 @@ jQuery(document).ready(function(){
                 field.find(".shop_isle_link_control").val('');
 				field.find(".shop_isle_label_control").val('');
 				field.find(".shop_isle_subtext_control").val('');
+				field.find(".shop_isle_box_id").val(id);
                 field.find(".custom_media_url").val('');
                 th.find(".shop_isle_general_control_repeater_container:first").parent().append(field);
                 shop_isle_refresh_general_control_values();

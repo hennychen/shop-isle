@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
- * @package storefront
+ * @package shop-isle
  */
 
 /**
@@ -24,7 +24,7 @@ function shop_isle_page_menu_args( $args ) {
  * @param array $classes Classes for the body element.
  * @return array
  */
-function storefront_body_classes( $classes ) {
+function shop_isle_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -37,12 +37,12 @@ function storefront_body_classes( $classes ) {
 	/**
 	 * What is this?!
 	 * Take the blue pill, close this file and forget you saw the following code.
-	 * Or take the red pill, filter storefront_make_me_cute and see how deep the rabbit hole goes...
+	 * Or take the red pill, filter shop_isle_make_me_cute and see how deep the rabbit hole goes...
 	 */
-	$cute	= apply_filters( 'storefront_make_me_cute', false );
+	$cute	= apply_filters( 'shop_isle_make_me_cute', false );
 
 	if ( true === $cute ) {
-		$classes[] = 'storefront-cute';
+		$classes[] = 'shop-isle-cute';
 	}
 
 	return $classes;

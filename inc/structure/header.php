@@ -5,27 +5,6 @@
  * @package shop-isle
  */
 
-
-if ( ! function_exists( 'shop_isle_site_branding' ) ) {
-	/**
-	 * Display Site Branding
-	 * @since  1.0.0
-	 * @return void
-	 */
-	function shop_isle_site_branding() {
-		if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
-			jetpack_the_site_logo();
-		} else { ?>
-			<div class="site-branding">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php if ( '' != get_bloginfo( 'description' ) ) { ?>
-					<p class="site-description"><?php echo bloginfo( 'description' ); ?></p>
-				<?php } ?>
-			</div>
-		<?php }
-	}
-}
-
 if ( ! function_exists( 'shop_isle_primary_navigation' ) ) {
 	/**
 	 * Display Primary Navigation
@@ -84,21 +63,28 @@ if ( ! function_exists( 'shop_isle_primary_navigation' ) ) {
 						</div>
 					</div>
 
-					<?php if( function_exists( 'WC' ) ): ?>
-						<div id="header-cart" class="header-shopping-cart-wrap">
+					<?php if( class_exists( 'WooCommerce' ) ): ?>
+						<div class="navbar-cart">
+							
+							<div class="header-search">
+								<div class="glyphicon glyphicon-search header-search-button"></div>
+								<div class="header-search-input">
+									<form role="search" method="get" class="woocommerce-product-search" action="<?php echo esc_url( home_url( '/'  ) ); ?>">
+										<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search Products&hellip;', 'placeholder', 'woocommerce' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'woocommerce' ); ?>" />
+										<input type="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'woocommerce' ); ?>" />
+										<input type="hidden" name="post_type" value="product" />
+									</form>
+								</div>
+							</div>
 
-							<a href="<?php echo WC()->cart->get_cart_url() ?>" title="<?php _e( 'View your shopping cart' ); ?>" class="cart-contents header-shopping-cart">
-								<span class="glyphicon glyphicon-shopping-cart shopping-cart-count">
-									<span>
-									<?php
-										echo trim( WC()->cart->get_cart_contents_count() );
-									?>
-									</span>
-								</span>
-								<span class="cart-total">
-								<?php echo WC()->cart->get_cart_total(); ?>
-								</span>
-							</a>
+							<?php if( function_exists( 'WC' ) ): ?>
+								<div class="navbar-cart-inner">
+									<a href="<?php echo WC()->cart->get_cart_url() ?>" title="<?php _e( 'View your shopping cart','shop-isle' ); ?>">
+										<span class="icon-basket"></span>
+										<span class="cart-item-number"><?php echo trim( WC()->cart->get_cart_contents_count() ); ?></span>
+									</a>
+								</div>
+							<?php endif; ?>
 
 						</div>
 					<?php endif; ?>
@@ -111,19 +97,3 @@ if ( ! function_exists( 'shop_isle_primary_navigation' ) ) {
 		<?php
 	}
 }
-
-if ( ! function_exists( 'storefront_skip_links' ) ) {
-	/**
-	 * Skip links
-	 * @since  1.4.1
-	 * @return void
-	 */
-	function storefront_skip_links() {
-		?>
-		<a class="skip-link screen-reader-text" href="#site-navigation"><?php _e( 'Skip to navigation', 'shop-isle' ); ?></a>
-		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'shop-isle' ); ?></a>
-		<?php
-	}
-}
-
-
