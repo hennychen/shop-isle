@@ -1,5 +1,29 @@
 
 
+### 1.1.3 - 25/02/2016
+
+ Changes: 
+
+
+ * #144, WooCommerce compare list integration
+ * French translations
+ * #147, add explanations for Contact and About us pages
+ * #138 Video section bug fixed
+ * Fixed #144 Added style for Woocommerce compare list
+ * Fixed #143 Responsive cart page
+ * Fixed #137 Shopping cart too big in header
+ * Fixed #131 Compatibility with YITH Woocommerce Wishlist
+ * #148 Translations for frontpage and about us pages boxes
+ * Fixed #134 Added search functionality
+ * Fixed #134 Search products issue on responsive
+ * Fixed #134 Display search and cart in header only when woocommerce is activated
+ * Fixed #140 Related products widget in footer on single page
+ * Removed dublicated h1 in header on woocommerce page
+ * Fixed #141 Space issue
+ * Fixed #137 Cart and search icon vertical aling issue
+ * Fixed #150, shortcodes not working in Customize
+
+
 ### 1.1.2 - 01/02/2016
 
  Changes: 
