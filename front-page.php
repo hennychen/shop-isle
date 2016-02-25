@@ -103,12 +103,16 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 	
 	}
 	
+	if( defined('WCCM_VERISON') ) {
+	
 		/* Woocommerce compare list plugin */
 		echo '<section class="module-small wccm-frontpage-compare-list">';
 			echo '<div class="container">';
 				do_action( 'shop_isle_wccm_compare_list' );
 			echo '</div>';
 		echo '</section>';
+		
+	}
 
 		/***********************/
 		/******  BANNERS *******/
