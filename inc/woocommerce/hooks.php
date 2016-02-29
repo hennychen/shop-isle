@@ -103,7 +103,6 @@ add_action( 'wp_enqueue_scripts', 'shop_isle_woocommerce_integrations_scripts' )
 * Cart page
 */
 add_filter( 'woocommerce_cart_item_thumbnail', 'shop_isle_cart_item_thumbnail', 10, 3 );
-remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
 
 
 /* Meta box for header description on shop page */
