@@ -78,17 +78,9 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	ob_start();
 	?>
 
-		<a href="<?php echo WC()->cart->get_cart_url() ?>" title="<?php _e( 'View your shopping cart','shop-isle' ); ?>" class="cart-contents header-shopping-cart">
-			<span class="glyphicon glyphicon-shopping-cart shopping-cart-count">
-				<span>
-				<?php
-					echo trim( WC()->cart->get_cart_contents_count() );
-				?>
-				</span>
-			</span>
-			<span class="cart-total">
-			<?php echo WC()->cart->get_cart_total(); ?>
-			</span>
+		<a href="<?php echo WC()->cart->get_cart_url() ?>" title="<?php _e( 'View your shopping cart','shop-isle' ); ?>" class="cart-contents">
+			<span class="icon-basket"></span>
+			<span class="cart-item-number"><?php echo trim( WC()->cart->get_cart_contents_count() ); ?></span>
 		</a>
 
 	<?php
