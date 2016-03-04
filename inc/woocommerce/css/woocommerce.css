@@ -2499,7 +2499,7 @@ Search form Header
 .header-search-button {
     font-size: 14px;
     color: #CBC7C2;
-    line-height: 26px;
+    line-height: 20px;
 	cursor: pointer;
 }
 .header-search:hover .header-search-button {

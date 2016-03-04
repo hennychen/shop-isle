@@ -3979,6 +3979,24 @@ Scroll to top
 	width: 33.33333333%;
 	display: inline-block;
 }
+.header-menu-wrap {
+	display: table-cell !important;
+	vertical-align: middle;
+}
+.navbar-header {
+	float: none;
+	display: table-cell !important;
+    vertical-align: middle;
+}
+.header-container {
+    min-height: 50px;
+    display: table;
+    width: 100%;
+}
+.shop-isle-header-title-inner {
+    text-align: center;
+    float: left;	
+}
 
 /*--------------------------------------------------------------
 	ALIGNMENTS
@@ -4013,16 +4031,6 @@ Responsive Media Querries
 ------------------------------------------------------------------- */
 
 @media (min-width: 768px) {
-
-	.header-menu-wrap {
-		display: table-cell !important;
-		vertical-align: middle;
-	}
-
-	.header-container {
-	    display: table;
-	    width: 100%;
-	}
 
 	body.home .navbar-transparent {
 		background: transparent;
@@ -4184,9 +4192,16 @@ Responsive Media Querries
 	}
 
 	.navbar-header {
-	    display: table;
-	    overflow: hidden;
+		display: table !important;
 	    width: 100%;
+	    min-height: 50px;
+	}
+	.shop_isle_header_title {
+	    margin-left: 0;
+	    display: table-cell !important;
+	    vertical-align: middle;
+	    float: none;
+	    text-align: left;
 	}
 
 	.navbar-fixed-top .navbar-collapse {
@@ -4200,14 +4215,11 @@ Responsive Media Querries
 	}
 
 	.header-container {
-		display: table; 
-		overflow: hidden;
 		width: 100%;
 	}
 	.navbar-header {
 	    padding-right: 0;
 	    margin-right: 0;
-	    float: left;
 	}
 
 	/* Navbar */
