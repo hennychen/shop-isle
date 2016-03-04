@@ -1,5 +1,17 @@
 
 
+### 1.1.4 - 04/03/2016
+
+ Changes: 
+
+
+ * Fixed #152, cross-sell products
+ * Fixed #151 Cart not working
+ * Fixed #152 Cross-sell not working
+ * Fixed #136 Added star rating on homepage
+ * Improved vertically centred menu in header
+
+
 ### 1.1.3 - 25/02/2016
 
  Changes: 
