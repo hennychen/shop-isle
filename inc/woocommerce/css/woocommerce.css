@@ -2126,7 +2126,6 @@ td.product-subtotal span.amount {
 #reviews p.comment-form-comment textarea {
     margin-bottom: 15px;
     font-family: "Roboto Condensed", sans-serif;
-    text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 11px;
     border: 1px solid #EAEAEA;
