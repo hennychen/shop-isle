@@ -146,7 +146,8 @@ ul.products li.product h3, .wccm-td div {
 }
 
 ul.products li.product .star-rating {
-    font-size: .857em
+    font-size: 11px;
+    margin-bottom: 5px;
 }
 
 ul.products li.product img {
@@ -2890,6 +2891,11 @@ table.cart .quantity .qty {
     margin-right: auto;
     float: none;
 }
+.product-rating-home .star-rating {
+    float: none;
+    display: inline-block;
+    margin-bottom: 0;
+}
 
 /****
 Cart page
@@ -3743,10 +3749,8 @@ a.button.compare:hover {
 	.shop-item-image, 
     .woocommerce ul.products li.product {
 		max-width: 370px;
-/***
-		margin-left: auto;
-		margin-right: auto !important; */
 		float: none;
+        margin: 0 auto;
 	}
     .header-shopping-cart-wrap {
         position: absolute;
@@ -3764,6 +3768,7 @@ a.button.compare:hover {
     .cart_totals h2, .cross-sells h2 {
         text-align: center;
     }
+
 }
 
 @media(min-width: 991px) and (max-width:1200px) {
