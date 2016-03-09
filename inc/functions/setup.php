@@ -222,6 +222,11 @@ function shop_isle_register_required_plugins() {
 	
 	$plugins = array(
 				array(
+					'name'      => 'WooCommerce',
+					'slug'      => 'woocommerce',
+					'required'  => false,
+				),
+				array(
 					'name'      => 'WooCommerce Compare List',
 					'slug'      => 'woocommerce-compare-list',
 					'required'  => false,
