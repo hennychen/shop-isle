@@ -367,6 +367,8 @@ function shop_isle_add_id() {
 }
 add_action( 'shutdown', 'shop_isle_add_id' );
 
+
+
 /* Polylang repeater translate */
 
 if(function_exists('icl_unregister_string') && function_exists('icl_register_string')){
@@ -393,35 +395,40 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 				$label = $shop_isle_slider->label;
 				
 				if(!empty($id)) {
-					if(!empty($text)){
-						icl_unregister_string ('Slider' , $id.'_slider_text' );
-						icl_register_string( 'Slider' , $id.'_slider_text' , $text );
-					} else {
-						icl_unregister_string ('Slider' , $id.'_slider_text' );
-					}
-					if(!empty($subtext)){
-						icl_unregister_string ('Slider' , $id.'_slider_subtext' );
-						icl_register_string( 'Slider' , $id.'_slider_subtext' , $subtext );
-					} else {
-						icl_unregister_string ('Slider' , $id.'_slider_subtext' );
-					}
-					if(!empty($link)){
-						icl_unregister_string ('Slider' , $id.'_slider_link' );
-						icl_register_string( 'Slider' , $id.'_slider_link' , $link );
-					} else {
-						icl_unregister_string ('Slider' , $id.'_slider_link' );
-					}
-					if(!empty($label)){
-						icl_unregister_string ('Slider' , $id.'_slider_label' );
-						icl_register_string( 'Slider' , $id.'_slider_label' , $label );
-					} else {
-						icl_unregister_string ('Slider' , $id.'_slider_label' );
-					}
+
 					if(!empty($image_url)){
-						icl_unregister_string ('Slider' , $id.'_slider_image_url' );
-						icl_register_string( 'Slider' , $id.'_slider_image_url' , $image_url );
+						icl_unregister_string( 'Slide '.$id, 'Slide image' );
+						icl_register_string( 'Slide '.$id, 'Slide image', $image_url );
 					} else {
-						icl_unregister_string ('Slider' , $id.'_slider_image_url' );
+						icl_unregister_string( 'Slide '.$id, 'Slide image' );
+					}
+
+					if(!empty($text)){
+						icl_unregister_string( 'Slide '. $id, 'Slide text' );
+						icl_register_string( 'Slide '. $id, 'Slide text', $text );
+					} else {
+						icl_unregister_string( 'Slide '. $id, 'Slide text' );
+					}
+
+					if(!empty($subtext)){
+						icl_unregister_string( 'Slide '.$id, 'Slide subtext' );
+						icl_register_string( 'Slide '.$id, 'Slide subtext',$subtext );
+					} else {
+						icl_unregister_string( 'Slide '.$id, 'Slide subtext' );
+					}
+
+					if(!empty($link)){
+						icl_unregister_string( 'Slide '.$id, 'Slide button link' );
+						icl_register_string( 'Slide '.$id, 'Slide button link', $link );
+					} else {
+						icl_unregister_string( 'Slide '.$id, 'Slide button link' );
+					}
+
+					if(!empty($label)){
+						icl_unregister_string( 'Slide '.$id, 'Slide button label' );
+						icl_register_string( 'Slide '.$id, 'Slide button label', $label );
+					} else {
+						icl_unregister_string( 'Slide '.$id, 'Slide button label' );
 					}
 				}
 			}
@@ -443,21 +450,24 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 				if( !empty($shop_isle_banners->id) ) {
 					$id = $shop_isle_banners->id;
 				}
+
 				$image_url = $shop_isle_banners->image_url;
 				$link = $shop_isle_banners->link;
-				
+
 				if(!empty($id)) {
-					if(!empty($image_url)){
-						icl_unregister_string ('Banner' , $id.'_banner_image_url' );
-						icl_register_string( 'Banner' , $id.'_banner_image_url' , $image_url );
-					} else {
-						icl_unregister_string ('Banner' , $id.'_banner_image_url' );
-					}
+
 					if(!empty($link)){
-						icl_unregister_string ('Banner' , $id.'_banner_link' );
-						icl_register_string( 'Banner' , $id.'_banner_link' , $link );
+						icl_unregister_string( 'Banner '.$id, 'Banner link' );
+						icl_register_string( 'Banner '.$id, 'Banner link', $link );
 					} else {
-						icl_unregister_string ('Banner' , $id.'_banner_link' );
+						icl_unregister_string( 'Banner '.$id, 'Banner link' );
+					}
+
+					if(!empty($image_url)){
+						icl_unregister_string( 'Banner '.$id, 'Banner image' );
+						icl_register_string( 'Banner '.$id, 'Banner image', $image_url );
+					} else {
+						icl_unregister_string( 'Banner '.$id, 'Banner image' );
 					}
 					
 				}
@@ -465,7 +475,7 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 		}	
 	}
 	
-	/* Footer socials */
+	/*Footer socials */
 	
 	$shop_isle_socials_pl = get_theme_mod('shop_isle_socials');
 	
@@ -482,21 +492,20 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 				}
 				$icon_value = $shop_isle_socials->icon_value;
 				$link = $shop_isle_socials->link;
-				
+
 				if(!empty($id)) {
 					if(!empty($icon_value)){
-						icl_unregister_string ('Social' , $id.'_social_icon_value' );
-						icl_register_string( 'Social' , $id.'_social_icon_value' , $icon_value );
+						icl_unregister_string( 'Social '.$id, 'Social icon' );
+						icl_register_string( 'Social '.$id, 'Social icon', $icon_value );
 					} else {
-						icl_unregister_string ('Social' , $id.'_social_icon_value' );
+						icl_unregister_string( 'Social '.$id, 'Social icon' );
 					}
 					if(!empty($link)){
-						icl_unregister_string ('Social' , $id.'_social_link' );
-						icl_register_string( 'Social' , $id.'_social_link' , $link );
+						icl_unregister_string( 'Social '.$id, 'Social link' );
+						icl_register_string( 'Social '.$id, 'Social link', $link );
 					} else {
-						icl_unregister_string ('Social' , $id.'_social_link' );
+						icl_unregister_string( 'Social '.$id, 'Social link' );
 					}
-					
 				}
 			}
 		}	
@@ -525,31 +534,34 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 				$text = $shop_isle_team_members->text;
 				$subtext = $shop_isle_team_members->subtext;
 				$description = $shop_isle_team_members->description;
-				
+
 				if(!empty($id)) {
 					if(!empty($image_url)){
-						icl_unregister_string ('Team member' , $id.'_team_member_image_url' );
-						icl_register_string( 'Team member' , $id.'_team_member_image_url' , $image_url );
+						icl_unregister_string( 'Team member '.$id, 'Team member image' );
+						icl_register_string( 'Team member '.$id, 'Team member image', $image_url );
 					} else {
-						icl_unregister_string ('Team member' , $id.'_team_member_image_url' );
+						icl_unregister_string( 'Team member '.$id, 'Team member image' );
 					}
+
 					if(!empty($text)){
-						icl_unregister_string ('Team member' , $id.'_team_member_text' );
-						icl_register_string( 'Team member' , $id.'_team_member_text' , $text );
+						icl_unregister_string( 'Team member '.$id, 'Team member name' );
+						icl_register_string( 'Team member '.$id, 'Team member name', $text );
 					} else {
-						icl_unregister_string ('Team member' , $id.'_team_member_text' );
+						icl_unregister_string( 'Team member '.$id, 'Team member name' );
 					}
+
 					if(!empty($subtext)){
-						icl_unregister_string ('Team member' , $id.'_team_member_subtext' );
-						icl_register_string( 'Team member' , $id.'_team_member_subtext' , $subtext );
+						icl_unregister_string( 'Team member '.$id, 'Team member job' );
+						icl_register_string( 'Team member '.$id, 'Team member job', $subtext );
 					} else {
-						icl_unregister_string ('Team member' , $id.'_team_member_subtext' );
+						icl_unregister_string( 'Team member '.$id, 'Team member job' );
 					}
+
 					if(!empty($description)){
-						icl_unregister_string ('Team member' , $id.'_team_member_description' );
-						icl_register_string( 'Team member' , $id.'_team_member_description' , $description );
+						icl_unregister_string( 'Team member '.$id, 'Team member description' );
+						icl_register_string( 'Team member '.$id, 'Team member description', $description );
 					} else {
-						icl_unregister_string ('Team member' , $id.'_team_member_description' );
+						icl_unregister_string( 'Team member '.$id, 'Team member description' );
 					}
 					
 				}
@@ -557,7 +569,7 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 		}	
 	}
 	
-	/* Our advantages */
+	// /* Our advantages */
 	$shop_isle_advantages_pl = get_theme_mod('shop_isle_advantages');
 	
 	if( !empty($shop_isle_advantages_pl) ) {
@@ -577,22 +589,24 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 				
 				if(!empty($id)) {
 					if(!empty($icon_value)){
-						icl_unregister_string ('Advantage' , $id.'_advantage_icon_value' );
-						icl_register_string( 'Advantage' , $id.'_advantage_icon_value' , $icon_value );
+						icl_unregister_string( 'Advantage '.$id, 'Advantage icon' );
+						icl_register_string( 'Advantage '.$id, 'Advantage icon',$icon_value );
 					} else {
-						icl_unregister_string ('Advantage' , $id.'_advantage_icon_value' );
+						icl_unregister_string( 'Advantage '.$id, 'Advantage icon' );
 					}
+
 					if(!empty($text)){
-						icl_unregister_string ('Advantage' , $id.'_advantage_text' );
-						icl_register_string( 'Advantage' , $id.'_advantage_text' , $text );
+						icl_unregister_string( 'Advantage '.$id, 'Advantage text' );
+						icl_register_string( 'Advantage '.$id, 'Advantage text', $text );
 					} else {
-						icl_unregister_string ('Advantage' , $id.'_advantage_text' );
+						icl_unregister_string( 'Advantage '.$id, 'Advantage text' );
 					}
+
 					if(!empty($subtext)){
-						icl_unregister_string ('Advantage' , $id.'_advantage_subtext' );
-						icl_register_string( 'Advantage' , $id.'_advantage_subtext' , $subtext );
+						icl_unregister_string( 'Advantage '.$id ,'Advantage subtext' );
+						icl_register_string( 'Advantage '.$id ,'Advantage subtext', $subtext );
 					} else {
-						icl_unregister_string ('Advantage' , $id.'_advantage_subtext' );
+						icl_unregister_string( 'Advantage '.$id ,'Advantage subtext' );
 					}
 					
 				}
