@@ -225,11 +225,6 @@ function shop_isle_register_required_plugins() {
 					'name'      => 'WooCommerce',
 					'slug'      => 'woocommerce',
 					'required'  => false,
-				),
-				array(
-					'name'      => 'WooCommerce Compare List',
-					'slug'      => 'woocommerce-compare-list',
-					'required'  => false,
 				)
 			);
 	
