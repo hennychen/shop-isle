@@ -1,5 +1,18 @@
 
 
+### 1.1.5 - 14/03/2016
+
+ Changes: 
+
+
+ * Fixed #158 Header search issue
+ * Fixed #155 Wishlist table issue
+ * #161 recommend WooCommerce at theme activation
+ * Merge pull request #162 from cristian-ungureanu/development
+
+!!! fixed translation issues
+
+
 ### 1.1.4 - 04/03/2016
 
  Changes: 
