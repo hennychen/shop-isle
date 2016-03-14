@@ -113,17 +113,17 @@ if ( ! function_exists( 'shop_isle_footer_copyright_and_socials' ) ) {
 
 
 											
-												$shop_isle_social_icon_value = icl_t( 'Social',$shop_isle_social->id.'_social_icon_value',$shop_isle_social->icon_value );
+												$shop_isle_social_icon_value = icl_t( 'Social '.$shop_isle_social->id, 'Social icon', $shop_isle_social->icon_value );
 												
-												$shop_isle_social_link = icl_t( 'Social',$shop_isle_social->id.'_social_link',$shop_isle_social->link );
+												$shop_isle_social_link = icl_t( 'Social '.$shop_isle_social->id, 'Social link', $shop_isle_social->link );
 												
 												
 												
-												echo '<a href="'.$shop_isle_social_link.'"><span class="'.$shop_isle_social_icon_value.'"></span></a>';		
+												echo '<a href="'. esc_url( $shop_isle_social_link ) .'"><span class="'.$shop_isle_social_icon_value.'"></span></a>';		
 												
 											} else {
 												
-												echo '<a href="'.$shop_isle_social->link.'"><span class="'.$shop_isle_social->icon_value.'"></span></a>';					
+												echo '<a href="'.esc_url($shop_isle_social->link).'"><span class="'.$shop_isle_social->icon_value.'"></span></a>';					
 											}
 									
 										}

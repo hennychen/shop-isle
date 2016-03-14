@@ -145,20 +145,34 @@ get_header(); ?>
 														echo '<div class="team-image">';
 														
 															if( !empty($shop_isle_team_member->image_url) ){
-																
-																if (function_exists ( 'icl_t' ) && !empty($shop_isle_team_member->id)){
-																	$shop_isle_team_member_image_url = icl_t( 'Team member',$shop_isle_team_member->id.'_team_member_image_url',$shop_isle_team_member->image_url );
-																	echo '<img src="'.$shop_isle_team_member_image_url.'" alt="">';
+															
+																if( !empty($shop_isle_team_member->text) ) {
+																	
+																	if (function_exists ( 'icl_t' ) && !empty($shop_isle_team_member->id)){
+																		$shop_isle_team_member_image_url = icl_t( 'Team member '.$shop_isle_team_member->id, 'Team member image', $shop_isle_team_member->image_url );
+																		$shop_isle_team_member_text = icl_t( 'Team member '.$shop_isle_team_member->id, 'Team member name', $shop_isle_team_member->text );
+																		echo '<img src="'. esc_url( $shop_isle_team_member_image_url ).'" alt="'.esc_html($shop_isle_team_member_text).'">';
+																	} else {
+																		echo '<img src="'. esc_url( $shop_isle_team_member->image_url ).'" alt="'.esc_html($shop_isle_team_member->text).'">';
+																	}
+
 																} else {
-																	echo '<img src="'.$shop_isle_team_member->image_url.'" alt="">';
+																	if (function_exists ( 'icl_t' ) && !empty($shop_isle_team_member->id)){
+																		$shop_isle_team_member_image_url = icl_t( 'Team member '.$shop_isle_team_member->id, 'Team member image', $shop_isle_team_member->image_url );
+																		echo '<img src="'. esc_url( $shop_isle_team_member_image_url ).'" alt="">';
+																	} else {
+																		echo '<img src="'. esc_url( $shop_isle_team_member_image_url ).'" alt="">';
+																	}
 																}
 																
 															}
+
+
 															if( !empty($shop_isle_team_member->description) ) {
 																echo '<div class="team-detail">';
 																
 																	if (function_exists ( 'icl_t' ) && !empty($shop_isle_team_member->id)){
-																		$shop_isle_team_member_description = icl_t( 'Team member',$shop_isle_team_member->id.'_team_member_description',$shop_isle_team_member->description );
+																		$shop_isle_team_member_description = icl_t( 'Team member '.$shop_isle_team_member->id, 'Team member description', $shop_isle_team_member->description );
 																		echo '<p class="font-serif">'.$shop_isle_team_member_description.'</p>';
 																	} else {
 																		echo '<p class="font-serif">'.$shop_isle_team_member->description.'</p>';
@@ -170,7 +184,7 @@ get_header(); ?>
 														echo '<div class="team-descr font-alt">';
 															if( !empty($shop_isle_team_member->text) ) {
 																if (function_exists ( 'icl_t' ) && !empty($shop_isle_team_member->id)){
-																	$shop_isle_team_member_text = icl_t( 'Team member',$shop_isle_team_member->id.'_team_member_text',$shop_isle_team_member->text );
+																	$shop_isle_team_member_text = icl_t( 'Team member '.$shop_isle_team_member->id, 'Team member name', $shop_isle_team_member->text );
 																	echo '<div class="team-name">'.$shop_isle_team_member_text.'</div>';
 																} else {
 																	echo '<div class="team-name">'.$shop_isle_team_member->text.'</div>';
@@ -178,7 +192,7 @@ get_header(); ?>
 															}
 															if( !empty($shop_isle_team_member->subtext) ) {
 																if (function_exists ( 'icl_t' ) && !empty($shop_isle_team_member->id)){
-																	$shop_isle_team_member_subtext = icl_t( 'Team member',$shop_isle_team_member->id.'_team_member_subtext',$shop_isle_team_member->subtext );
+																	$shop_isle_team_member_subtext = icl_t( 'Team member '.$shop_isle_team_member->id, 'Team member job', $shop_isle_team_member->subtext );
 																	echo '<div class="team-role">'.$shop_isle_team_member_subtext.'</div>';
 																} else {
 																	echo '<div class="team-role">'.$shop_isle_team_member->subtext.'</div>';
@@ -292,23 +306,11 @@ get_header(); ?>
 									echo '<div class="features-item">';
 									
 									
-									
-									/*
-									if (function_exists ( 'icl_t' ) && !empty($shop_isle_team_member->id)){
-																	$shop_isle_team_member_image_url = icl_t( 'Team member',$shop_isle_team_member->id.'_team_member_image_url',$shop_isle_team_member->image_url );
-																	echo '<img src="'.$shop_isle_team_member_image_url.'" alt="">';
-																} else {
-																	echo '<img src="'.$shop_isle_team_member->image_url.'" alt="">';
-																}
-									*/
-									
-									
-									
 										if( !empty($shop_isle_advantage->icon_value) ):
 											echo '<div class="features-icon">';
 											
 												if (function_exists ( 'icl_t' ) && !empty($shop_isle_advantage->id)){
-													$shop_isle_advantage_icon_value = icl_t( 'Advantage',$shop_isle_advantage->id.'_advantage_icon_value',$shop_isle_advantage->icon_value );
+													$shop_isle_advantage_icon_value = icl_t( 'Advantage '.$shop_isle_advantage->id, 'Advantage icon',$shop_isle_advantage->icon_value );
 													echo '<span class="'.$shop_isle_advantage_icon_value.'"></span>';
 												} else {
 													echo '<span class="'.$shop_isle_advantage->icon_value.'"></span>';
@@ -316,19 +318,20 @@ get_header(); ?>
 												
 											echo '</div>';
 										endif;	
+
 										if( !empty($shop_isle_advantage->text) ):
 										
 											if (function_exists ( 'icl_t' ) && !empty($shop_isle_advantage->id)){
-												$shop_isle_advantage_text = icl_t( 'Advantage',$shop_isle_advantage->id.'_advantage_text',$shop_isle_advantage->text );
+												$shop_isle_advantage_text = icl_t( 'Advantage '.$shop_isle_advantage->id, 'Advantage text', $shop_isle_advantage->text );
 												echo '<h3 class="features-title font-alt">'.$shop_isle_advantage_text.'</h3>';	
 											} else {
 												echo '<h3 class="features-title font-alt">'.$shop_isle_advantage->text.'</h3>';
 											}
-											
 										endif;	
+
 										if( !empty($shop_isle_advantage->subtext) ):
 											if (function_exists ( 'icl_t' ) && !empty($shop_isle_advantage->id)){
-												$shop_isle_advantage_subtext = icl_t( 'Advantage',$shop_isle_advantage->id.'_advantage_subtext',$shop_isle_advantage->subtext );
+												$shop_isle_advantage_subtext = icl_t( 'Advantage '.$shop_isle_advantage->id ,'Advantage subtext', $shop_isle_advantage->subtext );
 												echo $shop_isle_advantage_subtext;
 											} else {
 												echo $shop_isle_advantage->subtext;
