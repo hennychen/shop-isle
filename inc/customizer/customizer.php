@@ -461,7 +461,9 @@ function shop_isle_customize_register( $wp_customize ) {
         'priority' => 51
     ) );
 	
-	$wp_customize->add_setting( 'shop_isle_contact_page_instructions' );
+	$wp_customize->add_setting( 'shop_isle_contact_page_instructions', array(
+		'sanitize_callback' => 'shop_isle_sanitize_text',
+	));
 	
 	$wp_customize->add_control( new ShopIsle_Contact_Page_Instructions( $wp_customize, 'shop_isle_contact_page_instructions', array(
 	    'section' => 'shop_isle_contact_page_instructions',
@@ -556,7 +558,9 @@ function shop_isle_customize_register( $wp_customize ) {
         'priority' => 52
     ) );
 	
-	$wp_customize->add_setting( 'shop_isle_aboutus_page_instructions' );
+	$wp_customize->add_setting( 'shop_isle_aboutus_page_instructions', array(
+		'sanitize_callback' => 'shop_isle_sanitize_text' 	
+	));
 	
 	$wp_customize->add_control( new ShopIsle_Aboutus_Page_Instructions( $wp_customize, 'shop_isle_aboutus_page_instructions', array(
 	    'section' => 'shop_isle_aboutus_page_instructions',
