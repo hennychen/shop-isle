@@ -46,6 +46,10 @@ add_action( 'woocommerce_after_main_content', 		'shop_isle_after_content', 				 
 
 add_filter( 'woocommerce_page_title', 'shop_isle_header_shop_page');
 
+/* WooCommerce Search Products Page - No results */
+add_action( 'woocommerce_archive_description',      'shop_isle_search_products_no_results_wrapper',      10);
+add_action( 'woocommerce_after_main_content',       'shop_isle_search_products_no_results_wrapper_end',  10);
+
 /**
  * Products
  * @see  shop_isle_upsell_display()
