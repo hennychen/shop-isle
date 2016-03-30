@@ -68,8 +68,8 @@
 			if (homeSection.length > 0) {
 				var homeSHeight = homeSection.height();
 				var topScroll = $(document).scrollTop();
-				if ((homeSection.hasClass('home-parallax')) && ($(scrollTopp).scrollTop() <= homeSHeight)) {
-					homeSection.css('top', (topScroll * 0.55));
+				if ( ( homeSection.hasClass( 'home-parallax' ) ) && ( $( scrollTopp ).scrollTop() <= homeSHeight ) ) {
+					$( '.home-slider-overlay' ).css( 'opacity', ( 0.3 + 0.7 * topScroll / $(window).height() ) );
 				}
 				if (homeSection.hasClass('home-fade') && ($(scrollTopp).scrollTop() <= homeSHeight)) {
 					var caption = $('.caption-content');

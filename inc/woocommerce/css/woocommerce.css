@@ -3233,6 +3233,10 @@ Breacrumb
 .widget_top_rated_products li a {
     display: block;
 }
+.bottom-page-wrap {
+    position: relative;
+    z-index: 19;
+}
 .bottom-page-wrap .widget_shopping_cart .amount {
     color: #FFF;
 }

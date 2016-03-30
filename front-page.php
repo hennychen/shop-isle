@@ -35,11 +35,11 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 									
 									if (function_exists ( 'icl_t' ) && !empty($shop_isle_slide->id)){
 										$shop_isle_slider_image_url = icl_t( 'Slide '.$shop_isle_slide->id, 'Slide image', $shop_isle_slide->image_url );
-										echo '<li class="bg-dark-30 bg-dark" style="background-image:url('. esc_url( $shop_isle_slider_image_url ).')">';
+										echo '<li class="bg-dark" style="background-image:url('. esc_url( $shop_isle_slider_image_url ).')">';
 									} else {	
-										echo '<li class="bg-dark-30 bg-dark" style="background-image:url('. esc_url( $shop_isle_slide->image_url ).')">';
+										echo '<li class="bg-dark" style="background-image:url('. esc_url( $shop_isle_slide->image_url ).')">';
 									}
-								
+											echo '<div class="home-slider-overlay"></div>';
 											echo '<div class="hs-caption">';
 												echo '<div class="caption-content">';
 												
