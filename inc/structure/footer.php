@@ -155,7 +155,7 @@ if ( ! function_exists( 'shop_isle_footer_wrap_open' ) ) {
 	 * @return void
 	 */
 	function shop_isle_footer_wrap_open() {
-		echo '<div class="bottom-page-wrap">';
+		echo '</div><div class="bottom-page-wrap">';
 	}
 
 }
