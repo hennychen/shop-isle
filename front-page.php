@@ -420,9 +420,10 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 						
 						wp_reset_postdata();	
 						
-					endif;
 
-			echo '</div><!-- .container -->';
+				echo '</div><!-- .container -->';
+
+			endif;
 		
 		echo '</section>';
 		
