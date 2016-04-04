@@ -2269,7 +2269,7 @@ ul.products li.product {
 ul.products li.product:nth-child(4n+1) {
     clear: left;
 }
-.shop-with-sidebar ul.products li.product:nth-child(3n+1) {
+.shop-with-sidebar ul.products li.product:nth-child(4n+1) {
     clear: none;
 }
 h1.page-title {
