@@ -123,7 +123,7 @@ if ( ! function_exists( 'shop_isle_shop_page_wrapper_end' ) ) {
  * @since  1.0.0
  */
 function shop_isle_loop_columns() {
-	if ( is_active_sidebar( 'sidebar-1' ) ) {
+	if ( is_active_sidebar( 'shop-isle-sidebar-shop-archive' ) ) {
 		return apply_filters( 'shop_isle_loop_columns', 3 ); // 3 products per row
 	}
 	else {
