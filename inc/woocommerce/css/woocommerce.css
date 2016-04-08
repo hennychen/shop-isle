@@ -1427,7 +1427,7 @@ ul.products li.product {
 }
 
 ul.products li.product.last {
-    margin-right: 0!important
+    margin-right: 0;
 }
 
 ul.products li.product.first {
@@ -2845,6 +2845,7 @@ Single product page
 }
 .shop-with-sidebar {
     float: right;
+    padding: 0;
 }
 
 /****
@@ -3631,6 +3632,9 @@ a.button.compare:hover {
 		padding-right: 15px;
 	    padding-left: 15px;
 	}
+    .shop-with-sidebar ul.products li.product:nth-child(3n+1) {
+        clear: none;
+    }
 	.woocommerce ul.products li.product:nth-child(2n+1) {
 		clear: left;
 	}
@@ -3804,7 +3808,7 @@ a.button.compare:hover {
     .woocommerce ul.products li.product {
 		max-width: 370px;
 		float: none;
-        margin: 0 auto;
+        margin: 25px auto;
 	}
     .header-shopping-cart-wrap {
         position: absolute;
