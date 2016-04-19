@@ -3586,12 +3586,21 @@ a.button.compare:hover {
     -moz-osx-font-smoothing: grayscale;
 }
 
+.term-description {
+    width: 1170px;
+    max-width: 100%;
+    margin: 70px auto 30px;
+    padding: 0 30px;
+}
 
 @media screen and (max-width: 1200px) {
     .page-title ~ .woocommerce-error,
     .page-title ~ .woocommerce-info,
     .page-title ~ .woocommerce-message  {
         width: 970px;
+    }
+    .term-description {
+       width: 970px;
     }
 }
 
@@ -3681,6 +3690,11 @@ a.button.compare:hover {
     .cart-collaterals .shipping_calculator {
         width: 100%;
     }
+    
+    .term-description {
+        width: 750px;
+    }
+
 }
 
 @media screen and (max-width: 768px) {
