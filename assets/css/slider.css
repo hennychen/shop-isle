@@ -81,7 +81,7 @@ General Styles - FlexSlider
     opacity: 0.3;
 }
 
-.hero-slider {
+#home .hero-slider {
 	width: 100%;
 	height: 100%;
 	position: fixed;
