@@ -5,8 +5,6 @@
  */
 
 ( function( $ ) {
-	
-	fixFooterBottom();
 
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
@@ -155,11 +153,9 @@
 		value.bind( function( to ) {
 			if( to != '1' ) {
 				$( '.module-small-bottom' ).removeClass( 'shop_isle_hidden_if_not_customizer' );
-				fixFooterBottom();
 			}
 			else {
 				$( '.module-small-bottom' ).addClass( 'shop_isle_hidden_if_not_customizer' );
-				fixFooterBottom();
 			}
 		} );
 	} );
