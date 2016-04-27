@@ -14,7 +14,7 @@
 	} );
 	wp.customize( 'blogdescription', function( value ) {
 		value.bind( function( to ) {
-			$( '.site-description' ).text( to );
+			$( '.site-description a' ).text( to );
 		} );
 	} );
 
