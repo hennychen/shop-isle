@@ -1,5 +1,20 @@
 
 
+### 1.1.6 - 27/04/2016
+
+ Changes: 
+
+
+ * Fixed #165 Frontpage products not clickable
+ * Fixed the 404 not found page #169
+ * Fixed #171 Footer issue on search page
+ * Fixed #129 Changed slider effect
+ * Fixed #170 frontpage video errors
+ * Fixed issue on the shop page with sidebar
+ * Fixed #115 Category page content should be wrapped in a container div
+ * Fixed #176 Slider appears on mobile just below the footer
+
+
 ### 1.1.5 - 14/03/2016
 
  Changes: 
