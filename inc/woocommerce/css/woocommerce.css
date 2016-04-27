@@ -1419,10 +1419,20 @@ ul.products li.product {
     padding-left: 15px;
 }
 
-ul.products li.product.last {
-    margin-right: 0!important
+.shop-with-sidebar ul.products li.product {
+	width: 33.2%;
+}
+.shop-with-sidebar ul.products li.product:nth-child(3n+1) {
+    clear: left;
 }
 
+ul.products li.product.last {
+    margin-right: 0;
+}
+
+ul.products li.product.first {
+	clear:both;
+}
 .page-template-template-fullwidth-php .site-main .columns-1 ul.products li.product,
 .page-template-template-homepage-php .site-main .columns-1 ul.products li.product,
 .shop-isle-full-width-content .site-main .columns-1 ul.products li.product {
@@ -2259,6 +2269,9 @@ ul.products li.product {
 ul.products li.product:nth-child(4n+1) {
     clear: left;
 }
+.shop-with-sidebar ul.products li.product:nth-child(4n+1) {
+    clear: none;
+}
 h1.page-title {
 	margin-top: 0;
 }
@@ -2832,6 +2845,7 @@ Single product page
 }
 .shop-with-sidebar {
     float: right;
+    padding: 0;
 }
 
 /****
@@ -3233,6 +3247,10 @@ Breacrumb
 .widget_top_rated_products li a {
     display: block;
 }
+.bottom-page-wrap {
+    position: relative;
+    z-index: 19;
+}
 .bottom-page-wrap .widget_shopping_cart .amount {
     color: #FFF;
 }
@@ -3568,12 +3586,21 @@ a.button.compare:hover {
     -moz-osx-font-smoothing: grayscale;
 }
 
+.term-description {
+    width: 1170px;
+    max-width: 100%;
+    margin: 70px auto 30px;
+    padding: 0 30px;
+}
 
 @media screen and (max-width: 1200px) {
     .page-title ~ .woocommerce-error,
     .page-title ~ .woocommerce-info,
     .page-title ~ .woocommerce-message  {
         width: 970px;
+    }
+    .term-description {
+       width: 970px;
     }
 }
 
@@ -3614,6 +3641,9 @@ a.button.compare:hover {
 		padding-right: 15px;
 	    padding-left: 15px;
 	}
+    .shop-with-sidebar ul.products li.product:nth-child(3n+1) {
+        clear: none;
+    }
 	.woocommerce ul.products li.product:nth-child(2n+1) {
 		clear: left;
 	}
@@ -3660,6 +3690,11 @@ a.button.compare:hover {
     .cart-collaterals .shipping_calculator {
         width: 100%;
     }
+    
+    .term-description {
+        width: 750px;
+    }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -3787,7 +3822,7 @@ a.button.compare:hover {
     .woocommerce ul.products li.product {
 		max-width: 370px;
 		float: none;
-        margin: 0 auto;
+        margin: 25px auto;
 	}
     .header-shopping-cart-wrap {
         position: absolute;

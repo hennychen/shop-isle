@@ -123,7 +123,12 @@ if ( ! function_exists( 'shop_isle_shop_page_wrapper_end' ) ) {
  * @since  1.0.0
  */
 function shop_isle_loop_columns() {
-	return apply_filters( 'shop_isle_loop_columns', 4 ); // 4 products per row
+	if ( is_active_sidebar( 'shop-isle-sidebar-shop-archive' ) ) {
+		return apply_filters( 'shop_isle_loop_columns', 3 ); // 3 products per row
+	}
+	else {
+		return apply_filters( 'shop_isle_loop_columns', 4 ); // 4 products per row
+	}	
 }
 
 /**
@@ -510,3 +515,27 @@ function shop_isle_products_slider_on_single_page() {
 
 	endif;
 }
+
+if ( !function_exists( 'shop_isle_search_products_no_results_wrapper' ) ) {
+	function shop_isle_search_products_no_results_wrapper() {
+		
+		$shop_isle_body_classes = get_body_class();
+
+		if( is_search() && in_array('woocommerce',$shop_isle_body_classes) && in_array('search-no-results',$shop_isle_body_classes) ) {
+			echo '<section class="module-small module-small-shop">';
+				echo '<div class="container">';
+		}
+	}
+}	
+
+if ( !function_exists( 'shop_isle_search_products_no_results_wrapper_end' ) ) {
+	function shop_isle_search_products_no_results_wrapper_end() {
+		
+		$shop_isle_body_classes = get_body_class();
+
+		if( is_search() && in_array('woocommerce',$shop_isle_body_classes) && in_array('search-no-results',$shop_isle_body_classes) ) {
+				echo '</div><!-- .container -->';
+			echo '</section><!-- .module-small -->';
+		}
+	}
+}	

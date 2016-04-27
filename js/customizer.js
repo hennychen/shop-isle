@@ -5,8 +5,6 @@
  */
 
 ( function( $ ) {
-	
-	fixFooterBottom();
 
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
@@ -155,11 +153,9 @@
 		value.bind( function( to ) {
 			if( to != '1' ) {
 				$( '.module-small-bottom' ).removeClass( 'shop_isle_hidden_if_not_customizer' );
-				fixFooterBottom();
 			}
 			else {
 				$( '.module-small-bottom' ).addClass( 'shop_isle_hidden_if_not_customizer' );
-				fixFooterBottom();
 			}
 		} );
 	} );
@@ -271,34 +267,6 @@
 			$( '.error-page-button-text a' ).text( to );
 		} );
 	} );
-
-	/********************************************************/
-	/************** ADVANCED OPTIONS  ***********************/
-	function fixFooterBottom(){
-		var pageWidth = parseInt( jQuery( window ).outerWidth(), 10);
-		jQuery( 'footer.footer' ).css({'position':'relative' });
-		jQuery( 'div.main' ).height( 'auto' );
-		/* if page is less than 768px */
-		if (pageWidth > 768){
-			var bodyH 	= jQuery( 'body' ).outerHeight();
-			var windowH = jQuery( window ).outerHeight();
-	        var footerSidebarHeight = jQuery('.shop_isle_footer_sidebar').outerHeight();
-			if ( bodyH < windowH +footerSidebarHeight){
-				jQuery( 'footer.footer' ).css({
-					'position'	: 'absolute',
-					'bottom'	: '0',
-					'width'		: '100%',
-	                'z-index'   : '9'
-				});
-				jQuery( 'div.main' ).height( windowH-footerSidebarHeight );
-			}
-		}else{
-			jQuery( 'footer.footer' ).css({
-				'position'	: 'relative'
-			});
-			jQuery( 'div.main' ).height( 'auto' );
-		}
-	}
 
 } )( jQuery );
 
