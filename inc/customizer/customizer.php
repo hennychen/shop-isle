@@ -830,6 +830,31 @@ function shop_isle_customize_register( $wp_customize ) {
 		'section' => 'shop_isle_general_section',
 		'priority'    => 7,
 	));
+
+	/* Body font size */
+	$wp_customize->add_setting(
+		'shop_isle_font_size',
+		array(
+			'default' => '13px',
+		)
+	);
+
+	$wp_customize->add_control(
+		'shop_isle_font_size',
+		array(
+			'type' 		=> 'select',
+			'label' 	=> 'Select font size:',
+			'section' 	=> 'shop_isle_general_section',
+			'choices' 	=> array(
+				'12px' => '12px',
+				'13px' => '13px',
+				'14px' => '14px',
+				'15px' => '15px',
+				'16px' => '16px',
+			),
+		)
+	);
+
 }
 
 function shop_isle_is_contact_page() { 
