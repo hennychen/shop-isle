@@ -134,7 +134,7 @@ get_header(); ?>
 										
 										echo '<div class="row">';
 													
-											echo '<div class="hero-slider">';
+											echo '<div class="hero-slider about-team-member">';
 													
 												echo '<ul class="slides">';
 												
@@ -281,7 +281,7 @@ get_header(); ?>
 		<!-- Video end -->
 
 		<!-- Features start -->
-		<section class="module">
+		<section class="module module-advantages">
 			<div class="container">
 
 				<?php
