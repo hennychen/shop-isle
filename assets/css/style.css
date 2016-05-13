@@ -1244,7 +1244,7 @@ select {
 }
 
 pre {
-	font-size: 14px;
+	font-size: 1.076em;
 }
 /* Transition elsements */
 
@@ -1853,7 +1853,7 @@ p, ol, ul, blockquote {
 blockquote {
 	border: 0;
 	font-style: italic;
-	font-size: 15px;
+	font-size: 1.25em;
 	padding: 0;
 }
 
