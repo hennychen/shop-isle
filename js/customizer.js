@@ -14,7 +14,7 @@
 	} );
 	wp.customize( 'blogdescription', function( value ) {
 		value.bind( function( to ) {
-			$( '.site-description' ).text( to );
+			$( '.site-description a' ).text( to );
 		} );
 	} );
 
@@ -84,6 +84,7 @@
 		} );
 	} );
 
+
 	/********************************/
     /*********	Banners section *****/
 	/********************************/
@@ -97,6 +98,19 @@
 			}
 		} );
 	} );
+	
+	// Add new banner (Repeater)
+	wp.customize( "shop_isle_banners", function( value ) {
+		value.bind( function( to ) {
+			var obj = JSON.parse( to );
+			var result ="";
+			obj.forEach(function(item) {
+				result += '<div class="col-sm-4"><div class="content-box mt-0 mb-0"><div class="content-box-image"><a href="' + item.link + '"><img src="' + item.image_url + '"></a></div></div></div>';
+			});
+			$( '.shop_isle_bannerss_section' ).html( result );
+		} );
+	} );
+
 
 	/*********************************/
     /*******  Products section *******/
@@ -194,6 +208,18 @@
 		} );
 	} );
 
+	// socials (Repeater)
+	wp.customize( "shop_isle_socials", function( value ) {
+		value.bind( function( to ) {
+			var obj = JSON.parse( to );
+			var result ="";
+			obj.forEach(function(item) {
+				result+=  '<a href="' + item.link + '" class="social-icon"><i class="fa ' + item.icon_value + '"></i></a>';
+			});
+			$( '.footer-social-links' ).html( result );
+		} );
+	} );
+
 	/*********************************/
 	/******  About us page  **********/
 	/*********************************/
@@ -236,6 +262,30 @@
 	wp.customize( 'shop_isle_our_advantages_title', function( value ) {
 		value.bind( function( to ) {
 			$( '.our_advantages' ).text( to );
+		} );
+	} );
+
+	/* Team members (Repeater) */
+	wp.customize( "shop_isle_team_members", function( value ) {
+		value.bind( function( to ) {
+			var obj = JSON.parse( to );
+			var result ="";
+			obj.forEach(function(item) {
+				result += '<div class="col-sm-6 col-md-3 mb-sm-20 fadeInUp"><div class="team-item"><div class="team-image"><img src="' + item.image_url + '" alt="' + item.text + '"><div class="team-detail"><p class="font-serif">' + item.description + '</p></div><!-- .team-detail --></div><!-- .team-image --><div class="team-descr font-alt"><div class="team-name">' + item.text + '</div><div class="team-role">' + item.subtext + '</div></div><!-- .team-descr --></div><!-- .team-item --></div>';
+			});
+			$( '.about-team-member .slides' ).html( result );
+		} );
+	} );
+
+	/* Advantages (Repeater) */
+	wp.customize( "shop_isle_advantages", function( value ) {
+		value.bind( function( to ) {
+			var obj = JSON.parse( to );
+			var result ="";
+			obj.forEach(function(item) {
+				result += '<div class="col-sm-6 col-md-3 col-lg-3"><div class="features-item"><div class="features-icon"><span class="' + item.icon_value + '"></span></div><h3 class="features-title font-alt">' + item.text + '</h3>' + item.subtext + '</div></div>';
+			});
+			$( '.module-advantages .multi-columns-row' ).html( result );
 		} );
 	} );
 

@@ -81,7 +81,7 @@ if ( ! function_exists( 'shop_isle_setup' ) ) :
 		// Add support for the Site Logo plugin and the site logo functionality in JetPack
 		// https://github.com/automattic/site-logo
 		// http://jetpack.me/
-		add_theme_support( 'site-logo', array( 'size' => 'full' ) );
+		//add_theme_support( 'site-logo', array( 'size' => 'full' ) );
 
 		// Declare WooCommerce support
 		add_theme_support( 'woocommerce' );
@@ -209,6 +209,7 @@ function shop_isle_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
 }
 
 function shop_isle_admin_styles() {
@@ -611,4 +612,16 @@ if(function_exists('icl_unregister_string') && function_exists('icl_register_str
 	
 	
 	
+}
+
+
+add_action('wp_footer','shop_isle_php_style', 100);
+function shop_isle_php_style() {
+
+	echo '<style type="text/css">';
+
+	$shop_isle_body_font_size = get_theme_mod('shop_isle_font_size');
+	echo  !empty($shop_isle_body_font_size) ? 'body{font-size:'.$shop_isle_body_font_size.'}' : '' ;
+
+	echo '</style>';
 }

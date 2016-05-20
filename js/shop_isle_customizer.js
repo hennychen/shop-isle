@@ -197,6 +197,10 @@ jQuery(document).ready(function(){
 		shop_isle_refresh_general_control_values();
 	});
 
+	jQuery("#customize-theme-controls").on('keyup', '.shop_isle_description_control',function(){
+		shop_isle_refresh_general_control_values();
+	});
+
 	/*Drag and drop to change order*/
 	jQuery(".shop_isle_general_control_droppable").sortable({
 		update: function( event, ui ) {

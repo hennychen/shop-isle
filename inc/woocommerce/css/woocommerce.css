@@ -783,7 +783,7 @@ a.remove {
 #shop-isle-checkout-coupon .checkout_coupon .form-row-first input[type="text"] {
     font-family: "Roboto Condensed", sans-serif;
     letter-spacing: 2px;
-    font-size: 11px;
+    font-size: 12px;
     height: 35px;
     border: 1px solid #EAEAEA;
     -webkit-border-radius: 2px;
@@ -1039,13 +1039,14 @@ ul.digital-downloads li:before {
     margin: 0;
     padding: 1em 1.387em;
     background-color: #3D9CD2;
-    color: #fff
+    color: #fff;
+    z-index: 99999;
 }
 
 .demo_store:before {
-    font-family: FontAwesome;
+    font-family: ElegantIcons;
     margin-right: .53em;
-    content: "\f05a"
+    content: "\70"
 }
 
 .star-rating {
@@ -1112,9 +1113,8 @@ ul.digital-downloads li:before {
 	padding: 3px 16px;
 	text-align: left;
 	font-family: "Roboto Condensed", sans-serif;
-	text-transform: uppercase;
 	letter-spacing: 2px;
-	font-size: 11px;
+	font-size: 12px;
 	height: 39px;
 	border: 1px solid #EAEAEA;
 	-webkit-border-radius: 2px;
@@ -1613,9 +1613,8 @@ ul.products li.product.first {
 
 .woocommerce-ordering select {
     font-family: "Roboto Condensed", sans-serif;
-    text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 11px;
+    font-size: 12px;
     height: 33px;
     border: 1px solid #EAEAEA;
     -webkit-border-radius: 2px;
@@ -1679,9 +1678,8 @@ table.cart .quantity .qty {
     line-height: 1.42857143;
     padding: .618em;
     font-family: "Roboto Condensed", sans-serif;
-    text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 11px;
+    font-size: 12px;
     height: 33px;
     border: 1px solid #EAEAEA;
     -webkit-border-radius: 2px;
@@ -1994,9 +1992,8 @@ table.cart td.actions input[name="update_cart"] {
     -moz-border-radius: 2px;
     border-radius: 2px;
     font-family: "Roboto Condensed", sans-serif;
-    text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 11px;
+    font-size: 12px;
     padding: 8px 37px;
     border: rgba(17, 17, 17, 1);
 }
@@ -2016,9 +2013,8 @@ table.cart td.actions input[name="apply_coupon"] {
     border-radius: 2px;
     text-decoration: none;
     font-family: "Roboto Condensed", sans-serif;
-    text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 11px;
+    font-size: 12px;
     padding: 8px 37px;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -2043,7 +2039,7 @@ table.cart td.actions input[name="coupon_code"] {
     padding: 6px 12px;
     font-family: "Roboto Condensed", sans-serif;
     letter-spacing: 2px;
-    font-size: 11px;
+    font-size: 12px;
     height: 33px;
     border: 1px solid #EAEAEA;
     -webkit-border-radius: 2px;
@@ -2110,9 +2106,8 @@ td.product-subtotal span.amount {
 }
 #reviews form input {
     font-family: "Roboto Condensed", sans-serif;
-    text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 11px;
+    font-size: 12px;
     height: 33px;
     border: 1px solid #EAEAEA;
     -webkit-border-radius: 2px;
@@ -2137,7 +2132,7 @@ td.product-subtotal span.amount {
     margin-bottom: 15px;
     font-family: "Roboto Condensed", sans-serif;
     letter-spacing: 2px;
-    font-size: 11px;
+    font-size: 12px;
     border: 1px solid #EAEAEA;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -2210,9 +2205,8 @@ p.comment-form-rating {
     line-height: 1.42857143;
     padding: .618em;
     font-family: "Roboto Condensed", sans-serif;
-    text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 11px;
+    font-size: 12px;
     height: 33px;
     border: 1px solid #EAEAEA;
     -webkit-border-radius: 2px;
@@ -2235,9 +2229,8 @@ p.comment-form-rating {
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	font-family: "Roboto Condensed", sans-serif;
-	text-transform: uppercase;
 	letter-spacing: 2px;
-	font-size: 11px;
+	font-size: 12px;
 	height: 33px;
 	border: 1px solid #EAEAEA;
 	-webkit-border-radius: 2px;
@@ -2548,9 +2541,8 @@ Search form Header
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
-    text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 11px;
+    font-size: 12px;
     width: 100%;
     padding: 10px;
     border: none;
@@ -2912,6 +2904,16 @@ table.cart .quantity .qty {
     display: inline-block;
     margin-bottom: 0;
 }
+ul.products li.product .product-button-wrap .button,
+.product-button-wrap .button {
+    display: inline-block;
+    margin: 10px 5px 0;
+    padding: 0px 10px;
+}
+ul.products li.product .product-button-wrap .add-to-cart-button-wrap .button,
+.add-to-cart-button-wrap .button {
+    display: inline;
+}
 
 /****
 Cart page
@@ -2947,9 +2949,8 @@ ul.products li.product:hover img {
 }
 .woocommerce-billing-fields input {
 	font-family: "Roboto Condensed", sans-serif;
-	text-transform: uppercase;
 	letter-spacing: 2px;
-	font-size: 11px;
+	font-size: 12px;
 	height: 33px;
 	border: 1px solid #EAEAEA;
 	-webkit-border-radius: 2px;
@@ -2959,9 +2960,8 @@ ul.products li.product:hover img {
 }
 .form-row textarea {
     font-family: "Roboto Condensed", sans-serif;
-    text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 11px;
+    font-size: 12px;
     height: 75px;
     border: 1px solid #EAEAEA;
     -webkit-border-radius: 2px;
@@ -2974,9 +2974,8 @@ ul.products li.product:hover img {
 }
 .select2-container .select2-choice {
     font-family: "Roboto Condensed", sans-serif;
-    text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 11px;
+    font-size: 12px;
     height: 33px;
     border: 1px solid #EAEAEA;
     -webkit-border-radius: 2px;
@@ -3297,7 +3296,9 @@ Breacrumb
 /** WooCommerce Compare List plugin *****/
 /****************************************/
 
-a.button.compare, .shop-isle-compare-list-wrapper a.button.alt {
+a.button.compare, 
+.shop-isle-compare-list-wrapper a.button.alt,
+.product-button-wrap a.button {
     bottom: 0;
     -webkit-transform: translateY(0%);
     -moz-transform: translateY(0%);
@@ -3308,7 +3309,6 @@ a.button.compare, .shop-isle-compare-list-wrapper a.button.alt {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 10px;
-    padding: 6px;
     background: #0B5B34;
     color: #fff;
     border-radius: 2px;
@@ -3904,7 +3904,7 @@ a.button.compare:hover {
         width: 100%;
         float: left;
         margin-top: 5px;
-        font-size: 11px;
+        font-size: 12px;
         padding: 10px 37px;
     }
     .cart-collaterals .cart_totals, .cart-collaterals .shipping_calculator {

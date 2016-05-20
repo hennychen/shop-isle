@@ -127,6 +127,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	/* Banner */
 	$wp_customize->add_setting( 'shop_isle_banners', array(
+		'transport' => 'postMessage',
 		'sanitize_callback' => 'shop_isle_sanitize_repeater',
 		'default' => json_encode(array( array('image_url' => get_template_directory_uri().'/assets/images/banner1.jpg' ,'link' => '#' ),array('image_url' => get_template_directory_uri().'/assets/images/banner2.jpg' ,'link' => '#'),array('image_url' => get_template_directory_uri().'/assets/images/banner3.jpg' ,'link' => '#') ))
 	));
@@ -398,6 +399,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	/* socials */
 	$wp_customize->add_setting( 'shop_isle_socials', array(
+		'transport' => 'postMessage',
 		'sanitize_callback' => 'shop_isle_sanitize_repeater',
 		'default' => json_encode(array( array('icon_value' => 'social_facebook' ,'link' => '#' ),array('icon_value' => 'social_twitter' ,'link' => '#'), array('icon_value' => 'social_dribbble' ,'link' => '#'), array('icon_value' => 'social_skype' ,'link' => '#') )),
 	));
@@ -530,6 +532,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	/* Team members */
 	$wp_customize->add_setting( 'shop_isle_team_members', array(
+		'transport' => 'postMessage',
 		'sanitize_callback' => 'shop_isle_sanitize_repeater',
 		'default' => json_encode(array( array('image_url' => get_template_directory_uri().'/assets/images/team1.jpg' , 'text' => 'Eva Bean', 'subtext' => 'Developer', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.' ),array('image_url' => get_template_directory_uri().'/assets/images/team2.jpg' ,'text' => 'Maria Woods', 'subtext' => 'Designer', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.' ), array('image_url' => get_template_directory_uri().'/assets/images/team3.jpg' , 'text' => 'Booby Stone', 'subtext' => 'Director', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.'), array('image_url' => get_template_directory_uri().'/assets/images/team4.jpg' , 'text' => 'Anna Neaga', 'subtext' => 'Art Director', 'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a iaculis diam.') )),
 	));
@@ -673,6 +676,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	/* Advantages */
 	$wp_customize->add_setting( 'shop_isle_advantages', array(
+		'transport' => 'postMessage',
 		'sanitize_callback' => 'shop_isle_sanitize_repeater',
 		'default' => json_encode(array( array('icon_value' => 'icon_lightbulb' , 'text' => __('Ideas and concepts','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle')), array('icon_value' => 'icon_tools' , 'text' => __('Designs & interfaces','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle')), array('icon_value' => 'icon_cogs' , 'text' => __('Highly customizable','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle')), array('icon_value' => 'icon_like', 'text' => __('Easy to use','shop-isle'), 'subtext' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit.','shop-isle')))), 
 		));
@@ -810,6 +814,7 @@ function shop_isle_customize_register( $wp_customize ) {
 	
 	$wp_customize->remove_section('static_front_page');
 	$wp_customize->remove_section('title_tagline');
+
 	
 	$nav_menu_locations_primary = $wp_customize->get_control('nav_menu_locations[primary]');
 	if(!empty($nav_menu_locations_primary)){
@@ -830,6 +835,31 @@ function shop_isle_customize_register( $wp_customize ) {
 		'section' => 'shop_isle_general_section',
 		'priority'    => 7,
 	));
+
+	/* Body font size */
+	$wp_customize->add_setting(
+		'shop_isle_font_size',
+		array(
+			'default' => '13px',
+		)
+	);
+
+	$wp_customize->add_control(
+		'shop_isle_font_size',
+		array(
+			'type' 		=> 'select',
+			'label' 	=> 'Select font size:',
+			'section' 	=> 'shop_isle_general_section',
+			'choices' 	=> array(
+				'12px' => '12px',
+				'13px' => '13px',
+				'14px' => '14px',
+				'15px' => '15px',
+				'16px' => '16px',
+			),
+		)
+	);
+
 }
 
 function shop_isle_is_contact_page() { 
