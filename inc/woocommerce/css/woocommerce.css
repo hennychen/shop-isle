@@ -1039,13 +1039,14 @@ ul.digital-downloads li:before {
     margin: 0;
     padding: 1em 1.387em;
     background-color: #3D9CD2;
-    color: #fff
+    color: #fff;
+    z-index: 99999;
 }
 
 .demo_store:before {
-    font-family: FontAwesome;
+    font-family: ElegantIcons;
     margin-right: .53em;
-    content: "\f05a"
+    content: "\70"
 }
 
 .star-rating {
