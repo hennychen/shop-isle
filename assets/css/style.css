@@ -2883,75 +2883,70 @@ Captions
 Gallery
 ------------------------------------------------------------------- */
 
+.gallery {
+	margin: 0 -1.1666667% 1.75em;
+}
+
 .gallery-item {
-	position: relative;
+	display: inline-block;
+	max-width: 33.33%;
+	padding: 0 1.1400652% 2.2801304%;
 	text-align: center;
-	margin: 0 0 20px;
-}
-
-.gallery-image {
-	position: relative;
-	overflow: hidden;
-}
-
-.gallery-image img {
-	display: block;
-	overflow: hidden;
+	vertical-align: top;
 	width: 100%;
 }
 
-.gallery-image:after {
-	position: absolute;
-	background: transparent;
-	content: " ";
-	display: block;
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	z-index: 1;
+.gallery-columns-1 .gallery-item {
+	max-width: 100%;
 }
 
-.gallery-caption {
-	position: absolute;
-	width: 100%;
-	opacity: 0;
-	bottom: 100%;
-	left: 0;
-	z-index: 2;
-	text-align: center;
-	font-size: 28px;
-	color: #fff;
-	padding: 20px;
-
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
 }
 
-.gallery-icon {
-	background: rgba(255,255,255,0.2);
-	border-radius: 50%;
-	height: 50px;
-	width: 50px;
-	font-size: 24px;
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-icon img {
 	margin: 0 auto;
 }
 
-.gallery-icon i,
-.gallery-icon span {
-	line-height: 50px;
+.gallery-caption {
+	color: #686868;
+	display: block;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	font-style: italic;
+	line-height: 1.6153846154;
+	padding-top: 0.5384615385em;
 }
 
-/* Gallery hover */
-
-.gallery-item:hover .gallery-image:after {
-	background: rgba(0, 0, 0, .6);
-}
-
-.gallery-item:hover .gallery-caption {
-	opacity: 1;
-	bottom: 50%;
-	-webkit-transform: translateY(50%);
-	   -moz-transform: translateY(50%);
-	        transform: translateY(50%);
+.gallery-columns-6 .gallery-caption,
+.gallery-columns-7 .gallery-caption,
+.gallery-columns-8 .gallery-caption,
+.gallery-columns-9 .gallery-caption {
+	display: none;
 }
 
 /*--------------------------------------------------------------
