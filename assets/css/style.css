@@ -3317,6 +3317,13 @@ Post
 	border-radius: 2px;
 	box-shadow: none;
 }
+/* Jetpack subscribtion module */
+.comment-subscription-form {
+	clear: both;
+}
+.comment-subscription-form input#subscribe_blog {
+	float: none;
+}
 .comment-subscription-form input#subscribe_comments, .comment-subscription-form input#subscribe_blog {
 	height: auto;
 }
