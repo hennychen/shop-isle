@@ -3324,6 +3324,9 @@ Post
 .comment-subscription-form input#subscribe_blog {
 	float: none;
 }
+.comment-subscription-form label#subscribe-blog-label {
+	font-weight: normal;
+}
 .comment-subscription-form input#subscribe_comments, .comment-subscription-form input#subscribe_blog {
 	height: auto;
 }
