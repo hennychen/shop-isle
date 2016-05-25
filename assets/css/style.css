@@ -3317,7 +3317,7 @@ Post
 	border-radius: 2px;
 	box-shadow: none;
 }
-.comment-subscription-form input#subscribe_comments {
+.comment-subscription-form input#subscribe_comments, .comment-subscription-form input#subscribe_blog {
 	height: auto;
 }
 
