@@ -870,12 +870,10 @@ function shop_isle_customize_register( $wp_customize ) {
 	));
 
 	/* Body font size */
-	$wp_customize->add_setting(
-		'shop_isle_font_size',
-		array(
-			'default' => '13px',
-		)
-	);
+	$wp_customize->add_setting( 'shop_isle_font_size', array(
+		'default' => '13px',
+		'sanitize_callback' => 'shop_isle_sanitize_text'
+	) );
 
 	$wp_customize->add_control(
 		'shop_isle_font_size',
