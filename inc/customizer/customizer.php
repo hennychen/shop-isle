@@ -12,7 +12,22 @@
  * @since  1.0.0
  */ 
 function shop_isle_customize_register( $wp_customize ) {
-	
+
+	class ShopIsle_Message extends WP_Customize_Control{
+		private $message = '';
+		public function __construct( $manager, $id, $args = array() ) {
+			parent::__construct( $manager, $id, $args );
+			if(!empty($args['shop_isle_message'])){
+				$this->message = $args['shop_isle_message'];
+			}
+		}
+
+		public function render_content(){
+			echo '<span class="customize-control-title">'.$this->label.'</span>';
+			echo $this->message;
+		}
+	}
+
 	class ShopIsle_Contact_Page_Instructions extends WP_Customize_Control {
 		public function render_content() {
 			echo __( 'To customize the Contact Page you need to first select the template "Contact page" for the page you want to use for this purpose. Then open that page in the browser and press "Customize" in the top bar.','shop-isle' ).'<br><br>'. __( 'Need further assistance? Check out this','shop-isle' ).' <a href="http://docs.themeisle.com/article/211-shopisle-customizing-the-contact-and-about-us-page" target="_blank">'.__( 'doc','shop-isle' ).'</a>';
@@ -890,6 +905,77 @@ function shop_isle_customize_register( $wp_customize ) {
 			),
 		)
 	);
+
+	/*********************************/
+	/******* PLUS SECTIONS ***********/
+	/*********************************/
+	$wp_customize->add_section( 'shop_isle_sections_order_pro' , array(
+		'title'       => __( 'Sections management', 'shop-isle' ),
+		'priority' => 20
+	));
+	$wp_customize->add_setting( 'shop_isle_sections_management', array(
+		'sanitize_callback' => 'shop_isle_sanitize_text',
+	) );
+	$wp_customize->add_control( new ShopIsle_Message( $wp_customize, 'shop_isle_sections_management',
+		array(
+			'label'    => __( 'Sections management', 'shop-isle' ),
+			'section' => 'shop_isle_sections_order_pro',
+			'priority' => 1,
+			'shop_isle_message' => sprintf( __('Check out the %1$s for full control over the frontpage SECTIONS ORDER!', 'shop-isle' ), sprintf( '<a href="http://themeisle.com/themes/shop-isle-pro/">%s</a>', esc_html__( 'PRO version','shop-isle' )) )
+		)
+	));
+	$wp_customize->add_section( 'shop_isle_colors_section_pro' , array(
+		'title'       => esc_html__( 'Color schemes', 'shop-isle' ),
+		'priority'    => 48,
+	));
+	$wp_customize->add_setting( 'shop_isle_colors_schemes', array(
+		'sanitize_callback' => 'shop_isle_sanitize_text',
+	) );
+	$wp_customize->add_control( new ShopIsle_Message( $wp_customize, 'shop_isle_colors_schemes',
+		array(
+			'label'    => __( 'Color schemes', 'shop-isle' ),
+			'section' => 'shop_isle_colors_section_pro',
+			'priority' => 1,
+			'shop_isle_message' => sprintf( __('Check out the %1$s for full control over the COLOR SCHEME!', 'shop-isle' ), sprintf( '<a href="http://themeisle.com/themes/shop-isle-pro/">%s</a>', esc_html__( 'PRO version','shop-isle' )) )
+		)
+	));
+	$wp_customize->add_section( 'shop_isle_new_features_pro' , array(
+		'title'       => esc_html__( 'New Features', 'shop-isle' ),
+		'priority'    => 76,
+	));
+	$wp_customize->add_setting( 'shop_isle_new_services', array(
+		'sanitize_callback' => 'shop_isle_sanitize_text',
+	) );
+	$wp_customize->add_control( new ShopIsle_Message( $wp_customize, 'shop_isle_new_services',
+		array(
+			'label'    => __( 'Services section', 'shop-isle' ),
+			'section' => 'shop_isle_new_features_pro',
+			'priority' => 1,
+			'shop_isle_message' => sprintf( __('Check out the %1$s for full control over a new Services section!', 'shop-isle' ), sprintf( '<a href="http://themeisle.com/themes/shop-isle-pro/">%s</a>', esc_html__( 'PRO version','shop-isle' )) )
+		)
+	));
+	$wp_customize->add_setting( 'shop_isle_new_ribbon', array(
+		'sanitize_callback' => 'shop_isle_sanitize_text',
+	) );
+	$wp_customize->add_control( new ShopIsle_Message( $wp_customize, 'shop_isle_new_ribbon',
+		array(
+			'label'    => __( 'Ribbon section', 'shop-isle' ),
+			'section' => 'shop_isle_new_features_pro',
+			'priority' => 2,
+			'shop_isle_message' => sprintf( __('Check out the %1$s for full control over a new Ribbon section!', 'shop-isle' ), sprintf( '<a href="http://themeisle.com/themes/shop-isle-pro/">%s</a>', esc_html__( 'PRO version','shop-isle' )) )
+		)
+	));
+	$wp_customize->add_setting( 'shop_isle_new_shortcodes', array(
+		'sanitize_callback' => 'shop_isle_sanitize_text',
+	) );
+	$wp_customize->add_control( new ShopIsle_Message( $wp_customize, 'shop_isle_new_shortcodes',
+		array(
+			'label'    => __( 'Shortcodes section', 'shop-isle' ),
+			'section' => 'shop_isle_new_features_pro',
+			'priority' => 3,
+			'shop_isle_message' => sprintf( __('Check out the %1$s for full control over a new Shortcodes section!', 'shop-isle' ), sprintf( '<a href="http://themeisle.com/themes/shop-isle-pro/">%s</a>', esc_html__( 'PRO version','shop-isle' )) )
+		)
+	));
 
 }
 
