@@ -92,6 +92,13 @@ if ( ! function_exists( 'shop_isle_setup' ) ) :
 		/* Custom header */
 		add_theme_support( 'custom-header', array( 'default-image' => get_template_directory_uri().'/assets/images/header.jpg' ));
 		
+		register_default_headers( array(
+			'header' => array(
+				'url'           => get_template_directory_uri().'/assets/images/header.jpg',
+				'thumbnail_url' => get_template_directory_uri().'/assets/images/header.jpg'
+			)
+		));
+		
 		/* tgm-plugin-activation */
 		require_once get_template_directory() . '/class-tgm-plugin-activation.php';
 	}
