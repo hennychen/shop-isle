@@ -1,4 +1,8 @@
 
+### 2.1.10 - 03/06/2016
+**Changes:** 
+- Fixed errors in customize when WooCommerce is not installed
+
 ### 2.1.9 - 31/05/2016
 **Changes:** 
 - Fixed layout issues with Jetpack subscriptions module
