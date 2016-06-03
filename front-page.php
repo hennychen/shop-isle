@@ -277,8 +277,12 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 												echo '</div><!-- .shop-item-image -->';
 												
 												echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
-												$rating_html = $product->get_rating_html( $product->get_average_rating() );
-												if ( $rating_html && get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
+										
+												if( function_exists( 'get_rating_html' ) ) {
+													$rating_html = $product->get_rating_html( $product->get_average_rating() );
+												}
+
+												if ( !empty($rating_html) && get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
 													echo '<div class="product-rating-home">' . $rating_html . '</div>';
 												}
 												if( function_exists('get_woocommerce_currency_symbol') && !empty($product) ) {
@@ -378,8 +382,12 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 												echo '</div><!-- .shop-item-image -->';
 												
 												echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
-												$rating_html = $product->get_rating_html( $product->get_average_rating() );
-												if ( $rating_html && get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
+
+												if( function_exists( 'get_rating_html' ) ) {
+													$rating_html = $product->get_rating_html( $product->get_average_rating() );
+												}
+										
+												if ( !empty($rating_html) && get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
 													echo '<div class="product-rating-home">' . $rating_html . '</div>';
 												}
 												if( function_exists('get_woocommerce_currency_symbol') && !empty($product) ) {
@@ -546,8 +554,12 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 													echo '<a href="'.get_permalink().'">' . woocommerce_get_product_thumbnail().'</a>';
 												}
 												echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
-												$rating_html = $product->get_rating_html( $product->get_average_rating() );
-												if ( $rating_html && get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
+
+												if( function_exists( 'get_rating_html' ) ) {
+													$rating_html = $product->get_rating_html( $product->get_average_rating() );
+												}
+									
+												if ( !empty($rating_html) && get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
 													echo '<div class="product-rating-home">' . $rating_html . '</div>';
 												}
 												if( function_exists('get_woocommerce_currency_symbol') && !empty($product) ) {
@@ -610,8 +622,12 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 													echo '<a href="'.get_permalink().'">' . woocommerce_get_product_thumbnail().'</a>';
 												}
 												echo '<h4 class="shop-item-title font-alt"><a href="'.get_permalink().'">'.get_the_title().'</a></h4>';
-												$rating_html = $product->get_rating_html( $product->get_average_rating() );
-												if ( $rating_html && get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
+
+												if( function_exists( 'get_rating_html' ) ) {
+													$rating_html = $product->get_rating_html( $product->get_average_rating() );
+												}
+									
+												if ( !empty($rating_html) && get_option( 'woocommerce_enable_review_rating' ) === 'yes' ) {
 													echo '<div class="product-rating-home">' . $rating_html . '</div>';
 												}
 												if( function_exists('get_woocommerce_currency_symbol') && !empty($product) ) {
