@@ -73,6 +73,9 @@ function shop_isle_customize_register( $wp_customize ) {
 		'priority'    => 1,
 	)));
 
+	$wp_customize->get_control( 'header_image' )->section = 'shop_isle_header_section' ;
+	$wp_customize->get_control( 'header_image' )->priority = '2';
+
 	/***********************************************************************************/
 	/******  Frontpage - instructions for users when not on Frontpage template *********/
 	/***********************************************************************************/
