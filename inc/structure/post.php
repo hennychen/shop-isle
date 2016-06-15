@@ -147,7 +147,7 @@ if ( ! function_exists( 'shop_isle_posted_on' ) ) {
 			$shop_isle_comments = __('1 Comment','shop-isle');
 		}
 		if( !empty($shop_isle_comments) ):
-			echo '<a href="' . get_comments_link() .'">'. $shop_isle_comments.'</a> | ';
+			echo '<a href="' . get_comments_link() .'">'. esc_attr($shop_isle_comments).'</a> | ';
 		endif;	
 										
 		$shop_isle_categories = get_the_category();
@@ -155,7 +155,7 @@ if ( ! function_exists( 'shop_isle_posted_on' ) ) {
 		$shop_isleoutput = '';
 		if($shop_isle_categories){
 			foreach($shop_isle_categories as $shop_isle_category) {
-				$shop_isleoutput .= '<a href="'.get_category_link( $shop_isle_category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s", 'shop-isle' ), $shop_isle_category->name ) ) . '">'.$shop_isle_category->cat_name.'</a>'.$separator;
+				$shop_isleoutput .= '<a href="'.esc_attr(get_category_link( $shop_isle_category->term_id )).'" title="' . esc_attr( sprintf( __( "View all posts in %s", 'shop-isle' ), $shop_isle_category->name ) ) . '">'.$shop_isle_category->cat_name.'</a>'.$separator;
 			}
 			echo trim($shop_isleoutput, $separator);
 		}

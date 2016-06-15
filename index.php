@@ -19,7 +19,7 @@
 <?php
 $shop_isle_header_image = get_header_image();
 if( !empty($shop_isle_header_image) ):
-	echo '<section class="page-module-content module bg-dark" data-background="'.$shop_isle_header_image.'">';
+	echo '<section class="page-module-content module bg-dark" data-background="'.esc_url($shop_isle_header_image).'">';
 else:
 	echo '<section class="page-module-content module bg-dark">';
 endif;
@@ -60,15 +60,8 @@ echo '</section><!-- .module -->';
 ?>
 	<!-- Header section end -->
 
-	<!-- Blog standar start -->
+	<!-- Blog standard start -->
 <?php
-$shop_isle_posts_per_page = get_option('posts_per_page'); /* number of latest posts to show */
-
-if( !empty($shop_isle_posts_per_page) && ($shop_isle_posts_per_page > 0) ):
-
-	$shop_isle_query = new WP_Query( array('post_type' => 'post', 'posts_per_page' => $shop_isle_posts_per_page,'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1 ) ) );
-
-
 
 	if ( have_posts() ) {
 
@@ -151,14 +144,10 @@ if( !empty($shop_isle_posts_per_page) && ($shop_isle_posts_per_page > 0) ):
 
 			</div>
 		</section>
-		<!-- Blog standar end -->
+		<!-- Blog standard end -->
 
 		<?php
-		/* Restore original Post Data */
-		wp_reset_postdata();
 	}
-
-endif;
 
 ?>
 
