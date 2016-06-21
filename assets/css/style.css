@@ -2547,6 +2547,11 @@ Services, Content box
 	margin: 0 0 10px;
 }
 
+.add_to_cart_button {
+    text-align: center;
+    width: 100%;
+}
+
 /* Content box */
 
 .content-box {
@@ -4147,6 +4152,15 @@ Responsive Media Querries
     	display: inline-block;
     	float: none;
 	}
+
+    .module-advantages .multi-columns-row {
+        text-align: center;
+    }
+
+    .module-advantages .multi-columns-row div.col-sm-6 {
+        float: none;
+        display: inline-block;
+    }
 
 }
 
