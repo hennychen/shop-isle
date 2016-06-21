@@ -2671,6 +2671,19 @@ Team
 	        transform: translateY(50%);
 }
 
+.about-team-member .fadeInUp {
+	padding-bottom: 60px;
+	display: inline-block;
+	float: none;
+}
+
+.about-team-member > ul {
+	margin-bottom: -60px;
+	float: left;
+	width: 100%;
+	text-align: center;
+}
+
 /* -------------------------------------------------------------------
 Price-tables
 ------------------------------------------------------------------- */
@@ -4420,6 +4433,10 @@ Responsive Media Querries
 
 	.scroll-up {
 		display: none !important;
+	}
+
+	.about-team-member .fadeInUp {
+		max-width: 300px;
 	}
 
 }
