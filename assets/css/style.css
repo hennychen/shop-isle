@@ -2432,6 +2432,8 @@ Footer
 
 .footer {
 	padding: 0 0 10px 0;
+	z-index: 1;
+	position: relative;
 }
 
 .copyright {
