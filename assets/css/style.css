@@ -1991,9 +1991,9 @@ Navbar
 	right: 0;
 	top: 50%;
 	margin-top: -6px;
-	font: normal normal normal 14px/1 FontAwesome;
+	font: normal normal normal 14px/1 'ElegantIcons';
 	font-size: 9px;
-	content: "\f107";
+	content: "\43";
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -4094,9 +4094,9 @@ Responsive Media Querries
 		right: 9px;
 		top: 50%;
 		margin-top: -6px;
-		font: normal normal normal 14px/1 FontAwesome;
+		font: normal normal normal 14px/1 'ElegantIcons';
 		font-size: 9px;
-		content: "\f105";
+		content: "\45";
 		text-rendering: auto;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
