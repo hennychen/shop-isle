@@ -364,9 +364,9 @@
                     $menuWrap.find('.'+submenuOpenClass).removeClass(submenuOpenClass);
                 }
                 $(this).addClass(submenuOpenClass);
+                event.stopPropagation();
                 return false;
             }
-            event.stopPropagation();
         });
 
         $('html').click(function(){
