@@ -369,7 +369,7 @@
             }
         });
 
-        $('html').click(function(){
+        $('html,body,.main').click(function(){
             $menuWrap.find('.'+submenuOpenClass).removeClass(submenuOpenClass);
         });
 
