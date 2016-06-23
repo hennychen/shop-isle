@@ -348,17 +348,24 @@
 			return false;
 		});
 
-        /* Dropdown mennu on tablet */
+        /* ---------------------------------------------- /*
+         * Dropdown mennu on tablet
+         /* ---------------------------------------------- */
         var $menuBtnChildren = $('.menu-item-has-children'),
             submenuOpenClass = 'open',
             $thisParent,
             $menuWrap = $('.header-menu-wrap');
+        console.log('go');
         $menuBtnChildren.click(function(event){
+            console.log('click');
             if( mobileTest && !$(this).hasClass(submenuOpenClass) && window.innerWidth > 768 ) {
+                console.log('is_mobile');
                 $thisParent = $(this).parent('ul').parent('li');
                 if( $thisParent.hasClass(submenuOpenClass) ){
+                    console.log('parent');
                     $thisParent.find('.'+submenuOpenClass).removeClass(submenuOpenClass);
                 } else {
+                    console.log('else_parent');
                     $menuWrap.find('.'+submenuOpenClass).removeClass(submenuOpenClass);
                 }
                 $(this).addClass(submenuOpenClass);
@@ -368,6 +375,7 @@
         });
 
         $('html').click(function(){
+            console.log('remove');
             $menuWrap.find('.'+submenuOpenClass).removeClass(submenuOpenClass);
         });
 
