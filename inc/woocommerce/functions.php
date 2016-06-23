@@ -4,10 +4,6 @@
  *
  */
 
-add_image_size( 'shop_isle_cart_item_image_size', 58, 72, true );
-
-
-
 /**
  * Before Content
  * Wraps all WooCommerce content in wrappers which match the theme markup

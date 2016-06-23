@@ -1,8 +1,5 @@
 <?php
 
-add_image_size( 'shop_isle_blog_image_size', 750, 500, true );
-add_image_size( 'shop_isle_banner_homepage', 360, 235, true );
-
 add_filter( 'image_size_names_choose', 'shop_isle_media_uploader_custom_sizes' );
 function shop_isle_media_uploader_custom_sizes( $sizes ) {
     return array_merge( $sizes, array(
