@@ -355,27 +355,21 @@
             submenuOpenClass = 'open',
             $thisParent,
             $menuWrap = $('.header-menu-wrap');
-        console.log('go');
         $menuBtnChildren.click(function(event){
-            console.log('click');
-            if( mobileTest && !$(this).hasClass(submenuOpenClass) && window.innerWidth > 768 ) {
-                console.log('is_mobile');
+            if( mobileTest && !$(this).hasClass(submenuOpenClass) && window.innerWidth > 767 ) {
                 $thisParent = $(this).parent('ul').parent('li');
                 if( $thisParent.hasClass(submenuOpenClass) ){
-                    console.log('parent');
                     $thisParent.find('.'+submenuOpenClass).removeClass(submenuOpenClass);
                 } else {
-                    console.log('else_parent');
                     $menuWrap.find('.'+submenuOpenClass).removeClass(submenuOpenClass);
                 }
                 $(this).addClass(submenuOpenClass);
-                event.stopPropagation();
                 return false;
             }
+            event.stopPropagation();
         });
 
         $('html').click(function(){
-            console.log('remove');
             $menuWrap.find('.'+submenuOpenClass).removeClass(submenuOpenClass);
         });
 
