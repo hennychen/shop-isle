@@ -1041,7 +1041,7 @@ function shop_isle_sanitize_repeater($input){
 	return $input;
 }
 
-function wp_themeisle_customize_preview_js() {
+function shop_isle_wp_themeisle_customize_preview_js() {
 	wp_enqueue_script( 'wp_themeisle_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
 }
-add_action( 'customize_preview_init', 'wp_themeisle_customize_preview_js' );
+add_action( 'customize_preview_init', 'shop_isle_wp_themeisle_customize_preview_js' );
