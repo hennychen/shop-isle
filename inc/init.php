@@ -1,8 +1,5 @@
 <?php
 
-add_image_size( 'shop_isle_blog_image_size', 750, 500, true );
-add_image_size( 'shop_isle_banner_homepage', 360, 235, true );
-
 add_filter( 'image_size_names_choose', 'shop_isle_media_uploader_custom_sizes' );
 function shop_isle_media_uploader_custom_sizes( $sizes ) {
     return array_merge( $sizes, array(
@@ -73,8 +70,8 @@ add_action( 'woocommerce_checkout_order_review', 'shop_isle_coupon_after_order_t
 
 
 // Ensure cart contents update when products are added to the cart via AJAX )
-add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
-function woocommerce_header_add_to_cart_fragment( $fragments ) {
+add_filter( 'woocommerce_add_to_cart_fragments', 'shop_isle_woocommerce_header_add_to_cart_fragment' );
+function shop_isle_woocommerce_header_add_to_cart_fragment( $fragments ) {
 	ob_start();
 	?>
 

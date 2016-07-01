@@ -26,7 +26,7 @@ get_header(); ?>
 						$shop_isle_404_title = get_theme_mod('shop_isle_404_title',__( 'Error 404', 'shop-isle' ));
 						if( !empty($shop_isle_404_title) ):
 							echo '<div class="hs-title-size-4 font-alt mb-30 error-page-title">';
-								echo $shop_isle_404_title;
+								echo shop_isle_sanitize_text($shop_isle_404_title);
 							echo '</div>';
 						endif;
 				
@@ -34,7 +34,7 @@ get_header(); ?>
 						$shop_isle_404_text = get_theme_mod('shop_isle_404_text','The requested URL was not found on this server.<br> That is all we know.');
 						if( !empty($shop_isle_404_text) ):
 							echo '<div class="font-alt error-page-text">';
-								echo $shop_isle_404_text;
+								echo shop_isle_sanitize_text($shop_isle_404_text);
 							echo '</div>';
 						endif;
 						
@@ -44,7 +44,7 @@ get_header(); ?>
 						
 						if( !empty($shop_isle_404_link) && !empty($shop_isle_404_label) ):
 							echo '<div class="font-alt mt-30 error-page-button-text">';
-								echo '<a href="'.$shop_isle_404_link.'" class="btn btn-border-w btn-round">'.$shop_isle_404_label.'</a>';
+								echo '<a href="'.esc_url($shop_isle_404_link).'" class="btn btn-border-w btn-round">'.esc_attr($shop_isle_404_label).'</a>';
 							echo '</div>';
 						endif;
 					?>

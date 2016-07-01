@@ -53,6 +53,9 @@ if ( ! function_exists( 'shop_isle_setup' ) ) :
 		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 		 */
 		add_theme_support( 'post-thumbnails' );
+		add_image_size( 'shop_isle_cart_item_image_size', 58, 72, true );
+		add_image_size( 'shop_isle_blog_image_size', 750, 500, true );
+		add_image_size( 'shop_isle_banner_homepage', 360, 235, true );
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(

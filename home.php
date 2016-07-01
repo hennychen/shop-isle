@@ -7,7 +7,7 @@
 <?php
 $shop_isle_header_image = get_header_image();
 if( !empty($shop_isle_header_image) ):
-	echo '<section class="module bg-dark" data-background="'.$shop_isle_header_image.'">';
+	echo '<section class="module bg-dark" data-background="'.esc_url($shop_isle_header_image).'">';
 else:
 	echo '<section class="module bg-dark">';
 endif;
@@ -48,7 +48,7 @@ echo '</section><!-- .module -->';
 ?>
 	<!-- Header section end -->
 
-	<!-- Blog standar start -->
+	<!-- Blog standard start -->
 <?php
 $shop_isle_posts_per_page = get_option('posts_per_page'); /* number of latest posts to show */
 
@@ -139,7 +139,7 @@ if( !empty($shop_isle_posts_per_page) && ($shop_isle_posts_per_page > 0) ):
 
 			</div>
 		</section>
-		<!-- Blog standar end -->
+		<!-- Blog standard end -->
 
 		<?php
 		/* Restore original Post Data */

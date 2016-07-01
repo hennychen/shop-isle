@@ -163,7 +163,7 @@ get_header(); ?>
 																				$shop_isle_team_member_image_url = icl_t( 'Team member '.$shop_isle_team_member->id, 'Team member image', $shop_isle_team_member->image_url );
 																				echo '<img src="'. esc_url( $shop_isle_team_member_image_url ).'" alt="">';
 																			} else {
-																				echo '<img src="'. esc_url( $shop_isle_team_member_image_url ).'" alt="">';
+																				echo '<img src="'. esc_url( $shop_isle_team_member->image_url ).'" alt="">';
 																			}
 																		}
 																		
