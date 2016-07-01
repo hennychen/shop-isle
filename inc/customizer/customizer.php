@@ -34,12 +34,6 @@ function shop_isle_customize_register( $wp_customize ) {
 		}
 	}
 
-	class ShopIsle_Front_Page_Instructions extends WP_Customize_Control {
-		public function render_content() {
-			echo __( 'To customize the Frontpage sections please create a page and select the template "Frontpage" for that page. After that, go to Appearance -> Customize -> Static Front Page and under "Static Front Page" select "A static page". Finally, for "Front page" choose the page you previously created.','shop-isle' ).'<br><br>'.__( 'Need further informations? Check this','shop-isle' ).' <a href="http://docs.themeisle.com/article/236-how-to-set-up-the-home-page-for-llorix-one">'.__( 'doc','shop-isle').'</a>';
-		}
-	}
-
 	class ShopIsle_Aboutus_Page_Instructions extends WP_Customize_Control {
 		public function render_content() {
 			echo __( 'To customize the About us Page you need to first select the template "About us page" for the page you want to use for this purpose. Then open that page in the browser and press "Customize" in the top bar.','shop-isle' ).'<br><br>'. __( 'Need further assistance? Check out this','shop-isle' ).' <a href="http://docs.themeisle.com/article/211-shopisle-customizing-the-contact-and-about-us-page" target="_blank">'.__( 'doc','shop-isle' ).'</a>';
@@ -75,20 +69,6 @@ function shop_isle_customize_register( $wp_customize ) {
 
 	$wp_customize->get_control( 'header_image' )->section = 'shop_isle_header_section' ;
 	$wp_customize->get_control( 'header_image' )->priority = '2';
-
-	/***********************************************************************************/
-	/******  Frontpage - instructions for users when not on Frontpage template *********/
-	/***********************************************************************************/
-	$wp_customize->add_section( 'shop_isle_front_page_instructions', array(
-		'title'    => __( 'Frontpage settings', 'shop-isle' ),
-		'priority' => 41
-	) );
-	$wp_customize->add_setting( 'shop_isle_front_page_instructions', array(
-		'sanitize_callback' => 'shop_isle_sanitize_text'
-	) );
-	$wp_customize->add_control( new ShopIsle_Front_Page_Instructions( $wp_customize, 'shop_isle_front_page_instructions', array(
-		'section' => 'shop_isle_front_page_instructions'
-	)));
 
 	/****************************************************************/
 	/******************  	FRONTPAGE SECTIONS    *******************/
