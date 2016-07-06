@@ -12,7 +12,7 @@ Template Name: Blog template
 	<?php
 		$shop_isle_header_image = get_header_image();
 		if( !empty($shop_isle_header_image) ):
-			echo '<section class="page-header-module module bg-dark" data-background="'.$shop_isle_header_image.'">';
+			echo '<section class="page-header-module module bg-dark" data-background="'.esc_url( $shop_isle_header_image ).'">';
 		else:
 			echo '<section class="page-header-module module bg-dark">';
 		endif;
@@ -84,7 +84,7 @@ Template Name: Blog template
 										<?php
 										if ( has_post_thumbnail() ) {
 											echo '<div class="post-thumbnail">';
-												echo '<a href="'.get_permalink().'">';
+												echo '<a href="'.esc_url( get_permalink() ).'">';
 													echo get_the_post_thumbnail($post->ID, 'shop_isle_blog_image_size');
 												echo '</a>';
 											echo '</div>';
@@ -92,7 +92,7 @@ Template Name: Blog template
 										?>
 
 										<div class="post-header font-alt">
-											<h2 class="post-title"><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h2>
+											<h2 class="post-title"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h2>
 											<div class="post-meta">
 												<?php
 												shop_isle_posted_on();
@@ -113,7 +113,7 @@ Template Name: Blog template
 										</div>
 
 										<div class="post-more">
-											<a href="<?php echo get_permalink(); ?>" class="more-link"><?php _e('Read more','shop-isle'); ?></a>
+											<a href="<?php echo esc_url( get_permalink() ); ?>" class="more-link"><?php _e('Read more','shop-isle'); ?></a>
 										</div>
 
 									</div>
