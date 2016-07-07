@@ -7,9 +7,10 @@
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
-if ( ! isset( $content_width ) ) {
-	$content_width = 980; /* pixels */
+function shop_isle_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'zillah_content_width', 980 );
 }
+add_action( 'after_setup_theme', 'shop_isle_content_width', 0 );
 
 /**
  * Assign the ShopIsle version to a var
