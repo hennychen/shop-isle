@@ -1,4 +1,10 @@
 
+### 2.1.12 - 12/07/2016
+**Changes:** 
+- Fixed escaping issues
+- Moved content width inside the setup function
+- Removed prefixes for enqueued libraries
+
 ### 2.1.11 - 01/07/2016
 **Changes:** 
 - Update license for resources
