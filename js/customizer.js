@@ -65,7 +65,25 @@
 
 		} );
 	} );
-	
+
+	wp.customize( 'custom_logo', function( value ) {
+		value.bind( function( to ) {
+
+			if( to != '' ) {
+				$( '.shop_isle_header_title .shop-isle-header-title-inner > a' ).removeClass( 'shop_isle_hidden_if_not_customizer' );
+				$( '.shop_isle_header_title h1' ).addClass( 'shop_isle_hidden_if_not_customizer' );
+				$( '.shop_isle_header_title h2' ).addClass( 'shop_isle_hidden_if_not_customizer' );
+			}
+			else {
+				$( '.shop_isle_header_title .shop-isle-header-title-inner > a' ).addClass( 'shop_isle_hidden_if_not_customizer' );
+				$( '.shop_isle_header_title h1' ).removeClass( 'shop_isle_hidden_if_not_customizer' );
+				$( '.shop_isle_header_title h2' ).removeClass( 'shop_isle_hidden_if_not_customizer' );
+			}
+			$( '.shop_isle_header_title img' ).attr( 'src', to );
+
+		} );
+	} );
+
 	/*******************************/
 	/******    Slider section ******/
 	/*******************************/

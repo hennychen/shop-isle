@@ -48,6 +48,11 @@ if ( ! function_exists( 'shop_isle_setup' ) ) :
 		 */
 		add_theme_support( 'automatic-feed-links' );
 
+		/**
+		 * Add custom logo.
+		 */
+		add_theme_support( 'custom-logo' );
+
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
