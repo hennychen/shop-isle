@@ -1,4 +1,9 @@
 
+### 2.1.13 - 28/07/2016
+**Changes:** 
+- Fixed issue with copyright and powered by link
+- Update theme name
+
 ### 2.1.12 - 12/07/2016
 **Changes:** 
 - Fixed escaping issues
