@@ -24,36 +24,26 @@ if ( ! function_exists( 'shop_isle_primary_navigation' ) ) {
 
 					<div class="navbar-header">
 						<?php
+
+							$shop_isle_logo = get_theme_mod('shop_isle_logo');
 							echo '<div class="shop_isle_header_title"><div class="shop-isle-header-title-inner">';
-							if( function_exists( 'the_custom_logo' ) ) {
-								the_custom_logo();
-								if ( has_custom_logo() && is_customize_preview() ) {
-									echo '<h1 class="site-title shop_isle_hidden_if_not_customizer""><a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></h1>';
-									echo '<h2 class="site-description shop_isle_hidden_if_not_customizer"><a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">' . get_bloginfo( 'description' ) . '</a></h2>';
-								} else if( ! has_custom_logo() ) {
-									echo '<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></h1>';
-									echo '<h2 class="site-description"><a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">' . get_bloginfo( 'description' ) . '</a></h2>';
-								}
-							} else {
-								$shop_isle_logo = get_theme_mod( 'shop_isle_logo', false );
-								if ( ! empty( $shop_isle_logo ) ):
-									echo '<a href="' . esc_url( home_url( '/' ) ) . '" class="logo-image"><img src="' . esc_url( $shop_isle_logo ) . '"></a>';
-									if (  is_customize_preview() ):
-										echo '<h1 class="site-title shop_isle_hidden_if_not_customizer""><a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></h1>';
-										echo '<h2 class="site-description shop_isle_hidden_if_not_customizer"><a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">' . get_bloginfo( 'description' ) . '</a></h2>';
-									endif;
-								else:
-									if (  is_customize_preview() ):
-										echo '
-												<a href="' . esc_url( home_url( '/' ) ) . '" class="logo-image shop_isle_hidden_if_not_customizer">
-													<img src="">
-												</a>
-											';
-									endif;
-									echo '<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></h1>';
-									echo '<h2 class="site-description"><a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">' . get_bloginfo( 'description' ) . '</a></h2>';
+							if( !empty($shop_isle_logo) ):
+								echo '<a href="'.esc_url( home_url( '/' ) ).'" class="logo-image"><img src="'.esc_url( $shop_isle_logo ).'"></a>';
+								if( isset( $wp_customize ) ):
+									echo '<h1 class="site-title shop_isle_hidden_if_not_customizer""><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
+									echo '<h2 class="site-description shop_isle_hidden_if_not_customizer"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'description' ).'</a></h2>';
 								endif;
-							}
+							else:
+								if( isset( $wp_customize ) ):
+									echo '
+											<a href="'.esc_url( home_url( '/' ) ).'" class="logo-image shop_isle_hidden_if_not_customizer">
+												<img src="">
+											</a>
+										';
+								endif;							
+								echo '<h1 class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
+								echo '<h2 class="site-description"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'description' ).'</a></h2>';
+							endif;
 							echo '</div></div>';
 						?>
 
