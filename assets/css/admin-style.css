@@ -62,7 +62,7 @@ button.shop_isle_general_control_remove_field:hover{
 	display:none;
 }
 
-.shop_isle_general_control_repeater_container label{
+.shop_isle_general_control_repeater_container .shop-isle-customize-control-label {
 	display: none;
 }
 

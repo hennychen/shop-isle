@@ -182,7 +182,7 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 					?>
 							<div class="shop_isle_general_control_repeater_container">
 								<div class="shop-isle-customize-control-title"><?php echo $shop_isle_box_label; ?></div>
-								<label>
+								<div class="shop-isle-customize-control-label">
 								<?php
 										if($shop_isle_icon_control ==true){
                                 ?>
@@ -232,7 +232,7 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 									<?php } ?>
 									<input type="hidden" class="shop_isle_box_id" value="<?php if(!empty($icon->id)) echo esc_attr($icon->id); ?>">
 									<button type="button" class="shop_isle_general_control_remove_field button" style="display:none;"><?php esc_html_e('Delete field','shop-isle'); ?></button>
-								</label>
+								</div>
 							</div>
 					<?php
 						} else {
@@ -241,7 +241,7 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 					?>
 									<div class="shop_isle_general_control_repeater_container shop_isle_draggable">
 										<div class="shop-isle-customize-control-title"><?php echo $shop_isle_box_label; ?></div>
-										<label>
+										<div class="shop-isle-customize-control-label">
 										<?php
 											if($shop_isle_icon_control==true){ ?>
                                                     <span class="customize-control-title"><?php esc_html_e('Icon','shop-isle')?></span>
@@ -294,7 +294,7 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 											<?php	} ?>
 													<input type="hidden" class="shop_isle_box_id" value="<?php if(!empty($icon->id)) echo esc_attr($icon->id); ?>">
 													<button type="button" class="shop_isle_general_control_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php _e('Delete field','shop-isle'); ?></button>
-										</label>
+										</div>
 
 									</div>
 
@@ -306,7 +306,7 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 						?>
 									<div class="shop_isle_general_control_repeater_container shop_isle_draggable">
 										<div class="shop-isle-customize-control-title"><?php echo $shop_isle_box_label; ?></div>
-										<label>
+										<div class="shop-isle-customize-control-label">
 										<?php
 										if($shop_isle_icon_control==true){ ?>
                                                 <span class="customize-control-title"><?php _e('Icon','shop-isle')?></span>
@@ -360,7 +360,7 @@ if ( class_exists( 'WP_Customize_Control' ) ):
 
 											<input type="hidden" class="shop_isle_box_id" value="<?php if(!empty($icon->id)) echo esc_attr($icon->id); ?>">
 											<button type="button" class="shop_isle_general_control_remove_field button" <?php if ($it == 0) echo 'style="display:none;"'; ?>><?php esc_attr_e('Delete field','shop-isle'); ?></button>
-										</label>
+										</div>
 
 									</div>
 						<?php
