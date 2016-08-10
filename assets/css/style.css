@@ -3123,6 +3123,8 @@ Post
 	text-align: center;
 	color: #999;
 	padding: 7px 12px;
+    display: inline-block;
+    margin-top: 5px;
 }
 
 .woocommerce-pagination ul.page-numbers li a {
@@ -4657,4 +4659,35 @@ Vertival margin, padding
 	.admin-bar .navbar-fixed-top {
 		position: absolute;
 	}
+}
+
+
+/* -------------------------------------------------------------------
+Woocommerce Products Per Page
+------------------------------------------------------------------- */
+.products-per-page select {
+    font-family: "Roboto Condensed", sans-serif;
+    letter-spacing: 2px;
+    font-size: 12px;
+    height: 33px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    padding-left: 10px;
+}
+
+@media screen and (max-width: 992px) {
+    .products-per-page {
+        float: right;
+        margin-left: 5px;
+        width: 100%;
+        margin-right: 0;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-top: 20px;
+    }
+    .products-per-page select {
+        width: 100%;
+        margin-right: 0;
+    }
 }

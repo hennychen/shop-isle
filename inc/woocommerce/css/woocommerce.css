@@ -3145,9 +3145,10 @@ Breacrumb
 	margin-right: 0;
 }
 .woocommerce-pagination {
-	width: 100%;
+	width: auto;
 	float: left;
 	text-align: left;
+    margin-top: -5px;
 }
 .page-numbers {
 	text-align: left;
@@ -3694,11 +3695,12 @@ a.button.compare:hover {
     .cart-collaterals .shipping_calculator {
         width: 100%;
     }
-    
     .term-description {
         width: 750px;
     }
-
+    .woocommerce-pagination {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 768px) {
