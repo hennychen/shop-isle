@@ -4934,3 +4934,28 @@ WR MegaMenu
 	}
 
 }
+
+@media screen and (min-width: 768px) and (max-width: 783px) {
+    .wr-megamenu-container ul.wr-mega-menu > li {
+        border: 0 !important;
+        display: inline-block !important;
+        width: auto !important;
+    }
+    .wr-megamenu-container ul.wr-mega-menu > li.wr-megamenu-item > a.menu-item-link {
+        margin-right: 0 !important;
+    }
+    .wr-mega-menu .wr-menu-down {
+        width: 15px !important;
+    }
+    .wr-mega-menu > li > a, .wr-megamenu-container a {
+        padding: 15px !important;
+    }
+
+    .wr-mega-menu .wr-menu-down {
+        margin: -42px 7px 0 0 !important;
+    }
+
+    .wr-mega-menu .wr-menu-down {
+        width: 15px !important;
+    }
+}
