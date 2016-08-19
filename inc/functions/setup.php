@@ -94,7 +94,12 @@ if ( ! function_exists( 'shop_isle_setup' ) ) :
 		add_theme_support( 'title-tag' );
 		
 		/* Custom header */
-		add_theme_support( 'custom-header', array( 'default-image' => get_template_directory_uri().'/assets/images/header.jpg' ));
+		add_theme_support( 'custom-header', array(
+			'default-image' => get_template_directory_uri().'/assets/images/header.jpg',
+			'width'                  => 1200,
+			'height'                 => 280,
+			'flex-height'            => true,
+			));
 		
 		register_default_headers( array(
 			'header' => array(
